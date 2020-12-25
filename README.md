@@ -26,4 +26,4 @@ The default language setting for this project is C# 8.0. The project can be buil
 ## Roadmap
 - Expanding the cmdlet library with more useful commands
 - Transition to .NET 5 and C# 9.0 as a new development medium
-- "Module-arizing" the repo to work with a direct name such as `Import-Module -Name ...`
+- "Modularizing" the repo to work with a direct name such as `Import-Module -Name ...`

@@ -1,7 +1,7 @@
-# PowerPlug - A PowerShell Cmdlet Utility Library
+# PowerPlug - A PowerShell Cmdlet Library
 
 ## Introduction
-The cmdlet library contains `PSCmdlet` classes from the PowerShell Standard Library. These cmdlets can be added to PowerShell in the `$PROFILE` to make them visisbe during
+The cmdlet library contains `PSCmdlet` classes from the PowerShell Standard Library. These cmdlets can be added to PowerShell in the `$PROFILE` to make them visible during
 session. Cmdlet's also use XML documentation and the [XmlDoc2CmdletDoc](https://github.com/red-gate/XmlDoc2CmdletDoc) NuGet package to convert XML .NET comments to a 
 `.dll-Help.xml` file that contains cmdlet help text in `MAML`. This allows for more extensibility and accessibility for cmdlet integration on PowerShell. For more information
 on documenting PowerShell binary cmdlets, visit this article on [Documenting Your PowerShell Binary Cmdlets](https://www.red-gate.com/simple-talk/dotnet/software-tools/documenting-your-powershell-binary-cmdlets/).

@@ -1,4 +1,4 @@
-# PowerShell Cmdlet Utility Library
+# PowerPlug - A PowerShell Cmdlet Utility Library
 
 ## Introduction
 The cmdlet library contains `PSCmdlet` classes from the PowerShell Standard Library. These cmdlets can be added to PowerShell in the `$PROFILE` to make them visisbe during

@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System;
 using System.Text;
 
-namespace PowerShellCmdletLibrary
+namespace PowerPlugUtility
 {
     /// <summary>
     /// <para type="synopsis">Moves a file to the Recycle Bin</para>

@@ -7,8 +7,8 @@
     <ProjectGuid>{DF8484C0-1666-4981-81A9-AC0A7EBCBE76}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PowerShellCmdletLibrary</RootNamespace>
-    <AssemblyName>PowerShellCmdletLibrary</AssemblyName>
+    <RootNamespace>PowerPlug</RootNamespace>
+    <AssemblyName>PowerPlug</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\PowerShellCmdletLibrary.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\PowerPlug.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

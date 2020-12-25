@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PowerShellCmdletLibrary")]
+[assembly: AssemblyTitle("PowerPlug")]
 [assembly: AssemblyDescription("PowerShell utility cmdlets")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PowerShellCmdletLibrary")]
+[assembly: AssemblyProduct("PowerPlug")]
 [assembly: AssemblyCopyright("Copyright © Manu Puduvalli 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

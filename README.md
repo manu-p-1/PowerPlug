@@ -7,14 +7,13 @@ session. Cmdlet's also use XML documentation and the [XmlDoc2CmdletDoc](https://
 on documenting PowerShell binary cmdlets, visit: [](https://github.com/red-gate/XmlDoc2CmdletDoc).
 
 ## Execution
-You can use the `PowerShellCmdletLibrary.dll` binary and place it within any other directory but preferable `$env:PSModulePath`. To import the dll for the session, you can
-run:
+The latest release can be found under the [Releases Page](https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/releases). You can use the `PowerShellCmdletLibrary.dll` binary and place it within any other directory, but most sensibly in `$env:PSModulePath`. It is important to note that support for full `Get-Help` descriptions is contingent on the `PowerShellCmdletLibrary.dll-Help` being in the same directory as `PowerShellCmdletLibrary.dll`. To import the dll for the session, you can run:
 
 ```powershell
 ipmo Path\To\PowerShellCmdletLibrary.dll
 ```
 
-You can use the aforementioned command within the `$PROFILE` to load the library on PowerShell startup.
+You can use the aforementioned command within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module` to confirm the import rand successfully.
 
 ## Building Project
 Prerequisites:

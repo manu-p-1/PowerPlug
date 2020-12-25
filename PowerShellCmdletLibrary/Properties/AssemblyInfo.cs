@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PowerShellCmdletLibrary")]
-[assembly: AssemblyCopyright("Copyright © Manu Puduvalli  2020")]
+[assembly: AssemblyCopyright("Copyright © Manu Puduvalli 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

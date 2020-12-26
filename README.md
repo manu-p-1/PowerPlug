@@ -10,16 +10,16 @@
    <a href="https://github.com/manu-p-1/PowerPlug/pulse" alt="Activity">
       <img src="https://img.shields.io/github/commit-activity/m/manu-p-1/PowerPlug?color=%20%230099ff"/></a>
         
-   <a alt="Open Issues">
+   <a href="https://github.com/manu-p-1/PowerPlug/issues" alt="Open Issues">
       <img src="https://img.shields.io/github/issues/manu-p-1/PowerPlug"/></a>
       
-   <a alt="Latest Release">
+   <a href="https://github.com/manu-p-1/PowerPlug/releases" alt="Latest Release">
       <img src="https://img.shields.io/github/v/release/manu-p-1/PowerPlug?include_prereleases"/></a>
         
-   <a alt="Repo Size">
+   <a href="" alt="Repo Size">
       <img src="https://img.shields.io/github/repo-size/manu-p-1/PowerPlug?label=size&color=informational"/></a>
         
-   <a alt="License">
+   <a href="https://github.com/manu-p-1/PowerPlug/blob/master/LICENSE" alt="License">
       <img src="https://img.shields.io/github/license/manu-p-1/PowerPlug?color=informational"/></a>
 </p>
 

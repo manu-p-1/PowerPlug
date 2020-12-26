@@ -1,4 +1,7 @@
-# PowerPlug - A PowerShell Cmdlet Library
+<p align="center">
+  <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/PowerPlug%20Logo.png">
+  <br>
+</p>
 
 ## Introduction
 The cmdlet library contains `PSCmdlet` classes from the PowerShell Standard Library. These cmdlets can be added to PowerShell in the `$PROFILE` to make them visible during

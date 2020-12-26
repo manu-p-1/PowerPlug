@@ -36,7 +36,7 @@ The latest release can be found under the [Releases Page](https://github.com/man
 ipmo Path\To\PowerPlug.dll
 ```
 
-You can use the aforementioned command within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module` to confirm the import rand successfully.
+You can use the aforementioned command within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
 
 ## Building Project
 Prerequisites:
@@ -48,5 +48,5 @@ The default language setting for this project is C# 8.0. The project can be buil
 
 ## Roadmap
 - Expanding the cmdlet library with more useful commands
-- Transition to .NET 5 and C# 9.0 as a new development medium
+- Transition to .NET 5 and C# 9.0 as a new development medium (crucial dependencies need to support it first!)
 - "Modularizing" the repo to work with a direct name such as `Import-Module -Name ...`

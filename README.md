@@ -41,7 +41,7 @@ You can use the aforementioned command within the `$PROFILE` to load the library
 ## Building Project
 Prerequisites:
 - PowerShell 7.0 or Later
-- Visual Studio 2017 or Later
+- Visual Studio 2017 or Later OR Visual Studio Code 
 - .NET Framework 4.7.2 or Later
 
 The default language setting for this project is C# 8.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. 

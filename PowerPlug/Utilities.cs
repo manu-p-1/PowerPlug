@@ -1,17 +1,17 @@
-﻿using System.Management.Automation;
+﻿using System;
 using System.IO;
+using System.Management.Automation;
 using System.Security.Cryptography;
-using System;
 using System.Text;
 
-namespace PowerPlugUtility
+namespace PowerPlug
 {
     /// <summary>
     /// <para type="synopsis">Moves a file to the Recycle Bin</para>
     /// <para type="description">This function will move a file, whether directory or file, to the system Recycle Bin.
     /// <para type="aliases">trash</para>
     /// If the param list is true, it will print the contents of the current directory after recycling the file. 
-    /// Only error dialogsare printed and no confirmation message is shown.
+    /// Only error dialogs are printed and no confirmation message is shown.
     /// </para>
     /// <example>
     /// <para>A sample Move-Trash command</para>
@@ -41,9 +41,9 @@ namespace PowerPlugUtility
         /// </summary>
         protected override void ProcessRecord()
         {
-            var curr = this.SessionState.Path.CurrentFileSystemLocation.ToString();
+            var current = SessionState.Path.CurrentFileSystemLocation.ToString();
             var parent = System.IO.Path.Combine(Path, "..");
-            var fullPath = System.IO.Path.Combine(curr, Path);
+            var fullPath = System.IO.Path.Combine(current, Path);
 
             FileAttributes attr = File.GetAttributes(fullPath);
             var isDir = (attr & FileAttributes.Directory) == FileAttributes.Directory;
@@ -76,7 +76,7 @@ namespace PowerPlugUtility
 
     /// <summary>
     /// <para type="synopsis">Compares a file's user specified hash with another signature</para>
-    /// <para type="description">This function will compare a user defined hash of a file, such as an executible with the known signature of the file. 
+    /// <para type="description">This function will compare a user defined hash of a file, such as an executable with the known signature of the file. 
     /// This is especially useful since hashed values are long. The current supported hashes are SHA256, SHA512, MD5.
     /// </para>
     /// <para type="aliases">trash</para>
@@ -91,9 +91,9 @@ namespace PowerPlugUtility
     public class CompareHash : PSCmdlet
     {
 
-        private const string T_SHA256 = "SHA256";
-        private const string T_SHA512 = "SHA512";
-        private const string T_MD5 = "MD5";
+        private const string Sha256Option = "SHA256";
+        private const string SHA512Option = "SHA512";
+        private const string MD5Option = "MD5";
 
         private string _signature;
 
@@ -102,7 +102,7 @@ namespace PowerPlugUtility
         /// </summary>
         [Alias("HashType")]
         [Parameter(Position = 0, Mandatory = true, HelpMessage = "Choose from: [SHA256, SHA512, MD5] corresponding to the signature")]
-        [ValidateSet(T_SHA256, T_SHA512, T_MD5)]
+        [ValidateSet(Sha256Option, SHA512Option, MD5Option)]
         public string Hash { get; set; }
 
         /// <summary>
@@ -125,16 +125,17 @@ namespace PowerPlugUtility
         /// <summary>
         /// <para type="description">Processes the PSCmdlet</para>
         /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         protected override void ProcessRecord()
         {
-            var curr = this.SessionState.Path.CurrentFileSystemLocation.ToString();
-            var fullPath = System.IO.Path.Combine(curr, Path);
+            var current = SessionState.Path.CurrentFileSystemLocation.ToString();
+            var fullPath = System.IO.Path.Combine(current, Path);
 
             var hash = Hash switch
             {
-                T_SHA256 => ConvertHashAlgorithmToBase64String(SHA256.Create(), fullPath),
-                T_SHA512 => ConvertHashAlgorithmToBase64String(SHA512.Create(), fullPath),
-                T_MD5 => ConvertHashAlgorithmToBase64String(MD5.Create(), fullPath),
+                Sha256Option => ConvertHashAlgorithmToBase64String(SHA256.Create(), fullPath),
+                SHA512Option => ConvertHashAlgorithmToBase64String(SHA512.Create(), fullPath),
+                MD5Option => ConvertHashAlgorithmToBase64String(MD5.Create(), fullPath),
                 _ => throw new NotImplementedException()
             };
             var truth = (hash.ToLower() == Signature);
@@ -156,15 +157,15 @@ namespace PowerPlugUtility
         /// <param name="ha">The HashAlgorithm instance</param>
         /// <param name="filePath">The Path property</param>
         /// <returns>a Base64 encoded string</returns>
-        private string ConvertHashAlgorithmToBase64String(HashAlgorithm ha, string filePath)
+        private static string ConvertHashAlgorithmToBase64String(HashAlgorithm ha, string filePath)
         {
             using (ha)
             {
                 using var fileStream = File.OpenRead(filePath);
                 var computed = ha.ComputeHash(fileStream);
 
-                StringBuilder sb = new StringBuilder();
-                foreach (byte b in computed)
+                var sb = new StringBuilder();
+                foreach (var b in computed)
                     sb.Append(b.ToString("X2"));
 
                 return sb.ToString().ToLower();

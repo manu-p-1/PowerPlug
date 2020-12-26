@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/PowerPlug%20Logo.png">
+  <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/PowerPlugLogo.png">
   <br>
 </p>
 

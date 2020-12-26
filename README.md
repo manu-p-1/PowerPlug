@@ -14,10 +14,10 @@
       <img src="https://img.shields.io/github/issues/manu-p-1/PowerPlug"/></a>
         
    <a alt="Repo Size">
-      <img src="https://img.shields.io/github/repo-size/manu-p-1/PowerPlug?label=size&color=lightgrey"/></a>
+      <img src="https://img.shields.io/github/repo-size/manu-p-1/PowerPlug?label=size&color=informational"/></a>
         
    <a alt="License">
-      <img src="https://img.shields.io/github/license/manu-p-1/PowerPlug?color=lightgrey"/></a>
+      <img src="https://img.shields.io/github/license/manu-p-1/PowerPlug?color=informational"/></a>
 </p>
 
 ## Introduction

@@ -16,7 +16,7 @@
    <a href="https://github.com/manu-p-1/PowerPlug/releases" alt="Latest Release">
       <img src="https://img.shields.io/github/v/release/manu-p-1/PowerPlug?include_prereleases"/></a>
         
-   <a href="" alt="Repo Size">
+   <a href="#" alt="Repo Size">
       <img src="https://img.shields.io/github/repo-size/manu-p-1/PowerPlug?label=size&color=informational"/></a>
         
    <a href="https://github.com/manu-p-1/PowerPlug/blob/master/LICENSE" alt="License">

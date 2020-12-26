@@ -45,7 +45,7 @@ namespace PowerPlug
             var parent = System.IO.Path.Combine(Path, "..");
             var fullPath = System.IO.Path.Combine(current, Path);
 
-            FileAttributes attr = File.GetAttributes(fullPath);
+            var attr = File.GetAttributes(fullPath);
             var isDir = (attr & FileAttributes.Directory) == FileAttributes.Directory;
             if (isDir)
             {
@@ -92,8 +92,8 @@ namespace PowerPlug
     {
 
         private const string Sha256Option = "SHA256";
-        private const string SHA512Option = "SHA512";
-        private const string MD5Option = "MD5";
+        private const string Sha512Option = "SHA512";
+        private const string Md5Option = "MD5";
 
         private string _signature;
 
@@ -102,7 +102,7 @@ namespace PowerPlug
         /// </summary>
         [Alias("HashType")]
         [Parameter(Position = 0, Mandatory = true, HelpMessage = "Choose from: [SHA256, SHA512, MD5] corresponding to the signature")]
-        [ValidateSet(Sha256Option, SHA512Option, MD5Option)]
+        [ValidateSet(Sha256Option, Sha512Option, Md5Option)]
         public string Hash { get; set; }
 
         /// <summary>
@@ -133,9 +133,9 @@ namespace PowerPlug
 
             var hash = Hash switch
             {
-                Sha256Option => ConvertHashAlgorithmToBase64String(SHA256.Create(), fullPath),
-                SHA512Option => ConvertHashAlgorithmToBase64String(SHA512.Create(), fullPath),
-                MD5Option => ConvertHashAlgorithmToBase64String(MD5.Create(), fullPath),
+                Sha256Option => ConvertHashAlgorithmToX2FormattedString(SHA256.Create(), fullPath),
+                Sha512Option => ConvertHashAlgorithmToX2FormattedString(SHA512.Create(), fullPath),
+                Md5Option => ConvertHashAlgorithmToX2FormattedString(MD5.Create(), fullPath),
                 _ => throw new NotImplementedException()
             };
             var truth = (hash.ToLower() == Signature);
@@ -157,7 +157,7 @@ namespace PowerPlug
         /// <param name="ha">The HashAlgorithm instance</param>
         /// <param name="filePath">The Path property</param>
         /// <returns>a Base64 encoded string</returns>
-        private static string ConvertHashAlgorithmToBase64String(HashAlgorithm ha, string filePath)
+        private static string ConvertHashAlgorithmToX2FormattedString(HashAlgorithm ha, string filePath)
         {
             using (ha)
             {

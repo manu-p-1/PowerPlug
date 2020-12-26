@@ -5,20 +5,19 @@
 <p align="center">
   
    <a href="https://github.com/manu-p-1/PowerPlug/graphs/contributors" alt="Contributors">
-      <img src="https://img.shields.io/github/contributors/manu-p-1/PowerPlug?color=lightgrey" /></a>
+      <img src="https://img.shields.io/github/contributors/manu-p-1/PowerPlug?color=%20%230099ff"/></a>
     
    <a href="https://github.com/manu-p-1/PowerPlug/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/m/manu-p-1/PowerPlug?color=lightgrey" /></a>
+      <img src="https://img.shields.io/github/commit-activity/m/manu-p-1/PowerPlug?color=%20%230099ff"/></a>
         
    <a alt="Open Issues">
-        <img src="https://img.shields.io/github/issues/manu-p-1/PowerPlug"/></a>
+      <img src="https://img.shields.io/github/issues/manu-p-1/PowerPlug"/></a>
         
    <a alt="Repo Size">
-        <img src="https://img.shields.io/github/repo-size/manu-p-1/PowerPlug?label=size&color=%20%230099ff"/></a>
+      <img src="https://img.shields.io/github/repo-size/manu-p-1/PowerPlug?label=size&color=lightgrey"/></a>
         
    <a alt="License">
-        <img src="https://img.shields.io/github/license/manu-p-1/PowerPlug?color=%20%230099ff"/></a>
-   
+      <img src="https://img.shields.io/github/license/manu-p-1/PowerPlug?color=lightgrey"/></a>
 </p>
 
 ## Introduction

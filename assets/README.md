@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="PowerPlugLogo.png">
+  <img src="PowerPlugLogoAlt.png">
   <br>
 </p>
 

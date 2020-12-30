@@ -25,6 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\PowerPlug.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,12 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utilities.cs" />
+    <Compile Include="BaseCmdlets\BynameBase.cs" />
+    <Compile Include="BaseCmdlets\WritableBynameBase.cs" />
+    <Compile Include="BaseUtilities.cs" />
+    <Compile Include="Cmdlets.cs" />
+    <Compile Include="Engines\Byname\BynameCreatorBase.cs" />
+    <Compile Include="Engines\Byname\RemoveBynameCreator.cs" />
+    <Compile Include="Engines\Byname\NewBynameCreator.cs" />
+    <Compile Include="Engines\Byname\CreatableBynameCreatorBase.cs" />
+    <Compile Include="Engines\Byname\SetBynameCreator.cs" />
+    <Compile Include="PowerPlugFile\PowerPlugFileBase.cs" />
+    <Compile Include="PowerPlugFile\Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\XmlDoc2CmdletDoc.0.3.0\build\XmlDoc2CmdletDoc.targets" Condition="Exists('..\packages\XmlDoc2CmdletDoc.0.3.0\build\XmlDoc2CmdletDoc.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

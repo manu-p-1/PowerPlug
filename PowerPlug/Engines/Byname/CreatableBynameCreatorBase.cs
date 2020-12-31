@@ -6,71 +6,57 @@ using PowerPlug.BaseCmdlets;
 
 namespace PowerPlug.Engines.Byname
 {
-    public class AliasValueType
-    {
-        protected WritableBynameBase AliasCmdlet { get; }
-
-        public AliasValueType(WritableBynameBase cmdlet)
-        {
-            AliasCmdlet = cmdlet;
-        }
-    }
-
-    public class FunctionValueType : AliasValueType
-    {
-        public string ScriptBlock { get; }
-
-        public FunctionValueType(WritableBynameBase cmdlet, string scriptBlock) : base(cmdlet)
-        {
-            ScriptBlock = scriptBlock;
-        }
-    }
-
-    public class CmdletValueType : AliasValueType
-    {
-        public CmdletValueType(WritableBynameBase cmdlet) : base(cmdlet) { }
-    }
-
-
     public abstract class CreatableBynameCreatorBase : BynameCreatorBase
     {
         protected const string NewAliasCommand = "New-Alias";
         protected const string SetAliasCommand = "Set-Alias";
         protected WritableBynameBase AliasCmdlet { get; }
-        protected AliasValueType AliasValueType { get; }
 
         protected CreatableBynameCreatorBase(WritableBynameBase cmdlet) : base(cmdlet)
         {
             AliasCmdlet = cmdlet;
-            AliasValueType = GetAliasValueType();
         }
 
-        private AliasValueType GetAliasValueType()
+        protected static CommandAliasValueType GetAliasValueType(WritableBynameBase aliasCmdlet)
         {
-            // What happens when Get-Command fails? If the Powershell.Create() failed, this shouldn't run.
-            var gc = AliasCmdlet.SessionState.InvokeCommand.InvokeScript(
-                $"Get-Command {AliasCmdlet.Value} | select *");
+
+            using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
+            var gc = ps
+                .AddScript($"Get-Command {aliasCmdlet.Name} | select *")
+                .Invoke();
 
             var cmdType = gc.ElementAt(0).Properties.FirstOrDefault(e => e.Name == "CommandType");
-            if (cmdType is null)
+
+            if (cmdType == null)
             {
-                throw new Exception();
+                Exception e = new ArgumentException($"Alias name {nameof(aliasCmdlet)} was invalid");
+                aliasCmdlet.ThrowTerminatingError(new ErrorRecord(e, "InvalidAliasNameArgument", ErrorCategory.InvalidArgument, aliasCmdlet));
             }
-            if (cmdType.Value.ToString() == "Function")
+
+            switch (cmdType.Value.ToString())
             {
-                var elem0 = gc.ElementAt(0).Properties.FirstOrDefault(e => e.Name == "ScriptBlock");
-                if (elem0 is null)
+                case "Alias":
+                    return new AliasValueType(aliasCmdlet);
+                case "Function":
                 {
-                    throw new Exception("");
+                    var elem0 = gc.ElementAt(0).Properties.FirstOrDefault(e => e.Name == "ScriptBlock");
+                    if (elem0 == null)
+                    {
+                        throw new Exception("ScripBlock Not Found");
+                    }
+                    return new FunctionValueType(aliasCmdlet, elem0.Value.ToString().Trim());
                 }
-                return new FunctionValueType(AliasCmdlet, elem0.Value.ToString().Trim());
+                default:
+                    return new CmdletValueType(aliasCmdlet);
             }
-            return new CmdletValueType(AliasCmdlet);
         }
 
-        public override Collection<PSObject> RunCommand(string realCommandName) =>
-            PowerShell.Create(RunspaceMode.CurrentRunspace)
-                .AddCommand(realCommandName)
+        public override Collection<PSObject> RunCommand(string realCommand)
+        {
+            using var psShell = PowerShell.Create(RunspaceMode.CurrentRunspace);
+            
+            var ps = psShell
+                .AddCommand(realCommand)
                 .AddParameter("Name", AliasCmdlet.Name)
                 .AddParameter("Value", AliasCmdlet.Value)
                 .AddParameter("Description", AliasCmdlet.Description)
@@ -81,5 +67,43 @@ namespace PowerPlug.Engines.Byname
                 .AddParameter("WhatIf", AliasCmdlet.WhatIf)
                 .AddParameter("Confirm", AliasCmdlet.Confirm)
                 .Invoke();
+
+            var errorRec = psShell.Streams.Error;
+            if(errorRec.Count >= 1)
+            {
+                AliasCmdlet.ThrowTerminatingError(errorRec[0]);
+            }
+            return ps;
+        }
+    }
+
+    public class CommandAliasValueType
+    {
+        protected WritableBynameBase AliasCmdlet { get; }
+
+        public CommandAliasValueType(WritableBynameBase cmdlet)
+        {
+            AliasCmdlet = cmdlet;
+        }
+    }
+
+    public class FunctionValueType : CommandAliasValueType
+    {
+        public string ScriptBlock { get; }
+
+        public FunctionValueType(WritableBynameBase cmdlet, string scriptBlock) : base(cmdlet)
+        {
+            ScriptBlock = scriptBlock;
+        }
+    }
+
+    public class CmdletValueType : CommandAliasValueType
+    {
+        public CmdletValueType(WritableBynameBase cmdlet) : base(cmdlet) { }
+    }
+
+    public class AliasValueType : CommandAliasValueType
+    {
+        public AliasValueType(WritableBynameBase cmdlet) : base(cmdlet) { }
     }
 }

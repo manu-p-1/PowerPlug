@@ -13,7 +13,7 @@ namespace PowerPlug.Engines.Byname
     public class RemoveBynameCreator : BynameCreatorBase
     {
 
-        protected PowerPlug.BaseCmdlets.BynameBase AliasCmdlet { get; }
+        protected BynameBase AliasCmdlet { get; }
 
         protected const string RemoveAliasCommand = "Remove-Alias";
 
@@ -22,13 +22,17 @@ namespace PowerPlug.Engines.Byname
             AliasCmdlet = cmdlet;
         }
 
-        public override Collection<PSObject> RunCommand(string realCommandName)
-        {
-            throw new NotImplementedException();
-        }
-
+        public override Collection<PSObject> RunCommand(string realCommand) 
+            => PowerShell.Create(RunspaceMode.CurrentRunspace)
+                .AddCommand(realCommand)
+                .AddParameter("Name", AliasCmdlet.Name)
+                .AddParameter("Scope", AliasCmdlet.Scope)
+                .AddParameter("Force", AliasCmdlet.Force)
+                .Invoke();
+        
         public override void Execute()
         {
+            //Run Remove
             foreach (var r in RunCommand(RemoveAliasCommand))
             {
                 AliasCmdlet.WriteObject(r);

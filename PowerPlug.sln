@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPlug", "PowerPlug\PowerPlug.csproj", "{DF8484C0-1666-4981-81A9-AC0A7EBCBE76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPlug", "PowerPlug\PowerPlug.csproj", "{7F8C17F9-C254-44FB-ACD8-5047259B9017}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F8BA51E7-5E7C-4EB2-A7F1-47DAE0BDE544}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{720A0D3D-CDFB-4FCB-B42D-04FB994FFC6E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
@@ -16,15 +16,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DF8484C0-1666-4981-81A9-AC0A7EBCBE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF8484C0-1666-4981-81A9-AC0A7EBCBE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF8484C0-1666-4981-81A9-AC0A7EBCBE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF8484C0-1666-4981-81A9-AC0A7EBCBE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8C17F9-C254-44FB-ACD8-5047259B9017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8C17F9-C254-44FB-ACD8-5047259B9017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8C17F9-C254-44FB-ACD8-5047259B9017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8C17F9-C254-44FB-ACD8-5047259B9017}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E2141D00-E336-44CB-B50B-0D9080B0839D}
+		SolutionGuid = {C471DD22-8D08-4FF2-BDDA-19A4F7E69EE7}
 	EndGlobalSection
 EndGlobal

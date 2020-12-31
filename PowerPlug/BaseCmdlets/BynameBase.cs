@@ -31,10 +31,5 @@ namespace PowerPlug.BaseCmdlets
         }
 
         private bool _force;
-
-        /// <summary>
-        /// <para type="description">Processes the PSCmdlet</para>
-        /// </summary>
-        protected abstract override void ProcessRecord();
     }
 }

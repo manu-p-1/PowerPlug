@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Management.Automation;
+using System.Text;
 using PowerPlug.PowerPlugFile;
 
 namespace PowerPlug.Engines.Byname
@@ -17,8 +18,6 @@ namespace PowerPlug.Engines.Byname
             }
             ProfileInfo = Profile.GetProfile(cmdlet.SessionState);
         }
-
-        public abstract Collection<PSObject> RunCommand(string realCommandName);
         public abstract void Execute();
     }
 }

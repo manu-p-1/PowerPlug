@@ -25,21 +25,19 @@
 
 ## Introduction
 PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library.
-These cmdlets can be added to PowerShell in the `$PROFILE` to make them visible during session.
 
 ## Execution
-The latest release can be found under the [Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. To import the dll for the session, you can run:
+### Install from PS Gallery
+The latest release can be found at [PowerPlug Releases](https://www.powershellgallery.com/packages/PowerPlug/). You can install the prerelease to PowerShell by running:
 
 ```powershell
-ipmo PowerPlug
+Install-Module -Name PowerPlug -AllowPrerelease
 ```
-**or**
+### Install from GitHub Releases
+The latest zip release can be found under the [Github Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. 
 
-```powershell
-Import-Module PowerPlug
-```
-
-You can use the aforementioned command within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
+### Importing into session
+To import the dll for the session, you can run: `ipmo PowerPlug` **or** `Import-Module PowerPlug`. You can use the previous commands within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
 
 ## Building PowerPlug
 Prerequisites:
@@ -47,7 +45,7 @@ Prerequisites:
 - Visual Studio 2017 or Later OR VSCode
 - .NET 5
 
-The default language setting for this project is C# 9.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. 
+The default language setting for this project is C# 9.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. PowerShell 7 can be set as the startup item on Visual Studio to dynamically debug PowerPlug.
 
 ## Roadmap
 - Make exisiting commands more robust as we move to a full release
@@ -60,5 +58,3 @@ PowerPlug is a very fluid project and you may encounter issues during execution,
 
 ## Licensing
 PowerPlug is licensed under the GNU General Public License v3.0. The GNU General Public License is a free, copyleft license for software and other kinds of works.
-
-

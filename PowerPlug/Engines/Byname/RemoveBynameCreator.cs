@@ -17,26 +17,26 @@ namespace PowerPlug.Engines.Byname
 
         protected const string RemoveAliasCommand = "Remove-Alias";
 
-        public RemoveBynameCreator(PowerPlug.BaseCmdlets.BynameBase cmdlet) : base(cmdlet)
+        public RemoveBynameCreator(BynameBase cmdlet) : base(cmdlet)
         {
             AliasCmdlet = cmdlet;
         }
-
-        public override Collection<PSObject> RunCommand(string realCommand) 
-            => PowerShell.Create(RunspaceMode.CurrentRunspace)
-                .AddCommand(realCommand)
+    
+        public override void Execute()
+        {
+            using var psShell = PowerShell.Create(RunspaceMode.CurrentRunspace);
+            var resp = psShell
+                .AddCommand(RemoveAliasCommand)
                 .AddParameter("Name", AliasCmdlet.Name)
                 .AddParameter("Scope", AliasCmdlet.Scope)
                 .AddParameter("Force", AliasCmdlet.Force)
                 .Invoke();
-        
-        public override void Execute()
-        {
-            //Run Remove
-            foreach (var r in RunCommand(RemoveAliasCommand))
+
+            foreach (var r in resp)
             {
                 AliasCmdlet.WriteObject(r);
             }
+
             RemoveBynameFromFile(this.AliasCmdlet, ProfileInfo);
         }
 
@@ -48,7 +48,7 @@ namespace PowerPlug.Engines.Byname
             if (line == -1) { return; }
 
             var ln = powerPlugFile.GetValueAtLine(line);
-            var lns = ln.Substring(ln.IndexOf("New-Alias", StringComparison.Ordinal));
+            var lns = ln[ln.IndexOf("New-Alias", StringComparison.Ordinal)..];
             var value = lns.Split(' ')[4];
             var checkFunction = powerPlugFile.FindInFile(s => s.StartsWith($"function {value}"));
 

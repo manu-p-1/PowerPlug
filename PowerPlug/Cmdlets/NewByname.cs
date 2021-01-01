@@ -11,7 +11,7 @@ namespace PowerPlug.Cmdlets
     [Alias("nbn")]
     public class NewByname : WritableBynameBase
     {
-        ///<inheritdoc cref="PowerPlug.BaseCmdlets.BynameBase"/>
+        ///<inheritdoc cref="BynameBase"/>
         protected override void ProcessRecord() => new NewBynameCreator(this).Execute();
     }
 }

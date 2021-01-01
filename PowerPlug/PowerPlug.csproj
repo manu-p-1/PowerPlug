@@ -2,17 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>0.1.0</Version>
+    <Version>0.2.1-alpha</Version>
     <Company />
     <Description>PowerShell 7 utility cmdlets</Description>
     <Copyright>Copyright © Manu Puduvalli 2021</Copyright>
     <PackageProjectUrl>https://github.com/manu-p-1/PowerPlug</PackageProjectUrl>
     <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
-    <FileVersion>0.1.0</FileVersion>
+    <FileVersion>0.2.1</FileVersion>
+    <AssemblyVersion>0.2.1</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>C:\Users\Manu\source\repos\PowerPlug\PowerPlug\PowerPlug.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

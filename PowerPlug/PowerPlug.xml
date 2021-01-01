@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PowerPlug</name>
+    </assembly>
+    <members>
+        <member name="P:PowerPlug.BaseCmdlets.BynameBase.Name">
+            <summary>
+            The Name parameter for the command.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.BynameBase.Scope">
+            <summary>
+            The scope parameter for the command determines which scope the alias is set in.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.BynameBase.Force">
+            <summary>
+            If set to true and an existing alias of the same name exists
+            and is ReadOnly, the alias will be overwritten.
+            </summary>
+        </member>
+        <member name="T:PowerPlug.BaseCmdlets.WritableBynameBase">
+            <summary>
+            Fill out
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.WritableBynameBase.Value">
+            <summary>
+            The Value parameter for the command.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.WritableBynameBase.Description">
+            <summary>
+            The description for the alias.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.WritableBynameBase.Option">
+            <summary>
+            The Option parameter allows the alias to be set to
+            ReadOnly (for existing aliases) and/or Constant (only
+            for new aliases).
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.WritableBynameBase.PassThru">
+            <summary>
+            If set to true, the alias that is set is passed to the pipeline.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.WritableBynameBase.WhatIf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.WritableBynameBase.Confirm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PowerPlug.StringBuilderExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.StringBuilderExtensions.AppendIf(System.Text.StringBuilder,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="this"></param>
+            <param name="str"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.Cmdlets.CompareHash">
+            <summary>
+            <para type="synopsis">Compares a file's user specified hash with another signature</para>
+            <para type="description">This function will compare a user defined hash of a file, such as an executable with the known signature of the file. 
+            This is especially useful since hashed values are long. The current supported hashes are SHA256, SHA512, MD5.
+            </para>
+            <para type="aliases">trash</para>
+            <example>
+            <para>A sample Compare-Sha256 command</para>
+            <code>Compare-Hash .\audacity-win-2.4.2.exe 1f20cd153b2c322bf1ff9941e4e5204098abdc7da37250ce3fb38612b3e927bc</code>
+            </example>
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Cmdlets.CompareHash.Hash">
+            <summary>
+            <para type="description">The hashing algorithm (SHA256, SHA512, MD5) to use when comparing the signature</para>
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Cmdlets.CompareHash.Path">
+            <summary>
+            <para type="description">The path to the file</para>
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Cmdlets.CompareHash.Signature">
+            <summary>
+            <para type="description">The the known SHA256 signature of the file</para>
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.CompareHash.ProcessRecord">
+            <summary>
+            <para type="description">Processes the PSCmdlet</para>
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.CompareHash.ConvertHashAlgorithmToX2FormattedString(System.Security.Cryptography.HashAlgorithm,System.String)">
+            <summary>
+            Converts a <see cref="T:System.Security.Cryptography.HashAlgorithm"/> to the Path specified by the PSCmdlet
+            </summary>
+            <param name="ha">The HashAlgorithm instance</param>
+            <param name="filePath">The Path property</param>
+            <returns>a Base64 encoded string</returns>
+        </member>
+        <member name="T:PowerPlug.Cmdlets.MoveTrash">
+            <summary>
+            <para type="synopsis">Moves a file to the Recycle Bin</para>
+            <para type="description">This function will move a file, whether directory or file, to the system Recycle Bin.
+            <para type="aliases">trash</para>
+            If the param list is true, it will print the contents of the current directory after recycling the file. 
+            Only error dialogs are printed and no confirmation message is shown.
+            </para>
+            <example>
+            <para>A sample Move-Trash command</para>
+            <code>Move-Trash -Path Documents\file.txt -List</code>
+            </example>
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Cmdlets.MoveTrash.Path">
+            <summary>
+            <para type="description">The path to the file</para>
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Cmdlets.MoveTrash.List">
+            <summary>
+            <para type="description">A flag indicating whether to print the contents of the current directory</para>
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.MoveTrash.ProcessRecord">
+            <summary>
+            Processes the PSCmdlet
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.NewByname.ProcessRecord">
+            <inheritdoc cref="T:PowerPlug.BaseCmdlets.BynameBase"/>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.RemoveBynameProfileAlias.ProcessRecord">
+            <inheritdoc cref="T:PowerPlug.BaseCmdlets.BynameBase"/>
+        </member>
+        <member name="T:PowerPlug.Cmdlets.SetBynameProfileAlias">
+            <summary>
+            <para type="synopsis">Set's an alias within the profile instead of the session</para>
+            <para type="description">Set's an alias using Set-Byname, but writes to the $PROFILE instead of the session
+            </para>
+            <para type="aliases">sbn</para>
+            <example>
+            <para>A sample Set-Alias command</para>
+            <code>Set-Byname -Name list -Value Get-ChildItem</code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.SetBynameProfileAlias.ProcessRecord">
+            <inheritdoc cref="T:PowerPlug.BaseCmdlets.BynameBase"/>
+        </member>
+    </members>
+</doc>

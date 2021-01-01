@@ -24,29 +24,41 @@
 </p>
 
 ## Introduction
-The cmdlet library contains `PSCmdlet` classes from the PowerShell Standard Library. These cmdlets can be added to PowerShell in the `$PROFILE` to make them visible during
-session. Cmdlet's also use XML documentation and the [XmlDoc2CmdletDoc](https://github.com/red-gate/XmlDoc2CmdletDoc) NuGet package to convert XML .NET comments to a 
-`.dll-Help.xml` file that contains cmdlet help text in `MAML`. This allows for more extensibility and accessibility for cmdlet integration on PowerShell. For more information
-on documenting PowerShell binary cmdlets, visit this article on [Documenting Your PowerShell Binary Cmdlets](https://www.red-gate.com/simple-talk/dotnet/software-tools/documenting-your-powershell-binary-cmdlets/).
+PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library.
+These cmdlets can be added to PowerShell in the `$PROFILE` to make them visible during session.
 
 ## Execution
-The latest release can be found under the [Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but most sensibly in `$env:PSModulePath`. It is important to note that support for full `Get-Help` descriptions is contingent on the `PowerPlug.dll-Help` being in the same directory as `PowerPlug.dll`. To import the dll for the session, you can run:
+The latest release can be found under the [Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. To import the dll for the session, you can run:
 
 ```powershell
-ipmo Path\To\PowerPlug.dll
+ipmo PowerPlug
+```
+**or**
+
+```powershell
+Import-Module PowerPlug
 ```
 
 You can use the aforementioned command within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
 
-## Building Project
+## Building PowerPlug
 Prerequisites:
 - PowerShell 7.0 or Later
-- Visual Studio 2017 or Later OR Visual Studio Code 
-- .NET Framework 4.7.2 or Later
+- Visual Studio 2017 or Later OR VSCode
+- .NET 5
 
-The default language setting for this project is C# 8.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. 
+The default language setting for this project is C# 9.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. 
 
 ## Roadmap
+- Make exisiting commands more robust as we move to a full release
 - Expanding the cmdlet library with more useful commands
-- Transition to .NET 5 and C# 9.0 as a new development medium (crucial dependencies need to support it first!)
-- "Modularizing" the repo to work with a direct name such as `Import-Module -Name ...`
+- Adding Cmdlet documentation with XML and MAML
+
+## State
+PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. For more information visit, [PowerPlug Repo](https://github.com/manu-p-1/PowerPlug/). Or, to report an issue visit,
+[PowerPlug Issues](https://github.com/manu-p-1/PowerPlug/issues). If you are able to fix the isssue yourself by building the project, give our repo a Fork, would ya?
+
+## Licensing
+PowerPlug is licensed under the GNU General Public License v3.0. The GNU General Public License is a free, copyleft license for software and other kinds of works.
+
+

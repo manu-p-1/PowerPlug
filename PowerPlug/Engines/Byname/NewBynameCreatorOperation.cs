@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
 using PowerPlug.BaseCmdlets;
-using PowerPlug.Engines.Byname.Base;
 
 namespace PowerPlug.Engines.Byname
 {

@@ -1,46 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Management.Automation;
-using System.Text;
-using System.Threading.Tasks;
 using PowerPlug.BaseCmdlets;
+using PowerPlug.Cmdlets;
+using PowerPlug.Engines.Byname.Base;
 using PowerPlug.PowerPlugFile;
 
 namespace PowerPlug.Engines.Byname
 {
-    public class RemoveBynameCreator : BynameCreatorBase
+    public class RemoveBynameCreatorOperation : BynameCreatorStrategy
     {
-
-        protected BynameBase AliasCmdlet { get; }
+        protected RemoveBynameCmdlet AliasCmdlet { get; }
 
         protected const string RemoveAliasCommand = "Remove-Alias";
-
-        public RemoveBynameCreator(BynameBase cmdlet) : base(cmdlet)
+        public RemoveBynameCreatorOperation(RemoveBynameCmdlet cmdlet, IEnumerable<PSObject> commandResults) : base(commandResults)
         {
             AliasCmdlet = cmdlet;
         }
     
-        public override void Execute()
+        public override void ExecuteCommand()
         {
-            using var psShell = PowerShell.Create(RunspaceMode.CurrentRunspace);
-            var resp = psShell
-                .AddCommand(RemoveAliasCommand)
-                .AddParameter("Name", AliasCmdlet.Name)
-                .AddParameter("Scope", AliasCmdlet.Scope)
-                .AddParameter("Force", AliasCmdlet.Force)
-                .Invoke();
-
-            foreach (var r in resp)
+            foreach (var r in PsCommandResults)
             {
                 AliasCmdlet.WriteObject(r);
             }
-
             RemoveBynameFromFile(this.AliasCmdlet, ProfileInfo);
         }
 
-        internal static void RemoveBynameFromFile(BynameBase bb, PowerPlugFileBase powerPlugFile)
+        internal static void RemoveBynameFromFile(IByname bb, PowerPlugFileBase powerPlugFile)
         {
             bool Del(string s) => s.StartsWith($"New-Alias -Name {bb.Name}");
             var line = powerPlugFile.FindInFile(Del);

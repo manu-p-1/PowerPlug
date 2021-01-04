@@ -6,11 +6,11 @@ namespace PowerPlug.PowerPlugFile
 
     public class Profile : PowerPlugFileBase
     {
-        public DirectoryInfo ProfilePathPath { get; }
+        public DirectoryInfo ProfilePath { get; }
 
         public Profile(string path) : base(path)
         {
-            ProfilePathPath = new DirectoryInfo(Path.Combine(path, ".."));
+            ProfilePath = new DirectoryInfo(Path.Combine(path, ".."));
         }
 
         public static bool ProfileExists()

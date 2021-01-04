@@ -5,7 +5,6 @@ using System.Text;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Engines.Byname.Base;
 using PowerPlug.Engines.Byname.Base.AliasValueTypes;
-using PowerPlug.PowerPlugUtilities.Extensions;
 
 namespace PowerPlug.Engines.Byname
 {
@@ -26,17 +25,7 @@ namespace PowerPlug.Engines.Byname
                 sb.Append($"function {AliasCmdlet.Value} {{ {ft.ScriptBlock} }}\n");
             }
 
-            PsCommandAsString = sb.Append(NewAliasCommand)
-                .Append($" -Name {AliasCmdlet.Name}")
-                .Append($" -Value {AliasCmdlet.Value}")
-                .Append($" -Option {AliasCmdlet.Option}")
-                .Append($" -Scope {AliasCmdlet.Scope}")
-                .AppendIf(" -PassThru", AliasCmdlet.PassThru)
-                .AppendIf(" -Force", AliasCmdlet.Force)
-                .AppendIf(" -WhatIf", AliasCmdlet.WhatIf)
-                .AppendIf(" -Confirm", AliasCmdlet.Confirm)
-                .AppendIf($" -Description {AliasCmdlet.Description}", AliasCmdlet.Description != string.Empty)
-                .ToString();
+            PsCommandAsString = sb.Append(cmdlet).ToString();
         }
 
         private CommandAliasValueBaseType GetAliasValueType()

@@ -92,5 +92,7 @@ namespace PowerPlug.BaseCmdlets
         }
 
         private bool _confirm;
+
+        public abstract override string ToString();
     }
 }

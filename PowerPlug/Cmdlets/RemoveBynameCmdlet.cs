@@ -2,12 +2,14 @@
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Engines.Byname;
 using PowerPlug.Engines.Byname.Base;
+using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
 
 namespace PowerPlug.Cmdlets
 {
     [Cmdlet(VerbsCommon.Remove, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7")]
     [Alias("rbn")]
+    [BetaCmdlet(BetaCmdlet.WarningMessage)]
     public class RemoveBynameCmdlet : PSCmdlet, IByname
     {
         /// <summary>

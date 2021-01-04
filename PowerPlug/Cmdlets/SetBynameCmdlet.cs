@@ -2,6 +2,7 @@
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Engines.Byname;
 using PowerPlug.Engines.Byname.Base;
+using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
 
 namespace PowerPlug.Cmdlets
@@ -18,6 +19,7 @@ namespace PowerPlug.Cmdlets
     /// </summary>
     [Cmdlet(VerbsCommon.Set, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Set-Alias?view=powershell-7")]
     [Alias("sbn")]
+    [BetaCmdlet(BetaCmdlet.WarningMessage)]
     public class SetBynameCmdlet : WritableByname
     {
         protected override void ProcessRecord()

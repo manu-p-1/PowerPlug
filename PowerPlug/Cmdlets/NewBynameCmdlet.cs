@@ -1,13 +1,15 @@
-﻿using System.Management.Automation;
-using PowerPlug.BaseCmdlets;
+﻿using PowerPlug.BaseCmdlets;
 using PowerPlug.Engines.Byname;
 using PowerPlug.Engines.Byname.Base;
+using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
+using System.Management.Automation;
 
 namespace PowerPlug.Cmdlets
 {
     [Cmdlet(VerbsCommon.New, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7")]
     [Alias("nbn")]
+    [BetaCmdlet(BetaCmdlet.WarningMessage)]
     public class NewBynameCmdlet : WritableByname
     {
         protected override void ProcessRecord()

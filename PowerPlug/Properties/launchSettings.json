@@ -3,7 +3,7 @@
     "PowerPlug": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "commandLineArgs": "-NoLogo -NoProfile"
+      "commandLineArgs": "-NoLogo -NoProfile -NoExit -Command \"Import-Module '.\\PowerPlug.dll'\" "
     }
   }
 }

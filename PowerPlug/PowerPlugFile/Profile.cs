@@ -13,18 +13,20 @@ namespace PowerPlug.PowerPlugFile
             ProfilePathPath = new DirectoryInfo(Path.Combine(path, ".."));
         }
 
-        public static bool ProfileExists(SessionState ss)
+        public static bool ProfileExists()
         {
-            return bool.Parse(ss.InvokeCommand.InvokeScript("Test-Path $PROFILE")[0].ToString());
+            using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
+            return bool.Parse(ps.AddScript("Test-Path $PROFILE").Invoke()[0].ToString());
         }
 
-        public static Profile GetProfile(SessionState ss)
+        public static Profile GetProfile()
         {
-            if (!ProfileExists(ss))
+            if (!ProfileExists())
             {
                 throw new SessionStateException("Profile Not Found");
             }
-            return new Profile(ss.InvokeCommand.InvokeScript("$PROFILE")[0].ToString());
+            using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
+            return new Profile(ps.AddScript("$PROFILE").Invoke()[0].ToString());
         }
     }
 }

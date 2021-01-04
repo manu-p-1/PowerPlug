@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Management.Automation;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PowerPlug.Cmdlets
 {
@@ -22,7 +19,7 @@ namespace PowerPlug.Cmdlets
     /// </summary>
     [Cmdlet(VerbsData.Compare, "Hash")]
     [Alias("csh")]
-    public class CompareHash : PSCmdlet
+    public class CompareHashCmdlet : PSCmdlet
     {
 
         private const string Sha256Option = "SHA256";

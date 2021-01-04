@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Management.Automation;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PowerPlug.Cmdlets
 {
@@ -22,7 +17,7 @@ namespace PowerPlug.Cmdlets
     /// </summary>
     [Cmdlet(VerbsCommon.Move, "Trash")]
     [Alias("trash")]
-    public class MoveTrash : PSCmdlet
+    public class MoveTrashCmdlet : PSCmdlet
     {
         /// <summary>
         /// <para type="description">The path to the file</para>

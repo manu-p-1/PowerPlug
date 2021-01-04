@@ -8,9 +8,7 @@ namespace PowerPlug.PowerPlugUtilities.Attributes
         public string Msg { get; }
         internal const string WarningMessage = "This is a Beta PowerPlug Cmdlet - it may cause unexpected behavior";
 
-        internal BetaCmdlet()
-        {
-        }
+        internal BetaCmdlet() { }
 
         internal BetaCmdlet(string msg)
         {

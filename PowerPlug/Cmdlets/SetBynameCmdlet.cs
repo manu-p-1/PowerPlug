@@ -1,9 +1,11 @@
 ﻿using System.Management.Automation;
+using System.Text;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Engines.Byname;
 using PowerPlug.Engines.Byname.Base;
 using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
+using PowerPlug.PowerPlugUtilities.Extensions;
 
 namespace PowerPlug.Cmdlets
 {
@@ -44,5 +46,19 @@ namespace PowerPlug.Cmdlets
                 )
             ).ExecuteStrategy();
         }
+
+        public override string ToString() =>
+            new StringBuilder()
+                .Append("Set-Alias")
+                .Append($" -Name {Name}")
+                .Append($" -Value {Value}")
+                .Append($" -Option {Option}")
+                .Append($" -Scope {Scope}")
+                .AppendIf(" -PassThru", PassThru)
+                .AppendIf(" -Force", Force)
+                .AppendIf(" -WhatIf", WhatIf)
+                .AppendIf(" -Confirm", Confirm)
+                .AppendIf($" -Description {Description}", Description != string.Empty)
+                .ToString();
     }
 }

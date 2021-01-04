@@ -2,7 +2,8 @@
   "profiles": {
     "PowerPlug": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "commandLineArgs": "-NoLogo -NoProfile"
     }
   }
 }

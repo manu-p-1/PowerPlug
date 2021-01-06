@@ -10,13 +10,13 @@ namespace PowerPlug.Cmdlets
     [Cmdlet(VerbsCommon.Remove, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7")]
     [Alias("rbn")]
     [BetaCmdlet(BetaCmdlet.WarningMessage)]
-    public class RemoveBynameCmdlet : PSCmdlet, IByname
+    public class RemoveBynameCmdlet : BynameBase
     {
         /// <summary>
         /// The Name parameter for the command.
         /// </summary>
         [Parameter(Position = 0, Mandatory = true, ValueFromPipelineByPropertyName = true)]
-        public string Name { get; set; }
+        public override string Name { get; set; }
 
         /// <summary>
         /// The scope parameter for the command determines which scope the alias is set in.

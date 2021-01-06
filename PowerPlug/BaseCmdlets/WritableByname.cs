@@ -5,13 +5,13 @@ namespace PowerPlug.BaseCmdlets
     /// <summary>
     /// Fill out
     /// </summary>
-    public abstract class WritableByname : PSCmdlet, IByname
+    public abstract class WritableByname : BynameBase
     {
         /// <summary>
         /// The Name parameter for the command.
         /// </summary>
         [Parameter(Position = 0, Mandatory = true, ValueFromPipelineByPropertyName = true)]
-        public string Name { get; set; }
+        public override string Name { get; set; }
 
         /// <summary>
         /// The scope parameter for the command determines which scope the alias is set in.

@@ -173,5 +173,38 @@
             <param name="condition"></param>
             <returns></returns>
         </member>
+        <member name="T:PowerPlug.PowerPlugUtilities.Range`1">
+            <summary>The Range class.</summary>
+            <typeparam name="T">Generic parameter.</typeparam>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Minimum">
+            <summary>Minimum value of the range.</summary>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Maximum">
+            <summary>Maximum value of the range.</summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ToString">
+            <summary>Presents the Range in readable format.</summary>
+            <returns>String representation of the Range</returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.IsValid">
+            <summary>Determines if the range is valid.</summary>
+            <returns>True if range is valid, else false</returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ContainsValue(`0)">
+            <summary>Determines if the provided value is inside the range.</summary>
+            <param name="value">The value to test</param>
+            <returns>True if the value is inside Range, else false</returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange(PowerPlug.PowerPlugUtilities.Range{`0})">
+            <summary>Determines if this Range is inside the bounds of another range.</summary>
+            <param name="range">The parent range to test on</param>
+            <returns>True if range is inclusive, else false</returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ContainsRange(PowerPlug.PowerPlugUtilities.Range{`0})">
+            <summary>Determines if another range is inside the bounds of this range.</summary>
+            <param name="range">The child range to test</param>
+            <returns>True if range is inside, else false</returns>
+        </member>
     </members>
 </doc>

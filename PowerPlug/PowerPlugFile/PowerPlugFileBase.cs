@@ -20,15 +20,29 @@ namespace PowerPlug.PowerPlugFile
         }
         public void WriteLine(string value)
         {
+            var x = File.ReadLines(FileInfo.FullName).Last();
             using var file = new StreamWriter(FileInfo.FullName, true);
+
+            if (x != string.Empty)
+            {
+                file.WriteLine(Environment.NewLine);
+                
+            }
             file.WriteLine(value);
         }
+        
+        public void Replace(string oldValue, string replacementValue)
+        {
+            var text = File.ReadAllText(FileInfo.FullName);
+            text = text.Replace(oldValue, replacementValue);
+            File.WriteAllText(FileInfo.FullName, text);
+        }
 
-        public void Replace(string replacementValue)
+        public void ReplaceFromEachLine(string oldValue, string replacementValue)
         {
             File.WriteAllLines(FileInfo.FullName,
                 File.ReadLines(FileInfo.FullName)
-                    .Select(l => l == replacementValue ? replacementValue : l)
+                    .Select(l => l == oldValue ? replacementValue : l)
                     .ToList());
         }
 
@@ -47,9 +61,9 @@ namespace PowerPlug.PowerPlugFile
         public void ReplaceInLines(Dictionary<KeyValuePair<string, string>, int> replacementDict)
         {
             var arrLine = File.ReadAllLines(FileInfo.FullName);
-            foreach (var entry in replacementDict)
+            foreach (var ((key, s), value) in replacementDict)
             {
-                arrLine[entry.Value - 1] = arrLine[entry.Value - 1].Replace(entry.Key.Key, entry.Key.Value);
+                arrLine[value - 1] = arrLine[value - 1].Replace(key, s);
                 
             }
             File.WriteAllLines(FileInfo.FullName, arrLine);
@@ -65,14 +79,14 @@ namespace PowerPlug.PowerPlugFile
         public void ReplaceLines(Dictionary<string, int> replacementValueLine)
         {
             var arrLine = File.ReadAllLines(FileInfo.FullName);
-            foreach (var entry in replacementValueLine)
+            foreach (var (key, value) in replacementValueLine)
             {
-                arrLine[entry.Value - 1] = entry.Key;
+                arrLine[value - 1] = key;
             }
             File.WriteAllLines(FileInfo.FullName, arrLine);
         }
 
-        public void Remove(string valToRemove)
+        public void RemoveFromEachLine(string valToRemove)
         {
             File.WriteAllLines(FileInfo.FullName,
                 File.ReadLines(FileInfo.FullName)

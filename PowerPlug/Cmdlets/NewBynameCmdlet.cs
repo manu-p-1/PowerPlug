@@ -9,9 +9,22 @@ using PowerPlug.PowerPlugUtilities.Extensions;
 
 namespace PowerPlug.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Creates a new Byname</para>
+    /// <para type="description">This Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
+    /// command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
+    /// purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
+    /// prevent unintended behavior.
+    /// </para>
+    /// <para type="aliases">nbn</para>
+    /// <example>
+    /// <para>A sample Move-Trash command</para>
+    /// <code>New-Byname -Name list -Value Get-ChildItem</code>
+    /// </example>
+    /// </summary>
     [Cmdlet(VerbsCommon.New, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7")]
     [Alias("nbn")]
-    [BetaCmdlet(BetaCmdlet.WarningMessage)]
+    [Beta(BetaAttribute.WarningMessage)]
     public class NewBynameCmdlet : WritableByname
     {
         protected override void ProcessRecord()
@@ -37,6 +50,7 @@ namespace PowerPlug.Cmdlets
             ).ExecuteStrategy();
         }
 
+        ///<inheritdoc cref="WritableByname.ToString"/>
         public override string ToString() =>
             new StringBuilder()
                 .Append("New-Alias")

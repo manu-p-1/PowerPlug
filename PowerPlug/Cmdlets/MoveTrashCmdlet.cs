@@ -6,10 +6,10 @@ namespace PowerPlug.Cmdlets
     /// <summary>
     /// <para type="synopsis">Moves a file to the Recycle Bin</para>
     /// <para type="description">This function will move a file, whether directory or file, to the system Recycle Bin.
-    /// <para type="aliases">trash</para>
     /// If the param list is true, it will print the contents of the current directory after recycling the file. 
     /// Only error dialogs are printed and no confirmation message is shown.
     /// </para>
+    /// <para type="aliases">trash</para>
     /// <example>
     /// <para>A sample Move-Trash command</para>
     /// <code>Move-Trash -Path Documents\file.txt -List</code>

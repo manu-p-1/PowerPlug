@@ -3,7 +3,7 @@
 namespace PowerPlug.BaseCmdlets
 {
     /// <summary>
-    /// Fill out
+    /// Represents a Byname that can be written or modified to the user's $PROFILE.
     /// </summary>
     public abstract class WritableByname : BynameBase
     {
@@ -69,7 +69,7 @@ namespace PowerPlug.BaseCmdlets
         private bool _passThru;
 
         /// <summary>
-        /// 
+        /// Shows what would happen if the cmdlet runs. The cmdlet is not run.
         /// </summary>
         [Parameter]
         [Alias("wi")]
@@ -82,7 +82,7 @@ namespace PowerPlug.BaseCmdlets
         private bool _whatIf;
 
         /// <summary>
-        /// 
+        /// Displays a confirmation dialog to require user input to execute the command.
         /// </summary>
         [Parameter]
         public SwitchParameter Confirm
@@ -93,6 +93,12 @@ namespace PowerPlug.BaseCmdlets
 
         private bool _confirm;
 
+        /// <summary>
+        /// Every WritableByname must have ToString overriden. This is because a Byname is simply a wrapper for
+        /// the "New-Alias" or "Set-Alias" command. Therefore, the ToString method represents the either of the
+        /// previously mentioned alias commands as a string in it's fully qualified form.
+        /// </summary>
+        /// <returns>A string representing the entire command with all options included in the string</returns>
         public abstract override string ToString();
     }
 }

@@ -10,18 +10,21 @@ using PowerPlug.PowerPlugUtilities.Extensions;
 namespace PowerPlug.Cmdlets
 {
     /// <summary>
-    /// <para type="synopsis">Set's an alias within the profile instead of the session</para>
-    /// <para type="description">Set's an alias using Set-Byname, but writes to the $PROFILE instead of the session
+    /// <para type="synopsis">Sets a new Byname</para>
+    /// <para type="description">This Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
+    /// command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
+    /// purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
+    /// prevent unintended behavior.
     /// </para>
     /// <para type="aliases">sbn</para>
     /// <example>
-    /// <para>A sample Set-Alias command</para>
-    /// <code>Set-Byname -Name list -Value Get-ChildItem</code>
+    /// <para>A sample Set-Byname command</para>
+    /// <code>Set-Byname -Name gh -Value Get-Help</code>
     /// </example>
     /// </summary>
     [Cmdlet(VerbsCommon.Set, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Set-Alias?view=powershell-7")]
     [Alias("sbn")]
-    [BetaCmdlet(BetaCmdlet.WarningMessage)]
+    [Beta(BetaAttribute.WarningMessage)]
     public class SetBynameCmdlet : WritableByname
     {
         protected override void ProcessRecord()
@@ -47,6 +50,7 @@ namespace PowerPlug.Cmdlets
             ).ExecuteStrategy();
         }
 
+        ///<inheritdoc cref="WritableByname.ToString"/>
         public override string ToString() =>
             new StringBuilder()
                 .Append("Set-Alias")

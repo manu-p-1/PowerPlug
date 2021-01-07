@@ -174,7 +174,7 @@
             <returns></returns>
         </member>
         <member name="T:PowerPlug.PowerPlugUtilities.Range`1">
-            <summary>The Range class.</summary>
+            <summary>The Range class which was modified from user @drharris on StackOverflow.</summary>
             <typeparam name="T">Generic parameter.</typeparam>
         </member>
         <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Minimum">

@@ -27,6 +27,9 @@ namespace PowerPlug.Cmdlets
     [Beta(BetaAttribute.WarningMessage)]
     public class SetBynameCmdlet : WritableByname
     {
+        /// <summary>
+        /// Processes the Set-Byname PSCmdlet.
+        /// </summary>
         protected override void ProcessRecord()
         {
             using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);

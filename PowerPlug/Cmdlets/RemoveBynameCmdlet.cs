@@ -80,7 +80,7 @@ namespace PowerPlug.Cmdlets
         /// The fully qualified Remove-Byname command as it's executed in the command-line. Because Remove-Byname
         /// is a wrapper for Remove-Alias, the ToString version uses Remove-Alias as the cmdlet name. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string representing the entire command with all options included in the string</returns>
         public override string ToString() =>
             new StringBuilder()
                 .Append("Remove-Alias")

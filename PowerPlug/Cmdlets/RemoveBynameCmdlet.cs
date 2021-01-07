@@ -1,9 +1,11 @@
 ﻿using System.Management.Automation;
+using System.Text;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Engines.Byname;
 using PowerPlug.Engines.Byname.Base;
 using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
+using PowerPlug.PowerPlugUtilities.Extensions;
 
 namespace PowerPlug.Cmdlets
 {
@@ -54,7 +56,9 @@ namespace PowerPlug.Cmdlets
 
         private bool _force;
 
-        ///<inheritdoc cref="BynameCreatorStrategy"/>
+        /// <summary>
+        /// Processes the Remove-Byname PSCmdlet.
+        /// </summary>
         protected override void ProcessRecord()
         {
             using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
@@ -71,5 +75,18 @@ namespace PowerPlug.Cmdlets
                 )
             ).ExecuteStrategy();
         }
+
+        /// <summary>
+        /// The fully qualified Remove-Byname command as it's executed in the command-line. Because Remove-Byname
+        /// is a wrapper for Remove-Alias, the ToString version uses Remove-Alias as the cmdlet name. 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() =>
+            new StringBuilder()
+                .Append("Remove-Alias")
+                .Append($" -Name {Name}")
+                .Append($" -Scope {Scope}")
+                .AppendIf(" -Force", Force)
+                .ToString();
     }
 }

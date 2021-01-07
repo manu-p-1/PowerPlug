@@ -34,18 +34,17 @@ namespace PowerPlug.Engines.Byname
     {
         public BynameBase Byname { get; }
 
-        public PowerPlugFileBase PowerPlugFile { get; }
+        public Profile Profile { get; }
 
-        public BynameRemover(BynameBase bb, PowerPlugFileBase powerPlugFile)
+        public BynameRemover(BynameBase bb, Profile profileInfo)
         {
             Byname = bb;
-            PowerPlugFile = powerPlugFile;
-            
+            Profile = profileInfo;
         }
 
         public bool Remove()
         {
-            var text = File.ReadAllText(PowerPlugFile.FileInfo.FullName);
+            var text = File.ReadAllText(Profile.FileInfo.FullName);
             var aliasPattern =
                 $"(\\s*)((New|Set)-Alias)(\\s)(-Name)(\\s)({Regex.Escape(Byname.Name)})(\\s)(-Value)(\\s)([a-zA-z0-9].*)(\\s)(-Option)(\\s)([a-zA-z].*)(-Scope)(\\s)([a-zA-Z].*)";
 
@@ -69,7 +68,7 @@ namespace PowerPlug.Engines.Byname
             text = aliasRegex.Replace(text, string.Empty);
             text += Environment.NewLine;
 
-            File.WriteAllText(PowerPlugFile.FileInfo.FullName, text);
+            File.WriteAllText(Profile.FileInfo.FullName, text);
             return true;
         }
     }

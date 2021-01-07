@@ -1,132 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 
 namespace PowerPlug.PowerPlugFile
 {
-    public class PowerPlugFileBase
+    /// <summary>
+    /// The base class for any PowerPlug file abstraction. Representations of PowerShell entities such as
+    /// a user's profile should inherit this class for abstraction.
+    /// </summary>
+    public abstract class PowerPlugFileBase
     {
+        /// <summary>
+        /// The FileInfo of the path provided
+        /// </summary>
         public FileInfo FileInfo { get; }
 
-        public PowerPlugFileBase(string path)
+        /// <summary>
+        /// The DirectoryInfo of the parent folder of the path provided
+        /// </summary>
+        public DirectoryInfo FileParentDir { get; }
+
+        /// <summary>
+        /// Sets initial variables given a pathname
+        /// </summary>
+        /// <param name="path">The pathname in order to create a PowerPlug file</param>
+        protected PowerPlugFileBase(string path)
         {
             FileInfo = new FileInfo(path);
+            FileParentDir = new DirectoryInfo(FileInfo.DirectoryName ?? path);
         }
 
-        public PowerPlugFileBase(FileInfo fileInfo)
+        /// <summary>
+        /// Sets initial variables given a FileInfo
+        /// </summary>
+        /// <param name="fileInfo">The FileInfo instance in order to create a PowerPlug file</param>
+        protected PowerPlugFileBase(FileInfo fileInfo)
         {
             FileInfo = fileInfo;
+            FileParentDir = new DirectoryInfo(FileInfo.DirectoryName ?? fileInfo.FullName);
         }
-        public void WriteLine(string value)
-        {
-            var x = File.ReadLines(FileInfo.FullName).Last();
-            using var file = new StreamWriter(FileInfo.FullName, true);
-
-            if (x != string.Empty)
-            {
-                file.WriteLine(Environment.NewLine);
-                
-            }
-            file.WriteLine(value);
-        }
-        
-        public void Replace(string oldValue, string replacementValue)
-        {
-            var text = File.ReadAllText(FileInfo.FullName);
-            text = text.Replace(oldValue, replacementValue);
-            File.WriteAllText(FileInfo.FullName, text);
-        }
-
-        public void ReplaceFromEachLine(string oldValue, string replacementValue)
-        {
-            File.WriteAllLines(FileInfo.FullName,
-                File.ReadLines(FileInfo.FullName)
-                    .Select(l => l == oldValue ? replacementValue : l)
-                    .ToList());
-        }
-
-        public void ReplaceInLine(string value, string replacementValue, int line)
-        {
-            ReplaceInLines(new Dictionary<KeyValuePair<string, string>, int>
-            {
-                {
-                    new KeyValuePair<string, string>(value,
-                        replacementValue),
-                    line
-                }
-            });
-        }
-
-        public void ReplaceInLines(Dictionary<KeyValuePair<string, string>, int> replacementDict)
-        {
-            var arrLine = File.ReadAllLines(FileInfo.FullName);
-            foreach (var ((key, s), value) in replacementDict)
-            {
-                arrLine[value - 1] = arrLine[value - 1].Replace(key, s);
-                
-            }
-            File.WriteAllLines(FileInfo.FullName, arrLine);
-        }
-
-        public void ReplaceLine(string replacementValue, int line)
-        {
-            var arrLine = File.ReadAllLines(FileInfo.FullName);
-            arrLine[line - 1] = replacementValue;
-            File.WriteAllLines(FileInfo.FullName, arrLine);
-        }
-
-        public void ReplaceLines(Dictionary<string, int> replacementValueLine)
-        {
-            var arrLine = File.ReadAllLines(FileInfo.FullName);
-            foreach (var (key, value) in replacementValueLine)
-            {
-                arrLine[value - 1] = key;
-            }
-            File.WriteAllLines(FileInfo.FullName, arrLine);
-        }
-
-        public void RemoveFromEachLine(string valToRemove)
-        {
-            File.WriteAllLines(FileInfo.FullName,
-                File.ReadLines(FileInfo.FullName)
-                    .Where(l => l != valToRemove)
-                    .ToList());
-        }
-
-        public void RemoveLine(int line)
-        {
-            RemoveLines(line);
-        }
-
-        public void RemoveLines(params int[] lines)
-        {
-            var fileAsList = File.ReadAllLines(FileInfo.FullName).ToList();
-            foreach (var line in lines)
-            {
-                fileAsList.RemoveAt(line - 1);
-            }
-            File.WriteAllLines(FileInfo.FullName, fileAsList.ToArray());
-        }
-
-        public int FindInFile(Func<string, bool> predicate)
-        {
-            using var file = new StreamReader(FileInfo.FullName, true);
-            string line;
-            var count = 1;
-
-            while ((line = file.ReadLine()) != null)
-            {
-                if (predicate(line))
-                {
-                    return count;
-                }
-                count++;
-            }
-
-            return -1;
-        }
-
-        public string GetValueAtLine(int line) => File.ReadAllLines(FileInfo.FullName)[line - 1].Trim();
     }
 }

@@ -4,9 +4,20 @@
         <name>PowerPlug</name>
     </assembly>
     <members>
+        <member name="T:PowerPlug.BaseCmdlets.BynameBase">
+            <summary>
+            Represents the base structure of a Byname. All Byname cmdlet's stem from PSCmdlet.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.BaseCmdlets.BynameBase.Name">
+            <summary>
+            The Name Property of the Byname. Every Byname contains a Name property, regardless of creating a new Byname,
+            setting an existing Byname, or removing a Byname.
+            </summary>
+        </member>
         <member name="T:PowerPlug.BaseCmdlets.WritableByname">
             <summary>
-            Fill out
+            Represents a Byname that can be written or modified to the user's $PROFILE.
             </summary>
         </member>
         <member name="P:PowerPlug.BaseCmdlets.WritableByname.Name">
@@ -49,13 +60,21 @@
         </member>
         <member name="P:PowerPlug.BaseCmdlets.WritableByname.WhatIf">
             <summary>
-            
+            Shows what would happen if the cmdlet runs. The cmdlet is not run.
             </summary>
         </member>
         <member name="P:PowerPlug.BaseCmdlets.WritableByname.Confirm">
             <summary>
-            
+            Displays a confirmation dialog to require user input to execute the command.
             </summary>
+        </member>
+        <member name="M:PowerPlug.BaseCmdlets.WritableByname.ToString">
+            <summary>
+            Every WritableByname must have ToString overriden. This is because a Byname is simply a wrapper for
+            the "New-Alias" or "Set-Alias" command. Therefore, the ToString method represents the either of the
+            previously mentioned alias commands as a string in it's fully qualified form.
+            </summary>
+            <returns>A string representing the entire command with all options included in the string</returns>
         </member>
         <member name="T:PowerPlug.Cmdlets.CompareHashCmdlet">
             <summary>
@@ -103,10 +122,10 @@
             <summary>
             <para type="synopsis">Moves a file to the Recycle Bin</para>
             <para type="description">This function will move a file, whether directory or file, to the system Recycle Bin.
-            <para type="aliases">trash</para>
             If the param list is true, it will print the contents of the current directory after recycling the file. 
             Only error dialogs are printed and no confirmation message is shown.
             </para>
+            <para type="aliases">trash</para>
             <example>
             <para>A sample Move-Trash command</para>
             <code>Move-Trash -Path Documents\file.txt -List</code>
@@ -128,6 +147,44 @@
             Processes the PSCmdlet
             </summary>
         </member>
+        <member name="T:PowerPlug.Cmdlets.NewBynameCmdlet">
+            <summary>
+            <para type="synopsis">Creates a new Byname</para>
+            <para type="description">This Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
+            command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
+            purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
+            prevent unintended behavior.
+            </para>
+            <para type="aliases">nbn</para>
+            <example>
+            <para>A sample Move-Trash command</para>
+            <code>New-Byname -Name list -Value Get-ChildItem</code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord">
+            <summary>
+            Processes the New-Byname PSCmdlet.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.NewBynameCmdlet.ToString">
+            <inheritdoc cref="M:PowerPlug.BaseCmdlets.WritableByname.ToString"/>
+        </member>
+        <member name="T:PowerPlug.Cmdlets.RemoveBynameCmdlet">
+            <summary>
+            <para type="synopsis">Removes a new Byname</para>
+            <para type="description">This Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are
+            removed from the $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias
+            across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior. Extra precaution should be used
+            when using Remove-Byname as it removes all aliases with the same name from the $PROFILE.
+            </para>
+            <para type="aliases">rbn</para>
+            <example>
+            <para>A sample Move-Trash command</para>
+            <code>Remove-Byname -Name list</code>
+            </example>
+            </summary>
+        </member>
         <member name="P:PowerPlug.Cmdlets.RemoveBynameCmdlet.Name">
             <summary>
             The Name parameter for the command.
@@ -145,66 +202,378 @@
             </summary>
         </member>
         <member name="M:PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord">
-            <inheritdoc cref="T:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy"/>
+            <summary>
+            Processes the Remove-Byname PSCmdlet.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString">
+            <summary>
+            The fully qualified Remove-Byname command as it's executed in the command-line. Because Remove-Byname
+            is a wrapper for Remove-Alias, the ToString version uses Remove-Alias as the cmdlet name. 
+            </summary>
+            <returns>A string representing the entire command with all options included in the string</returns>
         </member>
         <member name="T:PowerPlug.Cmdlets.SetBynameCmdlet">
             <summary>
-            <para type="synopsis">Set's an alias within the profile instead of the session</para>
-            <para type="description">Set's an alias using Set-Byname, but writes to the $PROFILE instead of the session
+            <para type="synopsis">Sets a new Byname</para>
+            <para type="description">This Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
+            command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
+            purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
+            prevent unintended behavior.
             </para>
             <para type="aliases">sbn</para>
             <example>
-            <para>A sample Set-Alias command</para>
-            <code>Set-Byname -Name list -Value Get-ChildItem</code>
+            <para>A sample Set-Byname command</para>
+            <code>Set-Byname -Name gh -Value Get-Help</code>
             </example>
             </summary>
         </member>
+        <member name="M:PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord">
+            <summary>
+            Processes the Set-Byname PSCmdlet.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.SetBynameCmdlet.ToString">
+            <inheritdoc cref="M:PowerPlug.BaseCmdlets.WritableByname.ToString"/>
+        </member>
+        <member name="T:PowerPlug.PowerPlugFile.FileUtilities">
+            <summary>
+            A static class for File utility functions
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.WriteLine(System.IO.FileInfo,System.String)">
+            <summary>
+            Appends a string value into the file.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="value">The string value to write</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll(System.IO.FileInfo,System.String,System.String)">
+            <summary>
+            Replaces all instances of a specific value from a file with another replacement value.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="oldValue">The value to replace</param>
+            <param name="replacementValue">The replacement value</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine(System.IO.FileInfo,System.String,System.String)">
+            <summary>
+            Replaces all instances of a specific value from a file with another replacement value if and only if
+            the old value is solely in one line.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="oldValue">The value to replace</param>
+            <param name="replacementValue">The replacement value</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine(System.IO.FileInfo,System.String,System.String,System.Int32)">
+            <summary>
+            Replaces all instances of a specific value from a file with another replacement value from a specified line
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="oldValue">The value to replace</param>
+            <param name="replacementValue">The replacement value</param>
+            <param name="line">The line number to replace from</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines(System.IO.FileInfo,System.Collections.Generic.Dictionary{System.Collections.Generic.KeyValuePair{System.String,System.String},System.Int32})">
+            <summary>
+            Replaces all instances of a specific value from a file with another replacement value from a specified line.
+            This overload facilitates the replacement through a Dictionary where the key's is an instance of
+            <see cref="T:System.Collections.Generic.KeyValuePair`2"/> and the value is an int. This allows for unique replacements to occur
+            in more than one line
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="replacementDict">A Dictionary of replacement values and line numbers</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine(System.IO.FileInfo,System.String,System.Int32)">
+            <summary>
+            Replaces an entire line with a replacement value.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="replacementValue">The replacement value</param>
+            <param name="line">The line number to replace from</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines(System.IO.FileInfo,System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+            Replace an entire line with a replacement value. This overload uses a Dictionary of replacement values
+            and line numbers to replace more than one line. 
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="replacementValueLine">A Dictionary of replacement values and line number</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine(System.IO.FileInfo,System.String)">
+            <summary>
+            Removes all instances of a specific value from a file if and only if the value is solely in one line.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="valToRemove">The value to remove</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.RemoveLine(System.IO.FileInfo,System.Int32)">
+            <summary>
+            Removes a specific line number from a file.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="line">The line number to remove</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.RemoveLines(System.IO.FileInfo,System.Int32[])">
+            <summary>
+            Removes a variable argument number of lines from a file.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to write the value to</param>
+            <param name="lines">The line numbers to remove</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.FindInFile(System.IO.FileInfo,System.Func{System.String,System.Boolean})">
+            <summary>
+            Returns the line of the matched predicate in the file. If the predicate is not found,
+            -1 is returned.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to read from</param>
+            <param name="predicate">The function predicate to find in the file</param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine(System.IO.FileInfo,System.Int32)">
+            <summary>
+            Returns the value found at a line number.
+            </summary>
+            <param name="fileInfo">The FileInfo instance to read from</param>
+            <param name="line">The line number to find</param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.PowerPlugFile.PowerPlugFileBase">
+            <summary>
+            The base class for any PowerPlug file abstraction. Representations of PowerShell entities such as
+            a user's profile should inherit this class for abstraction.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo">
+            <summary>
+            The FileInfo of the path provided
+            </summary>
+        </member>
+        <member name="P:PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir">
+            <summary>
+            The DirectoryInfo of the parent folder of the path provided
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor(System.String)">
+            <summary>
+            Sets initial variables given a pathname
+            </summary>
+            <param name="path">The pathname in order to create a PowerPlug file</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor(System.IO.FileInfo)">
+            <summary>
+            Sets initial variables given a FileInfo
+            </summary>
+            <param name="fileInfo">The FileInfo instance in order to create a PowerPlug file</param>
+        </member>
+        <member name="T:PowerPlug.PowerPlugFile.Profile">
+            <summary>
+            An abstracted representation of the location of a user's PowerShell $PROFILE path
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.Profile.#ctor(System.String)">
+            <inheritdoc cref="T:PowerPlug.PowerPlugFile.PowerPlugFileBase"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.Profile.#ctor(System.IO.FileInfo)">
+            <inheritdoc cref="T:PowerPlug.PowerPlugFile.PowerPlugFileBase"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.Profile.ProfileExists">
+            <summary>
+            Runs a PowerShell script to check if the user's $PROFILE path exists. The command run internally
+            is <code>Test-Path $PROFILE</code>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugFile.Profile.GetProfile">
+            <summary>
+            Return's a new <see cref="T:PowerPlug.PowerPlugFile.Profile"/> object containing information about the user's $PROFILE path
+            </summary>
+            <exception cref="T:System.Management.Automation.SessionStateException">A SessionStateException is thrown if the user's $PROFILE cannot be found</exception>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.PowerPlugUtilities.Attributes.BetaAttribute">
+            <summary>
+            The BetaAttribute attribute represents any cmdlets which are functional, but may result in unintended behavior due
+            to its "beta" state.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.Attributes.BetaAttribute.Msg">
+            <summary>
+            The message attributed to this BetaCmdletAttribute, if any.
+            </summary>
+        </member>
+        <member name="F:PowerPlug.PowerPlugUtilities.Attributes.BetaAttribute.WarningMessage">
+            <summary>
+            The default warning message for this Attribute.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Attributes.BetaAttribute.#ctor">
+            <summary>
+            Creates a new BetaAttribute with no message. 
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Attributes.BetaAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new BetaAttribute with the specified message.
+            </summary>
+            <param name="msg">A message specifying or representing the state of the cmdlet</param>
+        </member>
+        <member name="T:PowerPlug.PowerPlugUtilities.Cmdlets.CmdletUtilities">
+            <summary>
+            An internal set of cmdlet utilities to be used to facilitate cmdlet processes.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Cmdlets.CmdletUtilities.InvokePowershellCommandOrThrowIfUnsuccessful(System.Management.Automation.PowerShell,System.Management.Automation.PSCmdlet)">
+            <summary>
+            Invokes a PowerShell command given a PowerShell instance and a PSCmdlet instance. If an error is found while invoking
+            the command, the PSCmdlet pipeline is stopped by invoking PSCmdlet.ThrowTerminatingError with the first error found.
+            </summary>
+            <param name="ps">The PowerShell instance</param>
+            <param name="psCmdlet">The PSCmdlet instance</param>
+            <returns>An Enumerable of PSObjects representing the results of invoking the PowerShell instance</returns>
+        </member>
         <member name="T:PowerPlug.PowerPlugUtilities.Extensions.StringBuilderExtensions">
             <summary>
-            
+            An internal class representing StringBuilder extension methods.
             </summary>
         </member>
         <member name="M:PowerPlug.PowerPlugUtilities.Extensions.StringBuilderExtensions.AppendIf(System.Text.StringBuilder,System.String,System.Boolean)">
             <summary>
-            
+            A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
             </summary>
-            <param name="this"></param>
-            <param name="str"></param>
-            <param name="condition"></param>
+            <param name="this">The StringBuilder extension</param>
+            <param name="str">The string to append</param>
+            <param name="condition">The condition to meet in order for the append to occur</param>
             <returns></returns>
         </member>
-        <member name="T:PowerPlug.PowerPlugUtilities.Range`1">
-            <summary>The Range class which was modified from user @drharris on StackOverflow.</summary>
-            <typeparam name="T">Generic parameter.</typeparam>
+        <member name="T:PowerPlug.PowerPlugUtilities.ImmutableRange`1">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
         </member>
-        <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Minimum">
-            <summary>Minimum value of the range.</summary>
+        <member name="P:PowerPlug.PowerPlugUtilities.ImmutableRange`1.Minimum">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
         </member>
-        <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Maximum">
-            <summary>Maximum value of the range.</summary>
+        <member name="P:PowerPlug.PowerPlugUtilities.ImmutableRange`1.Maximum">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
         </member>
-        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ToString">
-            <summary>Presents the Range in readable format.</summary>
-            <returns>String representation of the Range</returns>
+        <member name="M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.#ctor(`0,`0)">
+            <summary>
+            Creates a new instance of the ImmutableRange class. This class is immutable - for the mutable
+            version, see <see cref="T:PowerPlug.PowerPlugUtilities.Range`1"/>
+            </summary>
+            <param name="minimum">The minimum value</param>
+            <param name="maximum">The maximum value</param>
         </member>
-        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.IsValid">
-            <summary>Determines if the range is valid.</summary>
+        <member name="M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ToString">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsValid">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsValue(`0)">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="T:PowerPlug.PowerPlugUtilities.IntRange">
+            <summary>
+            The range class represents a range of int values. Unlike other <see cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/> implementing classes,
+            IntRange contains an <see cref="T:System.Collections.Generic.IEnumerator`1"/> of type int to enumerate through all of the values between
+            the minimum and maximum ranges. By convention, both sides of the range should be inclusive values.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.IntRange.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of IntRange, specifying the minimum and maximum values.
+            </summary>
+            <param name="minimum"></param>
+            <param name="maximum"></param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator">
+            <summary>
+            Returns an instance of the IntRangeEnumerator that's used to enumerate through the range
+            values of this instance.
+            </summary>
+            <returns>An instance of the IntRangeEnumerator class</returns>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.IntRange.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an instance of the IntRangeEnumerator that's used to enumerate through the range
+            values of this instance.
+            </summary>
+            <returns>An instance of the IntRangeEnumerator class</returns>
+        </member>
+        <member name="T:PowerPlug.PowerPlugUtilities.IRangify`1">
+            <summary>The range class represents a range of values of a generic type.
+            The Range class which was modified from user @drharris on StackOverflow.
+            By convention, both sides of the range should be inclusive values.
+            </summary>
+            <typeparam name="T">The generic parameter</typeparam>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.IRangify`1.Minimum">
+            <summary>
+            The minimum value of this range
+            </summary>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.IRangify`1.Maximum">
+            <summary>
+            The maximum value of this range
+            </summary>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.IRangify`1.IsValid">
+            <summary>
+            Determines if the range is valid.
+            </summary>
             <returns>True if range is valid, else false</returns>
         </member>
-        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ContainsValue(`0)">
-            <summary>Determines if the provided value is inside the range.</summary>
+        <member name="M:PowerPlug.PowerPlugUtilities.IRangify`1.ContainsValue(`0)">
+            <summary>
+            Determines if the provided value is inside the range.
+            </summary>
             <param name="value">The value to test</param>
             <returns>True if the value is inside Range, else false</returns>
         </member>
-        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange(PowerPlug.PowerPlugUtilities.Range{`0})">
-            <summary>Determines if this Range is inside the bounds of another range.</summary>
+        <member name="M:PowerPlug.PowerPlugUtilities.IRangify`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})">
+            <summary>
+            Determines if this Range is inside the bounds of another range.
+            </summary>
             <param name="range">The parent range to test on</param>
             <returns>True if range is inclusive, else false</returns>
         </member>
-        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ContainsRange(PowerPlug.PowerPlugUtilities.Range{`0})">
-            <summary>Determines if another range is inside the bounds of this range.</summary>
-            <param name="range">The child range to test</param>
-            <returns>True if range is inside, else false</returns>
+        <member name="T:PowerPlug.PowerPlugUtilities.Range`1">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Minimum">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="P:PowerPlug.PowerPlugUtilities.Range`1.Maximum">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.#ctor(`0,`0)">
+            <summary>
+            Creates a new instance of the Range class. This class is mutable - for the immutable
+            version, see <see cref="T:PowerPlug.PowerPlugUtilities.ImmutableRange`1"/>
+            </summary>
+            <param name="minimum">The minimum value</param>
+            <param name="maximum">The maximum value</param>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ToString">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.IsValid">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ContainsValue(`0)">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.PowerPlugUtilities.Range`1.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.PowerPlugUtilities.IRangify`1"/>
         </member>
     </members>
 </doc>

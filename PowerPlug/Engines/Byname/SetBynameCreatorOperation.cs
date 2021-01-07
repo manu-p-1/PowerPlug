@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
 using PowerPlug.BaseCmdlets;
+using PowerPlug.PowerPlugFile;
 
 namespace PowerPlug.Engines.Byname
 {
@@ -15,7 +16,7 @@ namespace PowerPlug.Engines.Byname
                 AliasCmdlet.WriteObject(p);
             }
             new BynameRemover(AliasCmdlet, ProfileInfo).Remove();
-            ProfileInfo.WriteLine(PsCommandAsString);
+            FileUtilities.WriteLine(ProfileInfo.FileInfo, PsCommandAsString);
         }
     }
 }

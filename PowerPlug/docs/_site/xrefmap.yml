@@ -1,0 +1,1423 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: PowerPlug.BaseCmdlets
+  name: PowerPlug.BaseCmdlets
+  href: api/PowerPlug.BaseCmdlets.html
+  commentId: N:PowerPlug.BaseCmdlets
+  fullName: PowerPlug.BaseCmdlets
+  nameWithType: PowerPlug.BaseCmdlets
+- uid: PowerPlug.BaseCmdlets.BynameBase
+  name: BynameBase
+  href: api/PowerPlug.BaseCmdlets.BynameBase.html
+  commentId: T:PowerPlug.BaseCmdlets.BynameBase
+  fullName: PowerPlug.BaseCmdlets.BynameBase
+  nameWithType: BynameBase
+- uid: PowerPlug.BaseCmdlets.BynameBase.Name
+  name: Name
+  href: api/PowerPlug.BaseCmdlets.BynameBase.html#PowerPlug_BaseCmdlets_BynameBase_Name
+  commentId: P:PowerPlug.BaseCmdlets.BynameBase.Name
+  fullName: PowerPlug.BaseCmdlets.BynameBase.Name
+  nameWithType: BynameBase.Name
+- uid: PowerPlug.BaseCmdlets.BynameBase.Name*
+  name: Name
+  href: api/PowerPlug.BaseCmdlets.BynameBase.html#PowerPlug_BaseCmdlets_BynameBase_Name_
+  commentId: Overload:PowerPlug.BaseCmdlets.BynameBase.Name
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.BynameBase.Name
+  nameWithType: BynameBase.Name
+- uid: PowerPlug.BaseCmdlets.WritableByname
+  name: WritableByname
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html
+  commentId: T:PowerPlug.BaseCmdlets.WritableByname
+  fullName: PowerPlug.BaseCmdlets.WritableByname
+  nameWithType: WritableByname
+- uid: PowerPlug.BaseCmdlets.WritableByname.Confirm
+  name: Confirm
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Confirm
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Confirm
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Confirm
+  nameWithType: WritableByname.Confirm
+- uid: PowerPlug.BaseCmdlets.WritableByname.Confirm*
+  name: Confirm
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Confirm_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Confirm
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Confirm
+  nameWithType: WritableByname.Confirm
+- uid: PowerPlug.BaseCmdlets.WritableByname.Description
+  name: Description
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Description
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Description
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Description
+  nameWithType: WritableByname.Description
+- uid: PowerPlug.BaseCmdlets.WritableByname.Description*
+  name: Description
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Description_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Description
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Description
+  nameWithType: WritableByname.Description
+- uid: PowerPlug.BaseCmdlets.WritableByname.Force
+  name: Force
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Force
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Force
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Force
+  nameWithType: WritableByname.Force
+- uid: PowerPlug.BaseCmdlets.WritableByname.Force*
+  name: Force
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Force_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Force
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Force
+  nameWithType: WritableByname.Force
+- uid: PowerPlug.BaseCmdlets.WritableByname.Name
+  name: Name
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Name
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Name
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Name
+  nameWithType: WritableByname.Name
+- uid: PowerPlug.BaseCmdlets.WritableByname.Name*
+  name: Name
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Name_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Name
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Name
+  nameWithType: WritableByname.Name
+- uid: PowerPlug.BaseCmdlets.WritableByname.Option
+  name: Option
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Option
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Option
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Option
+  nameWithType: WritableByname.Option
+- uid: PowerPlug.BaseCmdlets.WritableByname.Option*
+  name: Option
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Option_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Option
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Option
+  nameWithType: WritableByname.Option
+- uid: PowerPlug.BaseCmdlets.WritableByname.PassThru
+  name: PassThru
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_PassThru
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.PassThru
+  fullName: PowerPlug.BaseCmdlets.WritableByname.PassThru
+  nameWithType: WritableByname.PassThru
+- uid: PowerPlug.BaseCmdlets.WritableByname.PassThru*
+  name: PassThru
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_PassThru_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.PassThru
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.PassThru
+  nameWithType: WritableByname.PassThru
+- uid: PowerPlug.BaseCmdlets.WritableByname.Scope
+  name: Scope
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Scope
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Scope
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Scope
+  nameWithType: WritableByname.Scope
+- uid: PowerPlug.BaseCmdlets.WritableByname.Scope*
+  name: Scope
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Scope_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Scope
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Scope
+  nameWithType: WritableByname.Scope
+- uid: PowerPlug.BaseCmdlets.WritableByname.ToString
+  name: ToString()
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_ToString
+  commentId: M:PowerPlug.BaseCmdlets.WritableByname.ToString
+  fullName: PowerPlug.BaseCmdlets.WritableByname.ToString()
+  nameWithType: WritableByname.ToString()
+- uid: PowerPlug.BaseCmdlets.WritableByname.ToString*
+  name: ToString
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_ToString_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.ToString
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.ToString
+  nameWithType: WritableByname.ToString
+- uid: PowerPlug.BaseCmdlets.WritableByname.Value
+  name: Value
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Value
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.Value
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Value
+  nameWithType: WritableByname.Value
+- uid: PowerPlug.BaseCmdlets.WritableByname.Value*
+  name: Value
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_Value_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.Value
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.Value
+  nameWithType: WritableByname.Value
+- uid: PowerPlug.BaseCmdlets.WritableByname.WhatIf
+  name: WhatIf
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_WhatIf
+  commentId: P:PowerPlug.BaseCmdlets.WritableByname.WhatIf
+  fullName: PowerPlug.BaseCmdlets.WritableByname.WhatIf
+  nameWithType: WritableByname.WhatIf
+- uid: PowerPlug.BaseCmdlets.WritableByname.WhatIf*
+  name: WhatIf
+  href: api/PowerPlug.BaseCmdlets.WritableByname.html#PowerPlug_BaseCmdlets_WritableByname_WhatIf_
+  commentId: Overload:PowerPlug.BaseCmdlets.WritableByname.WhatIf
+  isSpec: "True"
+  fullName: PowerPlug.BaseCmdlets.WritableByname.WhatIf
+  nameWithType: WritableByname.WhatIf
+- uid: PowerPlug.Cmdlets
+  name: PowerPlug.Cmdlets
+  href: api/PowerPlug.Cmdlets.html
+  commentId: N:PowerPlug.Cmdlets
+  fullName: PowerPlug.Cmdlets
+  nameWithType: PowerPlug.Cmdlets
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet
+  name: CompareHashCmdlet
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html
+  commentId: T:PowerPlug.Cmdlets.CompareHashCmdlet
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet
+  nameWithType: CompareHashCmdlet
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.Hash
+  name: Hash
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_Hash
+  commentId: P:PowerPlug.Cmdlets.CompareHashCmdlet.Hash
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.Hash
+  nameWithType: CompareHashCmdlet.Hash
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.Hash*
+  name: Hash
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_Hash_
+  commentId: Overload:PowerPlug.Cmdlets.CompareHashCmdlet.Hash
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.Hash
+  nameWithType: CompareHashCmdlet.Hash
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.Path
+  name: Path
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_Path
+  commentId: P:PowerPlug.Cmdlets.CompareHashCmdlet.Path
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.Path
+  nameWithType: CompareHashCmdlet.Path
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.Path*
+  name: Path
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_Path_
+  commentId: Overload:PowerPlug.Cmdlets.CompareHashCmdlet.Path
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.Path
+  nameWithType: CompareHashCmdlet.Path
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.ProcessRecord
+  name: ProcessRecord()
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_ProcessRecord
+  commentId: M:PowerPlug.Cmdlets.CompareHashCmdlet.ProcessRecord
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.ProcessRecord()
+  nameWithType: CompareHashCmdlet.ProcessRecord()
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.ProcessRecord*
+  name: ProcessRecord
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_ProcessRecord_
+  commentId: Overload:PowerPlug.Cmdlets.CompareHashCmdlet.ProcessRecord
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.ProcessRecord
+  nameWithType: CompareHashCmdlet.ProcessRecord
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.Signature
+  name: Signature
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_Signature
+  commentId: P:PowerPlug.Cmdlets.CompareHashCmdlet.Signature
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.Signature
+  nameWithType: CompareHashCmdlet.Signature
+- uid: PowerPlug.Cmdlets.CompareHashCmdlet.Signature*
+  name: Signature
+  href: api/PowerPlug.Cmdlets.CompareHashCmdlet.html#PowerPlug_Cmdlets_CompareHashCmdlet_Signature_
+  commentId: Overload:PowerPlug.Cmdlets.CompareHashCmdlet.Signature
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.CompareHashCmdlet.Signature
+  nameWithType: CompareHashCmdlet.Signature
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet
+  name: MoveTrashCmdlet
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html
+  commentId: T:PowerPlug.Cmdlets.MoveTrashCmdlet
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet
+  nameWithType: MoveTrashCmdlet
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet.List
+  name: List
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html#PowerPlug_Cmdlets_MoveTrashCmdlet_List
+  commentId: P:PowerPlug.Cmdlets.MoveTrashCmdlet.List
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet.List
+  nameWithType: MoveTrashCmdlet.List
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet.List*
+  name: List
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html#PowerPlug_Cmdlets_MoveTrashCmdlet_List_
+  commentId: Overload:PowerPlug.Cmdlets.MoveTrashCmdlet.List
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet.List
+  nameWithType: MoveTrashCmdlet.List
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet.Path
+  name: Path
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html#PowerPlug_Cmdlets_MoveTrashCmdlet_Path
+  commentId: P:PowerPlug.Cmdlets.MoveTrashCmdlet.Path
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet.Path
+  nameWithType: MoveTrashCmdlet.Path
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet.Path*
+  name: Path
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html#PowerPlug_Cmdlets_MoveTrashCmdlet_Path_
+  commentId: Overload:PowerPlug.Cmdlets.MoveTrashCmdlet.Path
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet.Path
+  nameWithType: MoveTrashCmdlet.Path
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet.ProcessRecord
+  name: ProcessRecord()
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html#PowerPlug_Cmdlets_MoveTrashCmdlet_ProcessRecord
+  commentId: M:PowerPlug.Cmdlets.MoveTrashCmdlet.ProcessRecord
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet.ProcessRecord()
+  nameWithType: MoveTrashCmdlet.ProcessRecord()
+- uid: PowerPlug.Cmdlets.MoveTrashCmdlet.ProcessRecord*
+  name: ProcessRecord
+  href: api/PowerPlug.Cmdlets.MoveTrashCmdlet.html#PowerPlug_Cmdlets_MoveTrashCmdlet_ProcessRecord_
+  commentId: Overload:PowerPlug.Cmdlets.MoveTrashCmdlet.ProcessRecord
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.MoveTrashCmdlet.ProcessRecord
+  nameWithType: MoveTrashCmdlet.ProcessRecord
+- uid: PowerPlug.Cmdlets.NewBynameCmdlet
+  name: NewBynameCmdlet
+  href: api/PowerPlug.Cmdlets.NewBynameCmdlet.html
+  commentId: T:PowerPlug.Cmdlets.NewBynameCmdlet
+  fullName: PowerPlug.Cmdlets.NewBynameCmdlet
+  nameWithType: NewBynameCmdlet
+- uid: PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord
+  name: ProcessRecord()
+  href: api/PowerPlug.Cmdlets.NewBynameCmdlet.html#PowerPlug_Cmdlets_NewBynameCmdlet_ProcessRecord
+  commentId: M:PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord
+  fullName: PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord()
+  nameWithType: NewBynameCmdlet.ProcessRecord()
+- uid: PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord*
+  name: ProcessRecord
+  href: api/PowerPlug.Cmdlets.NewBynameCmdlet.html#PowerPlug_Cmdlets_NewBynameCmdlet_ProcessRecord_
+  commentId: Overload:PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.NewBynameCmdlet.ProcessRecord
+  nameWithType: NewBynameCmdlet.ProcessRecord
+- uid: PowerPlug.Cmdlets.NewBynameCmdlet.ToString
+  name: ToString()
+  href: api/PowerPlug.Cmdlets.NewBynameCmdlet.html#PowerPlug_Cmdlets_NewBynameCmdlet_ToString
+  commentId: M:PowerPlug.Cmdlets.NewBynameCmdlet.ToString
+  fullName: PowerPlug.Cmdlets.NewBynameCmdlet.ToString()
+  nameWithType: NewBynameCmdlet.ToString()
+- uid: PowerPlug.Cmdlets.NewBynameCmdlet.ToString*
+  name: ToString
+  href: api/PowerPlug.Cmdlets.NewBynameCmdlet.html#PowerPlug_Cmdlets_NewBynameCmdlet_ToString_
+  commentId: Overload:PowerPlug.Cmdlets.NewBynameCmdlet.ToString
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.NewBynameCmdlet.ToString
+  nameWithType: NewBynameCmdlet.ToString
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet
+  name: RemoveBynameCmdlet
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html
+  commentId: T:PowerPlug.Cmdlets.RemoveBynameCmdlet
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet
+  nameWithType: RemoveBynameCmdlet
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.Force
+  name: Force
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_Force
+  commentId: P:PowerPlug.Cmdlets.RemoveBynameCmdlet.Force
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.Force
+  nameWithType: RemoveBynameCmdlet.Force
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.Force*
+  name: Force
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_Force_
+  commentId: Overload:PowerPlug.Cmdlets.RemoveBynameCmdlet.Force
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.Force
+  nameWithType: RemoveBynameCmdlet.Force
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.Name
+  name: Name
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_Name
+  commentId: P:PowerPlug.Cmdlets.RemoveBynameCmdlet.Name
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.Name
+  nameWithType: RemoveBynameCmdlet.Name
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.Name*
+  name: Name
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_Name_
+  commentId: Overload:PowerPlug.Cmdlets.RemoveBynameCmdlet.Name
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.Name
+  nameWithType: RemoveBynameCmdlet.Name
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord
+  name: ProcessRecord()
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_ProcessRecord
+  commentId: M:PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord()
+  nameWithType: RemoveBynameCmdlet.ProcessRecord()
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord*
+  name: ProcessRecord
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_ProcessRecord_
+  commentId: Overload:PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.ProcessRecord
+  nameWithType: RemoveBynameCmdlet.ProcessRecord
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.Scope
+  name: Scope
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_Scope
+  commentId: P:PowerPlug.Cmdlets.RemoveBynameCmdlet.Scope
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.Scope
+  nameWithType: RemoveBynameCmdlet.Scope
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.Scope*
+  name: Scope
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_Scope_
+  commentId: Overload:PowerPlug.Cmdlets.RemoveBynameCmdlet.Scope
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.Scope
+  nameWithType: RemoveBynameCmdlet.Scope
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString
+  name: ToString()
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_ToString
+  commentId: M:PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString()
+  nameWithType: RemoveBynameCmdlet.ToString()
+- uid: PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString*
+  name: ToString
+  href: api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html#PowerPlug_Cmdlets_RemoveBynameCmdlet_ToString_
+  commentId: Overload:PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.RemoveBynameCmdlet.ToString
+  nameWithType: RemoveBynameCmdlet.ToString
+- uid: PowerPlug.Cmdlets.SetBynameCmdlet
+  name: SetBynameCmdlet
+  href: api/PowerPlug.Cmdlets.SetBynameCmdlet.html
+  commentId: T:PowerPlug.Cmdlets.SetBynameCmdlet
+  fullName: PowerPlug.Cmdlets.SetBynameCmdlet
+  nameWithType: SetBynameCmdlet
+- uid: PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord
+  name: ProcessRecord()
+  href: api/PowerPlug.Cmdlets.SetBynameCmdlet.html#PowerPlug_Cmdlets_SetBynameCmdlet_ProcessRecord
+  commentId: M:PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord
+  fullName: PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord()
+  nameWithType: SetBynameCmdlet.ProcessRecord()
+- uid: PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord*
+  name: ProcessRecord
+  href: api/PowerPlug.Cmdlets.SetBynameCmdlet.html#PowerPlug_Cmdlets_SetBynameCmdlet_ProcessRecord_
+  commentId: Overload:PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.SetBynameCmdlet.ProcessRecord
+  nameWithType: SetBynameCmdlet.ProcessRecord
+- uid: PowerPlug.Cmdlets.SetBynameCmdlet.ToString
+  name: ToString()
+  href: api/PowerPlug.Cmdlets.SetBynameCmdlet.html#PowerPlug_Cmdlets_SetBynameCmdlet_ToString
+  commentId: M:PowerPlug.Cmdlets.SetBynameCmdlet.ToString
+  fullName: PowerPlug.Cmdlets.SetBynameCmdlet.ToString()
+  nameWithType: SetBynameCmdlet.ToString()
+- uid: PowerPlug.Cmdlets.SetBynameCmdlet.ToString*
+  name: ToString
+  href: api/PowerPlug.Cmdlets.SetBynameCmdlet.html#PowerPlug_Cmdlets_SetBynameCmdlet_ToString_
+  commentId: Overload:PowerPlug.Cmdlets.SetBynameCmdlet.ToString
+  isSpec: "True"
+  fullName: PowerPlug.Cmdlets.SetBynameCmdlet.ToString
+  nameWithType: SetBynameCmdlet.ToString
+- uid: PowerPlug.Engines.Byname
+  name: PowerPlug.Engines.Byname
+  href: api/PowerPlug.Engines.Byname.html
+  commentId: N:PowerPlug.Engines.Byname
+  fullName: PowerPlug.Engines.Byname
+  nameWithType: PowerPlug.Engines.Byname
+- uid: PowerPlug.Engines.Byname.Base
+  name: PowerPlug.Engines.Byname.Base
+  href: api/PowerPlug.Engines.Byname.Base.html
+  commentId: N:PowerPlug.Engines.Byname.Base
+  fullName: PowerPlug.Engines.Byname.Base
+  nameWithType: PowerPlug.Engines.Byname.Base
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorContext
+  name: BynameCreatorContext
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html
+  commentId: T:PowerPlug.Engines.Byname.Base.BynameCreatorContext
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorContext
+  nameWithType: BynameCreatorContext
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorContext.#ctor(PowerPlug.Engines.Byname.Base.BynameCreatorStrategy)
+  name: BynameCreatorContext(BynameCreatorStrategy)
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html#PowerPlug_Engines_Byname_Base_BynameCreatorContext__ctor_PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_
+  commentId: M:PowerPlug.Engines.Byname.Base.BynameCreatorContext.#ctor(PowerPlug.Engines.Byname.Base.BynameCreatorStrategy)
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorContext.BynameCreatorContext(PowerPlug.Engines.Byname.Base.BynameCreatorStrategy)
+  nameWithType: BynameCreatorContext.BynameCreatorContext(BynameCreatorStrategy)
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorContext.#ctor*
+  name: BynameCreatorContext
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html#PowerPlug_Engines_Byname_Base_BynameCreatorContext__ctor_
+  commentId: Overload:PowerPlug.Engines.Byname.Base.BynameCreatorContext.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorContext.BynameCreatorContext
+  nameWithType: BynameCreatorContext.BynameCreatorContext
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy
+  name: ExecuteStrategy()
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html#PowerPlug_Engines_Byname_Base_BynameCreatorContext_ExecuteStrategy
+  commentId: M:PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy()
+  nameWithType: BynameCreatorContext.ExecuteStrategy()
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy*
+  name: ExecuteStrategy
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html#PowerPlug_Engines_Byname_Base_BynameCreatorContext_ExecuteStrategy_
+  commentId: Overload:PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy
+  nameWithType: BynameCreatorContext.ExecuteStrategy
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy
+  name: BynameCreatorStrategy
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html
+  commentId: T:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy
+  nameWithType: BynameCreatorStrategy
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name: BynameCreatorStrategy(IEnumerable<PSObject>)
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy__ctor_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name.vb: BynameCreatorStrategy(IEnumerable(Of PSObject))
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy(System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy(System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  nameWithType: BynameCreatorStrategy.BynameCreatorStrategy(IEnumerable<PSObject>)
+  nameWithType.vb: BynameCreatorStrategy.BynameCreatorStrategy(IEnumerable(Of PSObject))
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor*
+  name: BynameCreatorStrategy
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy__ctor_
+  commentId: Overload:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy
+  nameWithType: BynameCreatorStrategy.BynameCreatorStrategy
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand
+  name: ExecuteCommand()
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_ExecuteCommand
+  commentId: M:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand()
+  nameWithType: BynameCreatorStrategy.ExecuteCommand()
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand*
+  name: ExecuteCommand
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_ExecuteCommand_
+  commentId: Overload:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand
+  nameWithType: BynameCreatorStrategy.ExecuteCommand
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo
+  name: ProfileInfo
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_ProfileInfo
+  commentId: P:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo
+  nameWithType: BynameCreatorStrategy.ProfileInfo
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo*
+  name: ProfileInfo
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_ProfileInfo_
+  commentId: Overload:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo
+  nameWithType: BynameCreatorStrategy.ProfileInfo
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults
+  name: PsCommandResults
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_PsCommandResults
+  commentId: P:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults
+  nameWithType: BynameCreatorStrategy.PsCommandResults
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults*
+  name: PsCommandResults
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy_PsCommandResults_
+  commentId: Overload:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults
+  nameWithType: BynameCreatorStrategy.PsCommandResults
+- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation
+  name: NewBynameCreatorOperation
+  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html
+  commentId: T:PowerPlug.Engines.Byname.NewBynameCreatorOperation
+  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation
+  nameWithType: NewBynameCreatorOperation
+- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name: NewBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
+  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html#PowerPlug_Engines_Byname_NewBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name.vb: NewBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
+  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  nameWithType: NewBynameCreatorOperation.NewBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
+  nameWithType.vb: NewBynameCreatorOperation.NewBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
+- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor*
+  name: NewBynameCreatorOperation
+  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html#PowerPlug_Engines_Byname_NewBynameCreatorOperation__ctor_
+  commentId: Overload:PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation
+  nameWithType: NewBynameCreatorOperation.NewBynameCreatorOperation
+- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand
+  name: ExecuteCommand()
+  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html#PowerPlug_Engines_Byname_NewBynameCreatorOperation_ExecuteCommand
+  commentId: M:PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand
+  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand()
+  nameWithType: NewBynameCreatorOperation.ExecuteCommand()
+- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand*
+  name: ExecuteCommand
+  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html#PowerPlug_Engines_Byname_NewBynameCreatorOperation_ExecuteCommand_
+  commentId: Overload:PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand
+  nameWithType: NewBynameCreatorOperation.ExecuteCommand
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation
+  name: RemoveBynameCreatorOperation
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html
+  commentId: T:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation
+  nameWithType: RemoveBynameCreatorOperation
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name: RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable<PSObject>)
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation__ctor_PowerPlug_Cmdlets_RemoveBynameCmdlet_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name.vb: RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable(Of PSObject))
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(PowerPlug.Cmdlets.RemoveBynameCmdlet, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(PowerPlug.Cmdlets.RemoveBynameCmdlet, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  nameWithType: RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable<PSObject>)
+  nameWithType.vb: RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable(Of PSObject))
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor*
+  name: RemoveBynameCreatorOperation
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation__ctor_
+  commentId: Overload:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation
+  nameWithType: RemoveBynameCreatorOperation.RemoveBynameCreatorOperation
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet
+  name: AliasCmdlet
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation_AliasCmdlet
+  commentId: P:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet
+  nameWithType: RemoveBynameCreatorOperation.AliasCmdlet
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet*
+  name: AliasCmdlet
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation_AliasCmdlet_
+  commentId: Overload:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet
+  nameWithType: RemoveBynameCreatorOperation.AliasCmdlet
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand
+  name: ExecuteCommand()
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation_ExecuteCommand
+  commentId: M:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand()
+  nameWithType: RemoveBynameCreatorOperation.ExecuteCommand()
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand*
+  name: ExecuteCommand
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation_ExecuteCommand_
+  commentId: Overload:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand
+  nameWithType: RemoveBynameCreatorOperation.ExecuteCommand
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveAliasCommand
+  name: RemoveAliasCommand
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation_RemoveAliasCommand
+  commentId: F:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveAliasCommand
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveAliasCommand
+  nameWithType: RemoveBynameCreatorOperation.RemoveAliasCommand
+- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation
+  name: SetBynameCreatorOperation
+  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html
+  commentId: T:PowerPlug.Engines.Byname.SetBynameCreatorOperation
+  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation
+  nameWithType: SetBynameCreatorOperation
+- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name: SetBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
+  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html#PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name.vb: SetBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
+  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  nameWithType: SetBynameCreatorOperation.SetBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
+  nameWithType.vb: SetBynameCreatorOperation.SetBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
+- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor*
+  name: SetBynameCreatorOperation
+  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html#PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_
+  commentId: Overload:PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation
+  nameWithType: SetBynameCreatorOperation.SetBynameCreatorOperation
+- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand
+  name: ExecuteCommand()
+  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html#PowerPlug_Engines_Byname_SetBynameCreatorOperation_ExecuteCommand
+  commentId: M:PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand
+  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand()
+  nameWithType: SetBynameCreatorOperation.ExecuteCommand()
+- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand*
+  name: ExecuteCommand
+  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html#PowerPlug_Engines_Byname_SetBynameCreatorOperation_ExecuteCommand_
+  commentId: Overload:PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand
+  nameWithType: SetBynameCreatorOperation.ExecuteCommand
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation
+  name: WritableBynameCreatorBaseOperation
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html
+  commentId: T:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation
+  nameWithType: WritableBynameCreatorBaseOperation
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name: WritableBynameCreatorBaseOperation(WritableByname, IEnumerable<PSObject>)
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  name.vb: WritableBynameCreatorBaseOperation(WritableByname, IEnumerable(Of PSObject))
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  nameWithType: WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(WritableByname, IEnumerable<PSObject>)
+  nameWithType.vb: WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(WritableByname, IEnumerable(Of PSObject))
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor*
+  name: WritableBynameCreatorBaseOperation
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation__ctor_
+  commentId: Overload:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation
+  nameWithType: WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet
+  name: AliasCmdlet
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation_AliasCmdlet
+  commentId: P:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet
+  nameWithType: WritableBynameCreatorBaseOperation.AliasCmdlet
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet*
+  name: AliasCmdlet
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation_AliasCmdlet_
+  commentId: Overload:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet
+  nameWithType: WritableBynameCreatorBaseOperation.AliasCmdlet
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.NewAliasCommand
+  name: NewAliasCommand
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation_NewAliasCommand
+  commentId: F:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.NewAliasCommand
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.NewAliasCommand
+  nameWithType: WritableBynameCreatorBaseOperation.NewAliasCommand
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString
+  name: PsCommandAsString
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation_PsCommandAsString
+  commentId: P:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString
+  nameWithType: WritableBynameCreatorBaseOperation.PsCommandAsString
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString*
+  name: PsCommandAsString
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation_PsCommandAsString_
+  commentId: Overload:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString
+  isSpec: "True"
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString
+  nameWithType: WritableBynameCreatorBaseOperation.PsCommandAsString
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.SetAliasCommand
+  name: SetAliasCommand
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation_SetAliasCommand
+  commentId: F:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.SetAliasCommand
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.SetAliasCommand
+  nameWithType: WritableBynameCreatorBaseOperation.SetAliasCommand
+- uid: PowerPlug.PowerPlugFile
+  name: PowerPlug.PowerPlugFile
+  href: api/PowerPlug.PowerPlugFile.html
+  commentId: N:PowerPlug.PowerPlugFile
+  fullName: PowerPlug.PowerPlugFile
+  nameWithType: PowerPlug.PowerPlugFile
+- uid: PowerPlug.PowerPlugFile.FileUtilities
+  name: FileUtilities
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html
+  commentId: T:PowerPlug.PowerPlugFile.FileUtilities
+  fullName: PowerPlug.PowerPlugFile.FileUtilities
+  nameWithType: FileUtilities
+- uid: PowerPlug.PowerPlugFile.FileUtilities.FindInFile(System.IO.FileInfo,System.Func{System.String,System.Boolean})
+  name: FindInFile(FileInfo, Func<String, Boolean>)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_FindInFile_System_IO_FileInfo_System_Func_System_String_System_Boolean__
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.FindInFile(System.IO.FileInfo,System.Func{System.String,System.Boolean})
+  name.vb: FindInFile(FileInfo, Func(Of String, Boolean))
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.FindInFile(System.IO.FileInfo, System.Func<System.String, System.Boolean>)
+  fullName.vb: PowerPlug.PowerPlugFile.FileUtilities.FindInFile(System.IO.FileInfo, System.Func(Of System.String, System.Boolean))
+  nameWithType: FileUtilities.FindInFile(FileInfo, Func<String, Boolean>)
+  nameWithType.vb: FileUtilities.FindInFile(FileInfo, Func(Of String, Boolean))
+- uid: PowerPlug.PowerPlugFile.FileUtilities.FindInFile*
+  name: FindInFile
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_FindInFile_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.FindInFile
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.FindInFile
+  nameWithType: FileUtilities.FindInFile
+- uid: PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine(System.IO.FileInfo,System.Int32)
+  name: GetValueAtLine(FileInfo, Int32)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_GetValueAtLine_System_IO_FileInfo_System_Int32_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine(System.IO.FileInfo,System.Int32)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine(System.IO.FileInfo, System.Int32)
+  nameWithType: FileUtilities.GetValueAtLine(FileInfo, Int32)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine*
+  name: GetValueAtLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_GetValueAtLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.GetValueAtLine
+  nameWithType: FileUtilities.GetValueAtLine
+- uid: PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine(System.IO.FileInfo,System.String)
+  name: RemoveFromEachLine(FileInfo, String)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_RemoveFromEachLine_System_IO_FileInfo_System_String_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine(System.IO.FileInfo,System.String)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine(System.IO.FileInfo, System.String)
+  nameWithType: FileUtilities.RemoveFromEachLine(FileInfo, String)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine*
+  name: RemoveFromEachLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_RemoveFromEachLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.RemoveFromEachLine
+  nameWithType: FileUtilities.RemoveFromEachLine
+- uid: PowerPlug.PowerPlugFile.FileUtilities.RemoveLine(System.IO.FileInfo,System.Int32)
+  name: RemoveLine(FileInfo, Int32)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_RemoveLine_System_IO_FileInfo_System_Int32_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.RemoveLine(System.IO.FileInfo,System.Int32)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.RemoveLine(System.IO.FileInfo, System.Int32)
+  nameWithType: FileUtilities.RemoveLine(FileInfo, Int32)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.RemoveLine*
+  name: RemoveLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_RemoveLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.RemoveLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.RemoveLine
+  nameWithType: FileUtilities.RemoveLine
+- uid: PowerPlug.PowerPlugFile.FileUtilities.RemoveLines(System.IO.FileInfo,System.Int32[])
+  name: RemoveLines(FileInfo, Int32[])
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_RemoveLines_System_IO_FileInfo_System_Int32___
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.RemoveLines(System.IO.FileInfo,System.Int32[])
+  name.vb: RemoveLines(FileInfo, Int32())
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.RemoveLines(System.IO.FileInfo, System.Int32[])
+  fullName.vb: PowerPlug.PowerPlugFile.FileUtilities.RemoveLines(System.IO.FileInfo, System.Int32())
+  nameWithType: FileUtilities.RemoveLines(FileInfo, Int32[])
+  nameWithType.vb: FileUtilities.RemoveLines(FileInfo, Int32())
+- uid: PowerPlug.PowerPlugFile.FileUtilities.RemoveLines*
+  name: RemoveLines
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_RemoveLines_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.RemoveLines
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.RemoveLines
+  nameWithType: FileUtilities.RemoveLines
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll(System.IO.FileInfo,System.String,System.String)
+  name: ReplaceAll(FileInfo, String, String)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceAll_System_IO_FileInfo_System_String_System_String_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll(System.IO.FileInfo,System.String,System.String)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll(System.IO.FileInfo, System.String, System.String)
+  nameWithType: FileUtilities.ReplaceAll(FileInfo, String, String)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll*
+  name: ReplaceAll
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceAll_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAll
+  nameWithType: FileUtilities.ReplaceAll
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine(System.IO.FileInfo,System.String,System.String)
+  name: ReplaceAllByLine(FileInfo, String, String)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceAllByLine_System_IO_FileInfo_System_String_System_String_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine(System.IO.FileInfo,System.String,System.String)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine(System.IO.FileInfo, System.String, System.String)
+  nameWithType: FileUtilities.ReplaceAllByLine(FileInfo, String, String)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine*
+  name: ReplaceAllByLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceAllByLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllByLine
+  nameWithType: FileUtilities.ReplaceAllByLine
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine(System.IO.FileInfo,System.String,System.String,System.Int32)
+  name: ReplaceAllInLine(FileInfo, String, String, Int32)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceAllInLine_System_IO_FileInfo_System_String_System_String_System_Int32_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine(System.IO.FileInfo,System.String,System.String,System.Int32)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine(System.IO.FileInfo, System.String, System.String, System.Int32)
+  nameWithType: FileUtilities.ReplaceAllInLine(FileInfo, String, String, Int32)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine*
+  name: ReplaceAllInLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceAllInLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceAllInLine
+  nameWithType: FileUtilities.ReplaceAllInLine
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines(System.IO.FileInfo,System.Collections.Generic.Dictionary{System.Collections.Generic.KeyValuePair{System.String,System.String},System.Int32})
+  name: ReplaceInLines(FileInfo, Dictionary<KeyValuePair<String, String>, Int32>)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceInLines_System_IO_FileInfo_System_Collections_Generic_Dictionary_System_Collections_Generic_KeyValuePair_System_String_System_String__System_Int32__
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines(System.IO.FileInfo,System.Collections.Generic.Dictionary{System.Collections.Generic.KeyValuePair{System.String,System.String},System.Int32})
+  name.vb: ReplaceInLines(FileInfo, Dictionary(Of KeyValuePair(Of String, String), Int32))
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines(System.IO.FileInfo, System.Collections.Generic.Dictionary<System.Collections.Generic.KeyValuePair<System.String, System.String>, System.Int32>)
+  fullName.vb: PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines(System.IO.FileInfo, System.Collections.Generic.Dictionary(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String), System.Int32))
+  nameWithType: FileUtilities.ReplaceInLines(FileInfo, Dictionary<KeyValuePair<String, String>, Int32>)
+  nameWithType.vb: FileUtilities.ReplaceInLines(FileInfo, Dictionary(Of KeyValuePair(Of String, String), Int32))
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines*
+  name: ReplaceInLines
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceInLines_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceInLines
+  nameWithType: FileUtilities.ReplaceInLines
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine(System.IO.FileInfo,System.String,System.Int32)
+  name: ReplaceLine(FileInfo, String, Int32)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceLine_System_IO_FileInfo_System_String_System_Int32_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine(System.IO.FileInfo,System.String,System.Int32)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine(System.IO.FileInfo, System.String, System.Int32)
+  nameWithType: FileUtilities.ReplaceLine(FileInfo, String, Int32)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine*
+  name: ReplaceLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLine
+  nameWithType: FileUtilities.ReplaceLine
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines(System.IO.FileInfo,System.Collections.Generic.Dictionary{System.String,System.Int32})
+  name: ReplaceLines(FileInfo, Dictionary<String, Int32>)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceLines_System_IO_FileInfo_System_Collections_Generic_Dictionary_System_String_System_Int32__
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines(System.IO.FileInfo,System.Collections.Generic.Dictionary{System.String,System.Int32})
+  name.vb: ReplaceLines(FileInfo, Dictionary(Of String, Int32))
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines(System.IO.FileInfo, System.Collections.Generic.Dictionary<System.String, System.Int32>)
+  fullName.vb: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines(System.IO.FileInfo, System.Collections.Generic.Dictionary(Of System.String, System.Int32))
+  nameWithType: FileUtilities.ReplaceLines(FileInfo, Dictionary<String, Int32>)
+  nameWithType.vb: FileUtilities.ReplaceLines(FileInfo, Dictionary(Of String, Int32))
+- uid: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines*
+  name: ReplaceLines
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_ReplaceLines_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.ReplaceLines
+  nameWithType: FileUtilities.ReplaceLines
+- uid: PowerPlug.PowerPlugFile.FileUtilities.WriteLine(System.IO.FileInfo,System.String)
+  name: WriteLine(FileInfo, String)
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_WriteLine_System_IO_FileInfo_System_String_
+  commentId: M:PowerPlug.PowerPlugFile.FileUtilities.WriteLine(System.IO.FileInfo,System.String)
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.WriteLine(System.IO.FileInfo, System.String)
+  nameWithType: FileUtilities.WriteLine(FileInfo, String)
+- uid: PowerPlug.PowerPlugFile.FileUtilities.WriteLine*
+  name: WriteLine
+  href: api/PowerPlug.PowerPlugFile.FileUtilities.html#PowerPlug_PowerPlugFile_FileUtilities_WriteLine_
+  commentId: Overload:PowerPlug.PowerPlugFile.FileUtilities.WriteLine
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.FileUtilities.WriteLine
+  nameWithType: FileUtilities.WriteLine
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase
+  name: PowerPlugFileBase
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html
+  commentId: T:PowerPlug.PowerPlugFile.PowerPlugFileBase
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase
+  nameWithType: PowerPlugFileBase
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor(System.IO.FileInfo)
+  name: PowerPlugFileBase(FileInfo)
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase__ctor_System_IO_FileInfo_
+  commentId: M:PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor(System.IO.FileInfo)
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.PowerPlugFileBase(System.IO.FileInfo)
+  nameWithType: PowerPlugFileBase.PowerPlugFileBase(FileInfo)
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor(System.String)
+  name: PowerPlugFileBase(String)
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase__ctor_System_String_
+  commentId: M:PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor(System.String)
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.PowerPlugFileBase(System.String)
+  nameWithType: PowerPlugFileBase.PowerPlugFileBase(String)
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor*
+  name: PowerPlugFileBase
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase__ctor_
+  commentId: Overload:PowerPlug.PowerPlugFile.PowerPlugFileBase.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.PowerPlugFileBase
+  nameWithType: PowerPlugFileBase.PowerPlugFileBase
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo
+  name: FileInfo
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase_FileInfo
+  commentId: P:PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo
+  nameWithType: PowerPlugFileBase.FileInfo
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo*
+  name: FileInfo
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase_FileInfo_
+  commentId: Overload:PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileInfo
+  nameWithType: PowerPlugFileBase.FileInfo
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir
+  name: FileParentDir
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase_FileParentDir
+  commentId: P:PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir
+  nameWithType: PowerPlugFileBase.FileParentDir
+- uid: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir*
+  name: FileParentDir
+  href: api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html#PowerPlug_PowerPlugFile_PowerPlugFileBase_FileParentDir_
+  commentId: Overload:PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.PowerPlugFileBase.FileParentDir
+  nameWithType: PowerPlugFileBase.FileParentDir
+- uid: PowerPlug.PowerPlugFile.Profile
+  name: Profile
+  href: api/PowerPlug.PowerPlugFile.Profile.html
+  commentId: T:PowerPlug.PowerPlugFile.Profile
+  fullName: PowerPlug.PowerPlugFile.Profile
+  nameWithType: Profile
+- uid: PowerPlug.PowerPlugFile.Profile.#ctor(System.IO.FileInfo)
+  name: Profile(FileInfo)
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile__ctor_System_IO_FileInfo_
+  commentId: M:PowerPlug.PowerPlugFile.Profile.#ctor(System.IO.FileInfo)
+  fullName: PowerPlug.PowerPlugFile.Profile.Profile(System.IO.FileInfo)
+  nameWithType: Profile.Profile(FileInfo)
+- uid: PowerPlug.PowerPlugFile.Profile.#ctor(System.String)
+  name: Profile(String)
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile__ctor_System_String_
+  commentId: M:PowerPlug.PowerPlugFile.Profile.#ctor(System.String)
+  fullName: PowerPlug.PowerPlugFile.Profile.Profile(System.String)
+  nameWithType: Profile.Profile(String)
+- uid: PowerPlug.PowerPlugFile.Profile.#ctor*
+  name: Profile
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile__ctor_
+  commentId: Overload:PowerPlug.PowerPlugFile.Profile.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.Profile.Profile
+  nameWithType: Profile.Profile
+- uid: PowerPlug.PowerPlugFile.Profile.GetProfile
+  name: GetProfile()
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile_GetProfile
+  commentId: M:PowerPlug.PowerPlugFile.Profile.GetProfile
+  fullName: PowerPlug.PowerPlugFile.Profile.GetProfile()
+  nameWithType: Profile.GetProfile()
+- uid: PowerPlug.PowerPlugFile.Profile.GetProfile*
+  name: GetProfile
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile_GetProfile_
+  commentId: Overload:PowerPlug.PowerPlugFile.Profile.GetProfile
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.Profile.GetProfile
+  nameWithType: Profile.GetProfile
+- uid: PowerPlug.PowerPlugFile.Profile.ProfileExists
+  name: ProfileExists()
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile_ProfileExists
+  commentId: M:PowerPlug.PowerPlugFile.Profile.ProfileExists
+  fullName: PowerPlug.PowerPlugFile.Profile.ProfileExists()
+  nameWithType: Profile.ProfileExists()
+- uid: PowerPlug.PowerPlugFile.Profile.ProfileExists*
+  name: ProfileExists
+  href: api/PowerPlug.PowerPlugFile.Profile.html#PowerPlug_PowerPlugFile_Profile_ProfileExists_
+  commentId: Overload:PowerPlug.PowerPlugFile.Profile.ProfileExists
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugFile.Profile.ProfileExists
+  nameWithType: Profile.ProfileExists
+- uid: PowerPlug.PowerPlugUtilities
+  name: PowerPlug.PowerPlugUtilities
+  href: api/PowerPlug.PowerPlugUtilities.html
+  commentId: N:PowerPlug.PowerPlugUtilities
+  fullName: PowerPlug.PowerPlugUtilities
+  nameWithType: PowerPlug.PowerPlugUtilities
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1
+  name: ImmutableRange<T>
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html
+  commentId: T:PowerPlug.PowerPlugUtilities.ImmutableRange`1
+  name.vb: ImmutableRange(Of T)
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T)
+  nameWithType: ImmutableRange<T>
+  nameWithType.vb: ImmutableRange(Of T)
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.#ctor(`0,`0)
+  name: ImmutableRange(T, T)
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1__ctor__0__0_
+  commentId: M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.#ctor(`0,`0)
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ImmutableRange(T, T)
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ImmutableRange(T, T)
+  nameWithType: ImmutableRange<T>.ImmutableRange(T, T)
+  nameWithType.vb: ImmutableRange(Of T).ImmutableRange(T, T)
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.#ctor*
+  name: ImmutableRange
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1__ctor_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ImmutableRange
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ImmutableRange
+  nameWithType: ImmutableRange<T>.ImmutableRange
+  nameWithType.vb: ImmutableRange(Of T).ImmutableRange
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name: ContainsRange(IRangify<T>)
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_ContainsRange_PowerPlug_PowerPlugUtilities_IRangify__0__
+  commentId: M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name.vb: ContainsRange(IRangify(Of T))
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify<T>)
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ContainsRange(PowerPlug.PowerPlugUtilities.IRangify(Of T))
+  nameWithType: ImmutableRange<T>.ContainsRange(IRangify<T>)
+  nameWithType.vb: ImmutableRange(Of T).ContainsRange(IRangify(Of T))
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsRange*
+  name: ContainsRange
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_ContainsRange_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsRange
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ContainsRange
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ContainsRange
+  nameWithType: ImmutableRange<T>.ContainsRange
+  nameWithType.vb: ImmutableRange(Of T).ContainsRange
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsValue(`0)
+  name: ContainsValue(T)
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_ContainsValue__0_
+  commentId: M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsValue(`0)
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ContainsValue(T)
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ContainsValue(T)
+  nameWithType: ImmutableRange<T>.ContainsValue(T)
+  nameWithType.vb: ImmutableRange(Of T).ContainsValue(T)
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsValue*
+  name: ContainsValue
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_ContainsValue_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ContainsValue
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ContainsValue
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ContainsValue
+  nameWithType: ImmutableRange<T>.ContainsValue
+  nameWithType.vb: ImmutableRange(Of T).ContainsValue
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name: IsInsideRange(IRangify<T>)
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_IsInsideRange_PowerPlug_PowerPlugUtilities_IRangify__0__
+  commentId: M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name.vb: IsInsideRange(IRangify(Of T))
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify<T>)
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify(Of T))
+  nameWithType: ImmutableRange<T>.IsInsideRange(IRangify<T>)
+  nameWithType.vb: ImmutableRange(Of T).IsInsideRange(IRangify(Of T))
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsInsideRange*
+  name: IsInsideRange
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_IsInsideRange_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsInsideRange
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.IsInsideRange
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).IsInsideRange
+  nameWithType: ImmutableRange<T>.IsInsideRange
+  nameWithType.vb: ImmutableRange(Of T).IsInsideRange
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsValid
+  name: IsValid()
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_IsValid
+  commentId: M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsValid
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.IsValid()
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).IsValid()
+  nameWithType: ImmutableRange<T>.IsValid()
+  nameWithType.vb: ImmutableRange(Of T).IsValid()
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsValid*
+  name: IsValid
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_IsValid_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.IsValid
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.IsValid
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).IsValid
+  nameWithType: ImmutableRange<T>.IsValid
+  nameWithType.vb: ImmutableRange(Of T).IsValid
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.Maximum
+  name: Maximum
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_Maximum
+  commentId: P:PowerPlug.PowerPlugUtilities.ImmutableRange`1.Maximum
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.Maximum
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).Maximum
+  nameWithType: ImmutableRange<T>.Maximum
+  nameWithType.vb: ImmutableRange(Of T).Maximum
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.Maximum*
+  name: Maximum
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_Maximum_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.Maximum
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.Maximum
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).Maximum
+  nameWithType: ImmutableRange<T>.Maximum
+  nameWithType.vb: ImmutableRange(Of T).Maximum
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.Minimum
+  name: Minimum
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_Minimum
+  commentId: P:PowerPlug.PowerPlugUtilities.ImmutableRange`1.Minimum
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.Minimum
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).Minimum
+  nameWithType: ImmutableRange<T>.Minimum
+  nameWithType.vb: ImmutableRange(Of T).Minimum
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.Minimum*
+  name: Minimum
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_Minimum_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.Minimum
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.Minimum
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).Minimum
+  nameWithType: ImmutableRange<T>.Minimum
+  nameWithType.vb: ImmutableRange(Of T).Minimum
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.ToString
+  name: ToString()
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_ToString
+  commentId: M:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ToString
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ToString()
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ToString()
+  nameWithType: ImmutableRange<T>.ToString()
+  nameWithType.vb: ImmutableRange(Of T).ToString()
+- uid: PowerPlug.PowerPlugUtilities.ImmutableRange`1.ToString*
+  name: ToString
+  href: api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html#PowerPlug_PowerPlugUtilities_ImmutableRange_1_ToString_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.ImmutableRange`1.ToString
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.ImmutableRange<T>.ToString
+  fullName.vb: PowerPlug.PowerPlugUtilities.ImmutableRange(Of T).ToString
+  nameWithType: ImmutableRange<T>.ToString
+  nameWithType.vb: ImmutableRange(Of T).ToString
+- uid: PowerPlug.PowerPlugUtilities.IntRange
+  name: IntRange
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html
+  commentId: T:PowerPlug.PowerPlugUtilities.IntRange
+  fullName: PowerPlug.PowerPlugUtilities.IntRange
+  nameWithType: IntRange
+- uid: PowerPlug.PowerPlugUtilities.IntRange.#ctor(System.Int32,System.Int32)
+  name: IntRange(Int32, Int32)
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html#PowerPlug_PowerPlugUtilities_IntRange__ctor_System_Int32_System_Int32_
+  commentId: M:PowerPlug.PowerPlugUtilities.IntRange.#ctor(System.Int32,System.Int32)
+  fullName: PowerPlug.PowerPlugUtilities.IntRange.IntRange(System.Int32, System.Int32)
+  nameWithType: IntRange.IntRange(Int32, Int32)
+- uid: PowerPlug.PowerPlugUtilities.IntRange.#ctor*
+  name: IntRange
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html#PowerPlug_PowerPlugUtilities_IntRange__ctor_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IntRange.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IntRange.IntRange
+  nameWithType: IntRange.IntRange
+- uid: PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator
+  name: GetEnumerator()
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html#PowerPlug_PowerPlugUtilities_IntRange_GetEnumerator
+  commentId: M:PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator
+  fullName: PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator()
+  nameWithType: IntRange.GetEnumerator()
+- uid: PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator*
+  name: GetEnumerator
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html#PowerPlug_PowerPlugUtilities_IntRange_GetEnumerator_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IntRange.GetEnumerator
+  nameWithType: IntRange.GetEnumerator
+- uid: PowerPlug.PowerPlugUtilities.IntRange.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html#PowerPlug_PowerPlugUtilities_IntRange_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:PowerPlug.PowerPlugUtilities.IntRange.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: PowerPlug.PowerPlugUtilities.IntRange.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: IntRange.IEnumerable.GetEnumerator()
+  nameWithType.vb: IntRange.System.Collections.IEnumerable.GetEnumerator()
+- uid: PowerPlug.PowerPlugUtilities.IntRange.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/PowerPlug.PowerPlugUtilities.IntRange.html#PowerPlug_PowerPlugUtilities_IntRange_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IntRange.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: PowerPlug.PowerPlugUtilities.IntRange.System.Collections.IEnumerable.GetEnumerator
+  nameWithType: IntRange.IEnumerable.GetEnumerator
+  nameWithType.vb: IntRange.System.Collections.IEnumerable.GetEnumerator
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1
+  name: IRangify<T>
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html
+  commentId: T:PowerPlug.PowerPlugUtilities.IRangify`1
+  name.vb: IRangify(Of T)
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T)
+  nameWithType: IRangify<T>
+  nameWithType.vb: IRangify(Of T)
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.ContainsValue(`0)
+  name: ContainsValue(T)
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_ContainsValue__0_
+  commentId: M:PowerPlug.PowerPlugUtilities.IRangify`1.ContainsValue(`0)
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.ContainsValue(T)
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).ContainsValue(T)
+  nameWithType: IRangify<T>.ContainsValue(T)
+  nameWithType.vb: IRangify(Of T).ContainsValue(T)
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.ContainsValue*
+  name: ContainsValue
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_ContainsValue_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IRangify`1.ContainsValue
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.ContainsValue
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).ContainsValue
+  nameWithType: IRangify<T>.ContainsValue
+  nameWithType.vb: IRangify(Of T).ContainsValue
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name: IsInsideRange(IRangify<T>)
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_IsInsideRange_PowerPlug_PowerPlugUtilities_IRangify__0__
+  commentId: M:PowerPlug.PowerPlugUtilities.IRangify`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name.vb: IsInsideRange(IRangify(Of T))
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify<T>)
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify(Of T))
+  nameWithType: IRangify<T>.IsInsideRange(IRangify<T>)
+  nameWithType.vb: IRangify(Of T).IsInsideRange(IRangify(Of T))
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.IsInsideRange*
+  name: IsInsideRange
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_IsInsideRange_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IRangify`1.IsInsideRange
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.IsInsideRange
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).IsInsideRange
+  nameWithType: IRangify<T>.IsInsideRange
+  nameWithType.vb: IRangify(Of T).IsInsideRange
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.IsValid
+  name: IsValid()
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_IsValid
+  commentId: M:PowerPlug.PowerPlugUtilities.IRangify`1.IsValid
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.IsValid()
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).IsValid()
+  nameWithType: IRangify<T>.IsValid()
+  nameWithType.vb: IRangify(Of T).IsValid()
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.IsValid*
+  name: IsValid
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_IsValid_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IRangify`1.IsValid
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.IsValid
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).IsValid
+  nameWithType: IRangify<T>.IsValid
+  nameWithType.vb: IRangify(Of T).IsValid
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.Maximum
+  name: Maximum
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_Maximum
+  commentId: P:PowerPlug.PowerPlugUtilities.IRangify`1.Maximum
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.Maximum
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).Maximum
+  nameWithType: IRangify<T>.Maximum
+  nameWithType.vb: IRangify(Of T).Maximum
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.Maximum*
+  name: Maximum
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_Maximum_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IRangify`1.Maximum
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.Maximum
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).Maximum
+  nameWithType: IRangify<T>.Maximum
+  nameWithType.vb: IRangify(Of T).Maximum
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.Minimum
+  name: Minimum
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_Minimum
+  commentId: P:PowerPlug.PowerPlugUtilities.IRangify`1.Minimum
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.Minimum
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).Minimum
+  nameWithType: IRangify<T>.Minimum
+  nameWithType.vb: IRangify(Of T).Minimum
+- uid: PowerPlug.PowerPlugUtilities.IRangify`1.Minimum*
+  name: Minimum
+  href: api/PowerPlug.PowerPlugUtilities.IRangify-1.html#PowerPlug_PowerPlugUtilities_IRangify_1_Minimum_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.IRangify`1.Minimum
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.IRangify<T>.Minimum
+  fullName.vb: PowerPlug.PowerPlugUtilities.IRangify(Of T).Minimum
+  nameWithType: IRangify<T>.Minimum
+  nameWithType.vb: IRangify(Of T).Minimum
+- uid: PowerPlug.PowerPlugUtilities.Range`1
+  name: Range<T>
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html
+  commentId: T:PowerPlug.PowerPlugUtilities.Range`1
+  name.vb: Range(Of T)
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T)
+  nameWithType: Range<T>
+  nameWithType.vb: Range(Of T)
+- uid: PowerPlug.PowerPlugUtilities.Range`1.#ctor(`0,`0)
+  name: Range(T, T)
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1__ctor__0__0_
+  commentId: M:PowerPlug.PowerPlugUtilities.Range`1.#ctor(`0,`0)
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.Range(T, T)
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).Range(T, T)
+  nameWithType: Range<T>.Range(T, T)
+  nameWithType.vb: Range(Of T).Range(T, T)
+- uid: PowerPlug.PowerPlugUtilities.Range`1.#ctor*
+  name: Range
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1__ctor_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.#ctor
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.Range
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).Range
+  nameWithType: Range<T>.Range
+  nameWithType.vb: Range(Of T).Range
+- uid: PowerPlug.PowerPlugUtilities.Range`1.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name: ContainsRange(IRangify<T>)
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_ContainsRange_PowerPlug_PowerPlugUtilities_IRangify__0__
+  commentId: M:PowerPlug.PowerPlugUtilities.Range`1.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name.vb: ContainsRange(IRangify(Of T))
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.ContainsRange(PowerPlug.PowerPlugUtilities.IRangify<T>)
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).ContainsRange(PowerPlug.PowerPlugUtilities.IRangify(Of T))
+  nameWithType: Range<T>.ContainsRange(IRangify<T>)
+  nameWithType.vb: Range(Of T).ContainsRange(IRangify(Of T))
+- uid: PowerPlug.PowerPlugUtilities.Range`1.ContainsRange*
+  name: ContainsRange
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_ContainsRange_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.ContainsRange
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.ContainsRange
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).ContainsRange
+  nameWithType: Range<T>.ContainsRange
+  nameWithType.vb: Range(Of T).ContainsRange
+- uid: PowerPlug.PowerPlugUtilities.Range`1.ContainsValue(`0)
+  name: ContainsValue(T)
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_ContainsValue__0_
+  commentId: M:PowerPlug.PowerPlugUtilities.Range`1.ContainsValue(`0)
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.ContainsValue(T)
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).ContainsValue(T)
+  nameWithType: Range<T>.ContainsValue(T)
+  nameWithType.vb: Range(Of T).ContainsValue(T)
+- uid: PowerPlug.PowerPlugUtilities.Range`1.ContainsValue*
+  name: ContainsValue
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_ContainsValue_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.ContainsValue
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.ContainsValue
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).ContainsValue
+  nameWithType: Range<T>.ContainsValue
+  nameWithType.vb: Range(Of T).ContainsValue
+- uid: PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name: IsInsideRange(IRangify<T>)
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_IsInsideRange_PowerPlug_PowerPlugUtilities_IRangify__0__
+  commentId: M:PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify{`0})
+  name.vb: IsInsideRange(IRangify(Of T))
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify<T>)
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).IsInsideRange(PowerPlug.PowerPlugUtilities.IRangify(Of T))
+  nameWithType: Range<T>.IsInsideRange(IRangify<T>)
+  nameWithType.vb: Range(Of T).IsInsideRange(IRangify(Of T))
+- uid: PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange*
+  name: IsInsideRange
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_IsInsideRange_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.IsInsideRange
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.IsInsideRange
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).IsInsideRange
+  nameWithType: Range<T>.IsInsideRange
+  nameWithType.vb: Range(Of T).IsInsideRange
+- uid: PowerPlug.PowerPlugUtilities.Range`1.IsValid
+  name: IsValid()
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_IsValid
+  commentId: M:PowerPlug.PowerPlugUtilities.Range`1.IsValid
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.IsValid()
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).IsValid()
+  nameWithType: Range<T>.IsValid()
+  nameWithType.vb: Range(Of T).IsValid()
+- uid: PowerPlug.PowerPlugUtilities.Range`1.IsValid*
+  name: IsValid
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_IsValid_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.IsValid
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.IsValid
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).IsValid
+  nameWithType: Range<T>.IsValid
+  nameWithType.vb: Range(Of T).IsValid
+- uid: PowerPlug.PowerPlugUtilities.Range`1.Maximum
+  name: Maximum
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_Maximum
+  commentId: P:PowerPlug.PowerPlugUtilities.Range`1.Maximum
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.Maximum
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).Maximum
+  nameWithType: Range<T>.Maximum
+  nameWithType.vb: Range(Of T).Maximum
+- uid: PowerPlug.PowerPlugUtilities.Range`1.Maximum*
+  name: Maximum
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_Maximum_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.Maximum
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.Maximum
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).Maximum
+  nameWithType: Range<T>.Maximum
+  nameWithType.vb: Range(Of T).Maximum
+- uid: PowerPlug.PowerPlugUtilities.Range`1.Minimum
+  name: Minimum
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_Minimum
+  commentId: P:PowerPlug.PowerPlugUtilities.Range`1.Minimum
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.Minimum
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).Minimum
+  nameWithType: Range<T>.Minimum
+  nameWithType.vb: Range(Of T).Minimum
+- uid: PowerPlug.PowerPlugUtilities.Range`1.Minimum*
+  name: Minimum
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_Minimum_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.Minimum
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.Minimum
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).Minimum
+  nameWithType: Range<T>.Minimum
+  nameWithType.vb: Range(Of T).Minimum
+- uid: PowerPlug.PowerPlugUtilities.Range`1.ToString
+  name: ToString()
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_ToString
+  commentId: M:PowerPlug.PowerPlugUtilities.Range`1.ToString
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.ToString()
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).ToString()
+  nameWithType: Range<T>.ToString()
+  nameWithType.vb: Range(Of T).ToString()
+- uid: PowerPlug.PowerPlugUtilities.Range`1.ToString*
+  name: ToString
+  href: api/PowerPlug.PowerPlugUtilities.Range-1.html#PowerPlug_PowerPlugUtilities_Range_1_ToString_
+  commentId: Overload:PowerPlug.PowerPlugUtilities.Range`1.ToString
+  isSpec: "True"
+  fullName: PowerPlug.PowerPlugUtilities.Range<T>.ToString
+  fullName.vb: PowerPlug.PowerPlugUtilities.Range(Of T).ToString
+  nameWithType: Range<T>.ToString
+  nameWithType.vb: Range(Of T).ToString

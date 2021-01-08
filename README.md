@@ -24,7 +24,7 @@
 </p>
 
 ## Introduction
-PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library.
+PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library. The PowerPlug docs can be found at <https://powerplug.me>
 
 ## Execution
 ### Install from PS Gallery

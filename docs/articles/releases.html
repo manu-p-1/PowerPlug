@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Changelogs </title>
+    <title>GitHub Releases </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Changelogs ">
+    <meta name="title" content="GitHub Releases ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,9 +67,74 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="changelogs">Changelogs</h1>
+<h1 id="github-releases">GitHub Releases</h1>
 
-<p>Future changelogs between <strong>full versions</strong> will be here.</p>
+<p>The following releases can be found on the <a href="https://github.com/manu-p-1/PowerPlug/wiki/Cmdlets">PowerPlug GitHub releases page</a></p>
+<hr>
+<h2 id="021-alpha-release-of-powerplug">0.2.1-alpha Release of PowerPlug</h2>
+<p>The second and patch release of PowerPlug is now available on the PowerShell gallery as a prerelease available here: <a href="https://www.powershellgallery.com/packages/PowerPlug/0.2.1-alpha">PowerPlug</a></p>
+<p>Install PowerPlug to PowerShell with:</p>
+<pre><code class="lang-powershell">Install-Module -Name PowerPlug -AllowPrerelease
+</code></pre>
+<h3 id="features">Features</h3>
+<ul>
+<li><p><strong>New-Byname</strong> - for creating a new alias to your Profile across various sessions</p>
+<ul>
+<li>
+<pre><code class="lang-powershell">New-Byname [-Name] &lt;string&gt; [-Value] &lt;string&gt; [-Description &lt;string&gt;] [-Option {None | ReadOnly | Constant | Private | AllScope
+| Unspecified}] [-PassThru] [-WhatIf] [-Confirm] [-Scope {Global | Local | Private | Numbered scopes | Script}] [-Force]
+[&lt;CommonParameters&gt;]
+</code></pre>
+</li>
+<li>The underlying structure of the command is the same as New-Alias, however, <code>New-Byname</code> writes to the user's <code>$PROFILE</code></li>
+</ul>
+</li>
+<li><p><strong>Set-Byname</strong> - for setting an alias to your Profile across various sessions</p>
+<ul>
+<li>
+<pre><code class="lang-powershell">Set-Byname [-Name] &lt;string&gt; [-Value] &lt;string&gt; [-Description &lt;string&gt;] [-Option {None | ReadOnly | Constant | Private | AllScope
+| Unspecified}] [-PassThru] [-WhatIf] [-Confirm] [-Scope {Global | Local | Private | Numbered scopes | Script}] [-Force]
+[&lt;CommonParameters&gt;]
+</code></pre>
+</li>
+<li>The underlying structure of the command is the same as Set-Alias, however, <code>Set-Byname</code> writes to the user's <code>$PROFILE</code></li>
+</ul>
+</li>
+<li><p><strong>Remove-Byname</strong> - for removing an alias to your Profile across various sessions</p>
+<ul>
+<li>
+<pre><code class="lang-powershell">Remove-Byname [-Name] &lt;string&gt; [-Scope {Global | Local | Private | Numbered scopes | Script}] [-Force] [&lt;CommonParameters&gt;]
+</code></pre>
+</li>
+<li>The underlying structure of the command is the same as Remove-Alias, however, <code>Remove-Byname</code> removes and &quot;bynames&quot; from the  user's <code>$PROFILE</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="010-alpha-release-of-powerplug">0.1.0-alpha Release of PowerPlug</h2>
+<p>The initial release of PowerPlug is now available.</p>
+<p>Import the PowerPlug dll to PowerShell with:</p>
+<pre><code class="lang-powershell">ipmo &quot;path/to/PowerPlug.dll&quot;
+</code></pre>
+<h3 id="features-1">Features</h3>
+<ul>
+<li><p><strong>Move-Trash</strong> - Moves a file or directory to the Recycle Bin instead of erasing it off the system.</p>
+<ul>
+<li>
+<pre><code class="lang-powershell">Move-Trash [-Path] &lt;string&gt; [[-List]] [&lt;CommonParameters&gt;]
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Compare-Hash</strong> - Compares a file hash with a known signature and displays whether the signature was a match</p>
+<ul>
+<li>
+<pre><code class="lang-powershell">Compare-Hash [-Hash] {SHA256 | SHA512 | MD5} [-Path] &lt;string&gt; [-Signature] &lt;string&gt; [&lt;CommonParameters&gt;]
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
 </article>
           </div>
           
@@ -78,7 +143,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/docs/articles/changelog.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/DocFx/articles/releases.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Manu/source/repos/PowerPlug/docs",
+  "source_base_path": "C:/Users/Manu/source/repos/PowerPlug/PowerPlug/DocFx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "YTC+YKwexJR1K4dPJVCBag=="
+          "hash": "mD5ll6PfFlbmJYuEO2Yitw=="
         }
       },
       "is_incremental": true,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/changelog.html",
-          "hash": "o2Zzx2ab2MAfy6G55SAzFw=="
+          "hash": "zKUzP19g0xQRGimMSePQBw=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/releases.html",
-          "hash": "VSTYmlc/bR9VAz91Wx6rhA=="
+          "hash": "Q3YaFybrYQz+MZvYP4gMcA=="
         }
       },
       "is_incremental": true,
@@ -381,19 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "te8oIeHFAvBHmZwn3uf/Rg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pull_request_template.md",
-      "output": {
-        ".html": {
-          "relative_path": "pull_request_template.html",
-          "hash": "Drta+TqBK2lym6Fo8ddwmQ=="
+          "hash": "JMp3uwsOFySPPuZKW6kuFg=="
         }
       },
       "is_incremental": true,
@@ -424,8 +412,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 5,
-          "skipped_file_count": 5
+          "total_file_count": 4,
+          "skipped_file_count": 4
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,

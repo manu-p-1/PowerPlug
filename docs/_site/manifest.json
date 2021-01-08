@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Manu/source/repos/PowerPlug/PowerPlug/docs",
+  "source_base_path": "C:/Users/Manu/source/repos/PowerPlug/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.BynameBase.html",
-          "hash": "HrBBbq1rtSc6HHP1NHgM3Q=="
+          "hash": "iRbqsUiobKcm871yCHmF0Q=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.WritableByname.html",
-          "hash": "dnnIQIs56RACJ6pAht0o1g=="
+          "hash": "9xMo28lZcG4qCwljTccsNg=="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.CompareHashCmdlet.html",
-          "hash": "gXOvcw079w0naXOW51z72A=="
+          "hash": "TIdIPckXrTtZZCgplsWjXQ=="
         }
       },
       "is_incremental": true,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.MoveTrashCmdlet.html",
-          "hash": "tZC9fQf9O6BynLJudT5dHA=="
+          "hash": "hl+oa4FI9hrNeNeuLpW+eQ=="
         }
       },
       "is_incremental": true,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.NewBynameCmdlet.html",
-          "hash": "EEqN9bcWxWVIeyCWzpJT1w=="
+          "hash": "V/l4BhQ/jtarXjnT91026w=="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html",
-          "hash": "PRv5l61HAYI7RHY2NZ3t1Q=="
+          "hash": "YEmoadcciWysuDvfGCCIOg=="
         }
       },
       "is_incremental": true,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.SetBynameCmdlet.html",
-          "hash": "z1Yg5iBVr8Mtjcm+41QgJQ=="
+          "hash": "7hXgR1BA8JuxDG6aMVzd3A=="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html",
-          "hash": "yG4eYCo+IYuYcdyS7AgZtA=="
+          "hash": "ClTX/hfJKWSQyE1m0RU0qA=="
         }
       },
       "is_incremental": true,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html",
-          "hash": "HJLlrlOTEVrcltM7QeXR2w=="
+          "hash": "/YEszGgh9jzcxZWdu37cRg=="
         }
       },
       "is_incremental": true,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html",
-          "hash": "lVqaGaxOEJf0CaKMJQcdkg=="
+          "hash": "cvW1pFhTWLZqgM/4KUl5KQ=="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html",
-          "hash": "DZzaRZApLBFRNvVupubLyg=="
+          "hash": "kUJyjZ2Fnx8u98pCNa6vsA=="
         }
       },
       "is_incremental": true,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html",
-          "hash": "ogAGnyWf7xiiGS0q8aZDGg=="
+          "hash": "VjlrRIcFsmI94oqWilNKPw=="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugFile.Profile.html",
-          "hash": "wPlaa442pcIwEAvwUioJhQ=="
+          "hash": "Dbq6BgmXVBsg7Y3wVAS/xA=="
         }
       },
       "is_incremental": true,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.IRangify-1.html",
-          "hash": "8JQ88MAoUIctHSrVpZaUJg=="
+          "hash": "Wou+PaXhWRrPOOJGoc5NkA=="
         }
       },
       "is_incremental": true,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html",
-          "hash": "UmtPmNgilQ2IIIHAoY1BgA=="
+          "hash": "KIoW7u9B5IVP5+fTrF202Q=="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.Range-1.html",
-          "hash": "QuRFutW2Q4p6h11rmwkG7g=="
+          "hash": "GNIMxv8W693lg25tYw0vWw=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.html",
-          "hash": "0gRUgfLr1+dBzYVyzxd5+Q=="
+          "hash": "2InS/Md/O8R+Pzhb4IT7Ew=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "1jjNdQboTy0CoAXQVQHVEA=="
+          "hash": "YTC+YKwexJR1K4dPJVCBag=="
         }
       },
       "is_incremental": true,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/changelog.html",
-          "hash": "uAnzl/DetPh+3cyMPrECCg=="
+          "hash": "o2Zzx2ab2MAfy6G55SAzFw=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/releases.html",
-          "hash": "e0MeDh73JBg8W7mBqF+NQQ=="
+          "hash": "VSTYmlc/bR9VAz91Wx6rhA=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,19 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "me7sjWchhuWVNeq6im/uRA=="
+          "hash": "te8oIeHFAvBHmZwn3uf/Rg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pull_request_template.md",
+      "output": {
+        ".html": {
+          "relative_path": "pull_request_template.html",
+          "hash": "Drta+TqBK2lym6Fo8ddwmQ=="
         }
       },
       "is_incremental": true,
@@ -412,8 +424,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 4,
-          "skipped_file_count": 4
+          "total_file_count": 5,
+          "skipped_file_count": 5
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,

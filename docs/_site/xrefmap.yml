@@ -456,13 +456,13 @@ references:
   commentId: T:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy
   fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy
   nameWithType: BynameCreatorStrategy
-- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+- uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{PSObject})
   name: BynameCreatorStrategy(IEnumerable<PSObject>)
-  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy__ctor_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
-  commentId: M:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  href: api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html#PowerPlug_Engines_Byname_Base_BynameCreatorStrategy__ctor_System_Collections_Generic_IEnumerable_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{PSObject})
   name.vb: BynameCreatorStrategy(IEnumerable(Of PSObject))
-  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy(System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
-  fullName.vb: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy(System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  fullName: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy(System.Collections.Generic.IEnumerable<PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.BynameCreatorStrategy(System.Collections.Generic.IEnumerable(Of PSObject))
   nameWithType: BynameCreatorStrategy.BynameCreatorStrategy(IEnumerable<PSObject>)
   nameWithType.vb: BynameCreatorStrategy.BynameCreatorStrategy(IEnumerable(Of PSObject))
 - uid: PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor*
@@ -517,13 +517,13 @@ references:
   commentId: T:PowerPlug.Engines.Byname.NewBynameCreatorOperation
   fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation
   nameWithType: NewBynameCreatorOperation
-- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+- uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})
   name: NewBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
-  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html#PowerPlug_Engines_Byname_NewBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
-  commentId: M:PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  href: api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html#PowerPlug_Engines_Byname_NewBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})
   name.vb: NewBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
-  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
-  fullName.vb: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  fullName: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.NewBynameCreatorOperation.NewBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of PSObject))
   nameWithType: NewBynameCreatorOperation.NewBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
   nameWithType.vb: NewBynameCreatorOperation.NewBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
 - uid: PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor*
@@ -552,13 +552,13 @@ references:
   commentId: T:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation
   fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation
   nameWithType: RemoveBynameCreatorOperation
-- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+- uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{PSObject})
   name: RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable<PSObject>)
-  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation__ctor_PowerPlug_Cmdlets_RemoveBynameCmdlet_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
-  commentId: M:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  href: api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html#PowerPlug_Engines_Byname_RemoveBynameCreatorOperation__ctor_PowerPlug_Cmdlets_RemoveBynameCmdlet_System_Collections_Generic_IEnumerable_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{PSObject})
   name.vb: RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable(Of PSObject))
-  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(PowerPlug.Cmdlets.RemoveBynameCmdlet, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
-  fullName.vb: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(PowerPlug.Cmdlets.RemoveBynameCmdlet, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  fullName: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(PowerPlug.Cmdlets.RemoveBynameCmdlet, System.Collections.Generic.IEnumerable<PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(PowerPlug.Cmdlets.RemoveBynameCmdlet, System.Collections.Generic.IEnumerable(Of PSObject))
   nameWithType: RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable<PSObject>)
   nameWithType.vb: RemoveBynameCreatorOperation.RemoveBynameCreatorOperation(RemoveBynameCmdlet, IEnumerable(Of PSObject))
 - uid: PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor*
@@ -606,13 +606,13 @@ references:
   commentId: T:PowerPlug.Engines.Byname.SetBynameCreatorOperation
   fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation
   nameWithType: SetBynameCreatorOperation
-- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+- uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})
   name: SetBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
-  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html#PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
-  commentId: M:PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  href: api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html#PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})
   name.vb: SetBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
-  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
-  fullName.vb: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  fullName: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.SetBynameCreatorOperation.SetBynameCreatorOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of PSObject))
   nameWithType: SetBynameCreatorOperation.SetBynameCreatorOperation(WritableByname, IEnumerable<PSObject>)
   nameWithType.vb: SetBynameCreatorOperation.SetBynameCreatorOperation(WritableByname, IEnumerable(Of PSObject))
 - uid: PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor*
@@ -641,13 +641,13 @@ references:
   commentId: T:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation
   fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation
   nameWithType: WritableBynameCreatorBaseOperation
-- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+- uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})
   name: WritableBynameCreatorBaseOperation(WritableByname, IEnumerable<PSObject>)
-  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__
-  commentId: M:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})
+  href: api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html#PowerPlug_Engines_Byname_WritableBynameCreatorBaseOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_PSObject__
+  commentId: M:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})
   name.vb: WritableBynameCreatorBaseOperation(WritableByname, IEnumerable(Of PSObject))
-  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<System.Management.Automation.PSObject>)
-  fullName.vb: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of System.Management.Automation.PSObject))
+  fullName: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable<PSObject>)
+  fullName.vb: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(PowerPlug.BaseCmdlets.WritableByname, System.Collections.Generic.IEnumerable(Of PSObject))
   nameWithType: WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(WritableByname, IEnumerable<PSObject>)
   nameWithType.vb: WritableBynameCreatorBaseOperation.WritableBynameCreatorBaseOperation(WritableByname, IEnumerable(Of PSObject))
 - uid: PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor*

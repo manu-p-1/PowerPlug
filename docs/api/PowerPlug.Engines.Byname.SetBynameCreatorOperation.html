@@ -73,7 +73,9 @@
   
   <h1 id="PowerPlug_Engines_Byname_SetBynameCreatorOperation" data-uid="PowerPlug.Engines.Byname.SetBynameCreatorOperation" class="text-break">Class SetBynameCreatorOperation
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>The SetBynameCreatorOperation is responsible for writing the actual contents of the Byname cmdlet into the
+$PROFILE. This class will be responsible replace the contents of an existing cmdlet.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -134,14 +136,16 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/new/master/apiSpec/new?filename=PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_PSObject__.md&amp;value=---%0Auid%3A%20PowerPlug.Engines.Byname.SetBynameCreatorOperation.%23ctor(PowerPlug.BaseCmdlets.WritableByname%2CSystem.Collections.Generic.IEnumerable%7BPSObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/new/master/apiSpec/new?filename=PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__.md&amp;value=---%0Auid%3A%20PowerPlug.Engines.Byname.SetBynameCreatorOperation.%23ctor(PowerPlug.BaseCmdlets.WritableByname%2CSystem.Collections.Generic.IEnumerable%7BSystem.Management.Automation.PSObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/Engines/Byname/SetBynameCreatorOperation.cs/#L10">View Source</a>
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/Engines/Byname/SetBynameCreatorOperation.cs/#L15">View Source</a>
   </span>
   <a id="PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_" data-uid="PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor*"></a>
-  <h4 id="PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_PSObject__" data-uid="PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{PSObject})">SetBynameCreatorOperation(WritableByname, IEnumerable&lt;PSObject&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="PowerPlug_Engines_Byname_SetBynameCreatorOperation__ctor_PowerPlug_BaseCmdlets_WritableByname_System_Collections_Generic_IEnumerable_System_Management_Automation_PSObject__" data-uid="PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})">SetBynameCreatorOperation(WritableByname, IEnumerable&lt;PSObject&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the variables for this cmdlet. The results of the command and the command string are also set.
+If the -Value of the command string is a function, the function is appended to the command string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -160,12 +164,14 @@
       <tr>
         <td><a class="xref" href="PowerPlug.BaseCmdlets.WritableByname.html">WritableByname</a></td>
         <td><span class="parametername">cmdlet</span></td>
-        <td></td>
+        <td><p>The WritableByname cmdlet</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">PSObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Management.Automation.PSObject</span>&gt;</td>
         <td><span class="parametername">commandResults</span></td>
-        <td></td>
+        <td><p>The results of invoking the PowerShell command for the WritableByname cmdlet</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -176,11 +182,13 @@
     <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/new/master/apiSpec/new?filename=PowerPlug_Engines_Byname_SetBynameCreatorOperation_ExecuteCommand.md&amp;value=---%0Auid%3A%20PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/Engines/Byname/SetBynameCreatorOperation.cs/#L12">View Source</a>
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/Engines/Byname/SetBynameCreatorOperation.cs/#L21">View Source</a>
   </span>
   <a id="PowerPlug_Engines_Byname_SetBynameCreatorOperation_ExecuteCommand_" data-uid="PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand*"></a>
   <h4 id="PowerPlug_Engines_Byname_SetBynameCreatorOperation_ExecuteCommand" data-uid="PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand">ExecuteCommand()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes all of the information from the invoked command to the PowerShell console. The information is then
+written to the PowerShell $PROFILE.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -199,7 +207,7 @@
                     <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/new/master/apiSpec/new?filename=PowerPlug_Engines_Byname_SetBynameCreatorOperation.md&amp;value=---%0Auid%3A%20PowerPlug.Engines.Byname.SetBynameCreatorOperation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/Engines/Byname/SetBynameCreatorOperation.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/Engines/Byname/SetBynameCreatorOperation.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -236,6 +236,236 @@
         <member name="M:PowerPlug.Cmdlets.SetBynameCmdlet.ToString">
             <inheritdoc cref="M:PowerPlug.BaseCmdlets.WritableByname.ToString"/>
         </member>
+        <member name="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.CmdletValueType">
+            <summary>
+            Represents the type of the value of a command string which is a PowerShell cmdlet.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.AliasValueTypes.CmdletValueType.#ctor(PowerPlug.BaseCmdlets.WritableByname)">
+            <inheritdoc cref="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.CommandAliasValueBaseType"/>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.CommandAliasValueBaseType">
+            <summary>
+            The base representation of the Value of a cmdlet command. The value types are used by
+            the <see cref="T:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation"/> to detect the type of the value of the command string.
+            Ideally, this representation should be changed to the respective type supported by the PowerShell Standard
+            Library in the future. For more information on how to contribute to PowerPlug, visit the GitHub link.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.Base.AliasValueTypes.CommandAliasValueBaseType.AliasCmdlet">
+            <summary>
+            The WritableByname instance.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.AliasValueTypes.CommandAliasValueBaseType.#ctor(PowerPlug.BaseCmdlets.WritableByname)">
+            <summary>
+            Sets the variable for the WritableByname instance.
+            </summary>
+            <param name="cmdlet"></param>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.FunctionValueType">
+            <summary>
+            Represents the type of the value of a command string which is a PowerShell function.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.AliasValueTypes.FunctionValueType.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.String)">
+            <summary>
+            Sets the variables for the WritableByname instance and the string of values inside the function script block.
+            </summary>
+            <param name="cmdlet"></param>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.UndefinedValueType">
+            <summary>
+            Represents the type of the value of a command string which is not <em>immediately</em> recognized by PowerShell.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.AliasValueTypes.UndefinedValueType.#ctor(PowerPlug.BaseCmdlets.WritableByname)">
+            <inheritdoc cref="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.CommandAliasValueBaseType"/>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.Base.BynameCreatorContext">
+            <summary>
+            A BynameCreator context which invokes a <see cref="P:PowerPlug.Engines.Byname.Base.BynameCreatorContext.BynameCreatorStrategy"/> instance. The context
+            is useful for invoking instances of a strategy design pattern.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.Base.BynameCreatorContext.BynameCreatorStrategy">
+            <summary>
+            The BynameCreatorStrategy instance to invoke.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.BynameCreatorContext.#ctor(PowerPlug.Engines.Byname.Base.BynameCreatorStrategy)">
+            <summary>
+            Creates a new BynameCreatorContext given a BynameCreator strategy.
+            </summary>
+            <param name="bynameCreatorStrategy"></param>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.BynameCreatorContext.ExecuteStrategy">
+            <summary>
+            Executes a BynameCreatorStrategy instance assigned to this instance.
+            </summary>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy">
+            <summary>
+            A strategy class to invoke a BynameCreator of a specific type. This follows the strategy design pattern.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ProfileInfo">
+            <summary>
+            A Profile instance containing information about the location of the PowerShell $PROFILE
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.PsCommandResults">
+            <summary>
+            The results of the PowerShell command as an <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.#ctor(System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})">
+            <summary>
+            Sets the variables for the BynameCreatorStrategy.
+            </summary>
+            <param name="commandResults">The results of invoking the PowerShell command</param>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.ExecuteCommand">
+            <summary>
+            Executes a BynameCreator command. This could be any operation the command introduces in order to
+            create a Byname.
+            </summary>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.NewBynameCreatorOperation">
+            <summary>
+            The NewBynameCreatorOperation is responsible for writing the actual contents of the Byname cmdlet into the
+            $PROFILE.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.NewBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})">
+            <inheritdoc cref="T:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation"/>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.NewBynameCreatorOperation.ExecuteCommand">
+            <summary>
+            Writes all of the information from the invoked command to the PowerShell console. The information is then
+            written to the PowerShell $PROFILE.
+            </summary>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation">
+            <summary>
+            The RemoveBynameCreatorOperation is responsible for removing an existing Byname cmdlet string from the user's $PROFILE.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.AliasCmdlet">
+            <summary>
+            The RemoveBynameCmdlet instance
+            </summary>
+        </member>
+        <member name="F:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.RemoveAliasCommand">
+            <summary>
+            The Remove-Alias command as a string constant.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.#ctor(PowerPlug.Cmdlets.RemoveBynameCmdlet,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})">
+            <summary>
+            Sets the variables for this cmdlet.
+            </summary>
+            <param name="cmdlet">The WritableByname cmdlet</param>
+            <param name="commandResults">The results of invoking the PowerShell command for the RemoveBynameCmdlet cmdlet</param>>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.ExecuteCommand">
+            <summary>
+            Removes all of the command string information from the user's $PROFILE.
+            </summary>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.BynameRemover">
+            <summary>
+            A BynameRemover class which is responsible for finding pattern matches within the $PROFILE and executing
+            a removal of those matches. The BynameRemover uses a <see cref="T:PowerPlug.BaseCmdlets.BynameBase"/> to store as a Byname because
+            even writable and non-writable cmdlets may use this to remove or clean anything from the $PROFILE before
+            writing or removing from it. This is an internal class in the event of any expansion on the removal process
+            needs to be added.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.BynameRemover.Byname">
+            <summary>
+            The BynameBase instance.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.BynameRemover.Profile">
+            <summary>
+            A Profile instance containing information about the location of the PowerShell $PROFILE.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.BynameRemover.#ctor(PowerPlug.BaseCmdlets.BynameBase,PowerPlug.PowerPlugFile.Profile)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="bb">The BynameBase instance</param>
+            <param name="profileInfo">The Profile instance</param>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.BynameRemover.Remove">
+            <summary>
+            Removes the Byname from the $PROFILE. From an implementation standpoint, this is done by finding a regex match for the command string
+            in the user $PROFILE. All matches are removed, including any function references which are attached to the command value. Finally,
+            a new line is appended to the $PROFILE.
+            </summary>
+            <returns>A bool representing whether the removal was successful</returns>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.SetBynameCreatorOperation">
+            <summary>
+            The SetBynameCreatorOperation is responsible for writing the actual contents of the Byname cmdlet into the
+            $PROFILE. This class will be responsible replace the contents of an existing cmdlet.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.SetBynameCreatorOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})">
+            <inheritdoc cref="T:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation"/>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.SetBynameCreatorOperation.ExecuteCommand">
+            <summary>
+            Writes all of the information from the invoked command to the PowerShell console. The information is then
+            written to the PowerShell $PROFILE.
+            </summary>
+        </member>
+        <member name="T:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation">
+            <summary>
+            The base Operation to create a writable Byname (classes that inherit <see cref="T:PowerPlug.BaseCmdlets.WritableByname"/>). This class
+            is part of a broader Byname Strategy to execute cmdlets.
+            </summary>
+        </member>
+        <member name="F:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.NewAliasCommand">
+            <summary>
+            The New-Alias command as a string constant.
+            </summary>
+        </member>
+        <member name="F:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.SetAliasCommand">
+            <summary>
+            The Set-Alias command as a string constant.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.PsCommandAsString">
+            <summary>
+            The PowerShell command to write to the $PROFILE as a string (including any functions that need to be written).
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.AliasCmdlet">
+            <summary>
+            The WritableByname instance
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.#ctor(PowerPlug.BaseCmdlets.WritableByname,System.Collections.Generic.IEnumerable{System.Management.Automation.PSObject})">
+            <summary>
+            Sets the variables for this cmdlet. The results of the command and the command string are also set.
+            If the -Value of the command string is a function, the function is appended to the command string.
+            </summary>
+            <param name="cmdlet">The WritableByname cmdlet</param>
+            <param name="commandResults">The results of invoking the PowerShell command for the WritableByname cmdlet</param>
+        </member>
+        <member name="M:PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.GetAliasValueType">
+            <summary>
+            Get's the type of the value of the WritableByname cmdlet. This is done through invoking a script
+            in the default run space thread of execution. The script run is <code>Get-Command {AliasCmdlet.Name} | select*
+            </code>.
+            The properties of the command are read and a return type is assumed.
+            </summary>
+            <returns>A <see cref="T:PowerPlug.Engines.Byname.Base.AliasValueTypes.CommandAliasValueBaseType"/> base type</returns>
+        </member>
         <member name="T:PowerPlug.PowerPlugFile.FileUtilities">
             <summary>
             A static class for File utility functions

@@ -10,11 +10,12 @@
     <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
     <FileVersion>0.2.1</FileVersion>
     <AssemblyVersion>0.2.1</AssemblyVersion>
+    <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Users\Manu\source\repos\PowerPlug\PowerPlug\PowerPlug.xml</DocumentationFile>
-    <NoWarn>1701;1702;1591</NoWarn>
+    <NoWarn>1701;1702</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

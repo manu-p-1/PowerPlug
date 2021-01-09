@@ -1,5 +1,7 @@
 ﻿<p align="center">
-  <img src="https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugLogoAlt.png">
+  <a href="https://github.com/manu-p-1/PowerPlug/" target="_blank">
+    <img src="https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugLogoAlt.png" alt="PowerPlug Logo">
+  </a>
   <br>
 </p>
 <p align="center">

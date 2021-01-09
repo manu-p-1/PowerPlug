@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>0.2.1-alpha</Version>
+    <Version>0.2.6</Version>
     <Company />
     <Description>PowerShell 7 utility cmdlets</Description>
     <Copyright>Copyright © Manu Puduvalli 2021</Copyright>
     <PackageProjectUrl>https://github.com/manu-p-1/PowerPlug</PackageProjectUrl>
     <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
-    <FileVersion>0.2.1</FileVersion>
-    <AssemblyVersion>0.2.1</AssemblyVersion>
+    <FileVersion>0.2.6</FileVersion>
+    <AssemblyVersion>0.2.6</AssemblyVersion>
     <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
   </PropertyGroup>
 

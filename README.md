@@ -31,7 +31,7 @@ PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to 
 The latest release can be found at [PowerPlug Releases](https://www.powershellgallery.com/packages/PowerPlug/). You can install the prerelease to PowerShell by running:
 
 ```powershell
-Install-Module -Name PowerPlug -AllowPrerelease
+Install-Module -Name PowerPlug
 ```
 ### Install from GitHub Releases
 The latest zip release can be found under the [Github Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. 
@@ -63,7 +63,7 @@ HTML pages which are used by <powerplug.me>. THe `PowerPlug.dll-Help.xml` file i
 ## Roadmap
 There are two planned releases - the latest being by **July 2021**:
 
-- 0.2.5 - First full release of PowerPlug
+- 0.2.6 - First full release of PowerPlug
 - 0.3.0 - Full release with a statistics cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
 
 ## State

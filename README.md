@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/PowerPlugLogoAlt.png">
   <br>
 </p>
@@ -24,7 +24,7 @@
 </p>
 
 ## Introduction
-PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library. The PowerPlug docs can be found at <https://powerplug.me>
+PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library. The PowerPlug docs can be found at <https://powerplug.me>.
 
 ## Execution
 ### Install from PS Gallery
@@ -39,7 +39,10 @@ The latest zip release can be found under the [Github Releases Page](https://git
 ### Importing into session
 To import the dll for the session, you can run: `ipmo PowerPlug` **or** `Import-Module PowerPlug`. You can use the previous commands within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
 
-## Building PowerPlug
+## Contributing
+We are actively looking for contributors to work on all aspects of the code base ― from documentation to c# cmdlet utilities.
+
+### Building PowerPlug
 Prerequisites:
 - PowerShell 7.0 or Later
 - Visual Studio 2017 or Later OR VSCode
@@ -47,10 +50,21 @@ Prerequisites:
 
 The default language setting for this project is C# 9.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. PowerShell 7 can be set as the startup item on Visual Studio to dynamically debug PowerPlug.
 
+### Documentation
+There are three components to PowerPlug documentation:
+
+1. Assembly Documentation
+2. PowerShell Help File Documentation
+3. Miscellaneous Documentation (README.md, Wiki's, Discussions, etc...)
+
+All PowerPlug methods are documented using .NET XML documentation. This is compiled using [DocFX](https://dotnet.github.io/docfx/) with the `docfx.json` file under the [DocFX folder](https://github.com/manu-p-1/PowerPlug/tree/master/DocFx). DocFX creates static
+HTML pages which are used by <powerplug.me>. THe `PowerPlug.dll-Help.xml` file is the MAML file that is used to generate the `Get-Help` documentation for PowerPlug cmdlets. Lastly, as a fluid repository, many files change and constantly need to be documented and updated.
+
 ## Roadmap
-- Make exisiting commands more robust as we move to a full release
-- Expanding the cmdlet library with more useful commands
-- Adding Cmdlet documentation with XML and MAML
+There are two planned releases - the latest being by **July 2021**:
+
+- 0.2.5 - First full release of PowerPlug
+- 0.3.0 - Full release with a statistics cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
 
 ## State
 PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. For more information visit, [PowerPlug Repo](https://github.com/manu-p-1/PowerPlug/). Or, to report an issue visit,

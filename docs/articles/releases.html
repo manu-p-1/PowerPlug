@@ -81,12 +81,31 @@
 
 <p>The following releases can be found on the <a href="https://github.com/manu-p-1/PowerPlug/wiki/Cmdlets">PowerPlug GitHub releases page</a></p>
 <hr>
+<h2 id="026-release-of-powerplug">0.2.6 Release of PowerPlug</h2>
+<p>The first full release of PowerPlug comes with a variety of bug fixes and improvements. Versions 0.2.1-beta, 0.2.2, 0.2.3, 0.2.4, and 0.2.5 were tested internally.</p>
+<p>Install PowerPlug from the <strong>PowerShell gallery</strong> with:</p>
+<pre><code class="lang-powershell">Install-Module -Name PowerPlug
+</code></pre>
+<h3 id="features">Features</h3>
+<ul>
+<li>New <code>Get-Help</code> documentation</li>
+<li>Improved Performance</li>
+<li><a href="https://powerplug.me">PowerPlugDocs</a></li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>Fixed an issue where a Set-Byname would not occur</li>
+<li>Fixed an issue where Remove-Byname would not remove the alias</li>
+<li>Fixed an issue where Set-Byname would not replace old aliases with the new one</li>
+<li>Other internal fixes</li>
+</ul>
+<hr>
 <h2 id="021-alpha-release-of-powerplug">0.2.1-alpha Release of PowerPlug</h2>
 <p>The second and patch release of PowerPlug is now available on the PowerShell gallery as a prerelease available here: <a href="https://www.powershellgallery.com/packages/PowerPlug/0.2.1-alpha">PowerPlug</a></p>
 <p>Install PowerPlug to PowerShell with:</p>
 <pre><code class="lang-powershell">Install-Module -Name PowerPlug -AllowPrerelease
 </code></pre>
-<h3 id="features">Features</h3>
+<h3 id="features-1">Features</h3>
 <ul>
 <li><p><strong>New-Byname</strong> - for creating a new alias to your Profile across various sessions</p>
 <ul>
@@ -126,7 +145,7 @@
 <p>Import the PowerPlug dll to PowerShell with:</p>
 <pre><code class="lang-powershell">ipmo &quot;path/to/PowerPlug.dll&quot;
 </code></pre>
-<h3 id="features-1">Features</h3>
+<h3 id="features-2">Features</h3>
 <ul>
 <li><p><strong>Move-Trash</strong> - Moves a file or directory to the Recycle Bin instead of erasing it off the system.</p>
 <ul>

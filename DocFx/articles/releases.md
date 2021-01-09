@@ -4,6 +4,28 @@ The following releases can be found on the [PowerPlug GitHub releases page](http
 
 ---
 
+## 0.2.6 Release of PowerPlug
+The first full release of PowerPlug comes with a variety of bug fixes and improvements. Versions 0.2.1-beta, 0.2.2, 0.2.3, 0.2.4, and 0.2.5 were tested internally.
+
+Install PowerPlug from the **PowerShell gallery** with:
+
+```powershell
+Install-Module -Name PowerPlug
+```
+
+### Features
+- New `Get-Help` documentation
+- Improved Performance
+- [PowerPlugDocs](https://powerplug.me)
+
+### Bug Fixes
+- Fixed an issue where a Set-Byname would not occur
+- Fixed an issue where Remove-Byname would not remove the alias
+- Fixed an issue where Set-Byname would not replace old aliases with the new one
+- Other internal fixes
+
+---
+
 ## 0.2.1-alpha Release of PowerPlug
 The second and patch release of PowerPlug is now available on the PowerShell gallery as a prerelease available here: [PowerPlug](https://www.powershellgallery.com/packages/PowerPlug/0.2.1-alpha)
 

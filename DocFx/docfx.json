@@ -50,6 +50,12 @@
       }
     ],
     "dest": "../docs",
+    "globalMetadata": {
+      "_appLogoPath": "https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIconSmall.svg",
+      "_appFaviconPath": "https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIcon.ico",
+      "_enableSearch": true,
+      "appFooter": "Copyright © Manu Puduvalli"
+    },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [

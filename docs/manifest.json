@@ -4,15 +4,24 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/PowerPlug.BaseCmdlets.BynameBase.yml",
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.BynameBase.html",
-          "hash": "HrBBbq1rtSc6HHP1NHgM3Q=="
+          "hash": "ORc5iaKvQaclw46cQ2yyMw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +30,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.WritableByname.html",
-          "hash": "dnnIQIs56RACJ6pAht0o1g=="
+          "hash": "4PkotwCS3cWgI186ekjDpg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +42,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.html",
-          "hash": "ucuceHqS7jArBWnfvCOoGw=="
+          "hash": "+YrVqAhGsiK3sUHYTJmsZg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +54,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.CompareHashCmdlet.html",
-          "hash": "gXOvcw079w0naXOW51z72A=="
+          "hash": "0ZVDC9D5RWFutaqtZM9nTw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +66,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.MoveTrashCmdlet.html",
-          "hash": "tZC9fQf9O6BynLJudT5dHA=="
+          "hash": "VtC/xxjXm5Y/f7UO2QcapQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +78,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.NewBynameCmdlet.html",
-          "hash": "6z+n+2PlKxmisCUCqB92Yg=="
+          "hash": "l22LRAAzKWGWiJ3Cd8z6og=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +90,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html",
-          "hash": "d26BIX4/OGYazhDNaelYCA=="
+          "hash": "UugdyRRvnjKbh9zaBL4DsA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +102,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.SetBynameCmdlet.html",
-          "hash": "5mF/dzjOdLB64i6yux6TyA=="
+          "hash": "ICI0j50fpT4JeBIrzj0SoA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +114,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.html",
-          "hash": "UEnKNUdEfcFhVKsJNuXTzQ=="
+          "hash": "g2O1gXq1+3TXbVFLPP2bsA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +126,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html",
-          "hash": "NS51sCOyfCIHbuegAAFBVg=="
+          "hash": "cdLwmqAJNW/Po0QKPhebiQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,10 +138,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html",
-          "hash": "sbLa4FZiIq9RtuMS3vPZPg=="
+          "hash": "fg5kuV54A6WHPkkWSUIGeA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,10 +150,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.Base.html",
-          "hash": "PmdKskOTXzHl5xbbi5+Omg=="
+          "hash": "l802zQ9udszwnNhCgRv96A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +162,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html",
-          "hash": "edSzpmNaTpratzKvXRGqwg=="
+          "hash": "sOV9MUs+8Kp1K8zuuYN2CQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +174,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html",
-          "hash": "RumMvofFX/8KdjVigsYeHQ=="
+          "hash": "lFXdYbiGFCiMLVSQnIo0QQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +186,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html",
-          "hash": "zReHWfiMieyhJTJKWe8rNA=="
+          "hash": "HytYRw5xcvw+3EmSWdBbyw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,10 +198,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html",
-          "hash": "hziLOb5r1X7NvckVf+HCHA=="
+          "hash": "xg0laL8Rq4OS2BuLOaSRAQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -201,10 +210,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Engines.Byname.html",
-          "hash": "UDvRTI4TG+MgiUDnoj6gNg=="
+          "hash": "sxUDOFpRt1pvl4psinZ0Mw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +222,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugFile.FileUtilities.html",
-          "hash": "W/phhOdmAKmmQ9PeBHaJdQ=="
+          "hash": "eFhydtOGPhBVl51FtTDHCw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,10 +234,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html",
-          "hash": "8MSiLY7IDwwp3LN/t/63rA=="
+          "hash": "mBPzAd6wRl4HSnComzUqgg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -237,10 +246,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugFile.Profile.html",
-          "hash": "wPlaa442pcIwEAvwUioJhQ=="
+          "hash": "AeM/B/yi4eHfv6TxkQjGZw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -249,10 +258,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugFile.html",
-          "hash": "TOkCMKVtQ7eBS4uJjabFjA=="
+          "hash": "xmqszbCri8flUydoz9LM+A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -261,10 +270,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.IRangify-1.html",
-          "hash": "8JQ88MAoUIctHSrVpZaUJg=="
+          "hash": "qbWenc7yKw2C1XKHpaMl4Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -273,10 +282,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html",
-          "hash": "UmtPmNgilQ2IIIHAoY1BgA=="
+          "hash": "/G4GfEyNuXZ/At3LLnTMLA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -285,10 +294,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.IntRange.html",
-          "hash": "qCg8Oj2jChGGzi/TW8xqUA=="
+          "hash": "cwJiUwhaq5UoLfMJtH/pDQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -297,10 +306,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.Range-1.html",
-          "hash": "QuRFutW2Q4p6h11rmwkG7g=="
+          "hash": "38BFP9U8aLWW3FqHuGFUmA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -309,10 +318,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.PowerPlugUtilities.html",
-          "hash": "0gRUgfLr1+dBzYVyzxd5+Q=="
+          "hash": "IO7tNEhKC5aGHWVIcFnKaw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -321,10 +330,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "K43KwzbmCMHz0/mx+t7U0Q=="
+          "hash": "75HL6SBx3i7BJvutLfYtKw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -345,10 +354,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/changelog.html",
-          "hash": "Ct0sho2XiMFZGEiqgLuBdg=="
+          "hash": "cImFSjEB/fFCGj8Ry805+g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -357,10 +366,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/releases.html",
-          "hash": "tqMWZU5SFmNEpSJLQ4tCRw=="
+          "hash": "UhQOLOKyz/06ZTqJAYiT1w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -381,10 +390,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "6Z19KoQQJDtqI5ocQOiAEg=="
+          "hash": "yDwJQ96WUjRvHqcVDvlFCw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -432,8 +441,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

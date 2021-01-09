@@ -59,7 +59,7 @@ There are three components to PowerPlug documentation:
 3. Miscellaneous Documentation (README.md, Wiki's, Discussions, etc...)
 
 All PowerPlug methods are documented using .NET XML documentation. This is compiled using [DocFX](https://dotnet.github.io/docfx/) with the `docfx.json` file under the [DocFX folder](https://github.com/manu-p-1/PowerPlug/tree/master/DocFx). DocFX creates static
-HTML pages which are used by <powerplug.me>. THe `PowerPlug.dll-Help.xml` file is the MAML file that is used to generate the `Get-Help` documentation for PowerPlug cmdlets. Lastly, as a fluid repository, many files change and constantly need to be documented and updated.
+HTML pages which are used by <https://powerplug.me>. THe `PowerPlug.dll-Help.xml` file is the MAML file that is used to generate the `Get-Help` documentation for PowerPlug cmdlets. Lastly, as a fluid repository, many files change and constantly need to be documented and updated.
 
 ## Roadmap
 There are two planned releases - the latest being by **July 2021**:

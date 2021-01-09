@@ -11,7 +11,7 @@ namespace PowerPlug.Cmdlets
 {
     /// <summary>
     /// <para type="synopsis">Sets a new Byname</para>
-    /// <para type="description">This Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
+    /// <para type="description">Set-Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
     /// command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
     /// purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
     /// prevent unintended behavior.

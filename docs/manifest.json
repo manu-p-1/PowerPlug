@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Manu/source/repos/PowerPlug/PowerPlug/DocFx",
+  "source_base_path": "C:/Users/Manu/source/repos/PowerPlug/DocFx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.NewBynameCmdlet.html",
-          "hash": "EEqN9bcWxWVIeyCWzpJT1w=="
+          "hash": "6z+n+2PlKxmisCUCqB92Yg=="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html",
-          "hash": "PRv5l61HAYI7RHY2NZ3t1Q=="
+          "hash": "d26BIX4/OGYazhDNaelYCA=="
         }
       },
       "is_incremental": true,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.SetBynameCmdlet.html",
-          "hash": "z1Yg5iBVr8Mtjcm+41QgJQ=="
+          "hash": "5mF/dzjOdLB64i6yux6TyA=="
         }
       },
       "is_incremental": true,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.html",
-          "hash": "mN3Nyohn2eruNLuWsJ6C+A=="
+          "hash": "UEnKNUdEfcFhVKsJNuXTzQ=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "mD5ll6PfFlbmJYuEO2Yitw=="
+          "hash": "K43KwzbmCMHz0/mx+t7U0Q=="
         }
       },
       "is_incremental": true,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/changelog.html",
-          "hash": "zKUzP19g0xQRGimMSePQBw=="
+          "hash": "Ct0sho2XiMFZGEiqgLuBdg=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/releases.html",
-          "hash": "Q3YaFybrYQz+MZvYP4gMcA=="
+          "hash": "tqMWZU5SFmNEpSJLQ4tCRw=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "JMp3uwsOFySPPuZKW6kuFg=="
+          "hash": "MgpwDNLedISXSObAWrlqfA=="
         }
       },
       "is_incremental": true,

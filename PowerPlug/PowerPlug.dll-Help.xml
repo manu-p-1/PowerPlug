@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <!-- Cmdlet: New-Byname -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>New-Byname</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>Byname</command:noun>
+      <maml:description>
+        <maml:para>Creates a new Byname</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>New-Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>New-Byname</maml:name>
+        <!-- Parameter: Name -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="0">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Value -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="1">
+          <maml:name>Value</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Confirm -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Confirm</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Description -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Description</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue></dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Force -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Force</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Option -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Option</maml:name>
+          <maml:description>
+            <maml:para>Possible values: None, ReadOnly, Constant, Private, AllScope, Unspecified</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">ScopedItemOptions</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.ScopedItemOptions</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" variableLength="false">None</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">ReadOnly</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">Constant</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">Private</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">AllScope</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">Unspecified</command:parameterValue>
+          </command:parameterValueGroup>
+        </command:parameter>
+        <!-- Parameter: PassThru -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>PassThru</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Scope -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Scope</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Local</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: WhatIf -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: Value -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="1">
+        <maml:name>Value</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Description -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Description</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Option -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Option</maml:name>
+        <maml:description>
+          <maml:para>Possible values: None, ReadOnly, Constant, Private, AllScope, Unspecified</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">ScopedItemOptions</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.ScopedItemOptions</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValueGroup>
+          <command:parameterValue required="false" variableLength="false">None</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">ReadOnly</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">Constant</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">Private</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">AllScope</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">Unspecified</command:parameterValue>
+        </command:parameterValueGroup>
+      </command:parameter>
+      <!-- Parameter: PassThru -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>PassThru</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: WhatIf -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named" aliases="wi">
+        <maml:name>wi</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+        <maml:description>
+          <maml:para>This is an alias of the WhatIf parameter.</maml:para>
+        </maml:description>
+      </command:parameter>
+      <!-- Parameter: Confirm -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Confirm</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Name -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="0">
+        <maml:name>Name</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Scope -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Scope</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Local</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Force -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Force</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>New-Byname -Name list -Value Get-ChildItem</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>New-Alias</maml:linkText>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Remove-Byname -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Remove-Byname</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>Byname</command:noun>
+      <maml:description>
+        <maml:para>Removes a new Byname</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Remove-Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are removed from the $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior. Extra precaution should be used when using Remove-Byname as it removes all aliases with the same name from the $PROFILE.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Remove-Byname</maml:name>
+        <!-- Parameter: Name -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="0">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Force -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Force</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Scope -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Scope</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Local</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: Name -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="0">
+        <maml:name>Name</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Scope -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Scope</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Local</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Force -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Force</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <dev:para>Remove-Byname -Name list</dev:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Remove-Alias</maml:linkText>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-Byname -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-Byname</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>Byname</command:noun>
+      <maml:description>
+        <maml:para>Sets a new Byname</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Set-Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-Byname</maml:name>
+        <!-- Parameter: Name -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="0">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Value -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="1">
+          <maml:name>Value</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Confirm -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Confirm</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Description -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Description</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue></dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Force -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Force</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Option -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Option</maml:name>
+          <maml:description>
+            <maml:para>Possible values: None, ReadOnly, Constant, Private, AllScope, Unspecified</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">ScopedItemOptions</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.ScopedItemOptions</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" variableLength="false">None</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">ReadOnly</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">Constant</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">Private</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">AllScope</command:parameterValue>
+            <command:parameterValue required="false" variableLength="false">Unspecified</command:parameterValue>
+          </command:parameterValueGroup>
+        </command:parameter>
+        <!-- Parameter: PassThru -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>PassThru</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: Scope -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>Scope</maml:name>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Local</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: WhatIf -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: Value -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="1">
+        <maml:name>Value</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Description -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Description</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Option -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Option</maml:name>
+        <maml:description>
+          <maml:para>Possible values: None, ReadOnly, Constant, Private, AllScope, Unspecified</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">ScopedItemOptions</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.ScopedItemOptions</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValueGroup>
+          <command:parameterValue required="false" variableLength="false">None</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">ReadOnly</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">Constant</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">Private</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">AllScope</command:parameterValue>
+          <command:parameterValue required="false" variableLength="false">Unspecified</command:parameterValue>
+        </command:parameterValueGroup>
+      </command:parameter>
+      <!-- Parameter: PassThru -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>PassThru</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: WhatIf -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named" aliases="wi">
+        <maml:name>wi</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+        <maml:description>
+          <maml:para>This is an alias of the WhatIf parameter.</maml:para>
+        </maml:description>
+      </command:parameter>
+      <!-- Parameter: Confirm -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Confirm</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Name -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="0">
+        <maml:name>Name</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Scope -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Scope</maml:name>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Local</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: Force -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>Force</maml:name>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <dev:para>Set-Byname -Name gh -Value Get-Help</dev:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Set-Alias</maml:linkText>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Compare-Hash -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Compare-Hash</command:name>
+      <command:verb>Compare</command:verb>
+      <command:noun>Hash</command:noun>
+      <maml:description>
+        <maml:para>Compares a file's user specified hash with another signature</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function will compare a user defined hash of a file, such as an executable with the known signature of the file. This is especially useful since hashed values are long. The current supported hashes are SHA256, SHA512, MD5.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Compare-Hash</maml:name>
+        <!-- Parameter: Hash -->
+        <command:parameter required="true" globbing="false" pipelineInput="false" position="0" aliases="HashType">
+          <maml:name>Hash</maml:name>
+          <maml:description>
+            <maml:para>The hashing algorithm (SHA256, SHA512, MD5) to use when comparing the signature</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Path -->
+        <command:parameter required="true" globbing="false" pipelineInput="false" position="1" aliases="FilePath">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>The path to the file</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Signature -->
+        <command:parameter required="true" globbing="false" pipelineInput="false" position="2" aliases="KnownHash">
+          <maml:name>Signature</maml:name>
+          <maml:description>
+            <maml:para>The the known SHA256 signature of the file</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: Hash -->
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="0" aliases="HashType">
+        <maml:name>Hash</maml:name>
+        <maml:description>
+          <maml:para>The hashing algorithm (SHA256, SHA512, MD5) to use when comparing the signature</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="0" aliases="HashType">
+        <maml:name>HashType</maml:name>
+        <maml:description>
+          <maml:para>The hashing algorithm (SHA256, SHA512, MD5) to use when comparing the signature</maml:para>
+          <maml:para>This is an alias of the Hash parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Path -->
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="1" aliases="FilePath">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The path to the file</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="1" aliases="FilePath">
+        <maml:name>FilePath</maml:name>
+        <maml:description>
+          <maml:para>The path to the file</maml:para>
+          <maml:para>This is an alias of the Path parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Signature -->
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="2" aliases="KnownHash">
+        <maml:name>Signature</maml:name>
+        <maml:description>
+          <maml:para>The the known SHA256 signature of the file</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="2" aliases="KnownHash">
+        <maml:name>KnownHash</maml:name>
+        <maml:description>
+          <maml:para>The the known SHA256 signature of the file</maml:para>
+          <maml:para>This is an alias of the Signature parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>Compare-Hash .\audacity-win-2.4.2.exe 1f20cd153b2c322bf1ff9941e4e5204098abdc7da37250ce3fb38612b3e927bc</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+  </command:command>
+  <!-- Cmdlet: Move-Trash -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Move-Trash</command:name>
+      <command:verb>Move</command:verb>
+      <command:noun>Trash</command:noun>
+      <maml:description>
+        <maml:para>Moves a file to the Recycle Bin</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function will move a file, whether directory or file, to the system Recycle Bin. trash If the param list is true, it will print the contents of the current directory after recycling the file. Only error dialogs are printed and no confirmation message is shown.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Move-Trash</maml:name>
+        <!-- Parameter: Path -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue)" position="0" aliases="FilePath">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>The path to the file</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: List -->
+        <command:parameter required="false" globbing="false" pipelineInput="false" position="1" aliases="ListDirectory">
+          <maml:name>List</maml:name>
+          <maml:description>
+            <maml:para>A flag indicating whether to print the contents of the current directory</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: Path -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue)" position="0" aliases="FilePath">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The path to the file</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue)" position="0" aliases="FilePath">
+        <maml:name>FilePath</maml:name>
+        <maml:description>
+          <maml:para>The path to the file</maml:para>
+          <maml:para>This is an alias of the Path parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: List -->
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" aliases="ListDirectory">
+        <maml:name>List</maml:name>
+        <maml:description>
+          <maml:para>A flag indicating whether to print the contents of the current directory</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" aliases="ListDirectory">
+        <maml:name>ListDirectory</maml:name>
+        <maml:description>
+          <maml:para>A flag indicating whether to print the contents of the current directory</maml:para>
+          <maml:para>This is an alias of the List parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>The path to the file</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>Move-Trash -Path Documents\file.txt -List</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+  </command:command>
+</helpItems>

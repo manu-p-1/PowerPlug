@@ -11,14 +11,14 @@ namespace PowerPlug.Cmdlets
 {
     /// <summary>
     /// <para type="synopsis">Creates a new Byname</para>
-    /// <para type="description">This Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
+    /// <para type="description">New-Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
     /// command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
     /// purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
     /// prevent unintended behavior.
     /// </para>
     /// <para type="aliases">nbn</para>
     /// <example>
-    /// <para>A sample Move-Trash command</para>
+    /// <para>A sample New-Byname command</para>
     /// <code>New-Byname -Name list -Value Get-ChildItem</code>
     /// </example>
     /// </summary>

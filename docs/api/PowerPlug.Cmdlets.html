@@ -102,33 +102,33 @@ Only error dialogs are printed and no confirmation message is shown.
 </section>
       <h4><a class="xref" href="PowerPlug.Cmdlets.NewBynameCmdlet.html">NewBynameCmdlet</a></h4>
       <section><p>Creates a new Byname</p>
-<p>This Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
+<p>New-Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
 command name is written to the user&apos;s $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
 purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
 prevent unintended behavior.
 </p>
 <p>nbn</p>
 <example>
-<p>A sample Move-Trash command</p>
+<p>A sample New-Byname command</p>
 <pre><code>New-Byname -Name list -Value Get-ChildItem</code></pre>
 </example>
 </section>
       <h4><a class="xref" href="PowerPlug.Cmdlets.RemoveBynameCmdlet.html">RemoveBynameCmdlet</a></h4>
       <section><p>Removes a new Byname</p>
-<p>This Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are
+<p>Remove-Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are
 removed from the $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias
 across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior. Extra precaution should be used
 when using Remove-Byname as it removes all aliases with the same name from the $PROFILE.
 </p>
 <p>rbn</p>
 <example>
-<p>A sample Move-Trash command</p>
+<p>A sample Remove-Byname command</p>
 <pre><code>Remove-Byname -Name list</code></pre>
 </example>
 </section>
       <h4><a class="xref" href="PowerPlug.Cmdlets.SetBynameCmdlet.html">SetBynameCmdlet</a></h4>
       <section><p>Sets a new Byname</p>
-<p>This Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
+<p>Set-Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
 command name is written to the user&apos;s $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
 purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
 prevent unintended behavior.

@@ -12,14 +12,14 @@ namespace PowerPlug.Cmdlets
 
     /// <summary>
     /// <para type="synopsis">Removes a new Byname</para>
-    /// <para type="description">This Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are
+    /// <para type="description">Remove-Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are
     /// removed from the $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias
     /// across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior. Extra precaution should be used
     /// when using Remove-Byname as it removes all aliases with the same name from the $PROFILE.
     /// </para>
     /// <para type="aliases">rbn</para>
     /// <example>
-    /// <para>A sample Move-Trash command</para>
+    /// <para>A sample Remove-Byname command</para>
     /// <code>Remove-Byname -Name list</code>
     /// </example>
     /// </summary>

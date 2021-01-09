@@ -137,7 +137,7 @@
   "articles/changelog.html": {
     "href": "articles/changelog.html",
     "title": "Changelogs",
-    "keywords": "Changelogs Future changelogs between full versions will be here. 0.2.6 Release of PowerPlug Fixed an issue where a Set-Byname would not occur Fixed an issue where Remove-Byname would not remove the alias Fixed an issue where Set-Byname would not replace old aliases with the new one Other internal fixes New Get-Help documentation Improved Performance <powerplug.me> For documentation"
+    "keywords": "Changelogs Future changelogs between full versions will be here. 0.2.6 Release of PowerPlug Fixed an issue where a Set-Byname would not occur Fixed an issue where Remove-Byname would not remove the alias Fixed an issue where Set-Byname would not replace old aliases with the new one Other internal fixes New Get-Help documentation Improved Performance PowerPlugDocs"
   },
   "articles/releases.html": {
     "href": "articles/releases.html",

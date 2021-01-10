@@ -54,6 +54,7 @@
       "_appLogoPath": "https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIconSmall.svg",
       "_appFaviconPath": "https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIcon.ico",
       "_enableSearch": true,
+      "_enableNewTab": true,
       "_appFooter": "<span>Copyright &copy; Manu Puduvalli<br>Generated with <strong>DocFX</strong></span>",
       "_gitContribute": {
         "repo": "https://github.com/manu-p-1/PowerPlug"
@@ -66,7 +67,9 @@
       "default",
       "templates/material"
     ],
-    "postProcessors": [],
+    "postProcessors": [
+	    "ExtractSearchIndex"
+    ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,

@@ -37,7 +37,7 @@ The latest release can be found at [PowerPlug Releases](https://www.powershellga
 Install-Module -Name PowerPlug
 ```
 ### Install from GitHub Releases
-The latest zip release can be found under the [Github Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. 
+The latest zip release can be found under the [GitHub Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. 
 
 ### Importing into session
 To import the dll for the session, you can run: `ipmo PowerPlug` **or** `Import-Module PowerPlug`. You can use the previous commands within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.

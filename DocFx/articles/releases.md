@@ -1,13 +1,17 @@
 # GitHub Releases 
 
-The following releases can be found on the [PowerPlug GitHub releases page](https://github.com/manu-p-1/PowerPlug/wiki/Cmdlets)
+The following list is an up-to-date collection of all releases and descriptions to date.
+
+## 0.2.7 Release of PowerPlug
+This release contains a few fixes on PowerShell Help-URI and also fixing the PSD1 script in the module. 
+**This is a very minor release and the [0.2.6 release](https://github.com/manu-p-1/PowerPlug/releases/tag/0.2.6) contained more important fixes to refer to**.
 
 ---
 
 ## 0.2.6 Release of PowerPlug
 The first full release of PowerPlug comes with a variety of bug fixes and improvements. Versions 0.2.1-beta, 0.2.2, 0.2.3, 0.2.4, and 0.2.5 were tested internally.
 
-Install PowerPlug from the **PowerShell gallery** with:
+Install PowerPlug from the **PowerShell Gallery** with:
 
 ```powershell
 Install-Module -Name PowerPlug

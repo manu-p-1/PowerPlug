@@ -15,15 +15,15 @@ email, or any other method with the owners of this repository before making a ch
 
 ## Do's and Don'ts
 
-**Do** follow .NET coding style guidelines and conventions
-**Do** document all of your changes (screenshots are helpful)
-**Do** be engaged
-**Do** test your changes (integration and regression)
-**Do** respond to feedback
+**Do** follow .NET coding style guidelines and conventions  
+**Do** document all of your changes (screenshots are helpful)  
+**Do** be engaged  
+**Do** test your changes (integration and regression)  
+**Do** respond to feedback  
 
-**Don't** push large changes - no one likes to read a 5000 line diff
-**Don't** duplicate or repeat yourself
-**Don't** discourage others
+**Don't** push large changes - no one likes to read a 5000 line diff  
+**Don't** duplicate or repeat yourself  
+**Don't** discourage others  
 
 # Code of Conduct
 Contributors must strictly adhere to the PowerPlug code of conduct mentioned here: [Code of Conduct](https://github.com/manu-p-1/PowerPlug/blob/master/CODE_OF_CONDUCT.md)
@@ -58,8 +58,7 @@ Make sure to document your customized cmdlets using the XML format on top of eac
 
 ```csharp
 /// <summary>
-/// <para type="synopsis">Compares a file's user specified hash with another signature
-</para>
+/// <para type="synopsis">Compares a file's user specified hash with another signature</para>
 /// <para type="description">This function will compare a user defined hash of a file, such as an executable with the known signature of the file. 
 /// This is especially useful since hashed values are long. The current supported hashes are SHA256, SHA512, MD5.
 /// </para>

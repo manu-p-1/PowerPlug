@@ -42,7 +42,7 @@ The latest zip release can be found under the [Github Releases Page](https://git
 To import the dll for the session, you can run: `ipmo PowerPlug` **or** `Import-Module PowerPlug`. You can use the previous commands within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
 
 ## Contributing
-We are actively looking for contributors to work on all aspects of the code base ― from documentation to c# cmdlet utilities.
+We are actively looking for contributors to work on all aspects of the code base ― from documentation to C# Cmdlet utilities. For more information onn how to contribute, view our [CONTRIBUTING.md](https://github.com/manu-p-1/PowerPlug/blob/master/CONTRIBUTING.md)
 
 ### Building PowerPlug
 Prerequisites:
@@ -69,8 +69,7 @@ There are two planned releases - the latest being by **July 2021**:
 - 0.3.0 - Full release with a statistics cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
 
 ## State
-PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. For more information visit, [PowerPlug Repo](https://github.com/manu-p-1/PowerPlug/). Or, to report an issue visit,
-[PowerPlug Issues](https://github.com/manu-p-1/PowerPlug/issues). If you are able to fix the isssue yourself by building the project, give our repo a Fork, would ya?
+PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. To report an issue visit, [PowerPlug Issues](https://github.com/manu-p-1/PowerPlug/issues), or to contribute, view the contribution guidelines.
 
 ## Licensing
-PowerPlug is licensed under the GNU General Public License v3.0. The GNU General Public License is a free, copyleft license for software and other kinds of works.
+PowerPlug is licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html). The GNU General Public License is a free, copyleft license for software and other kinds of works.

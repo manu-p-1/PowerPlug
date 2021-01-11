@@ -95,10 +95,10 @@ docfx.exe .\DocFx\docfx.json --serve
 
 For more command options when needed, view the DocFX website provided above.
 
-# Repository Contributions
+## Repository Contributions
 The repository is the first thing a developer see's about the project and we like to keep it tidy. If you see ways to contribute, such as improving this document, changing README's, or improving the logo artwork, don't hesitate to create and issue and get it resolved. Keep in mind that aformentioned guidelines to good pull requests still apply.
 
-# Other Contributions
+## Other Contributions
 This is a broad contribution component which encompasses a massive role in the success of PowerPlug. Although no guidelines apply, contribution in this area signfies a level of content expertise and understanding. This section includes adding build scripts to improve productivity, creating CI/CD workflows, security compliance, adding unit testing assemblies to test PSCmdlets, optimizing the codebase with respect to performance, design, among other things. Keep in mind that aformentioned guidelines to good pull requests still apply.
 
 # State

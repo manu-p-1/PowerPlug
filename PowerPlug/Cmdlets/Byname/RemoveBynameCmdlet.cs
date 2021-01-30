@@ -3,9 +3,9 @@ using System.Text;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Cmdlets.Byname.Base;
 using PowerPlug.Cmdlets.Byname.Operators;
-using PowerPlug.Utils.Attributes;
-using PowerPlug.Utils.Cmdlets;
-using PowerPlug.Utils.Extensions;
+using PowerPlug.Cmdlets.Util;
+using PowerPlug.Common.Attributes;
+using PowerPlug.Common.Extensions;
 
 namespace PowerPlug.Cmdlets.Byname
 {
@@ -25,7 +25,7 @@ namespace PowerPlug.Cmdlets.Byname
     /// </summary>
     [Cmdlet(VerbsCommon.Remove, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7")]
     [Alias("rbn")]
-    [Beta(BetaAttribute.WarningMessage)]
+    [BetaCmdlet(BetaCmdlet.WarningMessage)]
     public class RemoveBynameCmdlet : BynameBase
     {
         /// <summary>

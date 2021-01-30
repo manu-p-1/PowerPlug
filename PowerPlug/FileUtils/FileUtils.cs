@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using PowerPlug.Common.Attributes;
 
 namespace PowerPlug.FileUtils
 {
@@ -192,5 +193,44 @@ namespace PowerPlug.FileUtils
         /// <returns></returns>
         public static string GetValueAtLine(FileInfo fileInfo, int line) => 
             File.ReadAllLines(fileInfo.FullName)[line - 1].Trim();
+
+        /// <summary>
+        /// Returns the size of a directory in bytes, given an abstract file path.
+        /// </summary>
+        /// <param name="dirPath">The path to the directory</param>
+        /// <returns>The size of the directory in bytes</returns>
+        [Beta]
+        public static long GetDirectorySize(this string dirPath)
+        {
+            var fiArr = new DirectoryInfo(dirPath).GetFiles();
+            var diArr = new DirectoryInfo(dirPath).GetDirectories();
+
+            long length = fiArr.Sum(indv => indv.Length);
+
+            length += diArr.Sum(indv => GetDirectorySize(indv.FullName));
+            return length;
+        }
+
+        /// <summary>
+        /// Returns the size of file in bytes, given an abstract file path.
+        /// </summary>
+        /// <param name="filePath">The path to the file</param>
+        /// <returns>The size of the file in bytes</returns>
+        [Beta]
+        public static long GetFileSize(this string filePath) => new FileInfo(filePath).Length;
+
+        /// <summary>
+        /// Returns a pathname to the root directory of the System.
+        /// </summary>
+        /// <returns>A pathname to the root directory of the System</returns>
+        [Beta]
+        public static string GetRootPath() => Path.GetPathRoot(Environment.SystemDirectory);
+
+        /// <summary>
+        /// Returns a pathname to the user's profile folder.
+        /// </summary>
+        /// <returns>A pathname to the user's profile folder</returns>
+        [Beta]
+        public static string GetUserPath() => Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
     }
 }

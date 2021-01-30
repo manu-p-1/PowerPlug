@@ -1076,6 +1076,32 @@
             <param name="line">The line number to find</param>
             <returns></returns>
         </member>
+        <member name="M:PowerPlug.FileUtils.FileUtils.GetDirectorySize(System.String)">
+            <summary>
+            Returns the size of a directory in bytes, given an abstract file path.
+            </summary>
+            <param name="dirPath">The path to the directory</param>
+            <returns>The size of the directory in bytes</returns>
+        </member>
+        <member name="M:PowerPlug.FileUtils.FileUtils.GetFileSize(System.String)">
+            <summary>
+            Returns the size of file in bytes, given an abstract file path.
+            </summary>
+            <param name="filePath">The path to the file</param>
+            <returns>The size of the file in bytes</returns>
+        </member>
+        <member name="M:PowerPlug.FileUtils.FileUtils.GetRootPath">
+            <summary>
+            Returns a pathname to the root directory of the System.
+            </summary>
+            <returns>A pathname to the root directory of the System</returns>
+        </member>
+        <member name="M:PowerPlug.FileUtils.FileUtils.GetUserPath">
+            <summary>
+            Returns a pathname to the user's profile folder.
+            </summary>
+            <returns>A pathname to the user's profile folder</returns>
+        </member>
         <member name="T:PowerPlug.FileUtils.PowerPlugFileBase">
             <summary>
             The base class for any PowerPlug file abstraction. Representations of PowerShell entities such as

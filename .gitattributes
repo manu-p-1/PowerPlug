@@ -63,3 +63,4 @@
 #*.RTF   diff=astextplain
 
 PowerPlug/docs/* linguist-vendored
+PowerPlug/DocFx/* linguist-vendored

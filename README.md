@@ -73,3 +73,8 @@ PowerPlug is a very fluid project and you may encounter issues during execution,
 
 ## Licensing
 PowerPlug is licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html). The GNU General Public License is a free, copyleft license for software and other kinds of works.
+
+## Acknowledgements
+Thanks especially to my fellow friends and contributors
+- [Sam Yuen](https://github.com/ssyuen)
+- [Lok Kwong](https://github.com/Lok-Kwong)

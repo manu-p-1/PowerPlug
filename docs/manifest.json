@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.BynameBase.html",
-          "hash": "+jSSvL9ILgihYiewWvUnJQ=="
+          "hash": "LhkCUixJcHxwf0qwvJH7QA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.BaseCmdlets.WritableByname.html",
-          "hash": "/tNE+Nxj3+WR/UG73hB0MA=="
+          "hash": "+Ok0gQs09HXfUfMeWn5Oeg=="
         }
       },
       "is_incremental": false,
@@ -50,11 +50,59 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Cmdlets.Byname.NewBynameCmdlet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Cmdlets.Byname.NewBynameCmdlet.html",
+          "hash": "5hblJ2oza2IRfz0d/cOcng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Cmdlets.Byname.RemoveBynameCmdlet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Cmdlets.Byname.RemoveBynameCmdlet.html",
+          "hash": "hXoCD+j72z17AZmSvwjTuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Cmdlets.Byname.SetBynameCmdlet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Cmdlets.Byname.SetBynameCmdlet.html",
+          "hash": "ouF3n6FtHQCl7AyORcXBIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Cmdlets.Byname.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Cmdlets.Byname.html",
+          "hash": "4QRpphynKABGz60ZUk+2fw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PowerPlug.Cmdlets.CompareHashCmdlet.yml",
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.CompareHashCmdlet.html",
-          "hash": "Oa6cfHc/ImTJPFzuAdiZuw=="
+          "hash": "Ax+yHaoMw55Lk5yTZL538g=="
         }
       },
       "is_incremental": false,
@@ -66,43 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.MoveTrashCmdlet.html",
-          "hash": "JGV+7BQ2zMGGYm/3Pjny4w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Cmdlets.NewBynameCmdlet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PowerPlug.Cmdlets.NewBynameCmdlet.html",
-          "hash": "fV8uaMevDv5iMIS+9PQyBw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Cmdlets.RemoveBynameCmdlet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PowerPlug.Cmdlets.RemoveBynameCmdlet.html",
-          "hash": "f+l2nfufrfMyBx6mImxQNw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Cmdlets.SetBynameCmdlet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PowerPlug.Cmdlets.SetBynameCmdlet.html",
-          "hash": "5avNOzhcoplpjsy9Vx0rvg=="
+          "hash": "liZNsBmuKLNxOlRUaiyWZw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PowerPlug.Cmdlets.html",
-          "hash": "l3rvPwFdpu9yNYDqZ1hlFg=="
+          "hash": "eRHi2dd+vGijMgwov7xCdA=="
         }
       },
       "is_incremental": false,
@@ -122,11 +134,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.yml",
+      "source_relative_path": "api/PowerPlug.Common.IIndexable-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorContext.html",
-          "hash": "QxRxj93dtyyHU2ot0hkWSg=="
+          "relative_path": "api/PowerPlug.Common.IIndexable-2.html",
+          "hash": "y0ZjraQalo4qPwJ2pcforQ=="
         }
       },
       "is_incremental": false,
@@ -134,11 +146,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.yml",
+      "source_relative_path": "api/PowerPlug.Common.IIndexableDouble-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.Base.BynameCreatorStrategy.html",
-          "hash": "DjbXj+AYSmW5jK3QHrfb/g=="
+          "relative_path": "api/PowerPlug.Common.IIndexableDouble-2.html",
+          "hash": "p6HlRMuDjOKwJcRhHzer3A=="
         }
       },
       "is_incremental": false,
@@ -146,11 +158,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.Base.yml",
+      "source_relative_path": "api/PowerPlug.Common.IIndexableDoubleReadOnly-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.Base.html",
-          "hash": "QOgimN4INCuyTCh+ohk+Mg=="
+          "relative_path": "api/PowerPlug.Common.IIndexableDoubleReadOnly-2.html",
+          "hash": "bSRVBJs7UD1Blq+pWg+r8Q=="
         }
       },
       "is_incremental": false,
@@ -158,11 +170,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.yml",
+      "source_relative_path": "api/PowerPlug.Common.IIndexableReadOnly-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.NewBynameCreatorOperation.html",
-          "hash": "aIlmN51qEuNmnYS8D3xGDQ=="
+          "relative_path": "api/PowerPlug.Common.IIndexableReadOnly-2.html",
+          "hash": "fJykNKudFF6q/HUe76ZWFQ=="
         }
       },
       "is_incremental": false,
@@ -170,11 +182,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.yml",
+      "source_relative_path": "api/PowerPlug.Common.IIndexableTriple-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.RemoveBynameCreatorOperation.html",
-          "hash": "thdobV7Y6eSK539tVZNyzg=="
+          "relative_path": "api/PowerPlug.Common.IIndexableTriple-2.html",
+          "hash": "DzJlxIaMMUoBXe8b/vJ/gA=="
         }
       },
       "is_incremental": false,
@@ -182,11 +194,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.yml",
+      "source_relative_path": "api/PowerPlug.Common.IIndexableTripleReadOnly-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.SetBynameCreatorOperation.html",
-          "hash": "rHRypUmQCz8Yzyj9FbGabg=="
+          "relative_path": "api/PowerPlug.Common.IIndexableTripleReadOnly-2.html",
+          "hash": "2plpWcP0sLlDhikVFXU11A=="
         }
       },
       "is_incremental": false,
@@ -194,11 +206,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.yml",
+      "source_relative_path": "api/PowerPlug.Common.IRangify-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.WritableBynameCreatorBaseOperation.html",
-          "hash": "3HO6QQAcg4rihvMEOeZNgw=="
+          "relative_path": "api/PowerPlug.Common.IRangify-1.html",
+          "hash": "cp66w9cC9iZShmpXrfpEIQ=="
         }
       },
       "is_incremental": false,
@@ -206,11 +218,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.Engines.Byname.yml",
+      "source_relative_path": "api/PowerPlug.Common.ImmutableRange-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.Engines.Byname.html",
-          "hash": "RCERp+naVCnoIaymZ6RgHg=="
+          "relative_path": "api/PowerPlug.Common.ImmutableRange-1.html",
+          "hash": "DKxf6q5Kr5RRhY5WUa2qrw=="
         }
       },
       "is_incremental": false,
@@ -218,11 +230,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugFile.FileUtilities.yml",
+      "source_relative_path": "api/PowerPlug.Common.IntRange.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugFile.FileUtilities.html",
-          "hash": "5dr7XdXvjhTnMKxHX0IJ2w=="
+          "relative_path": "api/PowerPlug.Common.IntRange.html",
+          "hash": "CQUld5gKhh7zZ0ZDTNXLAQ=="
         }
       },
       "is_incremental": false,
@@ -230,11 +242,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugFile.PowerPlugFileBase.yml",
+      "source_relative_path": "api/PowerPlug.Common.Range-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugFile.PowerPlugFileBase.html",
-          "hash": "+0h0m+Ze6Pn0Q2fmTH73nw=="
+          "relative_path": "api/PowerPlug.Common.Range-1.html",
+          "hash": "WeGIms1OOflBdXxJ6hcE9g=="
         }
       },
       "is_incremental": false,
@@ -242,11 +254,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugFile.Profile.yml",
+      "source_relative_path": "api/PowerPlug.Common.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugFile.Profile.html",
-          "hash": "l/HzJ50V87MVb4RyeLzUNQ=="
+          "relative_path": "api/PowerPlug.Common.html",
+          "hash": "xEBakI/KI35u5ODxhi1RkA=="
         }
       },
       "is_incremental": false,
@@ -254,11 +266,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugFile.yml",
+      "source_relative_path": "api/PowerPlug.EnumerableUtils.EnumerableUtils.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugFile.html",
-          "hash": "WzkzAIsRpZtn34k8gkWrMQ=="
+          "relative_path": "api/PowerPlug.EnumerableUtils.EnumerableUtils.html",
+          "hash": "4+Hy1w0QJH19pU+HK8ZBfg=="
         }
       },
       "is_incremental": false,
@@ -266,11 +278,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugUtilities.IRangify-1.yml",
+      "source_relative_path": "api/PowerPlug.EnumerableUtils.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugUtilities.IRangify-1.html",
-          "hash": "WDjw5xd5uOs7RKNtHXM/ag=="
+          "relative_path": "api/PowerPlug.EnumerableUtils.html",
+          "hash": "+07Iga+prBZHwAFNVknGFA=="
         }
       },
       "is_incremental": false,
@@ -278,11 +290,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.yml",
+      "source_relative_path": "api/PowerPlug.FileUtils.FileUtils.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugUtilities.ImmutableRange-1.html",
-          "hash": "Io2yTWHMVDgglIJ2ijearQ=="
+          "relative_path": "api/PowerPlug.FileUtils.FileUtils.html",
+          "hash": "bHyBzV8po4xDeKeExbvdWg=="
         }
       },
       "is_incremental": false,
@@ -290,11 +302,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugUtilities.IntRange.yml",
+      "source_relative_path": "api/PowerPlug.FileUtils.PowerPlugFileBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugUtilities.IntRange.html",
-          "hash": "4aM8U03bBn6ZXAevaj1j7A=="
+          "relative_path": "api/PowerPlug.FileUtils.PowerPlugFileBase.html",
+          "hash": "eprJgiJWyFb0k63jJFZDcA=="
         }
       },
       "is_incremental": false,
@@ -302,11 +314,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugUtilities.Range-1.yml",
+      "source_relative_path": "api/PowerPlug.FileUtils.Profile.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugUtilities.Range-1.html",
-          "hash": "BWqoNCupsAS9Cl0bsJ/AYA=="
+          "relative_path": "api/PowerPlug.FileUtils.Profile.html",
+          "hash": "/C7D9uXnpt0XtgbxYx5dPg=="
         }
       },
       "is_incremental": false,
@@ -314,11 +326,131 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PowerPlug.PowerPlugUtilities.yml",
+      "source_relative_path": "api/PowerPlug.FileUtils.yml",
       "output": {
         ".html": {
-          "relative_path": "api/PowerPlug.PowerPlugUtilities.html",
-          "hash": "NVE/jRmMbjsvCBSMlbb/fw=="
+          "relative_path": "api/PowerPlug.FileUtils.html",
+          "hash": "FRoKYZK9omwGPzqb3v137Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.MathUtils.IMatrixer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.MathUtils.IMatrixer-1.html",
+          "hash": "aBV5NGrnnn8duKV4SMtHpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.MathUtils.Matrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.MathUtils.Matrix.html",
+          "hash": "rLjaz4hJnv/OTfZmWikeLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.MathUtils.MatrixPropertyException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.MathUtils.MatrixPropertyException.html",
+          "hash": "xvDjPGykdNBv1DeRqhQEow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.MathUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.MathUtils.html",
+          "hash": "4MyU1ZS5XigW5GcXKAeE9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Statistics.EnumerableStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Statistics.EnumerableStats.html",
+          "hash": "vAW1W644HtW021vCfNXyOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Statistics.InsufficientDataSetException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Statistics.InsufficientDataSetException.html",
+          "hash": "Y/TOV9FBwN02cSrZc9em/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Statistics.NoModeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Statistics.NoModeException.html",
+          "hash": "HwPDPihI9RAwFnXnSQTTWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.Statistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.Statistics.html",
+          "hash": "6TEmOVAlDjTnS4oDJCLpZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.StringUtils.StringUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.StringUtils.StringUtils.html",
+          "hash": "sA+4+gS6pFfNR4KJ+TlOMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PowerPlug.StringUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PowerPlug.StringUtils.html",
+          "hash": "CJdyiOn4PpEvlfWaM3Pv+w=="
         }
       },
       "is_incremental": false,
@@ -342,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "KB5iaSwGenTcdkaHKsKFKg=="
+          "hash": "qSAFIbWw0+rQfUQsnl59ow=="
         }
       },
       "is_incremental": false,
@@ -390,7 +522,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "vRFaRxGM5zUEDzxN7UGlYw=="
+          "hash": "II47QIZxu/dQXX1wkKJYYA=="
         }
       },
       "is_incremental": false,
@@ -427,8 +559,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 26,
-          "skipped_file_count": 26
+          "total_file_count": 37,
+          "skipped_file_count": 37
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

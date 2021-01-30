@@ -1,0 +1,2145 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Matrix
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Matrix
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIcon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIconSmall.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PowerPlug.MathUtils.Matrix">
+  
+  
+  <h1 id="PowerPlug_MathUtils_Matrix" data-uid="PowerPlug.MathUtils.Matrix" class="text-break">Class Matrix
+  </h1>
+  <div class="markdown level0 summary"><p>A class representing a mathematical Matrix. Creates a rectangular
+array of rows and columns with numbers as elements. The Matrix
+class includes mathematical matrix operations to manipulate it.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Matrix</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="PowerPlug.MathUtils.IMatrixer-1.html">IMatrixer</a>&lt;<span class="xref">System.Double</span>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Double</span>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><a class="xref" href="PowerPlug.Common.IIndexableDouble-2.html">IIndexableDouble</a>&lt;<span class="xref">System.Int32</span>, <span class="xref">System.Double</span>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="PowerPlug.MathUtils.html">PowerPlug.MathUtils</a></h6>
+  <h6><strong>Assembly</strong>: PowerPlug.dll</h6>
+  <h5 id="PowerPlug_MathUtils_Matrix_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Matrix : IMatrixer&lt;double&gt;, IEnumerable&lt;double&gt;, IEnumerable, IIndexableDouble&lt;int, double&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix__ctor_System_Double_0__0___.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.%23ctor(System.Double%5B0%3A%2C0%3A%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L49">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix__ctor_" data-uid="PowerPlug.MathUtils.Matrix.#ctor*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix__ctor_System_Double_0__0___" data-uid="PowerPlug.MathUtils.Matrix.#ctor(System.Double[0:,0:])">Matrix(Double[,])</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of a Matrix given a 2D array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(double[, ] matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span>[,]</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>A 2D array of doubles</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L38">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix__ctor_" data-uid="PowerPlug.MathUtils.Matrix.#ctor*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix__ctor_System_Int32_System_Int32_" data-uid="PowerPlug.MathUtils.Matrix.#ctor(System.Int32,System.Int32)">Matrix(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of a Matrix given rows and columns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(int rows, int cols)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>The number of rows in this Matrix</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">cols</span></td>
+        <td><p>The number of columns in this Matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Cols.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Cols%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L31">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Cols_" data-uid="PowerPlug.MathUtils.Matrix.Cols*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Cols" data-uid="PowerPlug.MathUtils.Matrix.Cols">Cols</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Cols { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Item_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Item(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L63">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Item_" data-uid="PowerPlug.MathUtils.Matrix.Item*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Item_System_Int32_System_Int32_" data-uid="PowerPlug.MathUtils.Matrix.Item(System.Int32,System.Int32)">Item[Int32, Int32]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double this[int row, int col] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Rows.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Rows%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L26">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Rows_" data-uid="PowerPlug.MathUtils.Matrix.Rows*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Rows" data-uid="PowerPlug.MathUtils.Matrix.Rows">Rows</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Rows { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Add_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Add(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L346">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Add_" data-uid="PowerPlug.MathUtils.Matrix.Add*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Add_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.Add(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Add(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Add(Matrix left, Matrix right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Add_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Add(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L337">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Add_" data-uid="PowerPlug.MathUtils.Matrix.Add*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Add_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.Add(PowerPlug.MathUtils.Matrix,System.Double)">Add(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Add(Matrix left, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Divide_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Divide(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L391">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Divide_" data-uid="PowerPlug.MathUtils.Matrix.Divide*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Divide_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.Divide(PowerPlug.MathUtils.Matrix,System.Double)">Divide(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Divide(Matrix left, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_DotProduct_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.DotProduct(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L382">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_DotProduct_" data-uid="PowerPlug.MathUtils.Matrix.DotProduct*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_DotProduct_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.DotProduct(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">DotProduct(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix DotProduct(Matrix left, Matrix right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_EqualDimension_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.EqualDimension(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L94">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_EqualDimension_" data-uid="PowerPlug.MathUtils.Matrix.EqualDimension*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_EqualDimension_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.EqualDimension(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">EqualDimension(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool EqualDimension(Matrix one, Matrix two)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">one</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">two</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Equals_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Equals(PowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L428">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Equals_" data-uid="PowerPlug.MathUtils.Matrix.Equals*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Equals_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.Equals(PowerPlug.MathUtils.Matrix)">Equals(Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Equals(Matrix other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Equals_System_Object_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L416">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Equals_" data-uid="PowerPlug.MathUtils.Matrix.Equals*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Equals_System_Object_" data-uid="PowerPlug.MathUtils.Matrix.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_GetEnumerator.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L464">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_GetEnumerator_" data-uid="PowerPlug.MathUtils.Matrix.GetEnumerator*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_GetEnumerator" data-uid="PowerPlug.MathUtils.Matrix.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;double&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_GetHashCode.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L437">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_GetHashCode_" data-uid="PowerPlug.MathUtils.Matrix.GetHashCode*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_GetHashCode" data-uid="PowerPlug.MathUtils.Matrix.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_IsColumnVector.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.IsColumnVector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L452">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_IsColumnVector_" data-uid="PowerPlug.MathUtils.Matrix.IsColumnVector*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_IsColumnVector" data-uid="PowerPlug.MathUtils.Matrix.IsColumnVector">IsColumnVector()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsColumnVector()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_IsRowVector.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.IsRowVector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L446">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_IsRowVector_" data-uid="PowerPlug.MathUtils.Matrix.IsRowVector*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_IsRowVector" data-uid="PowerPlug.MathUtils.Matrix.IsRowVector">IsRowVector()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRowVector()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_IsSquareVector.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.IsSquareVector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L458">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_IsSquareVector_" data-uid="PowerPlug.MathUtils.Matrix.IsSquareVector*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_IsSquareVector" data-uid="PowerPlug.MathUtils.Matrix.IsSquareVector">IsSquareVector()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSquareVector()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Mod_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Mod(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L400">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Mod_" data-uid="PowerPlug.MathUtils.Matrix.Mod*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Mod_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.Mod(PowerPlug.MathUtils.Matrix,System.Double)">Mod(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Mod(Matrix left, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Multiply_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Multiply(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L373">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Multiply_" data-uid="PowerPlug.MathUtils.Matrix.Multiply*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Multiply_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.Multiply(PowerPlug.MathUtils.Matrix,System.Double)">Multiply(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Multiply(Matrix left, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Negate_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Negate(PowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L408">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Negate_" data-uid="PowerPlug.MathUtils.Matrix.Negate*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Negate_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.Negate(PowerPlug.MathUtils.Matrix)">Negate(Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Negate(Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Subtract_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Subtract(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L364">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Subtract_" data-uid="PowerPlug.MathUtils.Matrix.Subtract*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Subtract_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.Subtract(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Subtract(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Subtract(Matrix left, Matrix right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Subtract_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Subtract(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L355">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Subtract_" data-uid="PowerPlug.MathUtils.Matrix.Subtract*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Subtract_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.Subtract(PowerPlug.MathUtils.Matrix,System.Double)">Subtract(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix Subtract(Matrix left, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_ToString.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L488">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_ToString_" data-uid="PowerPlug.MathUtils.Matrix.ToString*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_ToString" data-uid="PowerPlug.MathUtils.Matrix.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_Transpose.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.Transpose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L74">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_Transpose_" data-uid="PowerPlug.MathUtils.Matrix.Transpose*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_Transpose" data-uid="PowerPlug.MathUtils.Matrix.Transpose">Transpose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix Transpose()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Addition_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Addition(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L225">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Addition_" data-uid="PowerPlug.MathUtils.Matrix.op_Addition*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Addition_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Addition(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Addition(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator +(Matrix one, Matrix two)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">one</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">two</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Addition_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Addition(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L138">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Addition_" data-uid="PowerPlug.MathUtils.Matrix.op_Addition*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Addition_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.op_Addition(PowerPlug.MathUtils.Matrix,System.Double)">Addition(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator +(Matrix m, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Addition_System_Double_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Addition(System.Double%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L146">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Addition_" data-uid="PowerPlug.MathUtils.Matrix.op_Addition*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Addition_System_Double_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Addition(System.Double,PowerPlug.MathUtils.Matrix)">Addition(Double, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator +(double scalar, Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Division_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Division(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L186">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Division_" data-uid="PowerPlug.MathUtils.Matrix.op_Division*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Division_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.op_Division(PowerPlug.MathUtils.Matrix,System.Double)">Division(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator /(Matrix m, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Division_System_Double_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Division(System.Double%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L194">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Division_" data-uid="PowerPlug.MathUtils.Matrix.op_Division*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Division_System_Double_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Division(System.Double,PowerPlug.MathUtils.Matrix)">Division(Double, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator /(double scalar, Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Equality_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Equality(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L285">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Equality_" data-uid="PowerPlug.MathUtils.Matrix.op_Equality*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Equality_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Equality(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Equality(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Matrix one, Matrix two)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">one</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">two</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Inequality_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Inequality(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L311">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Inequality_" data-uid="PowerPlug.MathUtils.Matrix.op_Inequality*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Inequality_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Inequality(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Inequality(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Matrix one, Matrix two)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">one</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">two</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_LogicalNot_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_LogicalNot(PowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L217">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_LogicalNot_" data-uid="PowerPlug.MathUtils.Matrix.op_LogicalNot*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_LogicalNot_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_LogicalNot(PowerPlug.MathUtils.Matrix)">LogicalNot(Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator !(Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Modulus_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Modulus(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L202">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Modulus_" data-uid="PowerPlug.MathUtils.Matrix.op_Modulus*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Modulus_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.op_Modulus(PowerPlug.MathUtils.Matrix,System.Double)">Modulus(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator %(Matrix m, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Modulus_System_Double_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Modulus(System.Double%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L210">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Modulus_" data-uid="PowerPlug.MathUtils.Matrix.op_Modulus*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Modulus_System_Double_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Modulus(System.Double,PowerPlug.MathUtils.Matrix)">Modulus(Double, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator %(double scalar, Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Multiply_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Multiply(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L253">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Multiply_" data-uid="PowerPlug.MathUtils.Matrix.op_Multiply*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Multiply_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Multiply(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Multiply(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator *(Matrix one, Matrix two)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">one</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">two</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Multiply_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Multiply(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L170">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Multiply_" data-uid="PowerPlug.MathUtils.Matrix.op_Multiply*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Multiply_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.op_Multiply(PowerPlug.MathUtils.Matrix,System.Double)">Multiply(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator *(Matrix m, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Multiply_System_Double_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Multiply(System.Double%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L178">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Multiply_" data-uid="PowerPlug.MathUtils.Matrix.op_Multiply*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Multiply_System_Double_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Multiply(System.Double,PowerPlug.MathUtils.Matrix)">Multiply(Double, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator *(double scalar, Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Subtraction_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Subtraction(PowerPlug.MathUtils.Matrix%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L239">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Subtraction_" data-uid="PowerPlug.MathUtils.Matrix.op_Subtraction*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Subtraction_PowerPlug_MathUtils_Matrix_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Subtraction(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">Subtraction(Matrix, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator -(Matrix one, Matrix two)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">one</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">two</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Subtraction_PowerPlug_MathUtils_Matrix_System_Double_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Subtraction(PowerPlug.MathUtils.Matrix%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L154">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Subtraction_" data-uid="PowerPlug.MathUtils.Matrix.op_Subtraction*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Subtraction_PowerPlug_MathUtils_Matrix_System_Double_" data-uid="PowerPlug.MathUtils.Matrix.op_Subtraction(PowerPlug.MathUtils.Matrix,System.Double)">Subtraction(Matrix, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator -(Matrix m, double scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_op_Subtraction_System_Double_PowerPlug_MathUtils_Matrix_.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.op_Subtraction(System.Double%2CPowerPlug.MathUtils.Matrix)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L162">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_op_Subtraction_" data-uid="PowerPlug.MathUtils.Matrix.op_Subtraction*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_op_Subtraction_System_Double_PowerPlug_MathUtils_Matrix_" data-uid="PowerPlug.MathUtils.Matrix.op_Subtraction(System.Double,PowerPlug.MathUtils.Matrix)">Subtraction(Double, Matrix)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix operator -(double scalar, Matrix m)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">scalar</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PowerPlug.MathUtils.Matrix.html">Matrix</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L479">View Source</a>
+  </span>
+  <a id="PowerPlug_MathUtils_Matrix_System_Collections_IEnumerable_GetEnumerator_" data-uid="PowerPlug.MathUtils.Matrix.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="PowerPlug_MathUtils_Matrix_System_Collections_IEnumerable_GetEnumerator" data-uid="PowerPlug.MathUtils.Matrix.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="PowerPlug.MathUtils.IMatrixer-1.html">IMatrixer&lt;T&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Common.IIndexableDouble-2.html">IIndexableDouble&lt;TKey, TVal&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="PowerPlug.EnumerableUtils.EnumerableUtils.html#PowerPlug_EnumerableUtils_EnumerableUtils_IsNullOrEmpty__1_System_Collections_Generic_IEnumerable___0__">EnumerableUtils.IsNullOrEmpty&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.EnumerableUtils.EnumerableUtils.html#PowerPlug_EnumerableUtils_EnumerableUtils_Shuffle__1_System_Collections_Generic_IEnumerable___0__">EnumerableUtils.Shuffle&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.EnumerableUtils.EnumerableUtils.html#PowerPlug_EnumerableUtils_EnumerableUtils_ToString__1_System_Collections_Generic_IEnumerable___0__System_String_System_Boolean_">EnumerableUtils.ToString&lt;T&gt;(IEnumerable&lt;T&gt;, String, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_Mean__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.Mean&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_Median__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.Median&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_Mode_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.Mode(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_Mode__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.Mode&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_SampleVariance_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.SampleVariance(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_SampleVariance__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.SampleVariance&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_PopulationVariance_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.PopulationVariance(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_PopulationVariance__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.PopulationVariance&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_SampleStandardDeviation_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.SampleStandardDeviation(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_SampleStandardDeviation__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.SampleStandardDeviation&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_PopulationStandardDeviation_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.PopulationStandardDeviation(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_PopulationStandardDeviation__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.PopulationStandardDeviation&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_Range_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.Range(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_Range__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.Range&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_LowerQuartile_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.LowerQuartile(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_LowerQuartile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.LowerQuartile&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_UpperQuartile_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.UpperQuartile(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_UpperQuartile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.UpperQuartile&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_InterQuartileRange_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.InterQuartileRange(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_InterQuartileRange__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.InterQuartileRange&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_IsNormalProportion_System_Collections_Generic_IEnumerable_System_Double__System_Double_">EnumerableStats.IsNormalProportion(IEnumerable&lt;Double&gt;, Double)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_IsNormalProportion__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__System_Double_">EnumerableStats.IsNormalProportion&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;, Double)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_IsNormalMean_System_Collections_Generic_IEnumerable_System_Double__">EnumerableStats.IsNormalMean(IEnumerable&lt;Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_IsNormalMean__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">EnumerableStats.IsNormalMean&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_StandardizedScore_System_Collections_Generic_IEnumerable_System_Double__System_Double_">EnumerableStats.StandardizedScore(IEnumerable&lt;Double&gt;, Double)</a>
+  </div>
+  <div>
+      <a class="xref" href="PowerPlug.Statistics.EnumerableStats.html#PowerPlug_Statistics_EnumerableStats_StandardizedScore__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__System_Double_">EnumerableStats.StandardizedScore&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Double&gt;, Double)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manu-p-1/PowerPlug/new/master/apiSpec/new?filename=PowerPlug_MathUtils_Matrix.md&amp;value=---%0Auid%3A%20PowerPlug.MathUtils.Matrix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manu-p-1/PowerShell-Cmdlet-Utils/blob/master/PowerPlug/MathUtils/Matrix.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; Manu Puduvalli<br>Generated with <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

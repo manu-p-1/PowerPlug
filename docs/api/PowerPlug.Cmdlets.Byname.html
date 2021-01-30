@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace PowerPlug.Cmdlets
+    <title>Namespace PowerPlug.Cmdlets.Byname
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace PowerPlug.Cmdlets
+    <meta name="title" content="Namespace PowerPlug.Cmdlets.Byname
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -78,36 +78,52 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="PowerPlug.Cmdlets">
+            <article class="content wrap" id="_content" data-uid="PowerPlug.Cmdlets.Byname">
   
-  <h1 id="PowerPlug_Cmdlets" data-uid="PowerPlug.Cmdlets" class="text-break">Namespace PowerPlug.Cmdlets
+  <h1 id="PowerPlug_Cmdlets_Byname" data-uid="PowerPlug.Cmdlets.Byname" class="text-break">Namespace PowerPlug.Cmdlets.Byname
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
-      <h4><a class="xref" href="PowerPlug.Cmdlets.CompareHashCmdlet.html">CompareHashCmdlet</a></h4>
-      <section><p>Compares a file&apos;s user specified hash with another signature</p>
-<p>This function will compare a user defined hash of a file, such as an executable with the known signature of the file. 
-This is especially useful since hashed values are long. The current supported hashes are SHA256, SHA512, MD5.
+      <h4><a class="xref" href="PowerPlug.Cmdlets.Byname.NewBynameCmdlet.html">NewBynameCmdlet</a></h4>
+      <section><p>Creates a new Byname</p>
+<p>New-Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
+command name is written to the user&apos;s $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
+purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
+prevent unintended behavior.
 </p>
-<p>trash</p>
+<p>nbn</p>
 <example>
-<p>A sample Compare-Sha256 command</p>
-<pre><code>Compare-Hash .\audacity-win-2.4.2.exe 1f20cd153b2c322bf1ff9941e4e5204098abdc7da37250ce3fb38612b3e927bc</code></pre>
+<p>A sample New-Byname command</p>
+<pre><code>New-Byname -Name list -Value Get-ChildItem</code></pre>
 </example>
 </section>
-      <h4><a class="xref" href="PowerPlug.Cmdlets.MoveTrashCmdlet.html">MoveTrashCmdlet</a></h4>
-      <section><p>Moves a file to the Recycle Bin</p>
-<p>This function will move a file, whether directory or file, to the system Recycle Bin.
-If the param list is true, it will print the contents of the current directory after recycling the file. 
-Only error dialogs are printed and no confirmation message is shown.
+      <h4><a class="xref" href="PowerPlug.Cmdlets.Byname.RemoveBynameCmdlet.html">RemoveBynameCmdlet</a></h4>
+      <section><p>Removes a new Byname</p>
+<p>Remove-Byname is a wrapper cmdlet for the Remove-Alias cmdlet. All instances of the The fully qualified command name are
+removed from the $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial purposes to quickly persist an alias
+across sessions. It should not be used outside of the PowerShell Console in order to prevent unintended behavior. Extra precaution should be used
+when using Remove-Byname as it removes all aliases with the same name from the $PROFILE.
 </p>
-<p>trash</p>
+<p>rbn</p>
 <example>
-<p>A sample Move-Trash command</p>
-<pre><code>Move-Trash -Path Documents\file.txt -List</code></pre>
+<p>A sample Remove-Byname command</p>
+<pre><code>Remove-Byname -Name list</code></pre>
+</example>
+</section>
+      <h4><a class="xref" href="PowerPlug.Cmdlets.Byname.SetBynameCmdlet.html">SetBynameCmdlet</a></h4>
+      <section><p>Sets a new Byname</p>
+<p>Set-Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
+command name is written to the user&apos;s $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
+purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
+prevent unintended behavior.
+</p>
+<p>sbn</p>
+<example>
+<p>A sample Set-Byname command</p>
+<pre><code>Set-Byname -Name gh -Value Get-Help</code></pre>
 </example>
 </section>
 </article>

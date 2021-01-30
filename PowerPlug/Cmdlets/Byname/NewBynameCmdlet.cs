@@ -1,40 +1,40 @@
 ﻿using System.Management.Automation;
 using System.Text;
 using PowerPlug.BaseCmdlets;
-using PowerPlug.Engines.Byname;
-using PowerPlug.Engines.Byname.Base;
+using PowerPlug.Cmdlets.Byname.Base;
+using PowerPlug.Cmdlets.Byname.Operators;
 using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
 using PowerPlug.PowerPlugUtilities.Extensions;
 
-namespace PowerPlug.Cmdlets
+namespace PowerPlug.Cmdlets.Byname
 {
     /// <summary>
-    /// <para type="synopsis">Sets a new Byname</para>
-    /// <para type="description">Set-Byname is a wrapper cmdlet for the Set-Alias cmdlet, however, the fully qualified
+    /// <para type="synopsis">Creates a new Byname</para>
+    /// <para type="description">New-Byname is a wrapper cmdlet for the New-Alias cmdlet, however, the fully qualified
     /// command name is written to the user's $PROFILE. An error is thrown if no $PROFILE exists. This cmdlet is to be used for trivial
     /// purposes to quickly persist an alias across sessions. It should not be used outside of the PowerShell Console in order to
     /// prevent unintended behavior.
     /// </para>
-    /// <para type="aliases">sbn</para>
+    /// <para type="aliases">nbn</para>
     /// <example>
-    /// <para>A sample Set-Byname command</para>
-    /// <code>Set-Byname -Name gh -Value Get-Help</code>
+    /// <para>A sample New-Byname command</para>
+    /// <code>New-Byname -Name list -Value Get-ChildItem</code>
     /// </example>
     /// </summary>
-    [Cmdlet(VerbsCommon.Set, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Set-Alias?view=powershell-7")]
-    [Alias("sbn")]
+    [Cmdlet(VerbsCommon.New, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7")]
+    [Alias("nbn")]
     [Beta(BetaAttribute.WarningMessage)]
-    public class SetBynameCmdlet : WritableByname
+    public class NewBynameCmdlet : WritableByname
     {
         /// <summary>
-        /// Processes the Set-Byname PSCmdlet.
+        /// Processes the New-Byname PSCmdlet.
         /// </summary>
         protected override void ProcessRecord()
         {
             using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
 
-            ps.AddCommand(WritableBynameCreatorBaseOperation.SetAliasCommand)
+            ps.AddCommand(WritableBynameCreatorBaseOperation.NewAliasCommand)
                 .AddParameter("Name", Name)
                 .AddParameter("Value", Value)
                 .AddParameter("Description", Description)
@@ -46,7 +46,7 @@ namespace PowerPlug.Cmdlets
                 .AddParameter("Confirm", Confirm);
 
             new BynameCreatorContext(
-                new SetBynameCreatorOperation(
+                new NewBynameCreatorOperation(
                     this,
                     CmdletUtilities.InvokePowershellCommandOrThrowIfUnsuccessful(ps, this)
                 )
@@ -56,7 +56,7 @@ namespace PowerPlug.Cmdlets
         ///<inheritdoc cref="WritableByname.ToString"/>
         public override string ToString() =>
             new StringBuilder()
-                .Append("Set-Alias")
+                .Append("New-Alias")
                 .Append($" -Name {Name}")
                 .Append($" -Value {Value}")
                 .Append($" -Option {Option}")

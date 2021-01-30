@@ -1,6 +1,6 @@
 ﻿using PowerPlug.BaseCmdlets;
 
-namespace PowerPlug.Engines.Byname.Base.AliasValueTypes
+namespace PowerPlug.Cmdlets.Byname.Base.AliasValueTypes
 {
     /// <summary>
     /// Represents the type of the value of a command string which is a PowerShell function.

@@ -1,13 +1,13 @@
 ﻿using System.Management.Automation;
 using System.Text;
 using PowerPlug.BaseCmdlets;
-using PowerPlug.Engines.Byname;
-using PowerPlug.Engines.Byname.Base;
+using PowerPlug.Cmdlets.Byname.Base;
+using PowerPlug.Cmdlets.Byname.Operators;
 using PowerPlug.PowerPlugUtilities.Attributes;
 using PowerPlug.PowerPlugUtilities.Cmdlets;
 using PowerPlug.PowerPlugUtilities.Extensions;
 
-namespace PowerPlug.Cmdlets
+namespace PowerPlug.Cmdlets.Byname
 {
 
     /// <summary>

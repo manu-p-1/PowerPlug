@@ -1,6 +1,7 @@
 ﻿using PowerPlug.BaseCmdlets;
+using PowerPlug.Cmdlets.Byname.Operators;
 
-namespace PowerPlug.Engines.Byname.Base.AliasValueTypes
+namespace PowerPlug.Cmdlets.Byname.Base.AliasValueTypes
 {
     /// <summary>
     /// The base representation of the Value of a cmdlet command. The value types are used by

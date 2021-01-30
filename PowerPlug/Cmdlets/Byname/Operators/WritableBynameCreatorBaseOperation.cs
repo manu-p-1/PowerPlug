@@ -4,26 +4,26 @@ using System.Linq;
 using System.Management.Automation;
 using System.Text;
 using PowerPlug.BaseCmdlets;
-using PowerPlug.Engines.Byname.Base;
-using PowerPlug.Engines.Byname.Base.AliasValueTypes;
+using PowerPlug.Cmdlets.Byname.Base;
+using PowerPlug.Cmdlets.Byname.Base.AliasValueTypes;
 
-namespace PowerPlug.Engines.Byname
+namespace PowerPlug.Cmdlets.Byname.Operators
 {
     /// <summary>
     /// The base Operation to create a writable Byname (classes that inherit <see cref="WritableByname"/>). This class
     /// is part of a broader Byname Strategy to execute cmdlets.
     /// </summary>
-    public abstract class WritableBynameCreatorBaseOperation : BynameCreatorStrategy
+    internal abstract class WritableBynameCreatorBaseOperation : BynameCreatorStrategy
     {
         /// <summary>
         /// The New-Alias command as a string constant.
         /// </summary>
-        public const string NewAliasCommand = "New-Alias";
+        internal const string NewAliasCommand = "New-Alias";
 
         /// <summary>
         /// The Set-Alias command as a string constant.
         /// </summary>
-        public const string SetAliasCommand = "Set-Alias";
+        internal const string SetAliasCommand = "Set-Alias";
 
         /// <summary>
         /// The PowerShell command to write to the $PROFILE as a string (including any functions that need to be written).

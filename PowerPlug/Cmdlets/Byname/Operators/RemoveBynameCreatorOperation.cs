@@ -4,16 +4,15 @@ using System.IO;
 using System.Management.Automation;
 using System.Text.RegularExpressions;
 using PowerPlug.BaseCmdlets;
-using PowerPlug.Cmdlets;
-using PowerPlug.Engines.Byname.Base;
+using PowerPlug.Cmdlets.Byname.Base;
 using PowerPlug.PowerPlugFile;
 
-namespace PowerPlug.Engines.Byname
+namespace PowerPlug.Cmdlets.Byname.Operators
 {
     /// <summary>
     /// The RemoveBynameCreatorOperation is responsible for removing an existing Byname cmdlet string from the user's $PROFILE.
     /// </summary>
-    public class RemoveBynameCreatorOperation : BynameCreatorStrategy
+    internal class RemoveBynameCreatorOperation : BynameCreatorStrategy
     {
         /// <summary>
         /// The RemoveBynameCmdlet instance
@@ -30,7 +29,7 @@ namespace PowerPlug.Engines.Byname
         /// </summary>
         /// <param name="cmdlet">The WritableByname cmdlet</param>
         /// <param name="commandResults">The results of invoking the PowerShell command for the RemoveBynameCmdlet cmdlet</param>>
-        public RemoveBynameCreatorOperation(RemoveBynameCmdlet cmdlet, IEnumerable<PSObject> commandResults) : base(commandResults)
+        internal RemoveBynameCreatorOperation(RemoveBynameCmdlet cmdlet, IEnumerable<PSObject> commandResults) : base(commandResults)
         {
             AliasCmdlet = cmdlet;
         }
@@ -38,7 +37,7 @@ namespace PowerPlug.Engines.Byname
         /// <summary>
         /// Removes all of the command string information from the user's $PROFILE.
         /// </summary>
-        public override void ExecuteCommand()
+        internal override void ExecuteCommand()
         {
             foreach (var r in PsCommandResults)
             {
@@ -60,19 +59,19 @@ namespace PowerPlug.Engines.Byname
         /// <summary>
         /// The BynameBase instance.
         /// </summary>
-        public BynameBase Byname { get; }
+        internal BynameBase Byname { get; }
 
         /// <summary>
         /// A Profile instance containing information about the location of the PowerShell $PROFILE.
         /// </summary>
-        public Profile Profile { get; }
+        internal Profile Profile { get; }
 
         /// <summary>
         /// Creates an instance of this class.
         /// </summary>
         /// <param name="bb">The BynameBase instance</param>
         /// <param name="profileInfo">The Profile instance</param>
-        public BynameRemover(BynameBase bb, Profile profileInfo)
+        internal BynameRemover(BynameBase bb, Profile profileInfo)
         {
             Byname = bb;
             Profile = profileInfo;
@@ -84,7 +83,7 @@ namespace PowerPlug.Engines.Byname
         /// a new line is appended to the $PROFILE.
         /// </summary>
         /// <returns>A bool representing whether the removal was successful</returns>
-        public bool Remove()
+        internal bool Remove()
         {
             var text = File.ReadAllText(Profile.FileInfo.FullName);
             var aliasPattern =

@@ -2,17 +2,17 @@
 using System.Management.Automation;
 using PowerPlug.PowerPlugFile;
 
-namespace PowerPlug.Engines.Byname.Base
+namespace PowerPlug.Cmdlets.Byname.Base
 {
     /// <summary>
     /// A strategy class to invoke a BynameCreator of a specific type. This follows the strategy design pattern.
     /// </summary>
-    public abstract class BynameCreatorStrategy
+    internal abstract class BynameCreatorStrategy
     {
         /// <summary>
         /// A Profile instance containing information about the location of the PowerShell $PROFILE
         /// </summary>
-        public Profile ProfileInfo { get; }
+        internal Profile ProfileInfo { get; }
 
         /// <summary>
         /// The results of the PowerShell command as an <see cref="IEnumerable{T}"/>
@@ -33,6 +33,6 @@ namespace PowerPlug.Engines.Byname.Base
         /// Executes a BynameCreator command. This could be any operation the command introduces in order to
         /// create a Byname.
         /// </summary>
-        public abstract void ExecuteCommand();
+        internal abstract void ExecuteCommand();
     }
 }

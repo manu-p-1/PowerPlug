@@ -466,6 +466,514 @@
             Processes the PSCmdlet
             </summary>
         </member>
+        <member name="T:PowerPlug.Cmdlets.Util.CmdletUtilities">
+            <summary>
+            An internal set of cmdlet utilities to be used to facilitate cmdlet processes.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Cmdlets.Util.CmdletUtilities.InvokePowershellCommandOrThrowIfUnsuccessful(System.Management.Automation.PowerShell,System.Management.Automation.PSCmdlet)">
+            <summary>
+            Invokes a PowerShell command given a PowerShell instance and a PSCmdlet instance. If an error is found while invoking
+            the command, the PSCmdlet pipeline is stopped by invoking PSCmdlet.ThrowTerminatingError with the first error found.
+            </summary>
+            <param name="ps">The PowerShell instance</param>
+            <param name="psCmdlet">The PSCmdlet instance</param>
+            <returns>An Enumerable of PSObjects representing the results of invoking the PowerShell instance</returns>
+        </member>
+        <member name="T:PowerPlug.Common.Attributes.Beta">
+            <summary>
+            The BetaCmdlet attribute represents any cmdlets which are functional, but may result in unintended behavior due
+            to its "beta" state.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Common.Attributes.Beta.Msg">
+            <summary>
+            The message attributed to this BetaCmdlet, if any.
+            </summary>
+        </member>
+        <member name="F:PowerPlug.Common.Attributes.Beta.WarningMessage">
+            <summary>
+            The default warning message for this Attribute.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.Attributes.Beta.#ctor">
+            <summary>
+            Creates a new BetaCmdlet with no message. 
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.Attributes.Beta.#ctor(System.String)">
+            <summary>
+            Creates a new BetaCmdlet with the specified message.
+            </summary>
+            <param name="msg">A message specifying or representing the state of the cmdlet</param>
+        </member>
+        <member name="T:PowerPlug.Common.Attributes.BetaCmdlet">
+            <summary>
+            The BetaCmdlet attribute represents any cmdlets which are functional, but may result in unintended behavior due
+            to its "beta" state.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Common.Attributes.BetaCmdlet.Msg">
+            <summary>
+            The message attributed to this BetaCmdlet, if any.
+            </summary>
+        </member>
+        <member name="F:PowerPlug.Common.Attributes.BetaCmdlet.WarningMessage">
+            <summary>
+            The default warning message for this Attribute.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.Attributes.BetaCmdlet.#ctor">
+            <summary>
+            Creates a new BetaCmdlet with no message. 
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.Attributes.BetaCmdlet.#ctor(System.String)">
+            <summary>
+            Creates a new BetaCmdlet with the specified message.
+            </summary>
+            <param name="msg">A message specifying or representing the state of the cmdlet</param>
+        </member>
+        <member name="T:PowerPlug.Common.Extensions.StringBuilderExtensions">
+            <summary>
+            An internal class representing StringBuilder extension methods.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.Extensions.StringBuilderExtensions.AppendIf(System.Text.StringBuilder,System.String,System.Boolean)">
+            <summary>
+            A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
+            </summary>
+            <param name="this">The StringBuilder extension</param>
+            <param name="str">The string to append</param>
+            <param name="condition">The condition to meet in order for the append to occur</param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.Common.IIndexable`2">
+            <summary>
+            Specifies an indexer with one dimension.
+            </summary>
+            <typeparam name="TKey">The element type of the key</typeparam>
+            <typeparam name="TVal">The element type of the value</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IIndexable`2.Item(`0)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.Common.IIndexableReadOnly`2">
+            <summary>
+            Specifies a read-only indexer with one dimension.
+            </summary>
+            <typeparam name="TKey">The element type of the key</typeparam>
+            <typeparam name="TVal">The element type of the value</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IIndexableReadOnly`2.Item(`0)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:PowerPlug.Common.IIndexableDouble`2">
+            <summary>
+            Specifies an indexer with two dimensions.
+            </summary>
+            <typeparam name="TKey">The element type of the key</typeparam>
+            <typeparam name="TVal">The element type of the value</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IIndexableDouble`2.Item(`0,`0)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="key2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.Common.IIndexableDoubleReadOnly`2">
+            <summary>
+            Specifies a read-only indexer with two dimensions.
+            </summary>
+            <typeparam name="TKey">The element type of the key</typeparam>
+            <typeparam name="TVal">The element type of the value</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IIndexableDoubleReadOnly`2.Item(`0,`0)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="key2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.Common.IIndexableTriple`2">
+            <summary>
+            Specifies an indexer with three dimensions.
+            </summary>
+            <typeparam name="TKey">The element type of the key</typeparam>
+            <typeparam name="TVal">The element type of the value</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IIndexableTriple`2.Item(`0,`0,`0)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="key2"></param>
+            <param name="key3"></param>
+        </member>
+        <member name="T:PowerPlug.Common.IIndexableTripleReadOnly`2">
+            <summary>
+            Specifies a read-only indexer with three dimensions.
+            </summary>
+            <typeparam name="TKey">The element type of the key</typeparam>
+            <typeparam name="TVal">The element type of the value</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IIndexableTripleReadOnly`2.Item(`0,`0,`0)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="key2"></param>
+            <param name="key3"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.Common.ImmutableRange`1">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="P:PowerPlug.Common.ImmutableRange`1.Minimum">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="P:PowerPlug.Common.ImmutableRange`1.Maximum">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.ImmutableRange`1.#ctor(`0,`0)">
+            <summary>
+            Creates a new instance of the ImmutableRange class. This class is immutable - for the mutable
+            version, see <see cref="T:PowerPlug.Common.Range`1"/>
+            </summary>
+            <param name="minimum">The minimum value</param>
+            <param name="maximum">The maximum value</param>
+        </member>
+        <member name="M:PowerPlug.Common.ImmutableRange`1.ToString">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.ImmutableRange`1.IsValid">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.ImmutableRange`1.ContainsValue(`0)">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.ImmutableRange`1.IsInsideRange(PowerPlug.Common.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.ImmutableRange`1.ContainsRange(PowerPlug.Common.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="T:PowerPlug.Common.IntRange">
+            <summary>
+            The range class represents a range of int values. Unlike other <see cref="T:PowerPlug.Common.IRangify`1"/> implementing classes,
+            IntRange contains an <see cref="T:System.Collections.Generic.IEnumerator`1"/> of type int to enumerate through all of the values between
+            the minimum and maximum ranges. By convention, both sides of the range should be inclusive values.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.IntRange.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of IntRange, specifying the minimum and maximum values.
+            </summary>
+            <param name="minimum"></param>
+            <param name="maximum"></param>
+        </member>
+        <member name="M:PowerPlug.Common.IntRange.GetEnumerator">
+            <summary>
+            Returns an instance of the IntRangeEnumerator that's used to enumerate through the range
+            values of this instance.
+            </summary>
+            <returns>An instance of the IntRangeEnumerator class</returns>
+        </member>
+        <member name="M:PowerPlug.Common.IntRange.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an instance of the IntRangeEnumerator that's used to enumerate through the range
+            values of this instance.
+            </summary>
+            <returns>An instance of the IntRangeEnumerator class</returns>
+        </member>
+        <member name="T:PowerPlug.Common.IRangify`1">
+            <summary>The range class represents a range of values of a generic type.
+            The Range class which was modified from user @drharris on StackOverflow.
+            By convention, both sides of the range should be inclusive values.
+            </summary>
+            <typeparam name="T">The generic parameter</typeparam>
+        </member>
+        <member name="P:PowerPlug.Common.IRangify`1.Minimum">
+            <summary>
+            The minimum value of this range
+            </summary>
+        </member>
+        <member name="P:PowerPlug.Common.IRangify`1.Maximum">
+            <summary>
+            The maximum value of this range
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Common.IRangify`1.IsValid">
+            <summary>
+            Determines if the range is valid.
+            </summary>
+            <returns>True if range is valid, else false</returns>
+        </member>
+        <member name="M:PowerPlug.Common.IRangify`1.ContainsValue(`0)">
+            <summary>
+            Determines if the provided value is inside the range.
+            </summary>
+            <param name="value">The value to test</param>
+            <returns>True if the value is inside Range, else false</returns>
+        </member>
+        <member name="M:PowerPlug.Common.IRangify`1.IsInsideRange(PowerPlug.Common.IRangify{`0})">
+            <summary>
+            Determines if this Range is inside the bounds of another range.
+            </summary>
+            <param name="range">The parent range to test on</param>
+            <returns>True if range is inclusive, else false</returns>
+        </member>
+        <member name="T:PowerPlug.Common.Range`1">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="P:PowerPlug.Common.Range`1.Minimum">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="P:PowerPlug.Common.Range`1.Maximum">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.Range`1.#ctor(`0,`0)">
+            <summary>
+            Creates a new instance of the Range class. This class is mutable - for the immutable
+            version, see <see cref="T:PowerPlug.Common.ImmutableRange`1"/>
+            </summary>
+            <param name="minimum">The minimum value</param>
+            <param name="maximum">The maximum value</param>
+        </member>
+        <member name="M:PowerPlug.Common.Range`1.ToString">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.Range`1.IsValid">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.Range`1.ContainsValue(`0)">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.Range`1.IsInsideRange(PowerPlug.Common.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="M:PowerPlug.Common.Range`1.ContainsRange(PowerPlug.Common.IRangify{`0})">
+            <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
+        </member>
+        <member name="T:PowerPlug.Common.Shuffle`1">
+            <summary>
+            A utility to shuffle an enumerable
+            </summary>
+            <typeparam name="T">The element type of the array</typeparam>
+        </member>
+        <member name="M:PowerPlug.Common.Shuffle`1.#ctor(`0[])">
+            <summary>
+            The constructor for the shuffle utility.
+            </summary>
+            <param name="data">The generic array to be shuffled</param>
+        </member>
+        <member name="M:PowerPlug.Common.Shuffle`1.ShuffleThis">
+            <summary>
+            Conducts the shuffle given this array. For more information on how the shuffle is done,
+            view the implementation note for this class. 
+            </summary>
+            <returns>The shuffled array</returns>
+        </member>
+        <member name="M:PowerPlug.Common.Shuffle`1.ShuffleSwapper(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Performs a dual swap on four indeces.
+            </summary>
+            <param name="indexOne">The first index to be swapped</param>
+            <param name="indexTwo">The second index to be swapped</param>
+            <param name="indexThree">The third index to be swapped</param>
+            <param name="indexFour">The fourth index to be swapped</param>
+        </member>
+        <member name="T:PowerPlug.EnumerableUtils.EnumerableUtils">
+            <summary>
+            A static utility class for .NET <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.Concat``1(System.Collections.Generic.IEnumerable{``0}[])">
+             <summary>
+             Concatenates all IEnumerables which are specified in in the parameter. The
+             concatenation occurs in the order specified in the parameter.
+             </summary>
+             <typeparam name="T">The enumerable type to be used</typeparam>
+             <param name="ie">An enumerable of all one dimensional arrays to be concatenated</param>
+             <exception cref="T:System.ArgumentNullException"> Is thrown if any enumerable, which is a candidate to be concatenated, is null</exception>
+             <returns>A single enumerable with all of the concatenated elements</returns>
+             <example>This simple example shows how to call the <see cref="M:PowerPlug.EnumerableUtils.EnumerableUtils.Concat``1(System.Collections.Generic.IEnumerable{``0}[])"/> method.</example>
+             <code>
+            
+             using static Utilities.EnumerableUtils;
+            
+             class TestClass
+             {
+                static void Main(string[] args)
+                {
+                    int[] x = { 1, 2, 3, 4 };
+                    int[] y = { 1, 2, 3, 4, 5, 6 };
+                    int[] z = { 1, 2, 3 };
+                    int[] comb = Concat(x, y, z).toArray();
+                    //Printing out 'comb' results in 1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 1, 2, 3
+                }
+             }
+             </code>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.Insert``1(System.Collections.Generic.IEnumerable{``0}@,System.Int32,System.Int32,``0[])">
+             <summary>
+             Inserts the specified element at the specified index in the enumerable (modifying the original enumerable).
+             If element at that position exits, If shifts that element and any subsequent elements to the right,
+             adding one to their indices. The method also allows for inserting more than one element into
+             the enumerable at one time given that they are specified. This Insert method is functionally similar
+             to the Insert method of the List class. <see cref="M:System.Collections.IList.Insert(System.Int32,System.Object)"/>
+             for information about the add method of the List class.
+             </summary>
+             <typeparam name="T">The type of the enumerable</typeparam>
+             <param name="src">The IEnumerable to be used</param>
+             <param name="startIdx">The index to start insertion</param>
+             <param name="amtToIns">The amount of elements to insert into the enumerable</param>
+             <param name="valuesToIns">Optionally, the values to insert into the empty indices of the new enumerable</param>
+             <returns>An enumerable of the elements inserted into the enumerable, if any</returns>
+             <exception cref="T:System.IndexOutOfRangeException">Thrown when the valuesToIns enumerable does not match the amount to insert (if it is greater than 0)</exception>
+             <exception cref="T:System.IndexOutOfRangeException">Thrown when the amtToIns or the startIdx is less than 0</exception>
+             <example>This sample shows how to call the <see cref="M:PowerPlug.EnumerableUtils.EnumerableUtils.Insert``1(System.Collections.Generic.IEnumerable{``0}@,System.Int32,System.Int32,``0[])"/> method.</example>
+             <seealso cref="M:System.Collections.IList.Insert(System.Int32,System.Object)"/>
+             <code>
+            
+             using static Utilities.EnumerableUtils;
+            
+             class TestClass
+             {
+                 static void Main(string[] args)
+                 {
+                     var w = new int[9] {2, 3, 4, 5, 6, 7, 8, 9, 10}.AsEnumerable();
+                     Insert(ref w, 1, 3);
+                     //Printing out 'w' results in: 2, 0, 0, 0, 3, 4, 5, 6, 7, 8, 9, 10
+            
+                     var y = new int[9] {2, 3, 4, 5, 6, 7, 8, 9, 10}.AsEnumerable();
+                     Insert(ref y, 1, 3, 250, 350, 450);
+                     //Printing out 'y' results in: 2, 250, 350, 450, 3, 4, 5, 6, 7, 8, 9, 10
+                 }
+             }
+             </code>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns whether an IEnumerable is null or empty
+            </summary>
+            <typeparam name="T">The type of the IEnumerable</typeparam>
+            <param name="ie">The IEnumerable to be used</param>
+            <returns>The truth</returns>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.IsZeroOrOne``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns true if the Count of the IEnumerable is zero or one.
+            </summary>
+            <typeparam name="T">The type of the IEnumerable</typeparam>
+            <param name="ie">The IEnumerable to be used</param>
+            <returns>True if the Count of the IEnumerable is zero or one</returns>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.Range(System.Int32,System.Int32)">
+             <summary>
+             Enables python style for-loop for easier readability. This loop begins
+             at the starting value and loops until the end - 1,
+             </summary>
+             <param name="start">The starting counter for the loop (inclusive)</param>
+             <param name="end">The ending counter for the loop (exclusive)</param>
+             <returns>An IEnumerable representing the current index</returns>
+             <example>This example shows how to use the <see cref="M:PowerPlug.EnumerableUtils.EnumerableUtils.Range(System.Int32,System.Int32)"/>method.</example>
+             <code>
+             using static Utilities.EnumerableUtils;
+            
+             class TestClass
+             {
+                 static void Main(string[] args)
+                 {
+                     foreach(int i in Range(0,10)) Console.WriteLine(i); //Prints 0 - 9
+                 }
+             }
+             </code>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.Shuffle``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Cryptographically shuffles an enumerable. 
+            </summary>
+            <typeparam name="T">The element type of the IEnumerable</typeparam>
+            <param name="src">The IEnumerable</param>
+            <returns>The Shuffled IEnumerable</returns>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.Span(System.Int32,System.Int32)">
+             <summary>
+             Enables python style for-loop for easier readability. This loop begins
+             at the starting value and loops until the end.
+             </summary>
+             <param name="start">The starting counter for the loop (inclusive)</param>
+             <param name="end">The ending counter for the loop (inclusive)</param>
+             <returns>An IEnumerable representing the current index</returns>
+             <example>This example shows how to use the <see cref="M:PowerPlug.EnumerableUtils.EnumerableUtils.Span(System.Int32,System.Int32)"/>method.</example>
+             <code>
+             using static Utilities.EnumerableUtils;
+            
+             class TestClass
+             {
+                 static void Main(string[] args)
+                 {
+                     foreach(int i in Span(0,10)) Console.WriteLine(i); //Prints 0 - 10
+                 }
+             }
+             </code>
+        </member>
+        <member name="M:PowerPlug.EnumerableUtils.EnumerableUtils.ToString``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Boolean)">
+             <summary>
+             Prints a string representation of an enumerable. There are 4 supported lengths for the fmtExp. The
+             default length is 0 and the default behavior depends on the type of the enumerable. If the type is primitive
+             (based on the System.IsPrimitive property) including decimal and string, then it prints the enumerable with a space
+             as a separator between each element. If the enumerable is not primitive, it prints the enumerable with no separator.
+             A fmtExp of length 1 specifies a character to separate each element. The enumerable is printed out, following
+             a default behavior, except with the specified separator rather than the default separator. A fmtExp
+             of length 2 specifies a two characters to mark the left and right outer bounds of the enumerable, A fmtExp
+             of length 3 specifies a character for the left outer bound of the enumerable, followed by a separator character,
+             followed by a character for the right outer bound of the enumerable. If no separator is desired, the "/0+" expression
+             can be specified.The evenlySpacedSeparator parameter specifies whether an even number of spaces should be on
+             both sides of the separator. This parameter ignores Object type enumerables excluding decimal and string.
+             </summary>
+             <typeparam name="T">The type of the enumerable</typeparam>
+             <param name="src">The IEnumerable to be used</param>
+             <param name="fmtExp">The defined expression to be optionally used</param>
+             <param name="evenlySpacedSeparator">Determines whether the spacing between each element should be the same</param>
+             <returns>The string representation of the enumerable</returns>
+             <exception cref="T:System.ArgumentNullException">If arr is null</exception>
+             <exception cref="T:System.FormatException">If the formatting expression length is neither 0 or 3</exception>
+             <example>This sample shows how to call the <see cref="M:PowerPlug.EnumerableUtils.EnumerableUtils.ToString``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Boolean)"/> method.</example>
+             <code>
+            
+             using static Utilities.EnumerableUtils;
+            
+             class TestClass
+             {
+                 static void Main(string[] args)
+                 {
+                     var w = new int[9] {2, 3, 4, 5, 6, 7, 8, 9, 10};
+                     Console.WriteLine(w.ToString("[,]"));
+                     //Printing out 'w' results in: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+            
+                     var x = new int[9] {2, 3, 4, 5, 6, 7, 8, 9, 10};
+                     Console.WriteLine(x.ToString("(|)", true));
+                     //Printing out 'x' results in: (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)
+            
+                     var y = new string[4] {"Bill", "Bob", "Tom", "Joe"};
+                     Console.WriteLine(y.ToString());
+                     //Printing out 'y' results in: Bill Bob Tom Joe
+                 }
+             }
+             </code>
+        </member>
         <member name="T:PowerPlug.FileUtils.FileUtils">
             <summary>
             A static class for File utility functions
@@ -621,189 +1129,1038 @@
             <exception cref="T:System.Management.Automation.SessionStateException">A SessionStateException is thrown if the user's $PROFILE cannot be found</exception>
             <returns></returns>
         </member>
-        <member name="T:PowerPlug.Utils.Attributes.BetaAttribute">
+        <member name="T:PowerPlug.MathUtils.IMatrixer`1">
             <summary>
-            The BetaAttribute attribute represents any cmdlets which are functional, but may result in unintended behavior due
-            to its "beta" state.
+            Represents the minimum requirements to create a Matrix.
+            </summary>
+            <typeparam name="T">The element type of this Matrix</typeparam>
+        </member>
+        <member name="P:PowerPlug.MathUtils.IMatrixer`1.Rows">
+            <summary>
+            Property for the number of Rows in and IMatrixer
             </summary>
         </member>
-        <member name="P:PowerPlug.Utils.Attributes.BetaAttribute.Msg">
+        <member name="P:PowerPlug.MathUtils.IMatrixer`1.Cols">
             <summary>
-            The message attributed to this BetaCmdletAttribute, if any.
+            Property for the number of columns in an IMatrixer
             </summary>
         </member>
-        <member name="F:PowerPlug.Utils.Attributes.BetaAttribute.WarningMessage">
+        <member name="M:PowerPlug.MathUtils.IMatrixer`1.ToString">
             <summary>
-            The default warning message for this Attribute.
+            Returns a string representation of an IMatrixer
             </summary>
-        </member>
-        <member name="M:PowerPlug.Utils.Attributes.BetaAttribute.#ctor">
-            <summary>
-            Creates a new BetaAttribute with no message. 
-            </summary>
-        </member>
-        <member name="M:PowerPlug.Utils.Attributes.BetaAttribute.#ctor(System.String)">
-            <summary>
-            Creates a new BetaAttribute with the specified message.
-            </summary>
-            <param name="msg">A message specifying or representing the state of the cmdlet</param>
-        </member>
-        <member name="T:PowerPlug.Utils.Cmdlets.CmdletUtilities">
-            <summary>
-            An internal set of cmdlet utilities to be used to facilitate cmdlet processes.
-            </summary>
-        </member>
-        <member name="M:PowerPlug.Utils.Cmdlets.CmdletUtilities.InvokePowershellCommandOrThrowIfUnsuccessful(System.Management.Automation.PowerShell,System.Management.Automation.PSCmdlet)">
-            <summary>
-            Invokes a PowerShell command given a PowerShell instance and a PSCmdlet instance. If an error is found while invoking
-            the command, the PSCmdlet pipeline is stopped by invoking PSCmdlet.ThrowTerminatingError with the first error found.
-            </summary>
-            <param name="ps">The PowerShell instance</param>
-            <param name="psCmdlet">The PSCmdlet instance</param>
-            <returns>An Enumerable of PSObjects representing the results of invoking the PowerShell instance</returns>
-        </member>
-        <member name="T:PowerPlug.Utils.Extensions.StringBuilderExtensions">
-            <summary>
-            An internal class representing StringBuilder extension methods.
-            </summary>
-        </member>
-        <member name="M:PowerPlug.Utils.Extensions.StringBuilderExtensions.AppendIf(System.Text.StringBuilder,System.String,System.Boolean)">
-            <summary>
-            A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
-            </summary>
-            <param name="this">The StringBuilder extension</param>
-            <param name="str">The string to append</param>
-            <param name="condition">The condition to meet in order for the append to occur</param>
             <returns></returns>
         </member>
-        <member name="T:PowerPlug.Utils.ImmutableRange`1">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="P:PowerPlug.Utils.ImmutableRange`1.Minimum">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="P:PowerPlug.Utils.ImmutableRange`1.Maximum">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="M:PowerPlug.Utils.ImmutableRange`1.#ctor(`0,`0)">
+        <member name="T:PowerPlug.MathUtils.Matrix">
             <summary>
-            Creates a new instance of the ImmutableRange class. This class is immutable - for the mutable
-            version, see <see cref="T:PowerPlug.Utils.Range`1"/>
+            A class representing a mathematical Matrix. Creates a rectangular
+            array of rows and columns with numbers as elements. The Matrix
+            class includes mathematical matrix operations to manipulate it.
             </summary>
-            <param name="minimum">The minimum value</param>
-            <param name="maximum">The maximum value</param>
         </member>
-        <member name="M:PowerPlug.Utils.ImmutableRange`1.ToString">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="M:PowerPlug.Utils.ImmutableRange`1.IsValid">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="M:PowerPlug.Utils.ImmutableRange`1.ContainsValue(`0)">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="M:PowerPlug.Utils.ImmutableRange`1.IsInsideRange(PowerPlug.Utils.IRangify{`0})">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="M:PowerPlug.Utils.ImmutableRange`1.ContainsRange(PowerPlug.Utils.IRangify{`0})">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="T:PowerPlug.Utils.IntRange">
+        <member name="P:PowerPlug.MathUtils.Matrix.Values">
             <summary>
-            The range class represents a range of int values. Unlike other <see cref="T:PowerPlug.Utils.IRangify`1"/> implementing classes,
-            IntRange contains an <see cref="T:System.Collections.Generic.IEnumerator`1"/> of type int to enumerate through all of the values between
-            the minimum and maximum ranges. By convention, both sides of the range should be inclusive values.
+            
             </summary>
         </member>
-        <member name="M:PowerPlug.Utils.IntRange.#ctor(System.Int32,System.Int32)">
+        <member name="P:PowerPlug.MathUtils.Matrix.Rows">
             <summary>
-            Creates a new instance of IntRange, specifying the minimum and maximum values.
+            
             </summary>
-            <param name="minimum"></param>
-            <param name="maximum"></param>
         </member>
-        <member name="M:PowerPlug.Utils.IntRange.GetEnumerator">
+        <member name="P:PowerPlug.MathUtils.Matrix.Cols">
             <summary>
-            Returns an instance of the IntRangeEnumerator that's used to enumerate through the range
-            values of this instance.
+            
             </summary>
-            <returns>An instance of the IntRangeEnumerator class</returns>
         </member>
-        <member name="M:PowerPlug.Utils.IntRange.System#Collections#IEnumerable#GetEnumerator">
+        <member name="M:PowerPlug.MathUtils.Matrix.#ctor(System.Int32,System.Int32)">
             <summary>
-            Returns an instance of the IntRangeEnumerator that's used to enumerate through the range
-            values of this instance.
+            Creates an instance of a Matrix given rows and columns.
             </summary>
-            <returns>An instance of the IntRangeEnumerator class</returns>
+            <param name="rows">The number of rows in this Matrix</param>
+            <param name="cols">The number of columns in this Matrix</param>
         </member>
-        <member name="T:PowerPlug.Utils.IRangify`1">
-            <summary>The range class represents a range of values of a generic type.
-            The Range class which was modified from user @drharris on StackOverflow.
-            By convention, both sides of the range should be inclusive values.
-            </summary>
-            <typeparam name="T">The generic parameter</typeparam>
-        </member>
-        <member name="P:PowerPlug.Utils.IRangify`1.Minimum">
+        <member name="M:PowerPlug.MathUtils.Matrix.#ctor(System.Double[0:,0:])">
             <summary>
-            The minimum value of this range
+            Creates an instance of a Matrix given a 2D array. 
             </summary>
+            <param name="matrix">A 2D array of doubles</param>
         </member>
-        <member name="P:PowerPlug.Utils.IRangify`1.Maximum">
+        <member name="P:PowerPlug.MathUtils.Matrix.Item(System.Int32,System.Int32)">
             <summary>
-            The maximum value of this range
+            
             </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.IRangify`1.IsValid">
+        <member name="M:PowerPlug.MathUtils.Matrix.Transpose">
             <summary>
-            Determines if the range is valid.
+            
             </summary>
-            <returns>True if range is valid, else false</returns>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.IRangify`1.ContainsValue(`0)">
+        <member name="M:PowerPlug.MathUtils.Matrix.EqualDimension(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
             <summary>
-            Determines if the provided value is inside the range.
+            
             </summary>
-            <param name="value">The value to test</param>
-            <returns>True if the value is inside Range, else false</returns>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.IRangify`1.IsInsideRange(PowerPlug.Utils.IRangify{`0})">
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Addition(PowerPlug.MathUtils.Matrix,System.Double)">
             <summary>
-            Determines if this Range is inside the bounds of another range.
+            
             </summary>
-            <param name="range">The parent range to test on</param>
-            <returns>True if range is inclusive, else false</returns>
+            <param name="m"></param>
+            <param name="scalar"></param>
+            <returns></returns>
         </member>
-        <member name="T:PowerPlug.Utils.Range`1">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="P:PowerPlug.Utils.Range`1.Minimum">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="P:PowerPlug.Utils.Range`1.Maximum">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
-        </member>
-        <member name="M:PowerPlug.Utils.Range`1.#ctor(`0,`0)">
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Addition(System.Double,PowerPlug.MathUtils.Matrix)">
             <summary>
-            Creates a new instance of the Range class. This class is mutable - for the immutable
-            version, see <see cref="T:PowerPlug.Utils.ImmutableRange`1"/>
+            
             </summary>
-            <param name="minimum">The minimum value</param>
-            <param name="maximum">The maximum value</param>
+            <param name="scalar"></param>
+            <param name="m"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.Range`1.ToString">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Subtraction(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <param name="scalar"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.Range`1.IsValid">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Subtraction(System.Double,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="scalar"></param>
+            <param name="m"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.Range`1.ContainsValue(`0)">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Multiply(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <param name="scalar"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.Range`1.IsInsideRange(PowerPlug.Utils.IRangify{`0})">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Multiply(System.Double,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="scalar"></param>
+            <param name="m"></param>
+            <returns></returns>
         </member>
-        <member name="M:PowerPlug.Utils.Range`1.ContainsRange(PowerPlug.Utils.IRangify{`0})">
-            <inheritdoc cref="T:PowerPlug.Utils.IRangify`1"/>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Division(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Division(System.Double,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="scalar"></param>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Modulus(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Modulus(System.Double,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="scalar"></param>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_LogicalNot(PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Addition(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Subtraction(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Multiply(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Equality(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.op_Inequality(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Add(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Add(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Subtract(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Subtract(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Multiply(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.DotProduct(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Divide(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Mod(PowerPlug.MathUtils.Matrix,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="scalar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Negate(PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.Equals(PowerPlug.MathUtils.Matrix)">
+            <summary>
+            
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.IsRowVector">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.IsColumnVector">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.IsSquareVector">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.MathUtils.Matrix.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PowerPlug.MathUtils.MatrixPropertyException">
+            <summary>
+            An exception that occurs if a Matrix property is violated
+            when examining certain properties at runtime.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:PowerPlug.Statistics.EnumerableStats">
+            <summary>
+            A static utility class for calculating a variety of statistics based on IEnumerables. Moreover,
+            generic overload methods exist to simplify calculating statistics of object enumerables containing
+            numeric properties.
+            </summary>
+        </member>
+        <member name="F:PowerPlug.Statistics.EnumerableStats.Tolerance">
+            <summary>
+            The tolerance level for floating point arithmetic (or known as the epsilon value).
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Mean(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the average of all the elements in the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>The average of all the elements in the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Mean``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.Mean(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.Mean(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The average of all the elements in the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the median of all the elements in the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source if of length 0</exception>
+            <returns>The median of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The median of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Mode(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the mode of all the elements in the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <exception cref="T:PowerPlug.Statistics.NoModeException">Thrown when no mode exists for the source</exception>
+            <returns>The mode of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Mode``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.Mode(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.Mode(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The mode of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.SampleVariance(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the sample variance of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source if of length 0</exception>
+            <returns>The sample variance of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.SampleVariance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.SampleVariance(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.SampleVariance(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The sample variance of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.PopulationVariance(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the population variance of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>The population variance of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.PopulationVariance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.PopulationVariance(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.PopulationVariance(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The populationvariance of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.SampleStandardDeviation(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the sample standard deviation of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>The sample standard deviation of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.SampleStandardDeviation``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.SampleStandardDeviation(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.SampleStandardDeviation(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The sample standard deviation of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.PopulationStandardDeviation(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the population standard deviation of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>The population standard deviation of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.PopulationStandardDeviation``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.PopulationStandardDeviation(System.Collections.Generic.IEnumerable{System.Double})"/> method.
+            This method will call the <see cref="M:PowerPlug.Statistics.EnumerableStats.PopulationStandardDeviation(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The population standard deviation of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the range of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of size 0</exception>
+            <returns>The range of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The range of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.LowerQuartile(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the lower quartile of the enumerable.
+            </summary>
+            <param name="src">The IEnumberable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of size 0</exception>
+            <exception cref="T:PowerPlug.Statistics.InsufficientDataSetException">Thrown when the data set is not large enough to calculate a lower quartile</exception>
+            <returns>The lower quartile of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.LowerQuartile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.LowerQuartile(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.LowerQuartile(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The lower quartile of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.UpperQuartile(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the upper quartile of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of size 0</exception>
+            <exception cref="T:PowerPlug.Statistics.InsufficientDataSetException">Thrown when the data set is not large enough to calculate an upper quartile</exception>
+            <returns>The upper quartile of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.UpperQuartile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.UpperQuartile(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.UpperQuartile(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The upper quartile of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.InterQuartileRange(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Finds the inter-quartile range of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>The inter-quartile range of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.InterQuartileRange``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.InterQuartileRange(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.InterQuartileRange(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>The inter-quartile range of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.IsNormalProportion(System.Collections.Generic.IEnumerable{System.Double},System.Double)">
+            <summary>
+            Returns whether if the data set is normally distributed for a proportion.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <param name="samstat">The sample statistic</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>Returns if the data set is normally distributed for a proportion.</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.IsNormalProportion``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double},System.Double)">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.IsNormalProportion(System.Collections.Generic.IEnumerable{System.Double},System.Double)"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.IsNormalProportion(System.Collections.Generic.IEnumerable{System.Double},System.Double)"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <param name="samstat">The sample statistic></param>
+            <returns>Returns if the data set is normally distributed for a proportion.</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.IsNormalMean(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Returns whether if the data set is normally distributed for a mean.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source is of length 0</exception>
+            <returns>Returns whether if the data set is normally distributed for a mean.</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.IsNormalMean``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.IsNormalMean(System.Collections.Generic.IEnumerable{System.Double})"/> method. This method will call
+            the <see cref="M:PowerPlug.Statistics.EnumerableStats.IsNormalMean(System.Collections.Generic.IEnumerable{System.Double})"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <returns>Returns if the data set is normally distributed for a proportion.</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.StandardizedScore(System.Collections.Generic.IEnumerable{System.Double},System.Double)">
+            <summary>
+            Calculates the standardized score (z-score or standard score) of the enumerable.
+            </summary>
+            <param name="src">The IEnumerable of type double</param>
+            <param name="elem">The value of the element</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the source if of length 0</exception>
+            <returns>The standardized score of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.StandardizedScore``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double},System.Double)">
+            <summary>
+            A generic overload of the <see cref="M:PowerPlug.Statistics.EnumerableStats.StandardizedScore(System.Collections.Generic.IEnumerable{System.Double},System.Double)"/> method. 
+            This method will call the <see cref="M:PowerPlug.Statistics.EnumerableStats.StandardizedScore(System.Collections.Generic.IEnumerable{System.Double},System.Double)"/> overload.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="numbers">The specified enumerable</param>
+            <param name="selector">The numeral specifier</param>
+            <param name="elem">The value of the element</param>
+            <returns>The standardized score of the source</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.CreateConfidenceInterval(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates confidence interval for the given data set.
+            </summary>
+            <param name="mean">The mean of the data set</param>
+            <param name="cv">The critical value of the data set</param>
+            <param name="se">The standard error of the data set</param>
+            <returns>Returns a confidence interval of the data set.</returns>
+        </member>
+        <member name="M:PowerPlug.Statistics.EnumerableStats.ConstructTValue(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Returns whether if the data set is normally distributed for a mean.
+            </summary>
+            <param name="mean">The mean of the data set</param>
+            <param name="popMean">The population mean</param>
+            <param name="stdDev">The standard deviation of the data set</param>
+            <param name="size">The size of the data set</param>
+            <returns>Constructs the t-critical value</returns>
+        </member>
+        <member name="T:PowerPlug.Statistics.InsufficientDataSetException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:PowerPlug.Statistics.NoModeException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Statistics.NoModeException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.Statistics.NoModeException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PowerPlug.Statistics.NoModeException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:PowerPlug.Statistics.NoModeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:PowerPlug.StringUtils.StringUtils">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PowerPlug.StringUtils.StringUtils.CharSpace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.CharToString(System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Converts a <see cref="T:System.Collections.Generic.IEnumerable`1"/> to a string
+            </summary>
+            <param name="charEnumerable">The <see cref="T:System.Collections.Generic.IEnumerable`1"/></param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="charEnumerable"/> is null</exception>
+            <returns>The converted string</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.Chomp(System.String)">
+            <summary>
+            Creates a string from the first character of the string to the first whitespace.
+            </summary>
+            <param name="str">The string to be chomped</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>The string retaining the first word</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.ChompAfter(System.String,System.Int32)">
+            <summary>
+            Creates a string from the first character of the string to the nth whitespace that is specified.
+            </summary>
+            <param name="str">The string to be chomped</param>
+            <param name="spaces">The amount of white space to chomp after</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>The string retaining the chomped word</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.ContainsDigits(System.String)">
+            <summary>
+            Checks if a given string contains any digits.
+            </summary>
+            <param name="str">The string to be used</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>True if the string contains any digits, false otherwise</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.ContainsDuplicateChars(System.String)">
+            <summary>
+            Checks whether a string contains duplicate characters.
+            </summary>
+            <param name="str">The string to be used</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>True if their are duplicate characters. False, otherwise</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.ContainsDuplicateStrings(System.String,System.String)">
+            <summary>
+            Checks whether a string contains duplicate inner strings.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="arg">The inner string to search for duplicates</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="arg"/> is null</exception>
+            <returns>True if their are duplicate inner strings. False, otherwise</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.CountLetters(System.String,System.Char)">
+            <summary>
+            Counts how many times a given letter appears in a string.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="letter">The specific letter to search</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns></returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.CountWords(System.String)">
+            <summary>
+            Counts the number of words in a string.
+            </summary>
+            <param name="str">The string to be used</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>The number of words in the string</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsPalindrome(System.String,System.Boolean)">
+            <summary>
+            Checks if a given string is a palindrome.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="ignoreCase">Whether case should be ignored</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>True if the string is a palindrome</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsStrictlyDecreasing(System.String,System.Boolean)">
+            <summary>
+            Checks if each character in a string is lexicographically smaller than the previous character.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="ignoreCase">Whether case should be ignored</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>True if the string strictly increases</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsStrictlyIncreasing(System.String,System.Boolean)">
+            <summary>
+            Checks if each character in a string is lexicographically greater than the previous character.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="ignoreCase">Whether case should be ignored</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>True if the string strictly increases</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsSystemDateTime(System.String,System.String)">
+            <summary>
+            Checks if a given string is a valid date used by System.DateTime
+            </summary>
+            <param name="date">The string to be used</param>
+            <param name="formattingRegex">The date format regex</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="date"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="formattingRegex"/> is null</exception>
+            <returns>True if the string is a valid date recognized by System.DateTime</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsValidUri(System.String)">
+            <summary>
+            Checks if a given string is a valid URI. This checks both HTTP and HTTPS URLs.
+            </summary>
+            <param name="uri">The string to be used</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="uri"/> is null</exception>
+            <returns>True if the URI is valid</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsWellFormed(System.String)">
+             <summary>
+             Checks if a string is well formed. A string is well formed if
+             for every alphabet-recognized character, there is an appropriate
+             closing character. For every inner string, with the exception
+             of characters not defined in the alphabet, in between an opening
+             and closing character, if that string were to be split in half,
+             each half would be a mirror image of each other. A well formed
+             string consists of the default alphabet consists of the following
+             characters: '(',')','{','}','[',']','&lt;','>'.
+             </summary>
+             <param name="str">the string to check</param>
+             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+             <returns>whether the string is well formed</returns>
+             <example>The following demonstrates how to use the <see cref="M:PowerPlug.StringUtils.StringUtils.IsWellFormed(System.String)"/> method.</example>
+             <code>
+            
+             using static Utilities.StringUtils;
+            
+             class TestClass
+             {
+                 static void Main(string[] args)
+                 {
+                     Console.WriteLine("&lt;&lt;()>>{}{}".IsWellFormed()); //prints true
+                     Console.WriteLine("{([)]}".IsWellFormed()) //prints false
+                 }
+             }
+             </code>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsWellFormed(System.String,System.Collections.Generic.Dictionary{System.Char,System.Char})">
+             <summary>
+             Checks if a string is well formed. A string is well formed if
+             for every alphabet-recognized character, there is an appropriate
+             closing character. For every inner string, with the exception
+             of characters not defined in the alphabet, in between an opening
+             and closing character, if that string were to be split in half,
+             each half would be a mirror image of each other. A well formed
+             string consists of the user specified Dictionary of key-value
+             pairs, where the key is the opening character and the value
+             is the closing character.
+             </summary>
+             <param name="str">the string to check</param>
+             <param name="alphabet">the dictionary of key value pairs - where the key
+             represents the opening character and the value represents the closing character</param>
+             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+             <returns>whether the string is well formed</returns>
+             <example>The following demonstrates how to use the
+             <see cref="M:PowerPlug.StringUtils.StringUtils.IsWellFormed(System.String,System.Collections.Generic.Dictionary{System.Char,System.Char})"/> method.</example>
+             <code>
+            
+             using static Utilities.StringUtils;
+             using System.Collections.Generic;
+            
+             class TestClass
+             {
+                 static void Main(string[] args)
+                 {
+                     var dict = new Dictionary&lt;char, char>();
+                     {
+                         {'/','\'},
+                         {'(',')'}
+                     };
+                     Console.WriteLine("(/Manu\)".IsWellFormed(dict)); //prints true
+                 }
+             }
+             </code>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.LongestCommonPrefix(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Finds the longest common prefix of a group of strings of type 
+            <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+            <param name="strs">A group of strings to find the common prefix</param>
+            <param name="ignoreCase">A flag whether to ignore case</param>
+            <returns>The longest common prefix</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.OrderByLength(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Orders an enumerable by its length in ascending order (natural order).
+            </summary>
+            <param name="si">the <see cref="T:System.Collections.Generic.IEnumerable`1"/> si</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="si"/> is null</exception>
+            <returns>An ordered enumerable</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.RemoveAll(System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.Char}[])">
+            <summary>
+            Removes all instances of any number of characters from a specified string.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="ignoreCase">Whether case should be ignored</param>
+            <param name="args">The characters which will be removed</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="args"/> is null</exception>
+            <returns>The string with all characters in args removed</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.RemoveAll(System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String}[])">
+            <summary>
+            Removes all instances of any number of strings from a specified string.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="ignoreCase">Whether case should be ignored</param>
+            <param name="args">The characters which will be removed</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="args"/> is null</exception>
+            <returns>The string with all characters in args removed</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.ReplaceAt(System.String,System.Int32,System.Char)">
+            <summary>
+            Replaces a character at a specific index in a string, only once.
+            </summary>
+            <param name="str">The string to be used</param>
+            <param name="c">The character to replace</param>
+            <param name="index">The index to replace <paramref name="c"/></param>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.Reverse(System.String)">
+            <summary>
+            Reverses a string from left to right order while maintaining case sensitivity.
+            </summary>
+            <param name="str">The string to be reversed</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="str"/> is null</exception>
+            <returns>The reversed string</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.Shuffle(System.String,System.Boolean)">
+            <summary>
+            Shuffle's characters in a string. The methodology used to generate random
+            indices used for shuffling is cryptographically strong. Due to this nature,
+            there is no guarantee that the return string will be entirely different
+            than the original.
+            </summary>
+            <param name="str">The string to be shuffled</param>
+            <param name="preserveSpaces">Determines whether to shuffle spaces or not</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the <paramref name="str"/> is null</exception>
+            <returns>The shuffled string</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.Substring(System.String,System.Int32,System.Int32)">
+            <summary>
+            Performs a Substring given a starting and ending index, similar to Java.
+            The operation is performed mathematically as [startIndex, endIndex).
+            </summary>
+            <param name="str">The given string</param>
+            <param name="startIndex">The inclusive starting index of <paramref name="str"/></param>
+            <param name="endIndex">The exclusive ending index of <paramref name="str"/></param>
+            <returns>A string that is equivalent to the substring that begins at startIndex in this 
+            instance, or Empty if startIndex is equal to the length of this instance.</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.IsZeroOrOne(System.String)">
+            <summary>
+            Returns true if the length of the string is zero or one.
+            </summary>
+            <param name="str">The string to be used</param>
+            <returns>True if the length of the string is zero or one</returns>
+        </member>
+        <member name="T:PowerPlug.StringUtils.StringUtils.WellFormedUtility">
+            <summary>
+            A utility class that contains functions to determine
+            whether a string is a well formed string.
+            </summary>
+        </member>
+        <member name="P:PowerPlug.StringUtils.StringUtils.WellFormedUtility.Alphabet">
+            <summary>
+            An instance of the Dictionary containing this alphabet.
+            </summary>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.WellFormedUtility.#ctor(System.Collections.Generic.Dictionary{System.Char,System.Char})">
+            <summary>
+            constructor that sets up the alphabet
+            </summary>
+            <param name="dct">A dictionary representing an alphabet</param>
+        </member>
+        <member name="P:PowerPlug.StringUtils.StringUtils.WellFormedUtility.DefaultAlphabet">
+            <summary>
+            The default alphabet
+            </summary>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.WellFormedUtility.Run(System.String)">
+            <summary>
+            Verifies if the string is well formed by using
+            a stack data structure to measure the balance of the string.
+            </summary>
+            <param name="inp">The input string</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

@@ -24,4 +24,8 @@
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Base\" />
+  </ItemGroup>
+
 </Project>

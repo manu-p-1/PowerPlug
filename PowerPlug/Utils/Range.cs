@@ -1,21 +1,21 @@
-﻿namespace PowerPlug.PowerPlugUtilities
+﻿namespace PowerPlug.Utils
 {
     ///<inheritdoc cref="IRangify{T}"/>
-    public class ImmutableRange<T> : IRangify<T> where T : System.IComparable<T>
+    public class Range<T> : IRangify<T> where T : System.IComparable<T>
     {
         ///<inheritdoc cref="IRangify{T}"/>
-        public T Minimum { get; }
+        public T Minimum { get; set; }
 
         ///<inheritdoc cref="IRangify{T}"/>
-        public T Maximum { get; }
+        public T Maximum { get; set; }
 
         /// <summary>
-        /// Creates a new instance of the ImmutableRange class. This class is immutable - for the mutable
-        /// version, see <see cref="Range{T}"/>
+        /// Creates a new instance of the Range class. This class is mutable - for the immutable
+        /// version, see <see cref="ImmutableRange{T}"/>
         /// </summary>
         /// <param name="minimum">The minimum value</param>
         /// <param name="maximum">The maximum value</param>
-        protected ImmutableRange(T minimum, T maximum)
+        protected Range(T minimum, T maximum)
         {
             Minimum = minimum;
             Maximum = maximum;

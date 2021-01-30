@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PowerPlug.PowerPlugFile
+namespace PowerPlug.FileUtils
 {
     /// <summary>
     /// A static class for File utility functions
     /// </summary>
-    public static class FileUtilities
+    public static class FileUtils
     {
         /// <summary>
         /// Appends a string value into the file.

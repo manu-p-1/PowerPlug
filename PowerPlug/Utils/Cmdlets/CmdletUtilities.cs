@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
 
-namespace PowerPlug.PowerPlugUtilities.Cmdlets
+namespace PowerPlug.Utils.Cmdlets
 {
     /// <summary>
     /// An internal set of cmdlet utilities to be used to facilitate cmdlet processes.

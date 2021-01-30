@@ -5,7 +5,7 @@ using System.Management.Automation;
 using System.Text.RegularExpressions;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Cmdlets.Byname.Base;
-using PowerPlug.PowerPlugFile;
+using PowerPlug.FileUtils;
 
 namespace PowerPlug.Cmdlets.Byname.Operators
 {

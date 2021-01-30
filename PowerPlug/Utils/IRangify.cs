@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PowerPlug.PowerPlugUtilities
+namespace PowerPlug.Utils
 {
     /// <summary>The range class represents a range of values of a generic type.
     /// The Range class which was modified from user @drharris on StackOverflow.

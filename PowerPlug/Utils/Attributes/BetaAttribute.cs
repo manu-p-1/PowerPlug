@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PowerPlug.PowerPlugUtilities.Attributes
+namespace PowerPlug.Utils.Attributes
 {
     /// <summary>
     /// The BetaAttribute attribute represents any cmdlets which are functional, but may result in unintended behavior due

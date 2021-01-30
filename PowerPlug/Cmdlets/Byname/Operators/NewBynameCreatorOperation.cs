@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
 using PowerPlug.BaseCmdlets;
-using PowerPlug.PowerPlugFile;
 
 namespace PowerPlug.Cmdlets.Byname.Operators
 {
@@ -24,7 +23,7 @@ namespace PowerPlug.Cmdlets.Byname.Operators
             {
                 AliasCmdlet.WriteObject(p);
             }
-            FileUtilities.WriteLine(ProfileInfo.FileInfo, PsCommandAsString);
+            FileUtils.FileUtils.WriteLine(ProfileInfo.FileInfo, PsCommandAsString);
         }
     }
 }

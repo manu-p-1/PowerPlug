@@ -3,9 +3,9 @@ using System.Text;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Cmdlets.Byname.Base;
 using PowerPlug.Cmdlets.Byname.Operators;
-using PowerPlug.PowerPlugUtilities.Attributes;
-using PowerPlug.PowerPlugUtilities.Cmdlets;
-using PowerPlug.PowerPlugUtilities.Extensions;
+using PowerPlug.Utils.Attributes;
+using PowerPlug.Utils.Cmdlets;
+using PowerPlug.Utils.Extensions;
 
 namespace PowerPlug.Cmdlets.Byname
 {

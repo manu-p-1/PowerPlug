@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PowerPlug.PowerPlugUtilities
+namespace PowerPlug.Utils
 {
     /// <summary>
     /// The range class represents a range of int values. Unlike other <see cref="IRangify{T}"/> implementing classes,

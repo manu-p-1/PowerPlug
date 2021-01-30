@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace PowerPlug.PowerPlugUtilities.Extensions
+namespace PowerPlug.Utils.Extensions
 {
     /// <summary>
     /// An internal class representing StringBuilder extension methods.

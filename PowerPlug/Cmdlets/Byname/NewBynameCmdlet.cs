@@ -5,7 +5,7 @@ using PowerPlug.Cmdlets.Byname.Base;
 using PowerPlug.Cmdlets.Byname.Operators;
 using PowerPlug.Cmdlets.Util;
 using PowerPlug.Common.Attributes;
-using PowerPlug.Common.Extensions;
+using PowerPlug.StringUtils;
 
 namespace PowerPlug.Cmdlets.Byname
 {

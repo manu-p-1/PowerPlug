@@ -8,10 +8,10 @@
     public interface IIndexable<in TKey, TVal>
     {
         /// <summary>
-        /// 
+        /// The one dimension read/write indexer.
         /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
+        /// <param name="key">The key to assign to the indexer</param>
+        /// <returns>The TVal generic type</returns>
         TVal this[TKey key] { get; set; }
     }
 
@@ -23,9 +23,10 @@
     public interface IIndexableReadOnly<in TKey, out TVal>
     {
         /// <summary>
-        /// 
+        /// The one dimension readonly indexer.
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">The key to assign to the indexer</param>
+        /// <returns>The TVal generic type</returns>
         TVal this[TKey key] { get; }
     }
 
@@ -37,11 +38,11 @@
     public interface IIndexableDouble<in TKey, TVal>
     {
         /// <summary>
-        /// 
+        /// The two dimension read/write indexer.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="key2"></param>
-        /// <returns></returns>
+        /// <param name="key">The first key to assign to the indexer</param>
+        /// <param name="key2">The second key to assign to the indexer</param>
+        /// <returns>The TVal generic type</returns>
         TVal this[TKey key, TKey key2] { get; set; }
     }
 
@@ -53,11 +54,11 @@
     public interface IIndexableDoubleReadOnly<in TKey, out TVal>
     {
         /// <summary>
-        /// 
+        /// The two dimension readonly indexer.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="key2"></param>
-        /// <returns></returns>
+        /// <param name="key">The first key to assign to the indexer</param>
+        /// <param name="key2">The second key to assign to the indexer</param>
+        /// <returns>The TVal generic type</returns>
         TVal this[TKey key, TKey key2] { get; }
     }
 
@@ -69,11 +70,12 @@
     public interface IIndexableTriple<in TKey, TVal>
     {
         /// <summary>
-        /// 
+        /// The two dimension read/write indexer.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="key2"></param>
-        /// <param name="key3"></param>
+        /// <param name="key">The first key to assign to the indexer</param>
+        /// <param name="key2">The second key to assign to the indexer</param>
+        /// <param name="key3">The third key to assign to the indexer</param>
+        /// <returns>The TVal generic type</returns>
         TVal this[TKey key, TKey key2, TKey key3] { get; set; }
     }
 
@@ -85,12 +87,12 @@
     public interface IIndexableTripleReadOnly<in TKey, out TVal>
     {
         /// <summary>
-        /// 
+        /// The third dimension readonly indexer.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="key2"></param>
-        /// <param name="key3"></param>
-        /// <returns></returns>
+        /// <param name="key">The first key to assign to the indexer</param>
+        /// <param name="key2">The second key to assign to the indexer</param>
+        /// <param name="key3">The third key to assign to the indexer</param>
+        /// <returns>The TVal generic type</returns>
         TVal this[TKey key, TKey key2, TKey key3] { get; }
     }
 }

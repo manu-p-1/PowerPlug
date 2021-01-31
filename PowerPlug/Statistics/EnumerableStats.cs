@@ -345,7 +345,7 @@ namespace PowerPlug.Statistics
         /// <summary>
         /// Finds the lower quartile of the enumerable.
         /// </summary>
-        /// <param name="src">The IEnumberable of type double</param>
+        /// <param name="src">The IEnumerable of type double</param>
         /// <exception cref="ArgumentNullException">Thrown when the source is null</exception>
         /// <exception cref="InvalidOperationException">Thrown when the source is of size 0</exception>
         /// <exception cref="InsufficientDataSetException">Thrown when the data set is not large enough to calculate a lower quartile</exception>

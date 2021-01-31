@@ -15,19 +15,14 @@ namespace PowerPlug.MathUtils
     public class Matrix : IMatrixer<double>, Common.IIndexableDouble<int, double>
     {
         private const double Tolerance = 0.000000000001;
-        /// <summary>
-        /// 
-        /// </summary>
-        private double[,] Values { get;  }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <inheritdoc cref="IMatrixer{T}"/>
+        public double[,] Values { get; }
+
+        /// <inheritdoc cref="IMatrixer{T}"/>
         public int Rows { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <inheritdoc cref="IMatrixer{T}"/>
         public int Cols { get; }
 
         /// <summary>
@@ -67,10 +62,7 @@ namespace PowerPlug.MathUtils
             set => Values[row, col] = value;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc cref="IMatrixer{T}"/>
         public Matrix Transpose()
         {
             var cp = new Matrix(Cols, Rows);
@@ -481,10 +473,7 @@ namespace PowerPlug.MathUtils
             return GetEnumerator();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc cref="IMatrixer{T}"/>
         public override string ToString()
         {
             var sb = new StringBuilder();

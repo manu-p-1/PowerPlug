@@ -9,17 +9,28 @@ namespace PowerPlug.MathUtils
     public interface IMatrixer<out T> : IEnumerable<T>
     {
         /// <summary>
-        /// Property for the number of Rows in and IMatrixer
+        /// Property representing the values of the IMatrixer as a generic 2D array.
+        /// </summary>
+        public T[,] Values { get; }
+
+        /// <summary>
+        /// Property for the number of Rows in and IMatrixer.
         /// </summary>
         public int Rows { get; }
 
         /// <summary>
-        /// Property for the number of columns in an IMatrixer
+        /// Property for the number of columns in an IMatrixer.
         /// </summary>
         public int Cols { get; }
 
         /// <summary>
-        /// Returns a string representation of an IMatrixer
+        /// Transposes the contents of the Matrix and returns a new Matrix.
+        /// </summary>
+        /// <returns>A new Matrix containing the transposed version of the original</returns>
+        public Matrix Transpose();
+
+        /// <summary>
+        /// Returns a string representation of an IMatrixer.
         /// </summary>
         /// <returns></returns>
         public string ToString();

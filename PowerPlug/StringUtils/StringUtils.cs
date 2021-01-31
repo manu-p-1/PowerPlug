@@ -8,7 +8,8 @@ using System.Text;
 namespace PowerPlug.StringUtils
 {
     /// <summary>
-    /// 
+    /// A static utility class for string extension methods including other string manipulation classes such as
+    /// StringBuilder and StringBuffer.
     /// </summary>
     public static class StringUtils
     {
@@ -691,5 +692,28 @@ namespace PowerPlug.StringUtils
                 return true;
             }
         } //WellFormedUtilities
+
+        /// <summary>
+        /// A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
+        /// </summary>
+        /// <param name="this">The StringBuilder extension</param>
+        /// <param name="str">The string to append</param>
+        /// <param name="condition">The condition to meet in order for the append to occur</param>
+        /// <returns></returns>
+        public static StringBuilder AppendIf(this StringBuilder @this, string str, bool condition)
+        {
+            if (@this is null)
+            {
+                throw new ArgumentNullException(nameof(@this));
+            }
+
+            if (condition)
+            {
+                @this.Append(str);
+            }
+
+            return @this;
+        }
+
     } //StringUtils
 } //Note

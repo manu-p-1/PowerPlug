@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PowerPlug.StringUtils;
 
@@ -7,6 +8,12 @@ namespace PowerPlugMSTest
     [TestClass]
     public class StringUtilsTest
     {
+        /// <summary>
+        /// Gets or sets the test context which provides
+        /// information about and functionality for the current test run.
+        /// </summary>
+        public TestContext TestContext { get; set; }
+
         [TestMethod]
         public void IsWellFormedTest()
         {
@@ -21,9 +28,12 @@ namespace PowerPlugMSTest
         }
 
         [TestMethod]
-        public void ContainsDuplicateInnerStringTest()
+        public void AppendFromEnumerableTest()
         {
-           
+            var ss = new List<string>(5) { "How", "Hello", "Are", "You","Doing" };
+            var sb = new StringBuilder(5);
+            sb.AppendLineFromEnumerable(ss);
+            TestContext.WriteLine(sb.ToString());
         }
     }
 }

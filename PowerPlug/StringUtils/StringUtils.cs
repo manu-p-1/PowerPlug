@@ -700,18 +700,15 @@ namespace PowerPlug.StringUtils
         /// <param name="str">The string to append</param>
         /// <param name="condition">The condition to meet in order for the append to occur</param>
         /// <returns>The StringBuilder instance</returns>
-        public static StringBuilder AppendIf(this StringBuilder @this, string str, bool condition)
+        public static StringBuilder AppendIf(this StringBuilder sb, string str, bool condition)
         {
-            if (@this is null)
-            {
+            if (sb is null)
                 throw new ArgumentNullException(nameof(@this));
-            }
-
+            
             if (condition)
-            {
-                @this.Append(str);
-            }
-            return @this;
+				sb.Append(str);
+			
+            return sb;
         }
 
         /// <summary>

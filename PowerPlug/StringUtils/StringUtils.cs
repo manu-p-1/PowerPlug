@@ -696,10 +696,10 @@ namespace PowerPlug.StringUtils
         /// <summary>
         /// A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
         /// </summary>
-        /// <param name="this">The StringBuilder extension</param>
+        /// <param name="this">The StringBuilder instance</param>
         /// <param name="str">The string to append</param>
         /// <param name="condition">The condition to meet in order for the append to occur</param>
-        /// <returns></returns>
+        /// <returns>The StringBuilder instance</returns>
         public static StringBuilder AppendIf(this StringBuilder @this, string str, bool condition)
         {
             if (@this is null)
@@ -711,9 +711,67 @@ namespace PowerPlug.StringUtils
             {
                 @this.Append(str);
             }
-
             return @this;
         }
 
+        /// <summary>
+        /// Appends the contents of an enumerable of generic objects provided a delegate to identify the string property.
+        /// </summary>
+        /// <typeparam name="T">The type of the enumerable</typeparam>
+        /// <param name="sb">The StringBuilder instance</param>
+        /// <param name="enumerable">The enumerable to append from</param>
+        /// <param name="func">The function specifying what item should be appended</param>
+        /// <returns>The StringBuilder instance</returns>
+        public static StringBuilder AppendFromEnumerable<T>(this StringBuilder sb, IEnumerable<T> enumerable, Func<T, string> func)
+            => EnumerableAction(sb, enumerable, s => sb.Append(func(s)));
+
+
+        /// <summary>
+        /// Appends the contents of a string enumerable. 
+        /// </summary>
+        /// <param name="sb">The StringBuilder instance</param>
+        /// <param name="enumerable">The enumerable to append from</param>
+        /// <returns>The StringBuilder instance</returns>
+        public static StringBuilder AppendFromEnumerable(this StringBuilder sb, IEnumerable<string> enumerable)
+            => EnumerableAction(sb, enumerable, s => sb.Append(s));
+
+        /// <summary>
+        /// Appends the contents of an enumerable of generic objects provided a delegate to identify the string property. This function also
+        /// adds the appropriate line terminator at the end of the StringBuilder instance.
+        /// </summary>
+        /// <typeparam name="T">The type of the enumerable</typeparam>
+        /// <param name="sb">The StringBuilder instance</param>
+        /// <param name="enumerable">The enumerable to append from</param>
+        /// <param name="func">The function specifying what item should be appended</param>
+        /// <returns>The StringBuilder instance</returns>
+        public static StringBuilder AppendLineFromEnumerable<T>(this StringBuilder sb, IEnumerable<T> enumerable, Func<T, string> func) 
+            => EnumerableAction(sb, enumerable, s => sb.AppendLine(func(s)));
+
+
+        /// <summary>
+        /// Appends the contents of a string enumerable. This function also
+        /// adds the appropriate line terminator at the end of the StringBuilder instance.
+        /// </summary>
+        /// <param name="sb">The StringBuilder instance</param>
+        /// <param name="enumerable">The enumerable to append from</param>
+        /// <returns>The StringBuilder instance</returns>
+        public static StringBuilder AppendLineFromEnumerable(this StringBuilder sb, IEnumerable<string> enumerable)
+            => EnumerableAction(sb, enumerable, s => sb.AppendLine(s));
+
+        /// <summary>
+        /// A helper method to carry out an enumerable action. This method really serves no function other than making the other
+        /// methods look more elegant.
+        /// </summary>
+        /// <typeparam name="T">The type of the enumerable</typeparam>
+        /// <param name="sb">The StringBuilder instance</param>
+        /// <param name="enumerable">The enumerable to append from</param>
+        /// <param name="action">The specific StringBuilder action to carry out for the StringBuilder</param>
+        /// <returns>The StringBuilder instance</returns>
+        private static StringBuilder EnumerableAction<T>(StringBuilder sb, IEnumerable<T> enumerable, Action<T> action)
+        {
+            foreach (var x in enumerable)
+                action(x);
+            return sb;
+        }
     } //StringUtils
 } //Note

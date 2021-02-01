@@ -534,20 +534,6 @@
             </summary>
             <param name="msg">A message specifying or representing the state of the cmdlet</param>
         </member>
-        <member name="T:PowerPlug.Common.Extensions.StringBuilderExtensions">
-            <summary>
-            An internal class representing StringBuilder extension methods.
-            </summary>
-        </member>
-        <member name="M:PowerPlug.Common.Extensions.StringBuilderExtensions.AppendIf(System.Text.StringBuilder,System.String,System.Boolean)">
-            <summary>
-            A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
-            </summary>
-            <param name="this">The StringBuilder extension</param>
-            <param name="str">The string to append</param>
-            <param name="condition">The condition to meet in order for the append to occur</param>
-            <returns></returns>
-        </member>
         <member name="T:PowerPlug.Common.IIndexable`2">
             <summary>
             Specifies an indexer with one dimension.
@@ -557,10 +543,10 @@
         </member>
         <member name="P:PowerPlug.Common.IIndexable`2.Item(`0)">
             <summary>
-            
+            The one dimension read/write indexer.
             </summary>
-            <param name="key"></param>
-            <returns></returns>
+            <param name="key">The key to assign to the indexer</param>
+            <returns>The TVal generic type</returns>
         </member>
         <member name="T:PowerPlug.Common.IIndexableReadOnly`2">
             <summary>
@@ -571,9 +557,10 @@
         </member>
         <member name="P:PowerPlug.Common.IIndexableReadOnly`2.Item(`0)">
             <summary>
-            
+            The one dimension readonly indexer.
             </summary>
-            <param name="key"></param>
+            <param name="key">The key to assign to the indexer</param>
+            <returns>The TVal generic type</returns>
         </member>
         <member name="T:PowerPlug.Common.IIndexableDouble`2">
             <summary>
@@ -584,11 +571,11 @@
         </member>
         <member name="P:PowerPlug.Common.IIndexableDouble`2.Item(`0,`0)">
             <summary>
-            
+            The two dimension read/write indexer.
             </summary>
-            <param name="key"></param>
-            <param name="key2"></param>
-            <returns></returns>
+            <param name="key">The first key to assign to the indexer</param>
+            <param name="key2">The second key to assign to the indexer</param>
+            <returns>The TVal generic type</returns>
         </member>
         <member name="T:PowerPlug.Common.IIndexableDoubleReadOnly`2">
             <summary>
@@ -599,11 +586,11 @@
         </member>
         <member name="P:PowerPlug.Common.IIndexableDoubleReadOnly`2.Item(`0,`0)">
             <summary>
-            
+            The two dimension readonly indexer.
             </summary>
-            <param name="key"></param>
-            <param name="key2"></param>
-            <returns></returns>
+            <param name="key">The first key to assign to the indexer</param>
+            <param name="key2">The second key to assign to the indexer</param>
+            <returns>The TVal generic type</returns>
         </member>
         <member name="T:PowerPlug.Common.IIndexableTriple`2">
             <summary>
@@ -614,11 +601,12 @@
         </member>
         <member name="P:PowerPlug.Common.IIndexableTriple`2.Item(`0,`0,`0)">
             <summary>
-            
+            The two dimension read/write indexer.
             </summary>
-            <param name="key"></param>
-            <param name="key2"></param>
-            <param name="key3"></param>
+            <param name="key">The first key to assign to the indexer</param>
+            <param name="key2">The second key to assign to the indexer</param>
+            <param name="key3">The third key to assign to the indexer</param>
+            <returns>The TVal generic type</returns>
         </member>
         <member name="T:PowerPlug.Common.IIndexableTripleReadOnly`2">
             <summary>
@@ -629,12 +617,12 @@
         </member>
         <member name="P:PowerPlug.Common.IIndexableTripleReadOnly`2.Item(`0,`0,`0)">
             <summary>
-            
+            The third dimension readonly indexer.
             </summary>
-            <param name="key"></param>
-            <param name="key2"></param>
-            <param name="key3"></param>
-            <returns></returns>
+            <param name="key">The first key to assign to the indexer</param>
+            <param name="key2">The second key to assign to the indexer</param>
+            <param name="key3">The third key to assign to the indexer</param>
+            <returns>The TVal generic type</returns>
         </member>
         <member name="T:PowerPlug.Common.ImmutableRange`1">
             <inheritdoc cref="T:PowerPlug.Common.IRangify`1"/>
@@ -786,7 +774,7 @@
         </member>
         <member name="M:PowerPlug.Common.Shuffle`1.ShuffleSwapper(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
-            Performs a dual swap on four indeces.
+            Performs a dual swap on four indices.
             </summary>
             <param name="indexOne">The first index to be swapped</param>
             <param name="indexTwo">The second index to be swapped</param>
@@ -1161,19 +1149,30 @@
             </summary>
             <typeparam name="T">The element type of this Matrix</typeparam>
         </member>
+        <member name="P:PowerPlug.MathUtils.IMatrixer`1.Values">
+            <summary>
+            Property representing the values of the IMatrixer as a generic 2D array.
+            </summary>
+        </member>
         <member name="P:PowerPlug.MathUtils.IMatrixer`1.Rows">
             <summary>
-            Property for the number of Rows in and IMatrixer
+            Property for the number of Rows in and IMatrixer.
             </summary>
         </member>
         <member name="P:PowerPlug.MathUtils.IMatrixer`1.Cols">
             <summary>
-            Property for the number of columns in an IMatrixer
+            Property for the number of columns in an IMatrixer.
             </summary>
+        </member>
+        <member name="M:PowerPlug.MathUtils.IMatrixer`1.Transpose">
+            <summary>
+            Transposes the contents of the Matrix and returns a new Matrix.
+            </summary>
+            <returns>A new Matrix containing the transposed version of the original</returns>
         </member>
         <member name="M:PowerPlug.MathUtils.IMatrixer`1.ToString">
             <summary>
-            Returns a string representation of an IMatrixer
+            Returns a string representation of an IMatrixer.
             </summary>
             <returns></returns>
         </member>
@@ -1185,19 +1184,13 @@
             </summary>
         </member>
         <member name="P:PowerPlug.MathUtils.Matrix.Values">
-            <summary>
-            
-            </summary>
+            <inheritdoc cref="T:PowerPlug.MathUtils.IMatrixer`1"/>
         </member>
         <member name="P:PowerPlug.MathUtils.Matrix.Rows">
-            <summary>
-            
-            </summary>
+            <inheritdoc cref="T:PowerPlug.MathUtils.IMatrixer`1"/>
         </member>
         <member name="P:PowerPlug.MathUtils.Matrix.Cols">
-            <summary>
-            
-            </summary>
+            <inheritdoc cref="T:PowerPlug.MathUtils.IMatrixer`1"/>
         </member>
         <member name="M:PowerPlug.MathUtils.Matrix.#ctor(System.Int32,System.Int32)">
             <summary>
@@ -1221,10 +1214,7 @@
             <returns></returns>
         </member>
         <member name="M:PowerPlug.MathUtils.Matrix.Transpose">
-            <summary>
-            
-            </summary>
-            <returns></returns>
+            <inheritdoc cref="T:PowerPlug.MathUtils.IMatrixer`1"/>
         </member>
         <member name="M:PowerPlug.MathUtils.Matrix.EqualDimension(PowerPlug.MathUtils.Matrix,PowerPlug.MathUtils.Matrix)">
             <summary>
@@ -1483,10 +1473,7 @@
             <returns></returns>
         </member>
         <member name="M:PowerPlug.MathUtils.Matrix.ToString">
-            <summary>
-            
-            </summary>
-            <returns></returns>
+            <inheritdoc cref="T:PowerPlug.MathUtils.IMatrixer`1"/>
         </member>
         <member name="T:PowerPlug.MathUtils.MatrixPropertyException">
             <summary>
@@ -1496,28 +1483,29 @@
         </member>
         <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor">
             <summary>
-            
+            Creates a new MatrixPropertyException.
             </summary>
         </member>
         <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor(System.String)">
             <summary>
-            
+            Creates a new overloaded MatrixPropertyException containing a message.
             </summary>
-            <param name="message"></param>
+            <param name="message">The message of this exception type</param>
         </member>
         <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor(System.String,System.Exception)">
             <summary>
-            
+            Creates a new overloaded MatrixPropertyException containing a message and an inner Exception.
             </summary>
-            <param name="message"></param>
-            <param name="inner"></param>
+            <param name="message">The message of this exception type</param>
+            <param name="inner">The inner Exception</param>
         </member>
         <member name="M:PowerPlug.MathUtils.MatrixPropertyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            
+            Creates a new overloaded MatrixPropertyException containing a <see cref="T:System.Runtime.Serialization.SerializationInfo"/> instance
+            and a <see cref="T:System.Runtime.Serialization.StreamingContext"/> instance.
             </summary>
-            <param name="info"></param>
-            <param name="context"></param>
+            <param name="info">The SerializationInfo instance</param>
+            <param name="context">The StreamingContext instance</param>
         </member>
         <member name="T:PowerPlug.Statistics.EnumerableStats">
             <summary>
@@ -1688,7 +1676,7 @@
             <summary>
             Finds the lower quartile of the enumerable.
             </summary>
-            <param name="src">The IEnumberable of type double</param>
+            <param name="src">The IEnumerable of type double</param>
             <exception cref="T:System.ArgumentNullException">Thrown when the source is null</exception>
             <exception cref="T:System.InvalidOperationException">Thrown when the source is of size 0</exception>
             <exception cref="T:PowerPlug.Statistics.InsufficientDataSetException">Thrown when the data set is not large enough to calculate a lower quartile</exception>
@@ -1825,33 +1813,34 @@
         </member>
         <member name="T:PowerPlug.Statistics.InsufficientDataSetException">
             <summary>
-            
+            An exception that is thrown when the data set is not large enough to compute a statistic.
             </summary>
         </member>
         <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor">
             <summary>
-            
+            Creates a new InsufficientDataSetException.
             </summary>
         </member>
         <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor(System.String)">
             <summary>
-            
+            Creates a new overloaded InsufficientDataSetException containing a message.
             </summary>
             <param name="message"></param>
         </member>
         <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor(System.String,System.Exception)">
             <summary>
-            
+            Creates a new overloaded InsufficientDataSetException containing a message and an inner Exception.
             </summary>
-            <param name="message"></param>
-            <param name="inner"></param>
+            <param name="message">The message of this exception type</param>
+            <param name="inner">The inner Exception</param>
         </member>
         <member name="M:PowerPlug.Statistics.InsufficientDataSetException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            
+            Creates a new overloaded InsufficientDataSetException containing a <see cref="T:System.Runtime.Serialization.SerializationInfo"/> instance
+            and a <see cref="T:System.Runtime.Serialization.StreamingContext"/> instance.
             </summary>
-            <param name="info"></param>
-            <param name="context"></param>
+            <param name="info">The SerializationInfo instance</param>
+            <param name="context">The StreamingContext instance</param>
         </member>
         <member name="T:PowerPlug.Statistics.NoModeException">
             <summary>
@@ -1885,7 +1874,8 @@
         </member>
         <member name="T:PowerPlug.StringUtils.StringUtils">
             <summary>
-            
+            A static utility class for string extension methods including other string manipulation classes such as
+            StringBuilder and StringBuffer.
             </summary>
         </member>
         <member name="F:PowerPlug.StringUtils.StringUtils.CharSpace">
@@ -2187,6 +2177,63 @@
             </summary>
             <param name="inp">The input string</param>
             <returns></returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.AppendIf(System.Text.StringBuilder,System.String,System.Boolean)">
+            <summary>
+            A StringBuilder extension to append to the StringBuilder if and only if a condition is met.
+            </summary>
+            <param name="this">The StringBuilder instance</param>
+            <param name="str">The string to append</param>
+            <param name="condition">The condition to meet in order for the append to occur</param>
+            <returns>The StringBuilder instance</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.AppendFromEnumerable``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Appends the contents of an enumerable of generic objects provided a delegate to identify the string property.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="sb">The StringBuilder instance</param>
+            <param name="enumerable">The enumerable to append from</param>
+            <param name="func">The function specifying what item should be appended</param>
+            <returns>The StringBuilder instance</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.AppendFromEnumerable(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Appends the contents of a string enumerable. 
+            </summary>
+            <param name="sb">The StringBuilder instance</param>
+            <param name="enumerable">The enumerable to append from</param>
+            <returns>The StringBuilder instance</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.AppendLineFromEnumerable``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Appends the contents of an enumerable of generic objects provided a delegate to identify the string property. This function also
+            adds the appropriate line terminator at the end of the StringBuilder instance.
+            </summary>
+            <typeparam name="T">The type of the enumerable</typeparam>
+            <param name="sb">The StringBuilder instance</param>
+            <param name="enumerable">The enumerable to append from</param>
+            <param name="func">The function specifying what item should be appended</param>
+            <returns>The StringBuilder instance</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.AppendLineFromEnumerable(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Appends the contents of a string enumerable. This function also
+            adds the appropriate line terminator at the end of the StringBuilder instance.
+            </summary>
+            <param name="sb">The StringBuilder instance</param>
+            <param name="enumerable">The enumerable to append from</param>
+            <returns>The StringBuilder instance</returns>
+        </member>
+        <member name="M:PowerPlug.StringUtils.StringUtils.EnumerableAction``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sb"></param>
+            <param name="enumerable"></param>
+            <param name="action"></param>
+            <returns>The StringBuilder instance</returns>
         </member>
     </members>
 </doc>

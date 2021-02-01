@@ -30,7 +30,7 @@ PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to 
 
 ## Execution
 ### Install from PS Gallery
-The latest release can be found at [PowerPlug Releases](https://www.powershellgallery.com/packages/PowerPlug/). You can install the prerelease to PowerShell by running:
+You can install the latest release to PowerShell 7 by running:
 
 ```powershell
 Install-Module -Name PowerPlug

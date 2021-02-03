@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace PowerPlug.FileUtils
+namespace PowerPlug.Base
 {
     /// <summary>
     /// The base class for any PowerPlug file abstraction. Representations of PowerShell entities such as

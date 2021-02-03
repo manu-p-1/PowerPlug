@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Management.Automation;
 
-namespace PowerPlug.FileUtils
+namespace PowerPlug.Base
 {
 
     /// <summary>

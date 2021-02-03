@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
+using Ampere.FileUtils;
 using PowerPlug.BaseCmdlets;
 
 namespace PowerPlug.Cmdlets.Byname.Operators
@@ -24,7 +25,7 @@ namespace PowerPlug.Cmdlets.Byname.Operators
                 AliasCmdlet.WriteObject(p);
             }
             new BynameRemover(AliasCmdlet, ProfileInfo).Remove();
-            FileUtils.FileUtils.WriteLine(ProfileInfo.FileInfo, PsCommandAsString);
+            FileUtils.WriteLine(ProfileInfo.FileInfo, PsCommandAsString);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<p align="center">
   <a href="https://github.com/manu-p-1/PowerPlug/" target="_blank">
-    <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/PowerPlugLogoAlt.png">
+    <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/VoltLogo.png" alt="Volt Logo">
   </a>
   <br>
 </p>

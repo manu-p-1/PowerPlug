@@ -15,8 +15,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="assets\**" />
+    <EmbeddedResource Remove="assets\**" />
+    <None Remove="assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="dist\" />
-    <Folder Include="assets\" />
   </ItemGroup>
 
   <ItemGroup>

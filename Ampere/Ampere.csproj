@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.2.6</Version>
+    <Company />
+    <Description>PowerShell 7 utility cmdlets</Description>
+    <Copyright>Copyright © Manu Puduvalli 2021</Copyright>
+    <PackageProjectUrl>https://github.com/manu-p-1/PowerPlug</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
+    <FileVersion>0.2.6</FileVersion>
+    <AssemblyVersion>0.2.6</AssemblyVersion>
+    <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Manu\source\repos\Volt\Ampere\Ampere.xml</DocumentationFile>
+    <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup>
+
+</Project>

@@ -4,6 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <Version>0.2.7</Version>
+    <Authors>The PowerPlug Authors</Authors>
+    <Company />
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Description>A PowerShell Cmdlet library powered by Ampere</Description>
+    <Copyright>Copyright © Manu Puduvalli 2021</Copyright>
+    <PackageProjectUrl>https://github.com/manu-p-1/PowerPlug</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
+    <PackageTags>csharp, library, utilities, dotnet, powershell, cmdlets, ampere, docfx</PackageTags>
+    <PackageIcon>PowerPlugIcon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,6 +28,14 @@
     <Compile Remove="assets\**" />
     <EmbeddedResource Remove="assets\**" />
     <None Remove="assets\**" />
+    <None Include="..\assets\PowerPlugIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +45,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\PowerPlug\Ampere.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

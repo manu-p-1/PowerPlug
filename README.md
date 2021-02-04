@@ -1,6 +1,6 @@
 ﻿<p align="center">
   <a href="https://github.com/manu-p-1/PowerPlug/" target="_blank">
-    <img src="https://github.com/manu-p-1/PowerPlug/blob/volt/assets/PowerPlugLogo.png" alt="Volt Logo">
+    <img src="https://github.com/manu-p-1/PowerPlug/blob/master/assets/PowerPlugLogo.png" alt="Volt Logo">
   </a>
   <br>
 </p>
@@ -26,7 +26,7 @@
 </p>
 
 ## Introduction
-PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library.
+PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library. PowerPlug is driven by the [Ampere Library](https://github.com/manu-p-1/Ampere).
 
 ## Execution
 ### Install from PS Gallery
@@ -59,14 +59,13 @@ There are three components to PowerPlug documentation:
 2. PowerShell Help File Documentation
 3. Miscellaneous Documentation (README.md, Wiki's, Discussions, etc...)
 
-All PowerPlug methods are documented using .NET XML documentation. This is compiled using [DocFX](https://dotnet.github.io/docfx/) with the `docfx.json` file under the [DocFX folder](https://github.com/manu-p-1/PowerPlug/tree/master/DocFx). DocFX creates static
-HTML pages which are used by <https://powerplug.me>. THe `PowerPlug.dll-Help.xml` file is the MAML file that is used to generate the `Get-Help` documentation for PowerPlug cmdlets. Lastly, as a fluid repository, many files change and constantly need to be documented and updated.
+All PowerPlug methods are documented using .NET XML documentation for better understanding. In addition, the `PowerPlug.dll-Help.xml` file is the MAML file that is used to generate the `Get-Help` documentation for PowerPlug cmdlets. Lastly, as a fluid repository, many files change and constantly need to be documented and updated.
 
 ## Roadmap
-There are two planned releases - the latest being by **July 2021**:
+There are two planned releases - the latest being by **September 2021**:
 
-- 0.2.6 - First full release of PowerPlug
 - 0.3.0 - Full release with a statistics cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
+- 0.4.0 - Ampere Wrappers
 
 ## State
 PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. To report an issue visit, [PowerPlug Issues](https://github.com/manu-p-1/PowerPlug/issues), or to contribute, view the contribution guidelines.

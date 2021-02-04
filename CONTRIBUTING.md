@@ -32,7 +32,6 @@ Contributors must strictly adhere to the PowerPlug code of conduct mentioned her
 There are a variety of ways that you can contribute to PowerPlug for the betterment of developers. There are four main components to contribute to:
 
 1. Cmdlets
-2. PowerPlug DocFX
 3. GitHub Repo
 4. Other (Scripting, CI/CD, Unit Testing, etc...)
 
@@ -76,24 +75,6 @@ public class CompareHashCmdlet : PSCmdlet { ... }
 In order to view `Get-Help` information for your custom cmdlets within PowerShell, you'll need to add cmdlet help xml into the `PowerPlug.dll-Help.xml` file. For more information on creating cmdlet help, view [this article](https://docs.microsoft.com/en-us/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets?view=powershell-7.1). The XML-based cmdlet Help file promotes consistency within the PowerShell environment. The XML file is validated agains the MAML schema.
 
 When a release is created, the assembly DLL (or multiple DLLs if multiple assemblies are created) are amalgamated with the the dll-Help.xml, license, and a `.psd1` file into a PowerShell module which is published in the PowerShell gallery. 
-
-## DocFX
-Since all PowerPlug methods are documented using .NET XML documentation. This is compiled using [DocFX](https://dotnet.github.io/docfx/) with the `docfx.json` file under the [DocFX folder](https://github.com/manu-p-1/PowerPlug/tree/master/DocFx). DocFX creates static HTML pages which are used by <https://powerplug.me>. If you would like to change documentation on this website after understanding the DocFX file structure, you can contribute it at the top-level DocFX folder.
-
-### Building DocFX
-Download the DocFX executable from their website. For convenience, it is recommended that the executable be added to the System environment variable PATH. [Here's a tutorial](https://www.c-sharpcorner.com/article/add-a-directory-to-path-environment-variable-in-windows-10/) on how to do that. To run the executable, go to the top level solution directory and run:
-
-```powershell
-docfx.exe .\DocFx\docfx.json
-```
-
-This allows you to build the documentation, then to view it locally on your localhost:
-
-```powershell
-docfx.exe .\DocFx\docfx.json --serve
-```
-
-For more command options when needed, view the DocFX website provided above.
 
 ## Repository Contributions
 The repository is the first thing a developer see's about the project and we like to keep it tidy. If you see ways to contribute, such as improving this document, changing README's, or improving the logo artwork, don't hesitate to create and issue and get it resolved. Keep in mind that aformentioned guidelines to good pull requests still apply.

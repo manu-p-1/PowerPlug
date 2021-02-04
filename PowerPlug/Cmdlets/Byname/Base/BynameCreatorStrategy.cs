@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
-using PowerPlug.FileUtils;
+using PowerPlug.Base;
 
 namespace PowerPlug.Cmdlets.Byname.Base
 {

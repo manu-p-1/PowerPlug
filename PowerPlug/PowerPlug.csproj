@@ -2,26 +2,39 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>0.2.6</Version>
-    <Company />
-    <Description>PowerShell 7 utility cmdlets</Description>
-    <Copyright>Copyright © Manu Puduvalli 2021</Copyright>
-    <PackageProjectUrl>https://github.com/manu-p-1/PowerPlug</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
-    <FileVersion>0.2.6</FileVersion>
-    <AssemblyVersion>0.2.6</AssemblyVersion>
     <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\Manu\source\repos\PowerPlug\PowerPlug\PowerPlug.xml</DocumentationFile>
-    <NoWarn>1701;1702</NoWarn>
+    <DocumentationFile>C:\Users\Manu\source\repos\Volt\PowerPlug\PowerPlug.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.1.0" />
+    <Compile Remove="assets\**" />
+    <EmbeddedResource Remove="assets\**" />
+    <None Remove="assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PowerPlug\Ampere.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo $(ConfigurationName)&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (&#xD;&#xA;xcopy /y $(TargetPath) $(ProjectDir)dist\&#xD;&#xA;xcopy /y $(ProjectDir)\PowerPlug.dll-Help.xml $(ProjectDir)dist\&#xD;&#xA;)&#xD;&#xA;" />
+  </Target>
 
 </Project>

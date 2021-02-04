@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Management.Automation;
 using System.Text.RegularExpressions;
+using PowerPlug.Base;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Cmdlets.Byname.Base;
-using PowerPlug.FileUtils;
 
 namespace PowerPlug.Cmdlets.Byname.Operators
 {

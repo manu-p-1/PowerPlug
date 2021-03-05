@@ -73,15 +73,16 @@ namespace PowerPlug.Cmdlets
             };
             var truth = (hash.ToLower() == Signature);
 
+            var pso = new PSObject();
             if (truth)
             {
-                Host.UI.WriteLine(ConsoleColor.Green, Host.UI.RawUI.BackgroundColor,
-                    "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~ SIGNATURE MATCH ~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+                pso.Members.Add(new PSNoteProperty("Result", "SIGNATURE MATCH SUCCESS"));
+                WriteObject(pso);
             }
             else
             {
-                Host.UI.WriteLine(ConsoleColor.Yellow, Host.UI.RawUI.BackgroundColor,
-                    "\n\n~~~~~~~~~~~~~~~~ WARNING: SIGNATURE FAILED TO MATCH ~~~~~~~~~~~~~~~~\n\n");
+                pso.Members.Add(new PSNoteProperty("Result", "SIGNATURE MATCH FAILURE"));
+                WriteObject(pso);
             }
 
         }

@@ -49,7 +49,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="echo $(ConfigurationName)&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (&#xD;&#xA;xcopy /y $(TargetPath) $(ProjectDir)dist\&#xD;&#xA;xcopy /y $(ProjectDir)\PowerPlug.dll-Help.xml $(ProjectDir)dist\&#xD;&#xA;)&#xD;&#xA;" />
+    <Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (&#xD;&#xA;xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)dist\&quot;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\PowerPlug.dll-Help.xml&quot; &quot;$(ProjectDir)dist\&quot;&#xD;&#xA;xcopy /y &quot;$(SolutionDir)\LICENSE.txt&quot; &quot;$(ProjectDir)dist\&quot;&#xD;&#xA;)&#xD;&#xA;" />
   </Target>
 
 </Project>

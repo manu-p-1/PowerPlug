@@ -39,17 +39,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="dist\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Ampere" Version="0.1.0" />
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (&#xD;&#xA;xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)dist\&quot;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\PowerPlug.dll-Help.xml&quot; &quot;$(ProjectDir)dist\&quot;&#xD;&#xA;xcopy /y &quot;$(SolutionDir)\LICENSE.txt&quot; &quot;$(ProjectDir)dist\&quot;&#xD;&#xA;)&#xD;&#xA;" />
+    <Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (&#xD;&#xA;xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)dist\PowerPlug\&quot;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\PowerPlug.dll-Help.xml&quot; &quot;$(ProjectDir)dist\PowerPlug\&quot;&#xD;&#xA;xcopy /y &quot;$(SolutionDir)\LICENSE.txt&quot; &quot;$(ProjectDir)dist\PowerPlug\&quot;&#xD;&#xA;)&#xD;&#xA;" />
   </Target>
 
 </Project>

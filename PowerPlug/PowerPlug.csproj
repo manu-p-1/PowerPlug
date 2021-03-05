@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
-    <RunPostBuildEvent>Always</RunPostBuildEvent>
-    <Version>0.2.7</Version>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <Version>0.2.8</Version>
     <Authors>The PowerPlug Authors</Authors>
     <Company />
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>

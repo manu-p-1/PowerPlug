@@ -39,7 +39,7 @@ HTML pages which are used by <powerplug.me>. THe `PowerPlug.dll-Help.xml` file i
 There are two planned releases - the latest being by **July 2021**:
 
 - 0.2.5 - First full release of PowerPlug
-- 0.3.0 - Full release with a statistics cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
+- 0.3.0 - Full release with additional cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
 
 ## State
 PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. For more information visit, [PowerPlug Repo](https://github.com/manu-p-1/PowerPlug/). Or, to report an issue visit,

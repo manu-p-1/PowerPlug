@@ -4,19 +4,19 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'PowerPlugPS.dll'
+RootModule = 'PowerPlug.dll'
 
 # Version number of this module.
-ModuleVersion = '0.2.7'
+ModuleVersion = '0.2.8'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = '0a1ebafa-f92e-487b-8ed0-ad523dc93183'
+GUID = 'b0608836-251b-4d25-9671-d09526a35d28'
 
 # Author of this module
-Author = 'Manu Puduvalli'
+Author = 'The PowerPlug Authors'
 
 # Company or vendor of this module
 CompanyName = 'Unknown'
@@ -82,7 +82,7 @@ AliasesToExport = @()
 # ModuleList = @()
 
 # List of all files packaged with this module
-FileList = @('')
+FileList = @('license.txt', 'README.md', 'PowerPlug.dll', 'PowerPlug.dll-Help.xml')
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -102,7 +102,7 @@ PrivateData = @{
         IconUri = 'https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIcon.ico'
 
         # ReleaseNotes of this module
-        ReleaseNotes = '0.2.7 release of PowerPlug'
+        ReleaseNotes = '0.2.8 release of PowerPlug'
 
         # Prerelease string of this module
         Prerelease = ''
@@ -111,14 +111,14 @@ PrivateData = @{
         RequireLicenseAcceptance = $false
 
         # External dependent modules of this module
-        # ExternalModuleDependencies = @()
+        ExternalModuleDependencies = @("Ampere")
 
     } # End of PSData hashtable
 
 } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
-HelpInfoURI = 'https://powerplug.me'
+HelpInfoURI = 'https://github.com/manu-p-1/PowerPlug/wiki/Cmdlets'
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''

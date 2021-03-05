@@ -64,7 +64,7 @@ All PowerPlug methods are documented using .NET XML documentation for better und
 ## Roadmap
 There are two planned releases - the latest being by **September 2021**:
 
-- 0.3.0 - Full release with a statistics cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
+- 0.3.0 - Full release with a additional cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
 - 0.4.0 - Ampere Wrappers
 
 ## State

@@ -11,14 +11,13 @@ namespace PowerPlug.BaseCmdlets
         /// The Name parameter for the command.
         /// </summary>
         [Parameter(Position = 0, Mandatory = true, ValueFromPipelineByPropertyName = true)]
-        public override string Name { get; set; }
+        public override string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// The scope parameter for the command determines which scope the alias is set in.
         /// </summary>
         [Parameter]
-        [ValidateSet("Global", "Local", "Private", "Numbered scopes", "Script")]
-
+        [ValidateSet("Global", "Local", "Private", "Script")]
         public string Scope { get; set; } = "Local";
 
         /// <summary>
@@ -26,20 +25,13 @@ namespace PowerPlug.BaseCmdlets
         /// and is ReadOnly, the alias will be overwritten.
         /// </summary>
         [Parameter]
-        public SwitchParameter Force
-        {
-            get => _force;
-
-            set => _force = value;
-        }
-
-        private bool _force;
+        public SwitchParameter Force { get; set; }
 
         /// <summary>
         /// The Value parameter for the command.
         /// </summary>
         [Parameter(Position = 1, Mandatory = true, ValueFromPipelineByPropertyName = true)]
-        public string Value { get; set; }
+        public string Value { get; set; } = string.Empty;
 
         /// <summary>
         /// The description for the alias.
@@ -59,39 +51,7 @@ namespace PowerPlug.BaseCmdlets
         /// If set to true, the alias that is set is passed to the pipeline.
         /// </summary>
         [Parameter]
-        public SwitchParameter PassThru
-        {
-            get => _passThru;
-
-            set => _passThru = value;
-        }
-
-        private bool _passThru;
-
-        /// <summary>
-        /// Shows what would happen if the cmdlet runs. The cmdlet is not run.
-        /// </summary>
-        [Parameter]
-        [Alias("wi")]
-        public SwitchParameter WhatIf
-        {
-            get => _whatIf;
-            set => _whatIf = value;
-        }
-
-        private bool _whatIf;
-
-        /// <summary>
-        /// Displays a confirmation dialog to require user input to execute the command.
-        /// </summary>
-        [Parameter]
-        public SwitchParameter Confirm
-        {
-            get => _confirm;
-            set => _confirm = value;
-        }
-
-        private bool _confirm;
+        public SwitchParameter PassThru { get; set; }
 
         /// <summary>
         /// Every WritableByname must have ToString overriden. This is because a Byname is simply a wrapper for

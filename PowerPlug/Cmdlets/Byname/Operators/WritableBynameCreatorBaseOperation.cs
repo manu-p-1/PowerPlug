@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Text;
+using System.Text.RegularExpressions;
+using PowerPlug.Base;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Cmdlets.Byname.Base;
 using PowerPlug.Cmdlets.Byname.Base.AliasValueTypes;
@@ -46,41 +49,77 @@ namespace PowerPlug.Cmdlets.Byname.Operators
             AliasCmdlet = cmdlet;
 
             var sb = new StringBuilder();
-            if (GetAliasValueType() is FunctionValueType ft)
+            var valueType = GetAliasValueType();
+            if (valueType is FunctionValueType ft && !FunctionExistsInProfile(AliasCmdlet.Value))
             {
-                sb.Append($"function {AliasCmdlet.Value} {{ {ft.ScriptBlock} }}{Environment.NewLine}");
+                var funcName = AliasCmdlet.Value;
+                if (funcName.Contains(' ', StringComparison.Ordinal) || funcName.Contains('"', StringComparison.Ordinal))
+                {
+                    throw new InvalidOperationException(
+                        $"Function name '{funcName}' contains spaces or quotes and cannot be written to $PROFILE. Use a simple name without spaces.");
+                }
+
+                sb.Append("function ").Append(funcName)
+                  .Append(" { ").Append(ft.ScriptBlock).Append(" }")
+                  .Append(Environment.NewLine);
             }
 
             PsCommandAsString = sb.Append(cmdlet).ToString();
         }
 
         /// <summary>
+        /// Checks whether a function definition for the given name already exists in the user's $PROFILE.
+        /// </summary>
+        private static bool FunctionExistsInProfile(string functionName)
+        {
+            if (!Profile.ProfileExists())
+            {
+                return false;
+            }
+
+            var profile = Profile.GetProfile();
+            if (!profile.FileInfo.Exists)
+            {
+                return false;
+            }
+
+            var content = File.ReadAllText(profile.FileInfo.FullName);
+            var pattern = $@"\bfunction\s+{Regex.Escape(functionName)}\b";
+            return Regex.IsMatch(content, pattern, RegexOptions.IgnoreCase, TimeSpan.FromSeconds(5));
+        }
+
+        /// <summary>
         /// Get's the type of the value of the WritableByname cmdlet. This is done through invoking a script
-        /// in the default run space thread of execution. The script run is <code>Get-Command {AliasCmdlet.Name} | select*
-        /// </code>.
-        /// The properties of the command are read and a return type is assumed.
+        /// in the default run space thread of execution.
         /// </summary>
         /// <returns>A <see cref="CommandAliasValueBaseType"/> base type</returns>
         private CommandAliasValueBaseType GetAliasValueType()
         {
             using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
             var gc = ps
-                .AddScript($"Get-Command {AliasCmdlet.Name} | select *")
+                .AddCommand("Get-Command")
+                .AddParameter("Name", AliasCmdlet.Name)
+                .AddCommand("Select-Object")
+                .AddParameter("Property", "*")
                 .Invoke<PSObject>();
 
-            var gcProp = gc[0].Properties;
-            var resolvedValue = gcProp.FirstOrDefault(e => e.Name == "ResolvedCommand").Value;
-
-            if (resolvedValue == null)
+            if (gc == null || gc.Count == 0)
             {
                 return new UndefinedValueType(AliasCmdlet);
             }
 
-            var cmd = (resolvedValue as CommandInfo);
-            return cmd.CommandType.ToString() switch
+            var gcProp = gc[0].Properties;
+            var resolvedCommandProp = gcProp.FirstOrDefault(e => e.Name == "ResolvedCommand");
+
+            if (resolvedCommandProp?.Value is not CommandInfo cmd)
             {
-                "Function" => new FunctionValueType(AliasCmdlet, cmd.Definition.Trim()),
-                "Cmdlet" => new CmdletValueType(AliasCmdlet),
+                return new UndefinedValueType(AliasCmdlet);
+            }
+
+            return cmd.CommandType switch
+            {
+                CommandTypes.Function => new FunctionValueType(AliasCmdlet, cmd.Definition.Trim()),
+                CommandTypes.Cmdlet => new CmdletValueType(AliasCmdlet),
                 _ => new UndefinedValueType(AliasCmdlet),
             };
         }

@@ -4,15 +4,16 @@ namespace PowerPlug.Attributes
 {
     /// <summary>
     /// The BetaCmdlet attribute represents any cmdlets which are functional, but may result in unintended behavior due
-    /// to its "beta" state.
+    /// to its "beta" state. The warning message should be emitted via <c>WriteWarning</c> in the cmdlet's
+    /// <c>BeginProcessing</c> method, not in the attribute constructor.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class)]
-    internal class BetaCmdlet : Attribute
+    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+    internal sealed class BetaCmdlet : Attribute
     {
         /// <summary>
         /// The message attributed to this BetaCmdlet, if any.
         /// </summary>
-        public string Msg { get; } = string.Empty;
+        public string Msg { get; }
 
         /// <summary>
         /// The default warning message for this Attribute.
@@ -22,7 +23,10 @@ namespace PowerPlug.Attributes
         /// <summary>
         /// Creates a new BetaCmdlet with no message. 
         /// </summary>
-        internal BetaCmdlet() { }
+        internal BetaCmdlet()
+        {
+            Msg = string.Empty;
+        }
 
         /// <summary>
         /// Creates a new BetaCmdlet with the specified message.
@@ -30,11 +34,7 @@ namespace PowerPlug.Attributes
         /// <param name="msg">A message specifying or representing the state of the cmdlet</param>
         internal BetaCmdlet(string msg)
         {
-            this.Msg = msg;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine();
-            Console.WriteLine(Msg);
-            Console.ResetColor();
+            Msg = msg ?? string.Empty;
         }
     }
 }

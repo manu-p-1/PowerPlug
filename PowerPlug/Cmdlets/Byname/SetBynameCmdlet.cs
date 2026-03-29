@@ -1,11 +1,12 @@
-﻿using System.Management.Automation;
+﻿using System;
+using System.Management.Automation;
 using System.Text;
-using Ampere.StringUtils;
 using PowerPlug.Attributes;
 using PowerPlug.BaseCmdlets;
 using PowerPlug.Cmdlets.Byname.Base;
 using PowerPlug.Cmdlets.Byname.Operators;
 using PowerPlug.Cmdlets.Util;
+using Ampere.Str;
 
 namespace PowerPlug.Cmdlets.Byname
 {
@@ -22,16 +23,22 @@ namespace PowerPlug.Cmdlets.Byname
     /// <code>Set-Byname -Name gh -Value Get-Help</code>
     /// </example>
     /// </summary>
-    [Cmdlet(VerbsCommon.Set, "Byname", HelpUri = "https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Set-Alias?view=powershell-7")]
+    [Cmdlet(VerbsCommon.Set, "Byname", SupportsShouldProcess = true,
+        HelpUri = "https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Set-Alias?view=powershell-7")]
     [Alias("sbn")]
     [BetaCmdlet(BetaCmdlet.WarningMessage)]
-    public class SetBynameCmdlet : WritableByname
+    public sealed class SetBynameCmdlet : WritableByname
     {
         /// <summary>
         /// Processes the Set-Byname PSCmdlet.
         /// </summary>
         protected override void ProcessRecord()
         {
+            if (!ShouldProcess($"Alias '{Name}' -> '{Value}'", "Set-Byname"))
+            {
+                return;
+            }
+
             using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
 
             ps.AddCommand(WritableBynameCreatorBaseOperation.SetAliasCommand)
@@ -41,9 +48,7 @@ namespace PowerPlug.Cmdlets.Byname
                 .AddParameter("Option", Option)
                 .AddParameter("PassThru", PassThru)
                 .AddParameter("Scope", Scope)
-                .AddParameter("Force", Force)
-                .AddParameter("WhatIf", WhatIf)
-                .AddParameter("Confirm", Confirm);
+                .AddParameter("Force", Force);
 
             new BynameCreatorContext(
                 new SetBynameCreatorOperation(
@@ -57,15 +62,13 @@ namespace PowerPlug.Cmdlets.Byname
         public override string ToString() =>
             new StringBuilder()
                 .Append("Set-Alias")
-                .Append($" -Name {Name}")
-                .Append($" -Value {Value}")
-                .Append($" -Option {Option}")
-                .Append($" -Scope {Scope}")
+                .Append(" -Name ").Append(Name)
+                .Append(" -Value ").Append(Value)
+                .Append(" -Option ").Append(Option)
+                .Append(" -Scope ").Append(Scope)
                 .AppendIf(" -PassThru", PassThru)
                 .AppendIf(" -Force", Force)
-                .AppendIf(" -WhatIf", WhatIf)
-                .AppendIf(" -Confirm", Confirm)
-                .AppendIf($" -Description {Description}", Description != string.Empty)
+                .AppendIf(string.Concat(" -Description \"", Description.Replace("\"", "\"\"", StringComparison.Ordinal), "\""), Description != string.Empty)
                 .ToString();
     }
 }

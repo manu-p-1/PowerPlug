@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Management.Automation;
-using Ampere.FileUtils;
+using Ampere.AmpFile;
 using PowerPlug.BaseCmdlets;
 
 namespace PowerPlug.Cmdlets.Byname.Operators
@@ -9,7 +9,7 @@ namespace PowerPlug.Cmdlets.Byname.Operators
     /// The NewBynameCreatorOperation is responsible for writing the actual contents of the Byname cmdlet into the
     /// $PROFILE.
     /// </summary>
-    internal class NewBynameCreatorOperation : WritableBynameCreatorBaseOperation
+    internal sealed class NewBynameCreatorOperation : WritableBynameCreatorBaseOperation
     {
         /// <inheritdoc cref="WritableBynameCreatorBaseOperation"/>
         internal NewBynameCreatorOperation(WritableByname cmdlet, IEnumerable<PSObject> commandResults) : base(cmdlet, commandResults) { }

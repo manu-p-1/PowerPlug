@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace PowerPlug.Base
 {
@@ -25,7 +26,8 @@ namespace PowerPlug.Base
         protected PowerPlugFileBase(string path)
         {
             FileInfo = new FileInfo(path);
-            FileParentDir = new DirectoryInfo(FileInfo.DirectoryName ?? path);
+            var directory = FileInfo.DirectoryName ?? Path.GetDirectoryName(Path.GetFullPath(path));
+            FileParentDir = new DirectoryInfo(directory ?? throw new ArgumentException("Unable to determine parent directory", nameof(path)));
         }
 
         /// <summary>
@@ -35,7 +37,8 @@ namespace PowerPlug.Base
         protected PowerPlugFileBase(FileInfo fileInfo)
         {
             FileInfo = fileInfo;
-            FileParentDir = new DirectoryInfo(FileInfo.DirectoryName ?? fileInfo.FullName);
+            var directory = FileInfo.DirectoryName ?? Path.GetDirectoryName(fileInfo.FullName);
+            FileParentDir = new DirectoryInfo(directory ?? throw new ArgumentException("Unable to determine parent directory", nameof(fileInfo)));
         }
     }
 }

@@ -4,7 +4,7 @@
     /// A BynameCreator context which invokes a <see cref="BynameCreatorStrategy"/> instance. The context
     /// is useful for invoking instances of a strategy design pattern.
     /// </summary>
-    internal class BynameCreatorContext
+    internal sealed class BynameCreatorContext
     {
         /// <summary>
         /// The BynameCreatorStrategy instance to invoke.

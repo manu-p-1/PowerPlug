@@ -26,49 +26,88 @@
 </p>
 
 ## Introduction
-PowerPlug is a PowerShell 7 cmdlet library. The main mission of PowerPlug is to make PowerShell development faster and eaiser. PowerPlug is run through C# `PSCmdlet` classes from the PowerShell Standard Library. PowerPlug is driven by the [Ampere Library](https://github.com/manu-p-1/Ampere).
+PowerPlug is a cross-platform PowerShell 7+ cmdlet utility library targeting .NET 8 and .NET 10. The main mission of PowerPlug is to make PowerShell development faster and easier with practical, everyday utilities. PowerPlug is built using C# `PSCmdlet` classes from the PowerShell Standard Library and is driven by the [Ampere Library](https://github.com/manu-p-1/Ampere).
 
-## Execution
-### Install from PS Gallery
-You can install the latest release to PowerShell 7 by running:
+> **Note:** All cmdlets are currently in **BETA** and may change in future releases.
 
+## Cmdlets
+
+### Networking
+| Cmdlet | Alias | Description |
+|--------|-------|-------------|
+| `Get-Speed` | `speedtest`, `gspd` | Network speed test with download/upload speed, latency, jitter, and packet loss |
+| `Get-NetworkInfo` | `gni`, `netinfo` | Detailed network interface information (IP, subnet, gateway, DNS, MAC, speed) |
+| `Test-Port` | `tp` | TCP port connectivity test with latency reporting |
+
+### Encoding
+| Cmdlet | Alias | Description |
+|--------|-------|-------------|
+| `ConvertTo-Base64` | `tobase64` | Encode strings or file contents to Base64 |
+| `ConvertFrom-Base64` | `frombase64` | Decode Base64 strings to plaintext or file |
+
+### Security & Hashing
+| Cmdlet | Alias | Description |
+|--------|-------|-------------|
+| `Compare-Hash` | `csh` | Compare file hashes (SHA256, SHA512, SHA384, MD5) against known signatures |
+| `New-RandomString` | `nrs`, `randstr` | Generate cryptographically secure random strings |
+
+### File System
+| Cmdlet | Alias | Description |
+|--------|-------|-------------|
+| `Move-Trash` | `trash` | Move files to Recycle Bin (Windows) or Trash (macOS) |
+| `New-TemporaryDirectory` | `ntd` | Create uniquely named temporary directories |
+
+### Aliases (Byname)
+| Cmdlet | Alias | Description |
+|--------|-------|-------------|
+| `New-Byname` | `nbn` | Create a persistent alias in your `$PROFILE` |
+| `Set-Byname` | `sbn` | Modify an existing persistent alias |
+| `Remove-Byname` | `rbn` | Remove a persistent alias from `$PROFILE` |
+
+### Diagnostics & Utilities
+| Cmdlet | Alias | Description |
+|--------|-------|-------------|
+| `Invoke-Retry` | `retry` | Retry a script block with configurable backoff |
+| `Measure-ScriptBlock` | `msb` | Benchmark a script block with statistical analysis |
+| `ConvertTo-HashTable` | `toht` | Convert PSObject to an ordered hashtable |
+| `Get-EnvironmentPath` | `gpath` | List PATH entries with existence validation |
+
+## Installation
+
+### From PowerShell Gallery
 ```powershell
 Install-Module -Name PowerPlug
 ```
-### Install from GitHub Releases
-The latest zip release can be found under the [Github Releases Page](https://github.com/manu-p-1/PowerPlug/releases). You can use the `PowerPlug.dll` binary and place it within any other directory, but conventionally in `$env:PSModulePath`. 
 
-### Importing into session
-To import the dll for the session, you can run: `ipmo PowerPlug` **or** `Import-Module PowerPlug`. You can use the previous commands within the `$PROFILE` to load the library on PowerShell startup. Run `Get-Module PowerPlug` to confirm the import ran successfully.
+### From GitHub Releases
+Download the latest zip from the [Releases Page](https://github.com/manu-p-1/PowerPlug/releases). Place the module folder in a directory listed in `$env:PSModulePath`.
+
+### Importing into a Session
+```powershell
+Import-Module PowerPlug
+```
+
+To load automatically on startup, add the above line to your `$PROFILE`.
+
+## Building
+
+### Prerequisites
+- PowerShell 7.0 or later
+- .NET 8 SDK or .NET 10 SDK
+- Any editor (VS Code recommended)
+
+### Build
+```bash
+dotnet build
+```
+
+The output DLL will be in `bin/Debug/net8.0/` (or `net10.0/`). Import it into PowerShell with:
+```powershell
+Import-Module ./PowerPlug/bin/Debug/net8.0/PowerPlug.dll
+```
 
 ## Contributing
-We are actively looking for contributors to work on all aspects of the code base ― from documentation to C# Cmdlet utilities. For more information onn how to contribute, view our [CONTRIBUTING.md](https://github.com/manu-p-1/PowerPlug/blob/master/CONTRIBUTING.md)
-
-### Building PowerPlug
-Prerequisites:
-- PowerShell 7.0 or Later
-- Visual Studio 2017 or Later OR VSCode
-- .NET 5
-
-The default language setting for this project is C# 9.0. The project can be built using `dotnet build` and the output will display the `AssemblyPath`. PowerShell 7 can be set as the startup item on Visual Studio to dynamically debug PowerPlug.
-
-### Documentation
-There are three components to PowerPlug documentation:
-
-1. Assembly Documentation
-2. PowerShell Help File Documentation
-3. Miscellaneous Documentation (README.md, Wiki's, Discussions, etc...)
-
-All PowerPlug methods are documented using .NET XML documentation for better understanding. In addition, the `PowerPlug.dll-Help.xml` file is the MAML file that is used to generate the `Get-Help` documentation for PowerPlug cmdlets. Lastly, as a fluid repository, many files change and constantly need to be documented and updated.
-
-## Roadmap
-There are two planned releases - the latest being by **September 2021**:
-
-- 0.3.0 - Full release with a additional cmdlets in its own library, comprehensive documentation in the code-base and PowerShell, robust cmdlets
-- 0.4.0 - Ampere Wrappers
-
-## State
-PowerPlug is a very fluid project and you may encounter issues during execution, especially for preleases. To report an issue visit, [PowerPlug Issues](https://github.com/manu-p-1/PowerPlug/issues), or to contribute, view the contribution guidelines.
+We welcome contributions! See [CONTRIBUTING.md](https://github.com/manu-p-1/PowerPlug/blob/master/CONTRIBUTING.md) for guidelines.
 
 ## Licensing
 PowerPlug is licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html). The GNU General Public License is a free, copyleft license for software and other kinds of works.

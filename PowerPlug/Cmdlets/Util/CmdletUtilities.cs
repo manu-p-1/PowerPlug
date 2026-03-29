@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Management.Automation;
 
 namespace PowerPlug.Cmdlets.Util
@@ -19,12 +20,28 @@ namespace PowerPlug.Cmdlets.Util
         {
             var res = ps.Invoke();
 
-            if (ps.HadErrors)
+            if (ps.HadErrors && ps.Streams.Error.Count > 0)
             {
                 psCmdlet.ThrowTerminatingError(ps.Streams.Error[0]);
             }
 
             return res;
+        }
+
+        /// <summary>
+        /// Resolves a path relative to the current PowerShell working directory.
+        /// </summary>
+        /// <param name="path">The path to resolve</param>
+        /// <param name="cmdlet">The PSCmdlet instance for accessing session state</param>
+        /// <returns>The fully qualified path</returns>
+        public static string ResolvePath(string path, PSCmdlet cmdlet)
+        {
+            if (Path.IsPathRooted(path))
+            {
+                return Path.GetFullPath(path);
+            }
+            var current = cmdlet.SessionState.Path.CurrentFileSystemLocation.ToString();
+            return Path.GetFullPath(Path.Combine(current, path));
         }
     }
 }

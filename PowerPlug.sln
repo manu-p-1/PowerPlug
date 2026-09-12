@@ -1,14 +1,19 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{720A0D3D-CDFB-4FCB-B42D-04FB994FFC6E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+		CHANGELOG.md = CHANGELOG.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerPlug", "PowerPlug\PowerPlug.csproj", "{A8298A11-D675-40BA-9940-7C3C1EC334CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerPlug.Tests", "PowerPlug.Tests\PowerPlug.Tests.csproj", "{05E972C5-D6DA-4A13-8739-A53031932963}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +25,10 @@ Global
 		{A8298A11-D675-40BA-9940-7C3C1EC334CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8298A11-D675-40BA-9940-7C3C1EC334CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8298A11-D675-40BA-9940-7C3C1EC334CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E972C5-D6DA-4A13-8739-A53031932963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E972C5-D6DA-4A13-8739-A53031932963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E972C5-D6DA-4A13-8739-A53031932963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E972C5-D6DA-4A13-8739-A53031932963}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

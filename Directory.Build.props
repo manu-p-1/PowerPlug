@@ -1,0 +1,18 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Deterministic>true</Deterministic>
+    <Authors>The PowerPlug Authors</Authors>
+    <Copyright>Copyright (c) Manu Puduvalli 2021-2026</Copyright>
+    <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
+    <!-- NuGet and assembly informational version. The manifest carries the same number with a Gallery friendly prerelease label. -->
+    <PowerPlugVersion>1.0.0-rc.1</PowerPlugVersion>
+  </PropertyGroup>
+
+</Project>

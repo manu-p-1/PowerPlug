@@ -2,58 +2,50 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>PowerPlug</RootNamespace>
+    <AssemblyName>PowerPlug</AssemblyName>
+    <Version>$(PowerPlugVersion)</Version>
     <ApplicationIcon>PowerPlugIcon.ico</ApplicationIcon>
-    <Version>0.9.0</Version>
-    <Authors>The PowerPlug Authors</Authors>
-    <Company />
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Description>A cross-platform PowerShell 7+ cmdlet utility library</Description>
-    <Copyright>Copyright © Manu Puduvalli 2021-2026</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/manu-p-1/PowerPlug</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
     <PackageTags>csharp;library;utilities;dotnet;powershell;cmdlets</PackageTags>
     <PackageIcon>PowerPlugIcon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <AnalysisLevel>latest-recommended</AnalysisLevel>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- Module staging folder used by the StageModule target and the help generator. -->
+    <ModuleOutputDir>$(MSBuildThisFileDirectory)../dist/PowerPlug/</ModuleOutputDir>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="assets\**" />
-    <Compile Remove="C:\**" />
-    <EmbeddedResource Remove="assets\**" />
-    <None Remove="assets\**" />
-    <None Include="..\assets\PowerPlugIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <None Include="..\assets\PowerPlugIcon.png" Pack="true" PackagePath="\" />
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Update="PowerPlug.psd1;PowerPlug.psm1;PowerPlug.dll-Help.xml;PowerPlug.Format.ps1xml" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ampere" Version="0.9.2" />
-    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
-    <MakeDir Directories="$(ProjectDir)dist/PowerPlug/" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ProjectDir)dist/PowerPlug/" />
-    <Copy SourceFiles="$(ProjectDir)PowerPlug.dll-Help.xml" DestinationFolder="$(ProjectDir)dist/PowerPlug/" Condition="Exists('$(ProjectDir)PowerPlug.dll-Help.xml')" />
-    <Copy SourceFiles="$(SolutionDir)LICENSE.txt" DestinationFolder="$(ProjectDir)dist/PowerPlug/" Condition="Exists('$(SolutionDir)LICENSE.txt')" />
+  <ItemGroup>
+    <InternalsVisibleTo Include="PowerPlug.Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+  <!--
+    Stages a ready to import module folder under dist/PowerPlug. Each target framework lands in its own
+    lib/<tfm> folder and PowerPlug.psm1 picks the right one at import time.
+  -->
+  <Target Name="StageModule" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <ItemGroup>
+      <ModuleRootFiles Include="$(ProjectDir)PowerPlug.psd1;$(ProjectDir)PowerPlug.psm1;$(ProjectDir)PowerPlug.dll-Help.xml;$(ProjectDir)PowerPlug.Format.ps1xml;$(ProjectDir)..\LICENSE.txt" />
+      <ModuleLibFiles Include="$(TargetPath);@(DocFileItem->'%(FullPath)')" />
+    </ItemGroup>
+    <MakeDir Directories="$(ModuleOutputDir)lib/$(TargetFramework)/" />
+    <Copy SourceFiles="@(ModuleRootFiles)" DestinationFolder="$(ModuleOutputDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ModuleLibFiles)" DestinationFolder="$(ModuleOutputDir)lib/$(TargetFramework)/" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>

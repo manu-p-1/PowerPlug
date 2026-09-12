@@ -1,20 +1,17 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: "[FEATURE REQ]"
-labels: enhancement, help wanted
+about: Suggest a new cmdlet or an improvement to an existing one
+title: "[FEATURE] "
+labels: enhancement
 assignees: manu-p-1
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**What would you like PowerPlug to do**
+Describe the cmdlet or change. If it is a new cmdlet, suggest a verb-noun name and the parameters you would expect.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Why**
+What are you doing today that this would make easier? A short example of the command you wish you could type is ideal.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Alternatives**
+Anything you tried or considered instead, including other modules or tools.

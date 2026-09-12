@@ -1,32 +1,31 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: "[BUG]"
+about: Something is not working the way the help says it should
+title: "[BUG] "
 labels: bug
 assignees: manu-p-1
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**What happened**
+A short description of the problem.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**How to reproduce**
+The command you ran and, if it matters, the input it was given.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+```powershell
+# paste the command here
+```
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**What you expected**
 
-**.NET or Visual Studio (If Applicable):**
- - .NET Version:
- - Visual Studio Version
- - **Additional Information**
+**Environment**
+Paste the output of these two commands:
 
-**Additional context**
-Add any other context about the problem here.
+```powershell
+Get-SystemInfo
+(Get-Module PowerPlug).Version
+```
+
+**Anything else**
+Error text, screenshots, or the contents of `$Error[0] | Format-List -Force` if there was an error.

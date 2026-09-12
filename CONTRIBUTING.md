@@ -1,91 +1,115 @@
-# PowerPlug Contribution Guidelines
+# Contributing to PowerPlug
 
-PowerPlug is only as good as its contributors and we are excited to help you make positive change. When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+Thanks for taking an interest. PowerPlug is a small project and every fix, cmdlet and doc improvement helps. Before starting on anything sizeable, open an issue so we can talk it through; it saves everyone time if the shape of a change is agreed before the code is written.
 
-## Pull Request Process
+## Getting set up
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a build.
-2. Update the `README.md` with details of changes to the interface.
-3. Follow the Pull Request template carefully. Certain changes may *not* require you to answer all of the questions, however, an in-depth discussion about the changes goes a long way.
-4. You may merge the Pull Request once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+You need:
 
-## Do's and Don'ts
+- PowerShell 7.4 or later
+- The .NET 10 SDK (it also builds the .NET 8 target)
+- An editor. VS Code with the C# Dev Kit and PowerShell extensions works well, as does Rider or Visual Studio.
 
-**Do** follow .NET coding style guidelines and conventions  
-**Do** document all of your changes (screenshots are helpful)  
-**Do** be engaged  
-**Do** test your changes (integration and regression)  
-**Do** respond to feedback  
+Then:
 
-**Don't** push large changes — no one likes to read a 5000 line diff  
-**Don't** duplicate or repeat yourself  
-**Don't** discourage others  
+```bash
+git clone https://github.com/<you>/PowerPlug.git
+cd PowerPlug
+dotnet build
+dotnet test
+```
+
+To try the module you just built:
+
+```powershell
+Import-Module ./PowerPlug/bin/Debug/net8.0/PowerPlug.psd1 -Force
+```
+
+`Properties/launchSettings.json` has a debug profile that launches `pwsh` with the module imported, so you can set breakpoints in a cmdlet and hit them from the prompt.
+
+## How the code is organised
+
+```
+PowerPlug/
+  Attributes/   ExperimentalCmdletAttribute
+  Base/         PowerPlugCmdlet, the base class every cmdlet derives from
+  Cmdlets/      One folder per category: Data, Diagnostics, FileSystem, Networking, Profile, Security, Shell
+  Internal/     Helpers with no PowerShell dependency (hashing, parsers, trash, PATH handling)
+  Models/       Output types returned by cmdlets
+PowerPlug.Tests/
+  Infrastructure/  CmdletHarness (mocked runtime), PowerShellFixture (hosted runspace), TempDirectory
+  Internal/        Unit tests for the helpers
+  Cmdlets/         Tests that run cmdlets against a mocked ICommandRuntime
+  Integration/     Tests that run scripts in a real PowerShell runspace
+tools/
+  New-HelpFile.ps1  Generates PowerPlug.dll-Help.xml from the XML doc comments
+```
+
+The split between `Cmdlets/` and `Internal/` is deliberate. Anything that can be expressed without `System.Management.Automation` goes in `Internal/`, where it can be unit tested directly. The cmdlet is then a thin layer that binds parameters, calls the helper and writes output.
+
+## Writing a cmdlet
+
+A few conventions keep the module consistent:
+
+- Derive from `PowerPlugCmdlet`. It gives you `ResolvePath`, `WriteError(exception, id, category, target)` and `WriteFileError`, and it handles the experimental warning.
+- Make the class `sealed`, name it `<Verb><Noun>Cmdlet`, and put it in the matching `Cmdlets/<Category>/` folder.
+- Use an [approved verb](https://learn.microsoft.com/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands). The integration tests check this.
+- Return a typed class from `Models/` rather than a `PSObject` with note properties. Add an `[OutputType]` attribute. If the object has more than four properties and reads better as a table, add a view to `PowerPlug.Format.ps1xml`.
+- Add `[Alias]` with one or two short names. Add them to `AliasesToExport` in `PowerPlug.psd1` too; the tests will tell you if you forget.
+- Add the cmdlet name to `CmdletsToExport` in the manifest.
+- Anything that deletes, renames, writes to disk or changes environment state gets `SupportsShouldProcess = true` and calls `ShouldProcess` before acting.
+- Report problems with a file or host as non-terminating errors (`WriteError`) so a pipeline of many items keeps going. Use `ThrowTerminatingError` only when the cmdlet cannot do anything useful at all.
+- Long running work should call `WriteProgress`, and anything that waits on the network should keep a `CancellationTokenSource`, cancel it in `StopProcessing`, and implement `IDisposable` to clean it up.
+- Document the class with `<para type="synopsis">`, `<para type="description">` and at least one `<example>`. Document each parameter with `<para type="description">`. This is where `Get-Help` content comes from.
+
+Mark a cmdlet `[ExperimentalCmdlet("reason")]` when it depends on external tools, platform quirks or the network in a way we cannot fully control, or when it modifies state the user cares about. Do not mark things experimental just because they are new. The reason should complete the sentence "`<Cmdlet>` is experimental. ..."
+
+After adding or changing a cmdlet, regenerate the help file:
+
+```powershell
+dotnet build
+./tools/New-HelpFile.ps1
+```
+
+and commit the updated `PowerPlug/PowerPlug.dll-Help.xml`.
+
+## Tests
+
+Every cmdlet should have tests at two levels:
+
+1. **Mocked runtime tests** (`PowerPlug.Tests/Cmdlets/`). `CmdletHarness<T>` swaps in an NSubstitute `ICommandRuntime`, so you set parameters on the cmdlet, call `Run()`, and assert on `Output`, `Errors`, `Warnings` and `ShouldProcessTargets`. These are fast and cover logic and error handling.
+2. **Integration tests** (`PowerPlug.Tests/Integration/`). `PowerShellFixture` hosts a runspace with the module loaded. Use it for anything that touches parameter binding, parameter sets, pipeline input, aliases or `SessionState`. Add the class to the `PowerShell` collection so it shares the runspace.
+
+Helpers in `Internal/` get plain unit tests in `PowerPlug.Tests/Internal/`.
+
+Tests must pass on both `net8.0` and `net10.0` and on all three operating systems. If a test genuinely cannot run somewhere (for example, creating symlinks on Windows without elevation), return early with a comment saying why rather than marking it skipped.
+
+```bash
+dotnet test                       # everything
+dotnet test -f net10.0            # one framework
+dotnet test --filter "FullyQualifiedName~TestPort"
+```
+
+## Style
+
+- `TreatWarningsAsErrors` is on with the `latest-recommended` analyzer set. If an analyzer is wrong for a specific line, suppress it with a `#pragma` and a one line reason. Do not turn rules off project wide.
+- File scoped namespaces, implicit usings, nullable enabled.
+- Comments explain why, not what. If the code needs a comment to say what it does, rewrite the code.
+- Keep the wording in docs and help natural. Write the way you would explain it to a colleague.
+
+## Pull requests
+
+1. Branch from `master`.
+2. Keep the change focused. One cmdlet or one fix per pull request is ideal.
+3. Add or update tests and the help file.
+4. Add a line under `Unreleased` in `CHANGELOG.md`.
+5. Make sure `dotnet build` and `dotnet test` are clean on your machine. CI runs the same on Windows, macOS and Linux.
+6. Describe what changed and why in the pull request. Screenshots or a pasted session are welcome for anything user facing.
 
 ## Code of Conduct
 
-Contributors must strictly adhere to the PowerPlug code of conduct: [Code of Conduct](https://github.com/manu-p-1/PowerPlug/blob/master/CODE_OF_CONDUCT.md)
-
-## Contribution Areas
-
-There are several ways to contribute to PowerPlug:
-
-1. **Cmdlets** — New or improved PowerShell cmdlets
-2. **Repository** — Documentation, README improvements, artwork
-3. **Infrastructure** — CI/CD, build scripts, unit testing, security compliance
-
-### Cmdlets
-
-If you are new to PowerShell, start with the [PowerShell Documentation](https://learn.microsoft.com/en-us/powershell/). To learn about writing custom PSCmdlets, see the [Cmdlet Overview](https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview). PowerPlug welcomes contributions for networking, encoding, file system, diagnostic, and utility cmdlets.
-
-#### Environment Setup
-
-PowerPlug targets **PowerShell 7+** and **.NET 8 / .NET 10** (multi-target). To get started:
-
-1. Install the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (or the [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)).
-2. Fork and clone the repository.
-3. Build the project:
-   ```bash
-   dotnet build
-   ```
-4. Import the module into PowerShell 7 for testing:
-   ```powershell
-   Import-Module ./PowerPlug/bin/Debug/net8.0/PowerPlug.dll
-   ```
-
-To debug with an IDE (Visual Studio, Rider, VS Code), configure the launch profile to run `pwsh` with these arguments:
-
-```
--NoLogo -NoProfile -NoExit -Command "Import-Module './PowerPlug.dll'"
-```
-
-See `Properties/launchSettings.json` for the existing debug configuration.
-
-#### Cmdlet Guidelines
-
-- **Mark all new cmdlets as BETA** by applying `[BetaCmdlet(BetaCmdlet.WarningMessage)]`.
-- **Seal cmdlet classes** — all cmdlet classes should be `sealed`.
-- Organize cmdlets into category folders under `Cmdlets/` (e.g., `Networking/`, `Encoding/`).
-- Document classes, properties, and methods using XML doc comments.
-- Add the `[Cmdlet]` and `[Alias]` attributes with appropriate verb-noun names.
-- For file-based cmdlets, use `CmdletUtilities.ResolvePath()` for path resolution.
-- For destructive operations, enable `SupportsShouldProcess`.
-
-#### Cmdlet Help
-
-To provide `Get-Help` support, add cmdlet help XML to the `PowerPlug.dll-Help.xml` file. For more information on creating cmdlet help, see [Writing Help for PowerShell Cmdlets](https://learn.microsoft.com/en-us/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
-
-### Repository Contributions
-
-The repository is the first thing a developer sees about the project. If you see ways to improve documentation, README files, or artwork, don't hesitate to create an issue.
-
-### Other Contributions
-
-This includes build scripts, CI/CD workflows, security compliance, unit testing, and performance optimization. Contribution in this area signifies a level of expertise and understanding.
-
-## Current State
-
-> **All cmdlets are currently marked BETA.** You may encounter issues during execution. To report a problem, visit [PowerPlug Issues](https://github.com/manu-p-1/PowerPlug/issues).
+Please read and follow the [Code of Conduct](https://github.com/manu-p-1/PowerPlug/blob/master/CODE_OF_CONDUCT.md).
 
 ## Licensing
 
-PowerPlug is licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html).
+By contributing you agree that your contributions are licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), the same as the rest of the project.

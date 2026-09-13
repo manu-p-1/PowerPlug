@@ -299,7 +299,7 @@ public class TestUrlCmdletTests : IClassFixture<LoopbackHttpServer>
     [Theory]
     [InlineData("GET")]
     [InlineData("OPTIONS")]
-    public void MethodIsHonoured(string method)
+    public void MethodIsHonored(string method)
     {
         Run("ok", c => c.Method = method);
         Assert.Equal(method, _server.LastMethod);

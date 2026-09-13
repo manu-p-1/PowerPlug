@@ -22,7 +22,7 @@ namespace PowerPlug.Cmdlets.FileSystem;
 [Cmdlet(VerbsCommon.Move, "Trash", SupportsShouldProcess = true)]
 [Alias("trash")]
 [OutputType(typeof(string))]
-[ExperimentalCmdlet("It relies on platform specific trash behaviour. On Linux it follows the FreeDesktop spec, which some environments may not honour.")]
+[ExperimentalCmdlet("It relies on platform specific trash behaviour. On Linux it follows the FreeDesktop spec, which some environments may not honor.")]
 public sealed class MoveTrashCmdlet : PowerPlugCmdlet
 {
     /// <summary>

@@ -380,7 +380,7 @@ public class GetLargestFileCmdletTests : IDisposable
     public void Dispose() => _temp.Dispose();
 
     [Fact]
-    public void ReturnsBiggestFirstAndHonoursTop()
+    public void ReturnsBiggestFirstAndHonorsTop()
     {
         var h = new CmdletHarness<GetLargestFileCmdlet>();
         h.Cmdlet.Path = [_temp.Path];

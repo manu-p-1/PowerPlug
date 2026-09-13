@@ -203,7 +203,7 @@ public class NewRandomStringCmdletTests
     }
 
     [Fact]
-    public void CustomCharacterSetIsHonouredAndDeduplicated()
+    public void CustomCharacterSetIsHonoredAndDeduplicated()
     {
         var h = new CmdletHarness<NewRandomStringCmdlet>();
         h.Cmdlet.Length = 3000;

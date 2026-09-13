@@ -51,7 +51,7 @@ Other additions:
 - Path parameters resolve through the PowerShell provider (`GetUnresolvedProviderPathFromPSPath`), so PSDrive paths and `~` work everywhere. A wildcard that matches nothing is reported as an error rather than silently doing nothing, and a piped path that names an existing file is used as-is even when it contains bracket characters.
 - `Move-Trash` refuses to move items across volumes (for example from an external drive) with a message pointing at `Remove-Item`, rather than copying gigabytes into the home trash.
 - `TextEncodings.Parse` rejects unknown encoding names instead of silently returning UTF-8.
-- Networking cmdlets share one `HttpClient`, honour Ctrl+C through `StopProcessing`, and never follow redirects silently.
+- Networking cmdlets share one `HttpClient`, honor Ctrl+C through `StopProcessing`, and never follow redirects silently.
 - `Get-Speed` reports packet loss as a number, jitter over the raw sample order, and falls back to TCP latency when ICMP is unavailable without pretending it was a ping.
 - `Get-NetworkInfo` returns real lists for IPv6 addresses, gateways and DNS servers instead of comma joined strings.
 - `New-TemporaryDirectory` uses `Directory.CreateTempSubdirectory`.

@@ -97,7 +97,7 @@ Some cmdlets are marked experimental. They work and they are tested, but they de
 An experimental cmdlet prints a warning the first time it runs in a pipeline, for example:
 
 ```
-WARNING: Move-Trash is experimental. It relies on platform specific trash behaviour. On Linux it follows the FreeDesktop spec, which some environments may not honour.
+WARNING: Move-Trash is experimental. It relies on platform specific trash behaviour. On Linux it follows the FreeDesktop spec, which some environments may not honor.
 ```
 
 Silence it per call with `-WarningAction SilentlyContinue`. Experimental cmdlets may change their parameters or output between minor releases. Stable cmdlets will not without a note in the changelog. If something misbehaves, [open an issue](https://github.com/manu-p-1/PowerPlug/issues) with the platform and PowerShell version.

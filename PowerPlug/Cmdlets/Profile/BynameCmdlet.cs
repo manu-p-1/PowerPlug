@@ -4,6 +4,8 @@ using PowerPlug.Internal;
 
 namespace PowerPlug.Cmdlets.Profile;
 
+//It all started from here - this very cmdlet - my baby.
+
 /// <summary>
 /// Shared plumbing for the Byname cmdlets: locating $PROFILE and running the underlying alias cmdlet
 /// in the caller's runspace.

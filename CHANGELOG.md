@@ -16,7 +16,7 @@ The release candidate exists to catch platform specific problems before the numb
 New cmdlets, grouped by area:
 
 - Data and encoding: `ConvertTo-UrlEncoding`, `ConvertFrom-UrlEncoding`, `ConvertFrom-UnixTime`, `ConvertTo-UnixTime`, `ConvertFrom-Jwt`, `Convert-Color`
-- Security: `Get-StringHash`, `Test-Elevation`
+- Security: `Get-StringHash`, `Test-Elevation`, `New-SecureKey`
 - File system: `Rename-BatchItem`, `Get-DirectorySize`, `Find-DuplicateFile`, `Remove-EmptyDirectory`, `Get-FileEncoding`, `Convert-LineEnding`, `Set-FileTimestamp`, `Get-LargestFile`, `Compare-Directory`, `Wait-File`
 - Networking: `Wait-Port`, `Test-Url`, `Get-TlsCertificate`, `Get-PublicIPAddress`, `Get-ListeningPort`
 - Shell: `Add-EnvironmentPath`, `Remove-EnvironmentPath`, `Import-DotEnv`, `Get-SystemInfo`

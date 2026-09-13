@@ -3605,6 +3605,283 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
     <command:details>
+      <command:name>New-SecureKey</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>SecureKey</command:noun>
+      <maml:description>
+        <maml:para>Generates cryptographically secure keys, passwords and secrets.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Produces secrets from the system CSPRNG (), never from . In the default password mode a character pool (letters, digits and symbols, or a custom set) is sampled uniformly, with optional -Min* parameters that guarantee character class coverage without weakening randomness: required characters are drawn from the intersection of the pool and the class, the remainder is filled from the whole pool, and the buffer is then shuffled with a CSPRNG-driven Fisher-Yates pass so the guaranteed characters do not land at predictable positions. Use -Encoding to switch to raw key material instead, sized in bytes and returned as Base64, Base64Url or hex. Use -AsSecureString or -AsCredential to avoid returning the secret as a plain string.</maml:para>
+      <maml:para>Aliases: nsk</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-SecureKey</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="false">
+          <maml:name>ByteLength</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>AsCredential</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>AsSecureString</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>Count</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false">
+          <maml:name>Encoding</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>UserName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-SecureKey</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="false">
+          <maml:name>Length</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>AlphanumericOnly</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>AsCredential</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>AsSecureString</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>CharacterSet</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>Count</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>ExcludeAmbiguous</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>MinDigits</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>MinLowercase</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>MinSymbols</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>MinUppercase</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>UserName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>AlphanumericOnly</maml:name>
+        <maml:description>
+          <maml:para>Only use letters and digits.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>AsCredential</maml:name>
+        <maml:description>
+          <maml:para>Return a PSCredential (secret as the password) instead of a plain string. Implies -AsSecureString.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>AsSecureString</maml:name>
+        <maml:description>
+          <maml:para>Return a System.Security.SecureString instead of a plain string.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="0" pipelineInput="false" aliases="KeyLength">
+        <maml:name>ByteLength</maml:name>
+        <maml:description>
+          <maml:para>Length of the raw key in bytes. Defaults to 32 (256 bits). Only used with -Encoding.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>CharacterSet</maml:name>
+        <maml:description>
+          <maml:para>Use exactly these characters instead of the built in sets.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>Count</maml:name>
+        <maml:description>
+          <maml:para>Number of secrets to generate. Defaults to 1.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" position="named" pipelineInput="false">
+        <maml:name>Encoding</maml:name>
+        <maml:description>
+          <maml:para>Switches to raw key material of -ByteLength bytes, returned in this encoding instead of a character based password.</maml:para>
+          <maml:para>Accepted values: Base64, Base64Url, Hex</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>ExcludeAmbiguous</maml:name>
+        <maml:description>
+          <maml:para>Leave out characters that are easy to confuse: 0 O o l I 1.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="0" pipelineInput="false">
+        <maml:name>Length</maml:name>
+        <maml:description>
+          <maml:para>Length of the password in characters. Defaults to 24. Only used in password mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>MinDigits</maml:name>
+        <maml:description>
+          <maml:para>Minimum number of digits guaranteed to appear.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>MinLowercase</maml:name>
+        <maml:description>
+          <maml:para>Minimum number of lowercase letters guaranteed to appear.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>MinSymbols</maml:name>
+        <maml:description>
+          <maml:para>Minimum number of symbols guaranteed to appear.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>MinUppercase</maml:name>
+        <maml:description>
+          <maml:para>Minimum number of uppercase letters guaranteed to appear.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>UserName</maml:name>
+        <maml:description>
+          <maml:para>User name to pair with -AsCredential. Defaults to "key".</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.PSCredential</maml:name>
+        </dev:type>
+      </command:returnValue>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Security.SecureString</maml:name>
+        </dev:type>
+      </command:returnValue>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>New-SecureKey -Length 24 -MinUppercase 1 -MinLowercase 1 -MinDigits 1 -MinSymbols 1</dev:code>
+        <dev:remarks>
+          <maml:para>A 24 character password with at least one of each character class</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>New-SecureKey -ByteLength 32 -Encoding Base64Url</dev:code>
+        <dev:remarks>
+          <maml:para>A 256-bit key encoded as Base64Url, suitable for a JWT signing secret</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>New-SecureKey -Length 32 -AsCredential -UserName api-service</dev:code>
+        <dev:remarks>
+          <maml:para>A credential object for use with -Credential parameters, without ever exposing the plain secret</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
       <command:name>Get-Speed</command:name>
       <command:verb>Get</command:verb>
       <command:noun>Speed</command:noun>

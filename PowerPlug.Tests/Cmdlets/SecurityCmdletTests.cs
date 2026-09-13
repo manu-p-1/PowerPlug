@@ -260,3 +260,200 @@ public class TestElevationCmdletTests
         Assert.Equal(Environment.IsPrivilegedProcess, h.Only<bool>());
     }
 }
+
+public class NewSecureKeyCmdletTests
+{
+    private const string Symbols = "!@#$%^&*()-_=+[]{}|;:,.<>?";
+
+    [Fact]
+    public void DefaultsTo24CharPassword()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Run();
+        Assert.Equal(24, h.Only<string>().Length);
+    }
+
+    [Fact]
+    public void CountProducesDistinctSecrets()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 32;
+        h.Cmdlet.Count = 20;
+        h.Run();
+        var all = h.OutputOf<string>();
+        Assert.Equal(20, all.Count);
+        Assert.Equal(20, all.Distinct().Count());
+    }
+
+    [Fact]
+    public void AlphanumericOnlyHasNoSymbols()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 500;
+        h.Cmdlet.AlphanumericOnly = true;
+        h.Run();
+        Assert.All(h.Only<string>(), c => Assert.True(char.IsAsciiLetterOrDigit(c)));
+    }
+
+    [Fact]
+    public void ExcludeAmbiguousDropsLookAlikes()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 2000;
+        h.Cmdlet.ExcludeAmbiguous = true;
+        h.Run();
+        Assert.DoesNotContain(h.Only<string>(), c => "0OolI1".Contains(c, StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void CustomCharacterSetIsHonored()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 200;
+        h.Cmdlet.CharacterSet = "ab";
+        h.Run();
+        Assert.All(h.Only<string>(), c => Assert.Contains(c, "ab"));
+    }
+
+    [Fact]
+    public void MinimumsAreGuaranteed()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 32;
+        h.Cmdlet.MinUppercase = 4;
+        h.Cmdlet.MinLowercase = 4;
+        h.Cmdlet.MinDigits = 4;
+        h.Cmdlet.MinSymbols = 4;
+        h.Run();
+
+        var text = h.Only<string>();
+        Assert.Equal(32, text.Length);
+        Assert.True(text.Count(char.IsUpper) >= 4);
+        Assert.True(text.Count(char.IsLower) >= 4);
+        Assert.True(text.Count(char.IsDigit) >= 4);
+        Assert.True(text.Count(c => Symbols.Contains(c, StringComparison.Ordinal)) >= 4);
+    }
+
+    [Fact]
+    public void UnsatisfiableMinimumsWriteError()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 4;
+        h.Cmdlet.MinUppercase = 2;
+        h.Cmdlet.MinLowercase = 2;
+        h.Cmdlet.MinDigits = 2;
+        h.Run();
+        Assert.Empty(h.Output);
+        Assert.Equal(ErrorCategory.InvalidArgument, h.OnlyError("UnsatisfiableRequirement").CategoryInfo.Category);
+    }
+
+    [Fact]
+    public void MinimumRequiringMissingClassWritesError()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 10;
+        h.Cmdlet.CharacterSet = "ab";
+        h.Cmdlet.MinDigits = 1;
+        h.Run();
+        Assert.Empty(h.Output);
+        Assert.Equal(ErrorCategory.InvalidArgument, h.OnlyError("UnsatisfiableRequirement").CategoryInfo.Category);
+    }
+
+    [Fact]
+    public void EmptyPoolAfterFilteringWritesError()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.CharacterSet = "0O";
+        h.Cmdlet.ExcludeAmbiguous = true;
+        h.Run();
+        Assert.Empty(h.Output);
+        Assert.Equal(ErrorCategory.InvalidArgument, h.OnlyError("EmptyCharacterPool").CategoryInfo.Category);
+    }
+
+    [Fact]
+    public void AsSecureStringReturnsTheSameTextAsPlain()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 40;
+        h.Cmdlet.AsSecureString = true;
+        h.Run();
+
+        var secure = h.Only<System.Security.SecureString>();
+        Assert.Equal(40, secure.Length);
+        Assert.True(secure.IsReadOnly());
+    }
+
+    [Fact]
+    public void AsCredentialUsesTheGivenUserName()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 40;
+        h.Cmdlet.AsCredential = true;
+        h.Cmdlet.UserName = "svc-account";
+        h.Run();
+
+        var credential = h.Only<PSCredential>();
+        Assert.Equal("svc-account", credential.UserName);
+        Assert.Equal(40, credential.Password.Length);
+    }
+
+    [Theory]
+    [InlineData("Base64")]
+    [InlineData("Base64Url")]
+    [InlineData("Hex")]
+    public void KeyModeProducesTheRequestedEncoding(string encoding)
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>().WithParameterSet("Key");
+        h.Cmdlet.ByteLength = 32;
+        h.Cmdlet.Encoding = encoding;
+        h.Run();
+
+        var text = h.Only<string>();
+        switch (encoding)
+        {
+            case "Base64":
+                Assert.Equal(32, Convert.FromBase64String(text).Length);
+                break;
+            case "Base64Url":
+                Assert.DoesNotContain('+', text);
+                Assert.DoesNotContain('/', text);
+                Assert.DoesNotContain('=', text);
+                break;
+            case "Hex":
+                Assert.Equal(64, text.Length);
+                Assert.Equal(32, Convert.FromHexString(text).Length);
+                break;
+        }
+    }
+
+    [Fact]
+    public void KeyModeDefaultsTo32BytesBase64()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>().WithParameterSet("Key");
+        h.Run();
+        Assert.Equal(32, Convert.FromBase64String(h.Only<string>()).Length);
+    }
+
+    [Fact]
+    public void KeyModeAsSecureStringDoesNotReturnAPlainString()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>().WithParameterSet("Key");
+        h.Cmdlet.ByteLength = 16;
+        h.Cmdlet.Encoding = "Hex";
+        h.Cmdlet.AsSecureString = true;
+        h.Run();
+
+        var secure = h.Only<System.Security.SecureString>();
+        Assert.Equal(32, secure.Length);
+    }
+
+    [Fact]
+    public void GeneratedSecretsAreNotDeterministic()
+    {
+        var h = new CmdletHarness<NewSecureKeyCmdlet>();
+        h.Cmdlet.Length = 24;
+        h.Cmdlet.Count = 50;
+        h.Run();
+        Assert.Equal(50, h.OutputOf<string>().Distinct().Count());
+    }
+}

@@ -63,3 +63,21 @@ jobs:
           --api-key "${{ secrets.GITHUB_TOKEN }}"
           --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
           --skip-duplicate
+
+      - name: Publish module to PowerShell Gallery
+        env:
+          PSGALLERY_API_KEY: ${{ secrets.PSGALLERY_API_KEY }}
+        shell: pwsh
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:PSGALLERY_API_KEY)) {
+            throw "PSGALLERY_API_KEY is not configured for the release environment."
+          }
+
+          $manifest = Import-PowerShellDataFile ./dist/PowerPlug/PowerPlug.psd1
+          $existing = Find-Module -Name $manifest.RootModule.Split('.')[0] -RequiredVersion $manifest.ModuleVersion -Repository PSGallery -ErrorAction SilentlyContinue
+          if ($existing) {
+            Write-Host "PowerShell Gallery already contains version $($manifest.ModuleVersion); skipping."
+            return
+          }
+
+          Publish-Module -Path ./dist/PowerPlug -Repository PSGallery -NuGetApiKey $env:PSGALLERY_API_KEY -ErrorAction Stop

@@ -28,6 +28,8 @@
         # Networking
         'Get-Speed', 'Get-NetworkInfo', 'Test-Port', 'Wait-Port', 'Test-Url'
         'Get-TlsCertificate', 'Get-PublicIPAddress', 'Get-ListeningPort'
+        'Get-NetworkConnection', 'Get-DnsRecord', 'Get-WifiInfo', 'Get-NetworkNeighbor'
+        'Find-NetworkDevice', 'Invoke-NetworkDiagnostic'
         # Shell and environment
         'Get-EnvironmentPath', 'Add-EnvironmentPath', 'Remove-EnvironmentPath'
         'Import-DotEnv', 'Get-SystemInfo'
@@ -43,6 +45,8 @@
         'gfe', 'eol', 'touch', 'bigfiles', 'dirdiff', 'waitfile'
         'speedtest', 'gspd', 'gni', 'netinfo', 'tp', 'waitport', 'turl', 'gtls', 'Get-SslCertificate'
         'pubip', 'Get-PublicIP', 'lsport', 'Get-OpenPort'
+        'gnc', 'connections', 'dns', 'resolve', 'wifi', 'gwifi', 'gnn', 'arp'
+        'scan', 'nmap', 'diag', 'netcheck'
         'gpath', 'addpath', 'rmpath', 'dotenv', 'sysinfo'
         'retry', 'msb', 'watchcmd'
     )

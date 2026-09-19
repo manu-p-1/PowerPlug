@@ -1307,6 +1307,134 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
     <command:details>
+      <command:name>Get-DnsRecord</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>DnsRecord</command:noun>
+      <maml:description>
+        <maml:para>Queries DNS records directly, without relying on the OS resolver cache.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Sends a raw DNS query over UDP to a chosen server (or the first server configured on an active interface) and decodes the answer itself, so A, AAAA, CNAME, MX, TXT, NS, SOA and PTR records are all available cross platform. This is useful for confirming what a domain's authoritative records actually say, independent of whatever the system resolver has cached.</maml:para>
+      <maml:para>Aliases: dns, resolve</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-DnsRecord</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true (ByValue)">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="false">
+          <maml:name>Type</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>Port</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>Server</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>TimeoutMs</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" position="0" pipelineInput="true (ByValue)">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The name to query. An IP address when -Type PTR is used.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>The DNS server's port. Defaults to 53.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>The DNS server to query. Defaults to the first server configured on an active network interface.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>TimeoutMs</maml:name>
+        <maml:description>
+          <maml:para>Query timeout in milliseconds. Defaults to 3000.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="1" pipelineInput="false">
+        <maml:name>Type</maml:name>
+        <maml:description>
+          <maml:para>The record type to request. Defaults to A.</maml:para>
+          <maml:para>Accepted values: A, AAAA, CNAME, MX, TXT, NS, SOA, PTR, SRV</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PowerPlug.Models.DnsRecordResult</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-DnsRecord example.com</dev:code>
+        <dev:remarks>
+          <maml:para>A records for a host</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Get-DnsRecord example.com -Type MX -Server 1.1.1.1</dev:code>
+        <dev:remarks>
+          <maml:para>Mail exchangers, queried against Cloudflare's resolver</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Get-DnsRecord 8.8.8.8 -Type PTR</dev:code>
+        <dev:remarks>
+          <maml:para>Reverse lookup</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
       <command:name>Import-DotEnv</command:name>
       <command:verb>Import</command:verb>
       <command:noun>DotEnv</command:noun>
@@ -2843,6 +2971,329 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
     <command:details>
+      <command:name>Get-NetworkConnection</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetworkConnection</command:noun>
+      <maml:description>
+        <maml:para>Lists TCP and UDP connections in any state, not just listeners.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>A netstat replacement that shows every socket - established, listening, closing - with the owning process where the platform tool can report it. Use this to see who your machine is actually talking to right now, which is the first thing to check when a connection misbehaves. See also Get-ListeningPort for a narrower, listener only view.</maml:para>
+      <maml:para>Aliases: gnc, connections</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetworkConnection</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="false">
+          <maml:name>State</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>Protocol</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>RemoteAddress</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>Protocol</maml:name>
+        <maml:description>
+          <maml:para>TCP, UDP or All. Defaults to All.</maml:para>
+          <maml:para>Accepted values: TCP, UDP, All</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>RemoteAddress</maml:name>
+        <maml:description>
+          <maml:para>Only show connections to or from this remote address or hostname.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="0" pipelineInput="false">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>Only show connections in this state, e.g. ESTABLISHED, LISTEN, TIME_WAIT. Wildcards are allowed. UDP sockets rarely report a state.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PowerPlug.Models.NetworkConnectionInfo</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-NetworkConnection</dev:code>
+        <dev:remarks>
+          <maml:para>Everything</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Get-NetworkConnection -State ESTABLISHED</dev:code>
+        <dev:remarks>
+          <maml:para>Only established connections</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Get-NetworkConnection | Where-Object ProcessId -eq 4521</dev:code>
+        <dev:remarks>
+          <maml:para>What is process 4521 connected to?</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Find-NetworkDevice</command:name>
+      <command:verb>Find</command:verb>
+      <command:noun>NetworkDevice</command:noun>
+      <maml:description>
+        <maml:para>Sweeps the local subnet for live hosts.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Pings every address in a subnet (your active interface's /24 by default, or a CIDR you supply) in parallel, then reads the ARP cache and reverse DNS to attach a MAC address and hostname to whatever answers. This is the "what else is on my network" view: unexpected devices, a neighbor piggybacking on your Wi-Fi, or a misbehaving IoT gadget flooding the LAN all show up here.</maml:para>
+      <maml:para>Aliases: scan, nmap</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Find-NetworkDevice</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="false">
+          <maml:name>Cidr</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>MaxConcurrency</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>NoResolveHostName</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>TimeoutMs</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="0" pipelineInput="false">
+        <maml:name>Cidr</maml:name>
+        <maml:description>
+          <maml:para>The subnet to scan in CIDR notation, e.g. 192.168.1.0/24. Defaults to the active interface's subnet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>MaxConcurrency</maml:name>
+        <maml:description>
+          <maml:para>Maximum number of hosts pinged at once. Defaults to 64.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>NoResolveHostName</maml:name>
+        <maml:description>
+          <maml:para>Skip reverse DNS lookups for a faster scan.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>TimeoutMs</maml:name>
+        <maml:description>
+          <maml:para>Per host ping timeout in milliseconds. Defaults to 400.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PowerPlug.Models.NetworkDeviceInfo</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Find-NetworkDevice</dev:code>
+        <dev:remarks>
+          <maml:para>Scan the current subnet</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Find-NetworkDevice -Cidr 10.0.0.0/24</dev:code>
+        <dev:remarks>
+          <maml:para>Scan a specific range</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Invoke-NetworkDiagnostic</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>NetworkDiagnostic</command:noun>
+      <maml:description>
+        <maml:para>Runs a full connection health check: gateway, DNS, path and Wi-Fi, in one shot.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Answers "why did my connection just drop" in a single command. It pings the default gateway to separate a local Wi-Fi/cable problem from an upstream one, times a DNS resolution, traces the path to a target host hop by hop, checks whether a VPN tunnel is active, and reads the Wi-Fi signal-to-noise ratio when the active interface is wireless (a weak SNR causes exactly the "full bars but nothing works" symptom). Plain language issues are called out; everything measured is also on the object for scripting.</maml:para>
+      <maml:para>Aliases: diag, netcheck</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-NetworkDiagnostic</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="false">
+          <maml:name>Target</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>MaxHops</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>PingCount</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>SkipPublicIP</maml:name>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false">
+          <maml:name>SkipTraceroute</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>MaxHops</maml:name>
+        <maml:description>
+          <maml:para>Maximum number of hops to trace towards -Target. Defaults to 20.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>PingCount</maml:name>
+        <maml:description>
+          <maml:para>Number of gateway pings used to compute latency, jitter and loss. Defaults to 8.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>SkipPublicIP</maml:name>
+        <maml:description>
+          <maml:para>Skip the public IP address lookup, which requires internet access to a third party service.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false">
+        <maml:name>SkipTraceroute</maml:name>
+        <maml:description>
+          <maml:para>Skip the hop by hop path trace.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" position="0" pipelineInput="false">
+        <maml:name>Target</maml:name>
+        <maml:description>
+          <maml:para>The host used for the DNS timing check and path trace. Defaults to example.com.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PowerPlug.Models.NetworkDiagnosticResult</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Invoke-NetworkDiagnostic</dev:code>
+        <dev:remarks>
+          <maml:para>Full check against the default target</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Invoke-NetworkDiagnostic -Target api.example.com -SkipPublicIP</dev:code>
+        <dev:remarks>
+          <maml:para>Diagnose while reaching a specific service, skipping the public IP lookup</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
       <command:name>Get-NetworkInfo</command:name>
       <command:verb>Get</command:verb>
       <command:noun>NetworkInfo</command:noun>
@@ -2851,7 +3302,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>A cross platform view of the machine's network interfaces. Only interfaces that are up (excluding loopback) are shown by default; -All includes the rest. Names accept wildcards.</maml:para>
+      <maml:para>A cross platform view of the machine's network interfaces. Only interfaces that are up (excluding loopback) are shown by default; -All includes the rest. Names accept wildcards. IsVpn flags interfaces that look like a VPN tunnel, which is worth checking first whenever traffic seems to be taking an odd path.</maml:para>
       <maml:para>Aliases: gni, netinfo</maml:para>
     </maml:description>
     <command:syntax>
@@ -2908,6 +3359,55 @@
         <dev:code>Get-NetworkInfo -Name en0</dev:code>
         <dev:remarks>
           <maml:para>Wi-Fi interface on macOS</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-NetworkNeighbor</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetworkNeighbor</command:noun>
+      <maml:description>
+        <maml:para>Lists the ARP / neighbor discovery cache: devices this machine has recently talked to on the local network.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Reads the same cache that arp -a or ip neigh reports. This only shows hosts your machine has already exchanged traffic with; use Find-NetworkDevice to actively sweep the subnet for hosts that have not been seen yet.</maml:para>
+      <maml:para>Aliases: gnn, arp</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetworkNeighbor</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PowerPlug.Models.NetworkNeighborInfo</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-NetworkNeighbor</dev:code>
+        <dev:remarks>
+          <maml:para>Everything in the cache</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Get-NetworkNeighbor | Where-Object MacAddress -like 'de:ad:*'</dev:code>
+        <dev:remarks>
+          <maml:para>Look for an unexpected MAC vendor prefix</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -4840,6 +5340,70 @@
         <dev:code>"name=John Doe&amp;city=Zürich" | ConvertTo-UrlEncoding</dev:code>
         <dev:remarks>
           <maml:para>Encode a query value</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>PowerPlug on GitHub</maml:linkText>
+        <maml:uri>https://github.com/manu-p-1/PowerPlug</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-WifiInfo</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WifiInfo</command:noun>
+      <maml:description>
+        <maml:para>Reports the associated Wi-Fi network's signal strength, channel and security.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Reads the platform's own wireless tooling (netsh on Windows, airport/system_profiler on macOS, nmcli/iwconfig on Linux) since .NET has no cross platform Wi-Fi API. SignalToNoiseDb is the most reliable indicator of interference or "full bars, no internet": below roughly 15 dB the link is unreliable even if the signal percentage looks fine, because something nearby is raising the noise floor.</maml:para>
+      <maml:para>Aliases: wifi, gwifi</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WifiInfo</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="false">
+          <maml:name>Interface</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="0" pipelineInput="false">
+        <maml:name>Interface</maml:name>
+        <maml:description>
+          <maml:para>The wireless interface name. Defaults to the first wireless interface that is up.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PowerPlug.Models.WifiInfoResult</maml:name>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-WifiInfo</dev:code>
+        <dev:remarks>
+          <maml:para>Current association</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>1..30 | ForEach-Object { Get-WifiInfo; Start-Sleep -Seconds 2 }</dev:code>
+        <dev:remarks>
+          <maml:para>Watch the signal to noise ratio degrade over time</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

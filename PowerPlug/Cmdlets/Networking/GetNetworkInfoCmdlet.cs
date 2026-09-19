@@ -3,6 +3,7 @@ using System.Management.Automation;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using PowerPlug.Base;
+using PowerPlug.Internal;
 using PowerPlug.Models;
 
 namespace PowerPlug.Cmdlets.Networking;
@@ -10,7 +11,8 @@ namespace PowerPlug.Cmdlets.Networking;
 /// <summary>
 /// <para type="synopsis">Lists network interfaces with their addresses, gateways and DNS servers.</para>
 /// <para type="description">A cross platform view of the machine's network interfaces. Only interfaces that are up
-/// (excluding loopback) are shown by default; -All includes the rest. Names accept wildcards.</para>
+/// (excluding loopback) are shown by default; -All includes the rest. Names accept wildcards. IsVpn flags interfaces
+/// that look like a VPN tunnel, which is worth checking first whenever traffic seems to be taking an odd path.</para>
 /// <example>
 /// <para>Active interfaces</para>
 /// <code>Get-NetworkInfo</code>
@@ -96,6 +98,7 @@ public sealed class GetNetworkInfoCmdlet : PowerPlugCmdlet
             Description = nic.Description,
             Type = nic.NetworkInterfaceType.ToString(),
             Status = nic.OperationalStatus.ToString(),
+            IsVpn = VpnDetector.IsLikelyVpn(nic),
             MacAddress = mac.Length == 0 ? null : string.Join(":", mac.Select(b => b.ToString("X2", CultureInfo.InvariantCulture))),
             LinkSpeedMbps = nic.Speed > 0 ? nic.Speed / 1_000_000 : null,
             IPv4Address = ipv4?.Address.ToString(),

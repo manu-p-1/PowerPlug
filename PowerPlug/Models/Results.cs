@@ -272,6 +272,9 @@ public sealed class NetworkInterfaceInfo
     /// <summary>Operational status.</summary>
     public required string Status { get; init; }
 
+    /// <summary>True when the interface's type or name suggests it is a VPN tunnel (WireGuard, OpenVPN, Tailscale, PPP, and similar).</summary>
+    public required bool IsVpn { get; init; }
+
     /// <summary>MAC address, or null for interfaces without one.</summary>
     public string? MacAddress { get; init; }
 

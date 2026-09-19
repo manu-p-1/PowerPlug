@@ -1,15 +1,8 @@
 name: CodeQL
 
 on:
-  push:
-    branches: [ master, experimental ]
   pull_request:
     branches: [ master, experimental ]
-  merge_group:
-    branches: [ master, experimental ]
-  workflow_dispatch:
-  schedule:
-    - cron: '38 3 * * 0'
 
 concurrency:
   group: codeql-${{ github.workflow }}-${{ github.ref }}
@@ -22,6 +15,7 @@ permissions:
 jobs:
   analyze:
     name: Analyze
+    if: github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     steps:

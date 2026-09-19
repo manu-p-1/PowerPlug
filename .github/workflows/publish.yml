@@ -30,15 +30,28 @@ jobs:
       - name: Pack
         run: dotnet pack PowerPlug/PowerPlug.csproj -c Release -o artifacts
 
-      - name: NuGet login
-        id: login
-        uses: NuGet/login@v1
-        with:
-          user: ${{ secrets.NUGET_USER }}
+      - name: Publish with NuGet trusted publishing
+        env:
+          NUGET_USER: ${{ secrets.NUGET_USER }}
+        shell: bash
+        run: |
+          set -euo pipefail
 
-      - name: Publish
-        run: >
-          dotnet nuget push artifacts/*.nupkg
-          --api-key "${{ steps.login.outputs.NUGET_API_KEY }}"
-          --source https://api.nuget.org/v3/index.json
-          --skip-duplicate
+          id_token_url="${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https://www.nuget.org"
+          id_token=$(curl --fail-with-body --silent --show-error \
+            --header "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" \
+            "${id_token_url}" | jq --raw-output '.value')
+
+          response=$(curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header "Authorization: Bearer ${id_token}" \
+            --header "Content-Type: application/json" \
+            --data "{\"username\":\"${NUGET_USER}\",\"tokenType\":\"ApiKey\"}" \
+            https://www.nuget.org/api/v2/token)
+          api_key=$(jq --exit-status --raw-output '.apiKey' <<< "${response}")
+          echo "::add-mask::${api_key}"
+
+          dotnet nuget push artifacts/*.nupkg \
+            --api-key "${api_key}" \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate

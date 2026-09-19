@@ -320,9 +320,8 @@ public class VpnDetectorTests
         Assert.True(VpnDetector.IsLikelyVpn(FakeNic("ppp0", "", NetworkInterfaceType.Ppp)));
     }
 
-    private static NetworkInterface FakeNic(string name, string description, NetworkInterfaceType type) =>
-        NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault(n => n.Name == name)
-        ?? new StubNetworkInterface(name, description, type);
+    private static StubNetworkInterface FakeNic(string name, string description, NetworkInterfaceType type) =>
+        new StubNetworkInterface(name, description, type);
 
     // Minimal stand-in since NetworkInterface has no public constructor; only the members VpnDetector reads are implemented.
     private sealed class StubNetworkInterface(string name, string description, NetworkInterfaceType type) : NetworkInterface

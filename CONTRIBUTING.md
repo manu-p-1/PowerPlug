@@ -99,7 +99,9 @@ dotnet test --filter "FullyQualifiedName~TestPort"
 
 ## Pull requests
 
-1. Branch from `master`.
+See [BRANCHING.md](BRANCHING.md) for how branches and releases fit together. In short:
+
+1. Branch from `experimental` and open the pull request against `experimental`, not `master`.
 2. Keep the change focused. One cmdlet or one fix per pull request is ideal.
 3. Add or update tests and the help file.
 4. Add a line under `Unreleased` in `CHANGELOG.md`.

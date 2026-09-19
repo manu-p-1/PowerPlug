@@ -1,0 +1,86 @@
+name: Build and test
+
+on:
+  push:
+    branches: [ master, experimental ]
+  pull_request:
+    branches: [ master, experimental ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+
+      - name: Test
+        run: dotnet test --no-build -c Release --logger "trx;LogFileName=results.trx" --blame-hang-timeout 5m
+
+      - name: Check help file is current
+        if: runner.os == 'Linux'
+        shell: pwsh
+        run: |
+          ./tools/New-HelpFile.ps1 -Configuration Release -OutputPath ./generated-help.xml
+          if ((Get-Content ./generated-help.xml -Raw) -ne (Get-Content ./PowerPlug/PowerPlug.dll-Help.xml -Raw)) {
+            Write-Error "PowerPlug.dll-Help.xml is out of date. Run ./tools/New-HelpFile.ps1 and commit the result."
+            exit 1
+          }
+
+      - name: Validate module manifest
+        shell: pwsh
+        run: |
+          $manifest = Test-ModuleManifest ./dist/PowerPlug/PowerPlug.psd1 -ErrorAction Stop
+          Import-Module ./dist/PowerPlug/PowerPlug.psd1 -ErrorAction Stop
+          $loaded = Get-Module PowerPlug
+          "Manifest {0}, {1} cmdlets, {2} aliases" -f $manifest.Version, $loaded.ExportedCmdlets.Count, $loaded.ExportedAliases.Count
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.os }}
+          path: '**/TestResults/*.trx'
+
+  package:
+    name: Package module
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Build release
+        run: dotnet build PowerPlug/PowerPlug.csproj -c Release
+
+      - name: Upload module folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: PowerPlug-module
+          path: dist/PowerPlug

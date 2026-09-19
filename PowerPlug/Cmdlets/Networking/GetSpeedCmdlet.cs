@@ -1,385 +1,292 @@
-using System;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
+using System.Globalization;
 using System.Management.Automation;
-using System.Net;
-using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using PowerPlug.Attributes;
 using PowerPlug.Base;
+using PowerPlug.Internal;
+using PowerPlug.Models;
 
-namespace PowerPlug.Cmdlets.Networking
+namespace PowerPlug.Cmdlets.Networking;
+
+/// <summary>
+/// <para type="synopsis">Measures download speed, upload speed and latency.</para>
+/// <para type="description">Runs a quick speed test against Cloudflare's public speed test endpoints by default and
+/// reports throughput in Mbps along with ICMP latency, jitter and packet loss. Custom download and upload URLs can
+/// be supplied to test against your own servers. Data is sent to the chosen endpoints during the test.</para>
+/// <example>
+/// <para>Run a speed test</para>
+/// <code>Get-Speed</code>
+/// </example>
+/// <example>
+/// <para>Latency only</para>
+/// <code>Get-Speed -LatencyOnly</code>
+/// </example>
+/// <example>
+/// <para>Bigger download sample against a custom server</para>
+/// <code>Get-Speed -DownloadUrl https://files.example.com/100mb.bin -SkipUpload</code>
+/// </example>
+/// </summary>
+[Cmdlet(VerbsCommon.Get, "Speed")]
+[Alias("speedtest", "gspd")]
+[OutputType(typeof(SpeedTestResult))]
+[ExperimentalCmdlet("It sends and receives test data over the internet. Results vary with the remote endpoint and network load.")]
+public sealed class GetSpeedCmdlet : PowerPlugCmdlet, IDisposable
 {
+    private const string CloudflareDownload = "https://speed.cloudflare.com/__down?bytes=";
+    private const string CloudflareUpload = "https://speed.cloudflare.com/__up";
+
     /// <summary>
-    /// <para type="synopsis">Performs a network speed test with download, upload, and latency measurements</para>
-    /// <para type="description">Get-Speed tests your network connectivity by measuring download speed, upload speed,
-    /// and latency. It also reports basic network interface information. By default it uses Cloudflare's speed test
-    /// endpoints, but custom URLs can be specified. Results are reported in Mbps.</para>
-    /// <example>
-    /// <para>Run a basic speed test</para>
-    /// <code>Get-Speed</code>
-    /// </example>
-    /// <example>
-    /// <para>Run a speed test with a larger download payload</para>
-    /// <code>Get-Speed -DownloadSize 50MB</code>
-    /// </example>
-    /// <example>
-    /// <para>Run a speed test with custom endpoints</para>
-    /// <code>Get-Speed -DownloadUrl "https://myserver.com/testfile" -UploadUrl "https://myserver.com/upload"</code>
-    /// </example>
-    /// <example>
-    /// <para>Measure only latency</para>
-    /// <code>Get-Speed -LatencyOnly</code>
-    /// </example>
+    /// <para type="description">URL to download from. Defaults to Cloudflare.</para>
     /// </summary>
-    [Cmdlet(VerbsCommon.Get, "Speed")]
-    [Alias("speedtest", "gspd")]
-    [OutputType(typeof(PSObject))]
-    [BetaCmdlet(BetaCmdlet.WarningMessage)]
-    public sealed class GetSpeedCmdlet : PowerPlugCmdletBase
+    [Parameter]
+    [ValidateNotNullOrEmpty]
+    public string? DownloadUrl { get; set; }
+
+    /// <summary>
+    /// <para type="description">URL to upload to. Defaults to Cloudflare.</para>
+    /// </summary>
+    [Parameter]
+    [ValidateNotNullOrEmpty]
+    public string UploadUrl { get; set; } = CloudflareUpload;
+
+    /// <summary>
+    /// <para type="description">Host to ping for latency. Defaults to 1.1.1.1.</para>
+    /// </summary>
+    [Parameter]
+    [ValidateNotNullOrEmpty]
+    public string LatencyHost { get; set; } = "1.1.1.1";
+
+    /// <summary>
+    /// <para type="description">Download sample size in bytes. Defaults to 10 MB.</para>
+    /// </summary>
+    [Parameter]
+    [ValidateRange(100_000, 500_000_000)]
+    public int DownloadSize { get; set; } = 10_000_000;
+
+    /// <summary>
+    /// <para type="description">Upload sample size in bytes. Defaults to 5 MB.</para>
+    /// </summary>
+    [Parameter]
+    [ValidateRange(100_000, 100_000_000)]
+    public int UploadSize { get; set; } = 5_000_000;
+
+    /// <summary>
+    /// <para type="description">Number of latency probes. Defaults to 5.</para>
+    /// </summary>
+    [Parameter]
+    [ValidateRange(1, 50)]
+    public int PingCount { get; set; } = 5;
+
+    /// <summary>
+    /// <para type="description">Only measure latency.</para>
+    /// </summary>
+    [Parameter]
+    public SwitchParameter LatencyOnly { get; set; }
+
+    /// <summary>
+    /// <para type="description">Skip the upload test.</para>
+    /// </summary>
+    [Parameter]
+    public SwitchParameter SkipUpload { get; set; }
+
+    private readonly CancellationTokenSource _cancellation = new();
+
+    /// <inheritdoc />
+    protected override void ProcessRecord()
     {
-        private const string DefaultUploadUrl = "https://speed.cloudflare.com/__up";
-        private const string DefaultLatencyHost = "1.1.1.1";
-        private const int DefaultPingCount = 5;
+        var (nicName, localIp) = FindActiveInterface();
+        Progress("Measuring latency", 10);
+        var (latencies, method) = MeasureLatency();
 
-        private static readonly HttpClient SpeedTestClient = CreateHttpClient();
+        double? downloadMbps = null;
+        long downloadBytes = 0;
+        double? uploadMbps = null;
+        long uploadBytes = 0;
 
-        private static HttpClient CreateHttpClient()
+        if (!LatencyOnly && !_cancellation.IsCancellationRequested)
         {
-            var client = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("PowerPlug-SpeedTest/0.9.0");
-            return client;
-        }
+            Progress("Measuring download", 30);
+            (downloadMbps, downloadBytes) = MeasureDownload();
 
-        /// <summary>
-        /// <para type="description">URL to download from for the speed test. Defaults to Cloudflare speed test.</para>
-        /// </summary>
-        [Parameter]
-        [ValidateNotNullOrEmpty]
-        public string DownloadUrl { get; set; } = string.Empty;
-
-        /// <summary>
-        /// <para type="description">URL to upload to for the speed test. Defaults to Cloudflare speed test.</para>
-        /// </summary>
-        [Parameter]
-        [ValidateNotNullOrEmpty]
-        public string UploadUrl { get; set; } = DefaultUploadUrl;
-
-        /// <summary>
-        /// <para type="description">Host to ping for latency measurement (default: 1.1.1.1)</para>
-        /// </summary>
-        [Parameter]
-        [ValidateNotNullOrEmpty]
-        public string LatencyHost { get; set; } = DefaultLatencyHost;
-
-        /// <summary>
-        /// <para type="description">Size in bytes for the download test (default: 10MB, range: 100KB-100MB)</para>
-        /// </summary>
-        [Parameter]
-        [ValidateRange(100_000, 100_000_000)]
-        public int DownloadSize { get; set; } = 10_000_000;
-
-        /// <summary>
-        /// <para type="description">Size in bytes for the upload test (default: 5MB, range: 100KB-50MB)</para>
-        /// </summary>
-        [Parameter]
-        [ValidateRange(100_000, 50_000_000)]
-        public int UploadSize { get; set; } = 5_000_000;
-
-        /// <summary>
-        /// <para type="description">Number of ping probes for latency measurement (default: 5, range: 1-20)</para>
-        /// </summary>
-        [Parameter]
-        [ValidateRange(1, 20)]
-        public int PingCount { get; set; } = DefaultPingCount;
-
-        /// <summary>
-        /// <para type="description">Only measure latency, skip download and upload tests</para>
-        /// </summary>
-        [Parameter]
-        public SwitchParameter LatencyOnly { get; set; }
-
-        /// <summary>
-        /// <para type="description">Skip the upload test</para>
-        /// </summary>
-        [Parameter]
-        public SwitchParameter SkipUpload { get; set; }
-
-        /// <summary>
-        /// Processes the Get-Speed PSCmdlet.
-        /// </summary>
-        protected override void ProcessRecord()
-        {
-            var result = new PSObject();
-
-            // --- Network interface info ---
-            WriteProgress(new ProgressRecord(1, "Speed Test", "Gathering network information...") { PercentComplete = 5 });
-            AddNetworkInfo(result);
-
-            // --- Latency ---
-            WriteProgress(new ProgressRecord(1, "Speed Test", "Measuring latency...") { PercentComplete = 15 });
-            MeasureLatency(result);
-
-            if (!LatencyOnly)
+            if (!SkipUpload && !_cancellation.IsCancellationRequested)
             {
-                // --- Download ---
-                WriteProgress(new ProgressRecord(1, "Speed Test", "Measuring download speed...") { PercentComplete = 30 });
-                MeasureDownload(result);
-
-                // --- Upload ---
-                if (!SkipUpload)
-                {
-                    WriteProgress(new ProgressRecord(1, "Speed Test", "Measuring upload speed...") { PercentComplete = 70 });
-                    MeasureUpload(result);
-                }
-            }
-
-            WriteProgress(new ProgressRecord(1, "Speed Test", "Complete") { PercentComplete = 100, RecordType = ProgressRecordType.Completed });
-            WriteObject(result);
-        }
-
-        private void AddNetworkInfo(PSObject result)
-        {
-            try
-            {
-                var activeInterface = NetworkInterface.GetAllNetworkInterfaces()
-                    .Where(n => n.OperationalStatus == OperationalStatus.Up
-                                && n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-                    .OrderByDescending(n => n.GetIPv4Statistics().BytesReceived)
-                    .FirstOrDefault();
-
-                if (activeInterface != null)
-                {
-                    var ipProps = activeInterface.GetIPProperties();
-                    var ipv4Addr = ipProps.UnicastAddresses
-                        .FirstOrDefault(a => a.Address.AddressFamily == AddressFamily.InterNetwork);
-
-                    result.Properties.Add(new PSNoteProperty("Interface", activeInterface.Name));
-                    result.Properties.Add(new PSNoteProperty("InterfaceType", activeInterface.NetworkInterfaceType.ToString()));
-                    result.Properties.Add(new PSNoteProperty("LinkSpeedMbps", activeInterface.Speed / 1_000_000));
-                    result.Properties.Add(new PSNoteProperty("LocalIP", ipv4Addr?.Address.ToString() ?? "N/A"));
-
-                    var gateway = ipProps.GatewayAddresses
-                        .FirstOrDefault(g => g.Address.AddressFamily == AddressFamily.InterNetwork);
-                    result.Properties.Add(new PSNoteProperty("Gateway", gateway?.Address.ToString() ?? "N/A"));
-
-                    var dnsServers = string.Join(", ", ipProps.DnsAddresses
-                        .Where(d => d.AddressFamily == AddressFamily.InterNetwork)
-                        .Select(d => d.ToString()));
-                    result.Properties.Add(new PSNoteProperty("DnsServers", string.IsNullOrEmpty(dnsServers) ? "N/A" : dnsServers));
-                }
-                else
-                {
-                    result.Properties.Add(new PSNoteProperty("Interface", "None detected"));
-                }
-            }
-            catch (Exception ex)
-            {
-                WriteWarning($"Could not gather network info: {ex.Message}");
-                result.Properties.Add(new PSNoteProperty("Interface", "Error"));
+                Progress("Measuring upload", 70);
+                (uploadMbps, uploadBytes) = MeasureUpload();
             }
         }
 
-        private void MeasureLatency(PSObject result)
+        WriteProgress(new ProgressRecord(1, "Speed test", "Done") { RecordType = ProgressRecordType.Completed });
+
+        var sorted = latencies.OrderBy(l => l).ToArray();
+        WriteObject(new SpeedTestResult
         {
-            try
+            Interface = nicName,
+            LocalIP = localIp,
+            LatencyMinMs = sorted.Length > 0 ? Math.Round(sorted[0], 2) : null,
+            LatencyAvgMs = sorted.Length > 0 ? Math.Round(sorted.Average(), 2) : null,
+            LatencyMaxMs = sorted.Length > 0 ? Math.Round(sorted[^1], 2) : null,
+            JitterMs = sorted.Length > 1 ? Math.Round(Statistics.Jitter(latencies), 2) : null,
+            PacketLossPercent = Math.Round(100.0 * (PingCount - latencies.Count) / PingCount, 1),
+            LatencyMethod = method,
+            DownloadMbps = downloadMbps,
+            DownloadBytes = downloadBytes,
+            UploadMbps = uploadMbps,
+            UploadBytes = uploadBytes,
+        });
+    }
+
+    private void Progress(string activity, int percent) =>
+        WriteProgress(new ProgressRecord(1, "Speed test", activity) { PercentComplete = percent });
+
+    private (string? Name, string? Ip) FindActiveInterface()
+    {
+        try
+        {
+            var nic = NetworkInterface.GetAllNetworkInterfaces()
+                .Where(n => n.OperationalStatus == OperationalStatus.Up && n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+                .Select(n => (Nic: n, Received: SafeBytesReceived(n)))
+                .OrderByDescending(x => x.Received)
+                .Select(x => x.Nic)
+                .FirstOrDefault();
+
+            if (nic is null)
             {
-                using var pinger = new Ping();
-                var latencies = new double[PingCount];
-                var successCount = 0;
-
-                for (var i = 0; i < PingCount; i++)
-                {
-                    try
-                    {
-                        var reply = pinger.Send(LatencyHost, 5000);
-                        if (reply.Status == IPStatus.Success)
-                        {
-                            latencies[successCount] = reply.RoundtripTime;
-                            successCount++;
-                        }
-
-                        WriteProgress(new ProgressRecord(1, "Speed Test",
-                            $"Measuring latency... ping {i + 1}/{PingCount}")
-                        { PercentComplete = 15 + (15 * i / PingCount) });
-                    }
-                    catch (PingException)
-                    {
-                        // Individual ping failure
-                    }
-                }
-
-                if (successCount > 0)
-                {
-                    var validLatencies = latencies.Take(successCount).OrderBy(l => l).ToArray();
-                    result.Properties.Add(new PSNoteProperty("LatencyMinMs", Math.Round(validLatencies[0], 2)));
-                    result.Properties.Add(new PSNoteProperty("LatencyMaxMs", Math.Round(validLatencies[^1], 2)));
-                    result.Properties.Add(new PSNoteProperty("LatencyAvgMs", Math.Round(validLatencies.Average(), 2)));
-
-                    // Jitter = average of absolute differences between consecutive pings
-                    if (successCount > 1)
-                    {
-                        var jitter = 0.0;
-                        for (var i = 1; i < successCount; i++)
-                        {
-                            jitter += Math.Abs(validLatencies[i] - validLatencies[i - 1]);
-                        }
-                        result.Properties.Add(new PSNoteProperty("JitterMs", Math.Round(jitter / (successCount - 1), 2)));
-                    }
-                    else
-                    {
-                        result.Properties.Add(new PSNoteProperty("JitterMs", 0.0));
-                    }
-
-                    result.Properties.Add(new PSNoteProperty("PacketLoss",
-                        $"{Math.Round((1.0 - (double)successCount / PingCount) * 100, 1)}%"));
-                }
-                else
-                {
-                    result.Properties.Add(new PSNoteProperty("LatencyMinMs", (object)null!));
-                    result.Properties.Add(new PSNoteProperty("LatencyMaxMs", (object)null!));
-                    result.Properties.Add(new PSNoteProperty("LatencyAvgMs", (object)null!));
-                    result.Properties.Add(new PSNoteProperty("JitterMs", (object)null!));
-                    result.Properties.Add(new PSNoteProperty("PacketLoss", "100%"));
-                    WriteWarning("All ping probes failed. Host may be unreachable or ICMP may be blocked.");
-                }
+                return (null, null);
             }
-            catch (PlatformNotSupportedException)
-            {
-                WriteWarning("ICMP ping is not supported on this platform. Falling back to TCP latency.");
-                MeasureTcpLatency(result);
-            }
+
+            var ipv4 = nic.GetIPProperties().UnicastAddresses.FirstOrDefault(a => a.Address.AddressFamily == AddressFamily.InterNetwork);
+            return (nic.Name, ipv4?.Address.ToString());
         }
-
-        private void MeasureTcpLatency(PSObject result)
+        catch (NetworkInformationException ex)
         {
-            var latencies = new double[PingCount];
-            var successCount = 0;
+            WriteWarning($"Could not read network interfaces: {ex.Message}");
+            return (null, null);
+        }
+    }
 
-            for (var i = 0; i < PingCount; i++)
+    private static long SafeBytesReceived(NetworkInterface nic)
+    {
+        try
+        {
+            return nic.GetIPStatistics().BytesReceived;
+        }
+        catch (Exception ex) when (ex is NetworkInformationException or PlatformNotSupportedException)
+        {
+            return 0;
+        }
+    }
+
+    private (List<double> Latencies, string Method) MeasureLatency()
+    {
+        var latencies = new List<double>(PingCount);
+        try
+        {
+            using var ping = new Ping();
+            for (var i = 0; i < PingCount && !_cancellation.IsCancellationRequested; i++)
             {
                 try
                 {
-                    using var client = new TcpClient();
-                    var sw = Stopwatch.StartNew();
-                    var task = client.ConnectAsync(LatencyHost, 443);
-                    if (task.Wait(5000))
+                    var reply = ping.Send(LatencyHost, 3000);
+                    if (reply.Status == IPStatus.Success)
                     {
-                        sw.Stop();
-                        latencies[successCount] = sw.Elapsed.TotalMilliseconds;
-                        successCount++;
+                        latencies.Add(reply.RoundtripTime);
                     }
                 }
-                catch (Exception)
+                catch (PingException)
                 {
-                    // TCP probe failed
+                    // Counted as a lost packet.
                 }
             }
 
-            if (successCount > 0)
+            return (latencies, "ICMP");
+        }
+        catch (Exception ex) when (ex is PlatformNotSupportedException or UnauthorizedAccessException or InvalidOperationException)
+        {
+            WriteVerbose($"ICMP unavailable ({ex.Message}); using TCP connect latency to port 443.");
+        }
+
+        for (var i = 0; i < PingCount && !_cancellation.IsCancellationRequested; i++)
+        {
+            var probe = TcpProbe.Connect(LatencyHost, 443, TimeSpan.FromSeconds(3), _cancellation.Token);
+            if (probe.Open)
             {
-                var valid = latencies.Take(successCount).OrderBy(l => l).ToArray();
-                result.Properties.Add(new PSNoteProperty("LatencyMinMs", Math.Round(valid[0], 2)));
-                result.Properties.Add(new PSNoteProperty("LatencyMaxMs", Math.Round(valid[^1], 2)));
-                result.Properties.Add(new PSNoteProperty("LatencyAvgMs", Math.Round(valid.Average(), 2)));
-                result.Properties.Add(new PSNoteProperty("JitterMs", (object)null!));
-                result.Properties.Add(new PSNoteProperty("PacketLoss", "N/A (TCP fallback)"));
-            }
-            else
-            {
-                result.Properties.Add(new PSNoteProperty("LatencyMinMs", (object)null!));
-                result.Properties.Add(new PSNoteProperty("LatencyMaxMs", (object)null!));
-                result.Properties.Add(new PSNoteProperty("LatencyAvgMs", (object)null!));
-                result.Properties.Add(new PSNoteProperty("JitterMs", (object)null!));
-                result.Properties.Add(new PSNoteProperty("PacketLoss", "100%"));
+                latencies.Add(probe.LatencyMs);
             }
         }
 
-        private void MeasureDownload(PSObject result)
+        return (latencies, "TCP");
+    }
+
+    private (double? Mbps, long Bytes) MeasureDownload()
+    {
+        var url = DownloadUrl ?? CloudflareDownload + DownloadSize.ToString(CultureInfo.InvariantCulture);
+        try
         {
-            try
+            using var cts = CancellationTokenSource.CreateLinkedTokenSource(_cancellation.Token);
+            cts.CancelAfter(TimeSpan.FromMinutes(2));
+
+            var stopwatch = Stopwatch.StartNew();
+            using var response = SharedHttp.Client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead, cts.Token).GetAwaiter().GetResult();
+            response.EnsureSuccessStatusCode();
+
+            using var stream = response.Content.ReadAsStreamAsync(cts.Token).GetAwaiter().GetResult();
+            var buffer = new byte[1 << 16];
+            long total = 0;
+            var expected = response.Content.Headers.ContentLength ?? DownloadSize;
+            var nextReport = expected / 10;
+            int read;
+            while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                var url = string.IsNullOrEmpty(DownloadUrl)
-                    ? string.Format(System.Globalization.CultureInfo.InvariantCulture, "https://speed.cloudflare.com/__down?bytes={0}", DownloadSize)
-                    : DownloadUrl;
-
-                var sw = Stopwatch.StartNew();
-                using var response = SpeedTestClient.GetAsync(url, HttpCompletionOption.ResponseHeadersRead)
-                    .GetAwaiter().GetResult();
-                response.EnsureSuccessStatusCode();
-
-                using var stream = response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
-                var buffer = new byte[81920];
-                long totalBytes = 0;
-                int bytesRead;
-
-                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                total += read;
+                if (total >= nextReport)
                 {
-                    totalBytes += bytesRead;
-
-                    if (totalBytes % (DownloadSize / 10) < buffer.Length)
-                    {
-                        var pct = (int)(30 + 40.0 * totalBytes / DownloadSize);
-                        WriteProgress(new ProgressRecord(1, "Speed Test",
-                            $"Downloading... {totalBytes / 1_000_000.0:F1} MB")
-                        { PercentComplete = Math.Min(pct, 69) });
-                    }
+                    Progress($"Downloading {ByteSize.Format(total)}", (int)Math.Min(69, 30 + 40.0 * total / expected));
+                    nextReport += expected / 10;
                 }
-
-                sw.Stop();
-
-                var durationSec = sw.Elapsed.TotalSeconds;
-                var bitsPerSecond = totalBytes * 8.0 / durationSec;
-                var mbps = bitsPerSecond / 1_000_000.0;
-
-                result.Properties.Add(new PSNoteProperty("DownloadMbps", Math.Round(mbps, 2)));
-                result.Properties.Add(new PSNoteProperty("DownloadBytes", totalBytes));
-                result.Properties.Add(new PSNoteProperty("DownloadDurationSec", Math.Round(durationSec, 2)));
             }
-            catch (Exception ex)
-            {
-                var msg = ex.InnerException?.Message ?? ex.Message;
-                WriteWarning($"Download test failed: {msg}");
-                result.Properties.Add(new PSNoteProperty("DownloadMbps", (object)null!));
-                result.Properties.Add(new PSNoteProperty("DownloadBytes", 0L));
-                result.Properties.Add(new PSNoteProperty("DownloadDurationSec", (object)null!));
-            }
+
+            stopwatch.Stop();
+            return (Math.Round(total * 8.0 / stopwatch.Elapsed.TotalSeconds / 1_000_000, 2), total);
         }
-
-        private void MeasureUpload(PSObject result)
+        catch (Exception ex) when (ex is HttpRequestException or IOException or OperationCanceledException)
         {
-            try
-            {
-                // Generate random upload payload
-                var payload = new byte[UploadSize];
-                System.Security.Cryptography.RandomNumberGenerator.Fill(payload);
-
-                var sw = Stopwatch.StartNew();
-                using var content = new ByteArrayContent(payload);
-                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
-                using var response = SpeedTestClient.PostAsync(UploadUrl, content)
-                    .GetAwaiter().GetResult();
-                response.EnsureSuccessStatusCode();
-                sw.Stop();
-
-                var durationSec = sw.Elapsed.TotalSeconds;
-                var bitsPerSecond = UploadSize * 8.0 / durationSec;
-                var mbps = bitsPerSecond / 1_000_000.0;
-
-                result.Properties.Add(new PSNoteProperty("UploadMbps", Math.Round(mbps, 2)));
-                result.Properties.Add(new PSNoteProperty("UploadBytes", (long)UploadSize));
-                result.Properties.Add(new PSNoteProperty("UploadDurationSec", Math.Round(durationSec, 2)));
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.InnerException?.Message ?? ex.Message;
-                WriteWarning($"Upload test failed: {msg}");
-                result.Properties.Add(new PSNoteProperty("UploadMbps", (object)null!));
-                result.Properties.Add(new PSNoteProperty("UploadBytes", 0L));
-                result.Properties.Add(new PSNoteProperty("UploadDurationSec", (object)null!));
-            }
+            WriteWarning($"Download test failed: {ex.InnerException?.Message ?? ex.Message}");
+            return (null, 0);
         }
     }
+
+    private (double? Mbps, long Bytes) MeasureUpload()
+    {
+        try
+        {
+            var payload = new byte[UploadSize];
+            Random.Shared.NextBytes(payload);
+
+            using var cts = CancellationTokenSource.CreateLinkedTokenSource(_cancellation.Token);
+            cts.CancelAfter(TimeSpan.FromMinutes(2));
+
+            using var content = new ByteArrayContent(payload);
+            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+
+            var stopwatch = Stopwatch.StartNew();
+            using var response = SharedHttp.Client.PostAsync(UploadUrl, content, cts.Token).GetAwaiter().GetResult();
+            response.EnsureSuccessStatusCode();
+            stopwatch.Stop();
+
+            return (Math.Round(UploadSize * 8.0 / stopwatch.Elapsed.TotalSeconds / 1_000_000, 2), UploadSize);
+        }
+        catch (Exception ex) when (ex is HttpRequestException or IOException or OperationCanceledException)
+        {
+            WriteWarning($"Upload test failed: {ex.InnerException?.Message ?? ex.Message}");
+            return (null, 0);
+        }
+    }
+
+    /// <inheritdoc />
+    protected override void StopProcessing() => _cancellation.Cancel();
+
+    /// <inheritdoc />
+    public void Dispose() => _cancellation.Dispose();
 }

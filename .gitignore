@@ -343,3 +343,6 @@ healthchecksdb
 .DS_Store
 
 .editorconfig
+# PowerPlug
+dist/
+.DS_Store

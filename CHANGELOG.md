@@ -5,6 +5,10 @@ All notable changes to PowerPlug will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2026-09-19
+
+The 1.0.0 release promotes the 1.0.0 release candidate to the stable channel after the final integration and validation pass.
+
 ## [1.0.0-rc.1] - 2026-09-12
 
 This release is close to a rewrite, and it is not compatible with 0.9.x scripts that relied on the old output shapes or the `BetaCmdlet` attribute. That is why the number jumps to 1.0.0 rather than 0.10.0: from here on, changes to stable cmdlets follow semantic versioning and experimental ones are marked as such. The module has grown from 16 to 44 cmdlets, drops its last external dependency, gains a module manifest and a full test suite, and every cmdlet has help.

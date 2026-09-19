@@ -61,8 +61,6 @@
             ProjectUri   = 'https://github.com/manu-p-1/PowerPlug'
             IconUri      = 'https://raw.githubusercontent.com/manu-p-1/PowerPlug/master/assets/PowerPlugIcon.png'
             ReleaseNotes = 'https://github.com/manu-p-1/PowerPlug/blob/master/CHANGELOG.md'
-            # The Gallery only allows letters and digits here, so this is rc1 rather than rc.1.
-            Prerelease   = 'rc1'
         }
     }
 }

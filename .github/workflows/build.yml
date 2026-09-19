@@ -5,6 +5,12 @@ on:
     branches: [ master, experimental ]
   pull_request:
     branches: [ master, experimental ]
+  merge_group:
+    branches: [ master, experimental ]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read

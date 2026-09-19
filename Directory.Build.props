@@ -12,7 +12,7 @@
     <Copyright>Copyright (c) Manu Puduvalli 2021-2026</Copyright>
     <RepositoryUrl>https://github.com/manu-p-1/PowerPlug</RepositoryUrl>
     <!-- NuGet and assembly informational version. The manifest carries the same number with a Gallery friendly prerelease label. -->
-    <PowerPlugVersion>1.0.0-rc.1</PowerPlugVersion>
+    <PowerPlugVersion>1.0.0</PowerPlugVersion>
   </PropertyGroup>
 
 </Project>

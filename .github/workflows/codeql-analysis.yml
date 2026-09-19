@@ -2,11 +2,18 @@ name: CodeQL
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, experimental ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, experimental ]
+  merge_group:
+    branches: [ master, experimental ]
+  workflow_dispatch:
   schedule:
     - cron: '38 3 * * 0'
+
+concurrency:
+  group: codeql-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
